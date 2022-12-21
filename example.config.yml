@@ -1,0 +1,4 @@
+development:
+  password: SHOPIFY_PASSWORD
+  theme_id: "THEMEID"
+  store: example.myshopify.com

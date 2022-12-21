@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "emmet.includeLanguages": {
+    "liquid": "html",
+    "liquid-css": "css",
+    "liquid-scss": "scss"
+  }
+}

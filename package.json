@@ -1,0 +1,28 @@
+{
+  "name": "scaldasonno",
+  "version": "1.0.0",
+  "description": "Theme for Mar del Sur for his store Scaldasonno",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx mix watch",
+    "production": "npx mix --production",
+    "watch": "theme watch --allow-live",
+    "get": "theme get",
+    "deploy": "theme deploy --allow-live",
+    "zip": "node ./src/tasks/zip.js"
+  },
+  "keywords": [],
+  "author": "Mediahuella",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.8",
+    "alpinejs": "^3.10.5",
+    "archiver": "^5.3.1",
+    "fslightbox": "^3.3.1",
+    "laravel-mix": "^6.0.49",
+    "postcss-custom-properties": "^13.0.0",
+    "swiper": "^8.4.5",
+    "tailwindcss": "^3.2.4"
+  }
+}
