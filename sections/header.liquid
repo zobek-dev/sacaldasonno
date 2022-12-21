@@ -1,0 +1,78 @@
+<div x-data>
+  <div class="relative block py-4 lg:py-0" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+    <div class="wrapper">
+      <div class="grid items-center grid-header">
+        <div x-data class="block col-start-1 col-end-2 lg:hidden">
+          <button>
+            {% render 'icon-burger' %}
+          </button>
+        </div> 
+        <div class="col-start-2 col-end-5 lg:col-start-1 lg:col-end-2 flex justify-center lg:justify-start">
+          <a href="{{ routes.root_url }}">
+            {% render 'logo', class: 'w-[120px] h-[41.4px] lg:w-[200px] lg:h-[69px]' %}
+          </a>
+        </div> 
+        <nav class="hidden lg:flex justify-center lg:col-start-2 lg:col-end-5">
+          <ul class="flex gap-x-4 items-center">
+            {% for link in linklists.main-menu.links %}
+              <li>
+                {% if link.links.size > 0 %}
+                  <details x-data>
+                    <summary class="flex items-center gap-x-1">
+                      <a href="{{ link.url }}" class="block font-medium uppercase text-[15px] py-8 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                        {{ link.title | escape }}
+                      </a>
+                      <span>{% render 'icon-caret', class: 'w-4' %}</span>
+                    </summary>
+                    <div class="w-full absolute top-full left-0 bg-white py-8">
+                      <ul class="wrapper">
+                        {% for childlink in link.links %}
+                          <li>
+                            <a href="{{ childlink.url }}">
+                              {{ childlink.title | escape }}
+                            </a> 
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </details>
+                {% else %}
+                  <a href="{{ link.url }}" class="block font-medium uppercase text-[15px] py-8 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                    {{ link.title | escape }}
+                  </a>  
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        <div class="flex justify-end gap-x-2 col-start-5 col-end-6">
+          <div>
+            <a href="{{ routes.search_url }}" x-data>
+              {% render 'icon-search', class: 'w-[19.2px] h-[19.2px] lg:w-[24px] lg:h-[24px]' %}
+            </a>
+          </div>
+          <div>
+            <a href="{{ routes.cart_url }}" x-data>
+              {% render 'icon-cart', class: 'w-[19.2px] h-[20.8px] lg:w-[24px] lg:h-[26px]' %}
+            </a>
+          </div>
+          <div>
+            <a href="{{ routes.account_login_url }}">
+              {% render 'icon-user', class: 'w-[24px] h-[24px] lg:w-[30px] lg:h-[30px]' %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "header",
+    "tag": "header",
+    "class": "block",
+    "settings": []
+  }
+{% endschema %}

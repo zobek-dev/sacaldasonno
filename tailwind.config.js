@@ -14,6 +14,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'barlow': ['Barlow', 'sans-serif']
+    }
   },
   plugins: [
     require('@tailwindcss/line-clamp'),

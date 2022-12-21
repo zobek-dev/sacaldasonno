@@ -1,3 +1,13 @@
-body{
-  @apply bg-gray-400 text-blue-600
+.wrapper{
+  @apply max-w-[1320px] mx-auto px-4 lg:px-8
+}
+
+.grid-header{
+  grid-template-columns: repeat(5, minmax(50px,1fr))
+}
+
+@media(min-width: 1024px){
+  .grid-header{
+    grid-template-columns: 200px 1fr 1fr 1fr 200px;
+  }
 }

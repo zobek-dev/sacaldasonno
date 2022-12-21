@@ -7,6 +7,8 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
 
     {% if settings.favicon != blank %}
       <!--FAVICON-->
@@ -29,6 +31,13 @@
     <!--METATAGS-->
     {% render 'meta-tags' %}
 
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!--GOOGLE-FONT BARLOW-->  
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" >
+
     <!--LOAD JAVASCRIPT -->
     <script src="{{ 'app.js' | asset_url }}" defer></script>
 
@@ -44,22 +53,12 @@
       }
     </script>
 </head>
-<body>
-  <div>
-    {% comment %}
-      Delete the next alpine js component is there only for test purpose.
-    {% endcomment %}
-    <div x-data="{ open: false }">
-      <button @click="open = !open">
-        Expand
-      </button>
-      <div x-show="open">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis asperiores quibusdam alias voluptatibus exercitationem. Ea, quas voluptatum delectus veniam laboriosam recusandae aut quos aliquam? Eius magnam dolore quia quas nam!
-      </div>
-    </div>
-  </div>
-  <main>
+<body class="font-barlow">
+  {% section 'announcement-bar' %}
+  {% section 'header' %}  
+  <main class="min-h-[90vh]">
     {{ content_for_layout }}
   </main> 
+  {% section 'footer' %}
 </body>
 </html>

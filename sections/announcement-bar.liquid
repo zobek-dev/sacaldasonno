@@ -1,0 +1,32 @@
+<div class="py-2 text-white bg-[#a00000]">
+  {% if section.settings.link != blank %}
+    <a href="{{ section.settings.link }}">
+  {% endif %}
+    <div class="wrapper">
+      <p class="text-center text-sm uppercase font-medium">
+        {{ section.settings.text | escape }}
+      </p>
+    </div>
+  {% if section.settings.link != blank %}
+    </a>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.announcement-bar.name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "default": "Bienvenidos a nuestra tienda",
+        "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+      }
+    ]
+  }
+{% endschema %}
