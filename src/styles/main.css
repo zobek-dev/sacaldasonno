@@ -3,3 +3,5 @@
 @tailwind utilities;
 
 @import './components/base.css';
+@import './components/drawer-menu.css';
+@import './components/drawer-cart.css';

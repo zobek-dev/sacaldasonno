@@ -1,0 +1,241 @@
+{% if cart == empty %}
+<div class="flex-1">
+  <div class="w-full h-full flex flex-col justify-center items-center">
+    {% render 'icon-cart-drawer' %}
+    <h3 class="text-center text-[#b5b5b5] py-1">
+      Tú carrito está vacío
+    </h3>
+  </div>
+</div>
+{% else %}
+<div class="flex-1 overflow-y-scroll">
+  <form
+    action="{{ routes.cart_url }}"
+    id="CartDrawerForm"
+    method="POST">
+    {% if cart != empty %}
+      <div>
+        <table class="block w-full md:shadow-none md:border-spacing-0 md:border-separate">
+          <thead class="inline-table w-full sticky top-0 z-[2] bg-white">
+            <tr role="row" class="table-row mb-0">
+              <th
+                id="CartDrawer-ColumnProductImage"
+                role="columnheader"
+                class="w-0 p-0">
+                <span class="sr-only">Imagen</span>
+              </th>
+              <th
+                id="CartDrawer-ColumnProduct"
+                scope="col"
+                role="columnheader"
+                class="w-1/2 pl-0 uppercase text-left pb-2 text-xs border-b-[0.3px] border-[#13203A]">
+                Producto
+              </th>
+              <th
+                id="CartDrawer-ColumnTotal"
+                scope="col"
+                role="columnheader"
+                class="w-1/2 pr-0 uppercase text-right pb-2 text-xs border-b-[0.5px] border-[#13203A]">
+                Total
+              </th>
+              <th
+                id="CartDrawer-ColumnQuantity"
+                class="w-0 p-0"
+                role="columnheader">
+                <span class="sr-only">Cantidad</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup" class="w-full block">
+            {% for item in cart.items %}
+              {% comment %} {% liquid
+                echo item | json
+              %} {% endcomment %}
+              <tr
+                id="CartDrawer-Item-{{ item.index | plus: 1 }}"
+                role="row"
+                x-data="{}"
+                class="grid grid-cols-4 gap-x-4 gap-y-2 py-4"
+                style="grid-template-rows: repeat(2, auto)"
+                >
+                <td role="cell" headers="CartDrawer-ColumnProductImage" class="row-start-1 row-end-3">
+                  {% if item.image %}
+                    <a
+                      href="{{ item.url }}"
+                      tabindex="-1"
+                      aria-hidden="true"></a>
+                    <img
+                      src="{{ item.image | img_url: '300x' }}"
+                      alt="{{ item.image.alt | escape }}"
+                      loading="lazy"
+                      width="150"
+                      height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+                      class="w-full"
+                      >
+                  {% endif %}
+                </td>
+                <td role="cell" headers="CartDrawer-ColumnProduct" class="col-start-2 col-end-4">
+                  {% if settings.show_vendor %}
+                    <p>{{ item.product.vendor }}</p>
+                  {% endif %}
+
+                  <a href="{{ item.url }}" class="block text-sm font-semibold leading-none mb-2">
+                    {{ item.product.title | escape }}
+                  </a>
+
+                  {% if item.original_price != item.final_price %}
+                    <div class="flex gap-x-1">
+                      <span class="sr-only">
+                        {{ 'products.product.price.regular_price' | t }}
+                      </span>
+                      <s class="text-xs font-light">
+                        {{ item.original_price | money }}
+                      </s>
+                      <span class="sr-only">
+                        {{ 'products.product.price.sale_price' | t }}
+                      </span>
+                      <strong class="text-xs font-medium">
+                        {{ item.final_price | money }}
+                      </strong>
+                    </div>
+                  {% else %}
+                    <div class="text-xs font-medium">
+                      {{ item.original_price | money }}
+                    </div>
+                  {% endif %}
+                </td>
+                <td role="cell" headers="CartDrawer-ColumnTotal" class="pointer-events-none text-right flex justify-end items-start py-2">
+                  <div class="hidden">
+                    <div class="loading-overlay__spinner">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        class="spinner"
+                        viewBox="0 0 66 66"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle
+                          class="path"
+                          fill="none"
+                          stroke-width="6"
+                          cx="33"
+                          cy="33"
+                          r="30"></circle>
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    {% if item.original_line_price != item.final_line_price %}
+                      <div>
+                        <span class="sr-only">
+                          {{ 'products.product.price.regular_price' | t }}
+                        </span>
+                        <s class="font-light text-xs">
+                          {{ item.original_line_price | money }}
+                        </s>
+                        <span class="sr-only">
+                          {{ 'products.product.price.sale_price' | t }}
+                        </span>
+                        <span class="font-bold text-sm">
+                          {{ item.final_line_price | money }}
+                        </span>
+                      </div>
+                    {% else %}
+                      <span class="font-bold text-sm">
+                        {{ item.original_line_price | money }}
+                      </span>
+                    {% endif %}
+                  </div>
+                </td>
+                <td
+                  class="col-start-2 col-end-5"
+                  role="cell"
+                  headers="CartDrawer-ColumnQuatity">
+                  <div class="flex flex-wrap items-center gap-4">
+                    <div 
+                    x-data="{ quantity: {{ item.quantity }}}"
+                    class="flex items-center group border-[0.5px] border-[#13203A] rounded-[32px]"
+                    >
+                      <button
+                        name="minus"
+                        type="button"
+                        class="block px-4 h-[30px]"
+                        @click.debounce="fetch('/cart/change.js', {
+                          method: 'POST',
+                          headers: {'Content-Type': 'application/json'},
+                          body: JSON.stringify({ quantity: --quantity, line: {{ forloop.index }}})
+                          })
+                          .then(response => response.json())
+                          .then(data => $dispatch('update-cart'))
+                          .catch(error => console.error('Error', error));
+                          ">
+                        {% render 'icon-minus', class: 'w-3' %}
+                      </button>
+                      <input
+                        type="number"
+                        name="updates[]"
+                        value="{{ item.quantity }}"
+                        min="0"
+                        aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                        id="Drawer-quantity-{{ item.index | plus: 1 }}"
+                        data-index="{{ item.index | plus: 1 }}"
+                        class="w-[50px] h-[30px] text-center border-l-[0.5px] text-xs md:text-sm border-r-[0.5px] border-[#13203A]"
+                        x-ref="input"
+                      >
+                      <button
+                        name="plus"
+                        type="button"
+                        class="block px-4 h-[30px]"
+                        @click.debounce="fetch('/cart/change.js', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({ quantity: ++quantity, line: {{ forloop.index }}})
+                          })
+                          .then(response => response.json())
+                          .then(data => $dispatch('update-cart'))
+                          .catch(error => console.error('Error', error));
+                          ">
+                        {% render 'icon-plus', class: 'w-3' %}
+                      </button>
+                    </div>
+                    <div id="CartDrawer-Remove-{{ item.index | plus: 1 }}" x-data="{ index: {{ item.index | plus: 1 }}}">
+                      <button
+                        type="button"
+                        class=""
+                        aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                        @click.debounce="fetch('/cart/change.js', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({ quantity: 0, line: {{ forloop.index }}})
+                          })
+                          .then(response => response.json())
+                          .then(data => $dispatch('update-cart'))
+                          .catch(error => console.error('Error', error));
+                          ">
+                        {% render 'icon-remove', class: 'w-4' %}
+                      </button>
+                    </div>
+                  </div>   
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+  </form>
+</div>
+<div class="pt-2 pb-4 border-t border-[#13203A]">
+  <div class="flex justify-between items-center mb-4">
+    <h3 class="text-xl font-bold">Total:</h3>
+    <span id="CartTotal" class="text-xl font-semibold">{{ cart.total_price | money }}</span>
+  </div>
+  <div class="flex flex-col gap-2">
+    <button
+      type="submit"
+      form="CartDrawerForm"
+      class="btn-primary-cart hover:opacity-70 transition-opacity duration-200 ease-in"
+      name="checkout">Ir al Checkout</button>
+    <button class="btn-secondary-cart hover:opacity-70 transition-opacity duration-200 ease-in" @click="$dispatch('toggle-cart')">Continuar Comprando</button>
+  </div>
+</div>
+{% endif %}

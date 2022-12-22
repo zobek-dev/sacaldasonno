@@ -1,11 +1,21 @@
-<div x-data>
+<div class="z-[999]">
   <div class="relative block py-4 lg:py-0" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
     <div class="wrapper">
       <div class="grid items-center grid-header">
-        <div x-data class="block col-start-1 col-end-2 lg:hidden">
-          <button>
+        <div x-data="{
+          open: false,
+          handleMenu(){
+            this.open = !this.open;
+            $refs.drawer_menu.classList.toggle('active');
+          }
+        }"
+        @toggle-menu.window="handleMenu"
+        @keyup="$dispatch('toggle-menu')" 
+        class="block col-start-1 col-end-2 lg:hidden">
+          <button @click="$dispatch('toggle-menu')" aria-label="{{ 'sections.header.menu' | t }}">
             {% render 'icon-burger' %}
           </button>
+          {% render 'drawer-menu' %}
         </div> 
         <div class="col-start-2 col-end-5 lg:col-start-1 lg:col-end-2 flex justify-center lg:justify-start">
           <a href="{{ routes.root_url }}">
@@ -13,31 +23,50 @@
           </a>
         </div> 
         <nav class="hidden lg:flex justify-center lg:col-start-2 lg:col-end-5">
-          <ul class="flex gap-x-4 items-center">
+          <ul class="flex items-center">
             {% for link in linklists.main-menu.links %}
               <li>
                 {% if link.links.size > 0 %}
-                  <details x-data>
+                <div x-data="{
+                  open: false, 
+                  handleOpen(){
+                    this.open = !this.open;  
+                    this.open ? $refs.detail.setAttribute('open', true) : $refs.detail.removeAttribute('open');
+                    this.open ? $refs.overlay.classList.remove('hidden'): $refs.overlay.classList.add('hidden')
+                    this.open ? $refs.caret.firstElementChild.classList.add('rotate-180') :  $refs.caret.firstElementChild.classList.remove('rotate-180');
+                    this.open ? $refs.caret.classList.add('text-[#a00]') :  $refs.caret.classList.remove('text-[#a00]');
+                  }
+                  }">
+                  <div class="hidden absolute bg-[rgba(10,10,10,.5)] top-full left-0 w-full h-[80vh]" x-ref="overlay"></div>
+                  <details 
+                  x-ref="detail"
+                  class="px-2"
+                  @mouseover="handleOpen"
+                  @mouseout="handleOpen"
+                  >
                     <summary class="flex items-center gap-x-1">
-                      <a href="{{ link.url }}" class="block font-medium uppercase text-[15px] py-8 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                      <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-8 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
                         {{ link.title | escape }}
                       </a>
-                      <span>{% render 'icon-caret', class: 'w-4' %}</span>
+                      <span x-ref="caret">{% render 'icon-caret', class: 'w-3' %}</span>
                     </summary>
-                    <div class="w-full absolute top-full left-0 bg-white py-8">
-                      <ul class="wrapper">
-                        {% for childlink in link.links %}
-                          <li>
-                            <a href="{{ childlink.url }}">
-                              {{ childlink.title | escape }}
-                            </a> 
-                          </li>
-                        {% endfor %}
-                      </ul>
+                    <div class="w-full absolute top-full left-0">
+                      <div class="bg-white py-8 w-full border-t border-gray-400" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                        <ul class="wrapper">
+                          {% for childlink in link.links %}
+                            <li>
+                              <a href="{{ childlink.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-1 {% if childlink.current %}text-[#a00]{% endif %}" {% if childlink.current %}aria-current="page"{% endif %}>
+                                {{ childlink.title | escape }}
+                              </a> 
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </div> 
                     </div>
                   </details>
+                </div>         
                 {% else %}
-                  <a href="{{ link.url }}" class="block font-medium uppercase text-[15px] py-8 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 px-4 font-semibold uppercase text-[15px] py-8 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
                     {{ link.title | escape }}
                   </a>  
                 {% endif %}
@@ -45,16 +74,27 @@
             {% endfor %}
           </ul>
         </nav>
-        <div class="flex justify-end gap-x-2 col-start-5 col-end-6">
+        <div class="flex justify-end gap-x-1 lg:gap-x-2 col-start-5 col-end-6">
           <div>
             <a href="{{ routes.search_url }}" x-data>
               {% render 'icon-search', class: 'w-[19.2px] h-[19.2px] lg:w-[24px] lg:h-[24px]' %}
             </a>
           </div>
-          <div>
-            <a href="{{ routes.cart_url }}" x-data>
+          <div x-data="{
+            open: false,
+            toggleCart(){
+              this.open = !this.open;
+              $refs.drawer_cart.classList.toggle('active');
+            },
+            updateCart(){}
+          }"
+          @toggle-cart.window="toggleCart"
+          @update-cart.window="updateCart"
+          >
+            <a href="{{ routes.cart_url }}" @click.prevent="$dispatch('toggle-cart')">
               {% render 'icon-cart', class: 'w-[19.2px] h-[20.8px] lg:w-[24px] lg:h-[26px]' %}
             </a>
+            {% render 'drawer-cart' %}
           </div>
           <div>
             <a href="{{ routes.account_login_url }}">

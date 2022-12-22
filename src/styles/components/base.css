@@ -1,3 +1,7 @@
+summary::-webkit-details-marker {
+  display: none;
+}
+
 .wrapper{
   @apply max-w-[1320px] mx-auto px-4 lg:px-8
 }
@@ -10,4 +14,8 @@
   .grid-header{
     grid-template-columns: 200px 1fr 1fr 1fr 200px;
   }
+}
+
+.detail-drawer[open] svg{
+  @apply rotate-180;
 }

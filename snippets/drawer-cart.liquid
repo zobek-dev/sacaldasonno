@@ -1,0 +1,15 @@
+<div class="drawer-cart fixed z-[9999] w-[100vw] h-full top-0 left-0 flex justify-end bg-[rgba(10,10,10,.5)]" x-ref="drawer_cart">
+  <div class="block">
+    <div class="fixed top-0 left-0 right-0 bottom-0" @click="$dispatch('toggle-cart')"></div>
+    <div class="cart-inner bg-white h-full w-[420px] px-4 flex flex-col justify-between z-[9999]" style="max-width: calc(100vw - 3rem);">
+      <div class="flex justify-between items-center py-4">
+        <h2 class="text-base lg:text-xl font-bold uppercase">Carrito de compras</h2>
+        <button aria-label="Cerrar el carrito" @click="$dispatch('toggle-cart')">
+          {% render 'icon-close' %}
+          <div class="sr-only">Cerrar el menu</div>
+        </button>
+      </div>
+      {% render 'cart-form' %}
+    </div>
+  </div>
+</div>  

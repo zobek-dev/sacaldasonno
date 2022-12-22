@@ -1,1 +1,6 @@
-<h1>Product</h1>
+<h1>{{ product.title | escape }}</h1>
+<form action="{{ routes.cart_add_url }}" method="POST">
+  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+  <input type="hidden" name="quantity" value="1">
+  <button type="submit" name="add">ADD TO CART</button>
+</form>

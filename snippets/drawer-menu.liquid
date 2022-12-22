@@ -1,0 +1,47 @@
+
+
+<div class="drawer-menu fixed z-[9999] w-[100vw] h-full top-0 left-0 flex justify-start bg-[rgba(10,10,10,.5)]" x-ref="drawer_menu">
+  <div class="block">
+    <div class="fixed top-0 left-0 right-0 bottom-0" @click="$dispatch('toggle-menu')"></div>
+    <div class="menu-inner bg-white h-full w-[420px] px-4 flex flex-col z-[9999]" style="max-width: calc(100vw - 3rem);">
+       <div class="flex justify-between items-start py-4 mb-4">
+        {% render 'logo-drawer' %}
+        <button aria-label="Cerrar el Menú" @click="$dispatch('toggle-menu')">
+          {% render 'icon-close' %}
+          <div class="sr-only">Cerrar el menu</div>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-scroll">
+        <ul class="text-[#4A4A49]">
+          {% for link in linklists.main-menu.links %}
+            <li class="border-b-[0.5px] border-[#4A4A49] pb-3 pt-3">
+              {% if link.links.size > 0 %}
+                <details class="detail-drawer">
+                  <summary class="flex justify-between items-center">
+                    <a href="{{ link.url }}" class="text-[13px]  font-bold uppercase {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                      {{ link.title | escape }}
+                    </a>
+                    <span>{% render 'icon-caret', class: 'w-3' %}</span>
+                  </summary>
+                  <ul>
+                    {% for childlink in link.links %}
+                      <li class="pt-2">
+                        <a href="{{ childlink.url }}" class="text-[13px] font-medium {% if childlink.current %}text-[#a00]{% endif %}" {% if childlink.current %}aria-current="page"{% endif %}>
+                          {{ childlink.title | escape }}
+                        </a>
+                      </li>
+                    {% endfor %}   
+                  </ul>
+                </details>
+              {% else %}
+                  <a href="{{ link.url }}" class="text-[13px]  font-bold uppercase {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                  {{ link.title | escape }}
+                </a> 
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>  
+    </div>
+  </div>
+</div>  
