@@ -10,7 +10,7 @@
           }
         }"
         @toggle-menu.window="handleMenu"
-        @keyup="$dispatch('toggle-menu')" 
+        @keyup.escape="$dispatch('toggle-menu')" 
         class="block col-start-1 col-end-2 lg:hidden">
           <button @click="$dispatch('toggle-menu')" aria-label="{{ 'sections.header.menu' | t }}">
             {% render 'icon-burger' %}
@@ -86,15 +86,40 @@
               this.open = !this.open;
               $refs.drawer_cart.classList.toggle('active');
             },
-            updateCart(){}
+            updateCart(event){
+              event.preventDefault();
+              fetch('/?view=cart')
+              .then(response => response.text())
+              .then(data => {
+                $refs.cart_content.innerHTML = data;
+                const div = document.createElement('div');
+                div.innerHTML = data
+                const cartCount = JSON.parse(div.querySelector('[data-options]').innerHTML).item_count;
+                if(cartCount > 0){
+                  $refs.cart_count.innerText = cartCount
+                  $refs.cart_count.classList.remove('hidden');
+                }else{
+                  $refs.cart_count.innerText = cartCount
+                  $refs.cart_count.classList.add('hidden');
+                } 
+              })
+              .catch(error => console.error('Error: ', error))
+            }
+            //updateCount
           }"
           @toggle-cart.window="toggleCart"
           @update-cart.window="updateCart"
+          @keyup.escape="$dispatch('toggle-cart')"
           >
-            <a href="{{ routes.cart_url }}" @click.prevent="$dispatch('toggle-cart')">
-              {% render 'icon-cart', class: 'w-[19.2px] h-[20.8px] lg:w-[24px] lg:h-[26px]' %}
+          <a href="{{ routes.cart_url }}" {% if settings.drawer_cart %}@click.prevent="$dispatch('toggle-cart')"{% endif %} class="relative">
+              {% render 'icon-cart', class: 'w-[19.2px] h-[20.8px] lg:w-[24px] lg:h-[26px]' %}              
+              <span aria-hidden="true" class="text-white absolute -top-1 -right-1 bg-[#a00] text-xs w-[14px] h-[14px] rounded-[50%] flex justify-center items-center font-bold {% if cart == empty %}hidden{% endif %}" x-ref="cart_count">
+                {{ cart.item_count }}
+              </span>  
             </a>
-            {% render 'drawer-cart' %}
+            {% if settings.drawer_cart %}
+              {% render 'drawer-cart' %}
+            {% endif %}
           </div>
           <div>
             <a href="{{ routes.account_login_url }}">
@@ -113,6 +138,7 @@
     "name": "header",
     "tag": "header",
     "class": "block",
-    "settings": []
+    "settings": [
+    ]
   }
 {% endschema %}

@@ -47,6 +47,13 @@
     <!--LOAD MAIN CSS -->
     {{ 'main.css' | asset_url | stylesheet_tag }}
     <!--DESIGN-MODE-->
+
+    <style>
+      @font-face {
+        font-family: 'Gobold-Bold';
+        src: url({{ 'gobold_bold_italic-webfont.woff2' | asset_url }}) format('woff2');
+      }
+    </style>
     <script>
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');

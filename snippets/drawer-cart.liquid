@@ -9,7 +9,9 @@
           <div class="sr-only">Cerrar el menu</div>
         </button>
       </div>
-      {% render 'cart-form' %}
+      <div x-ref="cart_content" class="flex flex-col h-[90vh]">
+        {% render 'cart-form' %}
+      </div>
     </div>
   </div>
 </div>  

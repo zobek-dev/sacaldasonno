@@ -28,14 +28,14 @@
                 id="CartDrawer-ColumnProduct"
                 scope="col"
                 role="columnheader"
-                class="w-1/2 pl-0 uppercase text-left pb-2 text-xs border-b-[0.3px] border-[#13203A]">
+                class="w-1/2 pl-0 uppercase text-left pb-2 text-sm border-b-[0.3px] border-[#4a4a49]">
                 Producto
               </th>
               <th
                 id="CartDrawer-ColumnTotal"
                 scope="col"
                 role="columnheader"
-                class="w-1/2 pr-0 uppercase text-right pb-2 text-xs border-b-[0.5px] border-[#13203A]">
+                class="w-1/2 pr-0 uppercase text-right pb-2 text-sm border-b-[0.5px] border-[#4a4a49]">
                 Total
               </th>
               <th
@@ -54,8 +54,7 @@
               <tr
                 id="CartDrawer-Item-{{ item.index | plus: 1 }}"
                 role="row"
-                x-data="{}"
-                class="grid grid-cols-4 gap-x-4 gap-y-2 py-4"
+                class="grid grid-cols-4 gap-x-2 gap-y-2 py-4"
                 style="grid-template-rows: repeat(2, auto)"
                 >
                 <td role="cell" headers="CartDrawer-ColumnProductImage" class="row-start-1 row-end-3">
@@ -68,22 +67,22 @@
                       src="{{ item.image | img_url: '300x' }}"
                       alt="{{ item.image.alt | escape }}"
                       loading="lazy"
-                      width="150"
-                      height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+                      width="180"
+                      height="{{ 180 | divided_by: item.image.aspect_ratio | ceil }}"
                       class="w-full"
                       >
                   {% endif %}
                 </td>
                 <td role="cell" headers="CartDrawer-ColumnProduct" class="col-start-2 col-end-4">
                   {% if settings.show_vendor %}
-                    <p>{{ item.product.vendor }}</p>
+                    <p class="block uppercase text-base leading-none">{{ item.product.vendor }}</p>
                   {% endif %}
 
-                  <a href="{{ item.url }}" class="block text-sm font-semibold leading-none mb-2">
+                  <a href="{{ item.url }}" class="block uppercase text-base font-medium leading-none mb-2">
                     {{ item.product.title | escape }}
                   </a>
 
-                  {% if item.original_price != item.final_price %}
+                  {% comment %} {% if item.original_price != item.final_price %}
                     <div class="flex gap-x-1">
                       <span class="sr-only">
                         {{ 'products.product.price.regular_price' | t }}
@@ -102,7 +101,7 @@
                     <div class="text-xs font-medium">
                       {{ item.original_price | money }}
                     </div>
-                  {% endif %}
+                  {% endif %} {% endcomment %}
                 </td>
                 <td role="cell" headers="CartDrawer-ColumnTotal" class="pointer-events-none text-right flex justify-end items-start py-2">
                   <div class="hidden">
@@ -140,7 +139,7 @@
                         </span>
                       </div>
                     {% else %}
-                      <span class="font-bold text-sm">
+                      <span class="font-gobold text-[#a00] text-base">
                         {{ item.original_line_price | money }}
                       </span>
                     {% endif %}
@@ -150,15 +149,15 @@
                   class="col-start-2 col-end-5"
                   role="cell"
                   headers="CartDrawer-ColumnQuatity">
-                  <div class="flex flex-wrap items-center gap-4">
+                  <div class="flex flex-wrap items-center gap-4 text-[#4a4a49]">
                     <div 
                     x-data="{ quantity: {{ item.quantity }}}"
-                    class="flex items-center group border-[0.5px] border-[#13203A] rounded-[32px]"
+                    class="flex items-center group border-[0.5px] border-[#4a4a49]"
                     >
                       <button
                         name="minus"
                         type="button"
-                        class="block px-4 h-[30px]"
+                        class="block px-4 h-[25px]"
                         @click.debounce="fetch('/cart/change.js', {
                           method: 'POST',
                           headers: {'Content-Type': 'application/json'},
@@ -178,13 +177,13 @@
                         aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
                         id="Drawer-quantity-{{ item.index | plus: 1 }}"
                         data-index="{{ item.index | plus: 1 }}"
-                        class="w-[50px] h-[30px] text-center border-l-[0.5px] text-xs md:text-sm border-r-[0.5px] border-[#13203A]"
+                        class="w-[50px] h-[25px] text-center border-l-[0.5px] text-xs md:text-sm border-r-[0.5px] border-[#4a4a49]"
                         x-ref="input"
                       >
                       <button
                         name="plus"
                         type="button"
-                        class="block px-4 h-[30px]"
+                        class="block px-4 h-[25px]"
                         @click.debounce="fetch('/cart/change.js', {
                             method: 'POST',
                             headers: {'Content-Type': 'application/json'},
@@ -224,18 +223,19 @@
     {% endif %}
   </form>
 </div>
-<div class="pt-2 pb-4 border-t border-[#13203A]">
+<div class="pt-4 pb-4 border-t border-[#13203A]">
   <div class="flex justify-between items-center mb-4">
-    <h3 class="text-xl font-bold">Total:</h3>
-    <span id="CartTotal" class="text-xl font-semibold">{{ cart.total_price | money }}</span>
+    <h3 class="text-xl font-bold uppercase">Subtotal:</h3>
+    <span id="CartTotal" class="text-xl font-gobold text-[#a00]">{{ cart.total_price | money }}</span>
   </div>
   <div class="flex flex-col gap-2">
+    
+    <button class="border border-[#a00] font-bold text-[#a00] py-2 px-4 text-center uppercase hover:opacity-70 transition-opacity duration-200 ease-in" @click="$dispatch('toggle-cart')">Continuar Comprando</button>
     <button
       type="submit"
       form="CartDrawerForm"
-      class="btn-primary-cart hover:opacity-70 transition-opacity duration-200 ease-in"
-      name="checkout">Ir al Checkout</button>
-    <button class="btn-secondary-cart hover:opacity-70 transition-opacity duration-200 ease-in" @click="$dispatch('toggle-cart')">Continuar Comprando</button>
+      class="py-2 px-4 text-center font-bold text-white uppercase hover:opacity-70 transition-opacity duration-200 ease-in bg-[#a00]"
+      name="checkout">Ir a pagar</button>
   </div>
 </div>
 {% endif %}
