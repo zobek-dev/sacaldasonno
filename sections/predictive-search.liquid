@@ -1,0 +1,38 @@
+{%- if predictive_search.performed -%}
+  <div id="predictive-search-results">
+    {%- if predictive_search.resources.products.size > 0 -%}
+      <h3 id="predictive-search-products" class="border-b-[0.5px] border-[#b5b5b5] uppercase text-bold px-4 py-2 font-bold">
+        Productos
+      </h3>
+    {%- endif -%}
+    <ul id="predictive-search-results-list" class="predictive-search__results-list" role="listbox" aria-labelledby="predictive-search-products">
+      {%- for product in predictive_search.resources.products -%}
+        <li class="border-b-[0.5px] border-[#b5b5b5]" role="option">
+          <a href="{{ product.url }}" class="flex gap-x-4 px-4 py-2 items-center hover:bg-[#ddd] hover:bg-opacity-30 transition-color duration-200 ease-in-out" tabindex="-1">
+            <img class="predictive-search__image"
+              src="{{ product.featured_media | img_url: '150x' }}"
+              alt="{{ product.featured_media.alt }}"
+              width="50"
+              height="{{ 50 | divided_by: product.featured_media.preview_image.aspect_ratio }}"
+            >
+            <div class="predictive-search__item-content">
+              {%- if settings.predictive_search_show_vendor -%}
+                <span class="visually-hidden">Vendor</span>
+                <div class="predictive-search__item-vendor">{{ product.vendor }}</div>
+              {%- endif -%}
+              <span class="text-sm">{{ product.title | escape }}</span>
+              {%- if settings.predictive_search_show_price -%}
+                {% comment %}Render price{% endcomment %}
+              {%- endif -%}
+            </div>
+          </a>
+        </li>
+      {%- endfor -%}
+      <li class="predictive-search__list-item" role="option">
+        <button class="px-4 py-2 w-full cursor-pointer text-left hover:bg-[#ccc] hover:bg-opacity-30 transition-color duration-200 ease-in-out" tabindex="-1">
+          Buscar para “{{ predictive_search.terms }}”
+        </button>
+      </li>
+    </ul>
+  </div>
+{%- endif -%}

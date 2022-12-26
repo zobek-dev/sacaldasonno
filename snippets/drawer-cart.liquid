@@ -4,7 +4,7 @@
     <div class="cart-inner bg-white h-full w-[420px] px-4 flex flex-col justify-between z-[9999]" style="max-width: calc(100vw - 3rem);">
       <div class="flex justify-between items-center py-4">
         <h2 class="text-base lg:text-xl font-bold uppercase">Carrito de compras</h2>
-        <button aria-label="Cerrar el carrito" @click="$dispatch('toggle-cart')">
+        <button aria-label="Cerrar el carrito" @click="$dispatch('toggle-cart')" class="text-[#a00]">
           {% render 'icon-close' %}
           <div class="sr-only">Cerrar el menu</div>
         </button>

@@ -1,0 +1,40 @@
+<div class="absolute top-full left-0 w-full h-[90vh] bg-[rgba(10,10,10,.3)] hidden" x-ref="search_overlay" @click="$dispatch('toggle-search')"></div>
+<div x-ref="search_bar" class="z-[99] hidden absolute top-full w-full left-0 bg-white border-t border-[#4a4a49]" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+  <div class="wrapper">
+    <div class="flex items-center gap-x-4 py-4 lg:py-6">
+      <div class="mx-auto w-full max-w-[600px]">
+        <predictive-search>
+          <form action="{{ routes.search_url }}" method="get" role="search" class="relative">
+            <div class="flex gap-x-2 group px-2 focus-within:border-[2px] focus-within:border-[#a00]">
+              <button type="submit" class="text-[#b5b5b5] outline-none rounded-[4px]">
+                {% render 'icon-search', class: 'fill-[#b5b5b5]' %}
+              </button>
+              <input
+                id="Search"
+                type="search"
+                name="q"
+                class="flex-1 text-sm block placeholder:text-[#b5b5b5] placeholder:text-sm border-b border-[#b5b5b5] focus:border-transparent py-2 px-1 outline-none"
+                value="{{ search.terms | escape }}"
+                role="combobox"
+                aria-expanded="false"
+                aria-owns="predictive-search-results-list"
+                aria-controls="predictive-search-results-list"
+                aria-haspopup="listbox"
+                aria-autocomplete="list"
+                autocorrect="off"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                placeholder="Busca en scaldasonno.cl"
+                x-ref="search_input"
+              >
+              <input name="options[prefix]" type="hidden" value="last">
+              <input name="type" type="hidden" value="product">
+            </div>
+            <div id="predictive-search" tabindex="-1" x-ref="predictive_search" class="absolute top-full left-0 w-full bg-white" style="box-shadow: 0 1px 3px rgb(0, 0, 0, .35);"></div>
+          </form>
+        </predictive-search>
+      </div>
+    </div>
+  </div>
+</div>
