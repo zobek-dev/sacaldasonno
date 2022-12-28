@@ -1,0 +1,132 @@
+<div class="drawer-filter fixed z-[9999] w-[100vw] h-full top-0 left-0 flex justify-end bg-[rgba(10,10,10,.5)]" x-ref="drawer_filter">
+  <div class="block">
+    <div class="fixed top-0 left-0 right-0 bottom-0" @click="$dispatch('toggle-filter')"></div>
+    <div class="filter-inner bg-white h-full w-[420px] px-4 flex flex-col justify-between z-[9999]" style="max-width: calc(100vw - 3rem);">
+      <div class="flex justify-between items-center py-4">
+        <h2 class="text-base lg:text-xl font-bold uppercase">Ordenar y filtrar</h2>
+        <button aria-label="Cerrar el carrito" @click="$dispatch('toggle-filter')" class="text-[#a00]">
+          {% render 'icon-close' %}
+          <div class="sr-only">Cerrar el menu</div>
+        </button>
+      </div>
+      <div class="active-filters block">                               
+        {% for filter in collection.filters -%}                                                                                                    {%- if filter.type == "price_range" -%}
+            {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+              <a href="{{ filter.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
+                <span class="flex gap-x-2 items-center">
+                  {%- assign min_value = filter.min_value.value | default: 0 -%}
+                  {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                  {{ min_value | money }} - {{ max_value | money }}
+                  {% render 'icon-close-small' %}
+                  <span class="sr-only">Quitar Filtro</span>
+                </span> 
+              </a>
+            {%- endif -%}
+          {%- else -%}
+            {%- for filter_value in filter.active_values -%}
+              <a href="{{ filter_value.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
+                <span class="flex gap-x-2 items-center">
+                  {{ filter.label }}: {{ filter_value.label }}
+                  {% render 'icon-close-small' %}
+                  <span class="sr-only">Quitar Filtro</span>
+                </span>   
+              </a>
+            {%- endfor -%}
+          {%- endif- %}
+        {%- endfor -%}
+        <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="inline-flex underline underline-offset-2 mr-1 text-sm tracking-[1.5px]">Quitar Todos</a>
+      </div>
+      <div class="flex flex-1 overflow-y-scroll">
+        <form id="Form-{{ section.id }}" class="block w-full">
+          <h3 class="text-base font-semibold uppercase my-3">Ordenar Por</h3>
+          <select id="sort-by-mobile" name="sort_by" class="p-1 text-base bg-white border border-[#4a4a49] rounded-sm w-full">
+            {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+
+            {% for option in collection.sort_options %}
+              <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+                {{ option.name }}
+              </option>
+            {% endfor %}
+          </select>
+          <h3 class="text-base font-semibold uppercase my-3">Filtrar por</h3>
+          {%- for filter in collection.filters -%}
+            <details class="filter-group border-b border-[#4a4a49] py-3">
+              <summary class="flex cursor-pointer justify-between items-center tracking-[1px]">
+                <div>
+                  <span>{{ filter.label }}</span>
+        
+                  {%- if filter.active_values.size > 0 -%}
+                    <span>({{ filter.active_values.size }})</span>
+                  {%- endif -%}
+                </div>
+                {% render 'icon-caret', class: 'w-3' %}
+              </summary>
+        
+              <div class="filter-group-display pt-3">     
+                {%- case filter.type -%}
+                  {%- when 'boolean' or 'list' -%}
+                    <ul class="filter-group-display__list">
+                      {%- for filter_value in filter.values -%}
+                        <li class="filter-group-display__list-item mb-1">
+                          <label for="Filter-Mobile-{{ filter.param_name }}-{{ forloop.index }}">
+                          <input type="checkbox"
+                            name="{{ filter_value.param_name }}"
+                            value="{{ filter_value.value }}"
+                            id="Filter-Mobile-{{ filter.param_name }}-{{ forloop.index }}"
+                            {% if filter_value.active -%}checked{%- endif %}
+                            {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                            class="accent-[#4a4a49] cursor-pointer"
+                          >&nbsp;&nbsp;{{ filter_value.label }}</label>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- when 'price_range' -%}
+                    <div class="filter-group-display__price-range mb-1 flex gap-x-2">
+                      <div class="filter-group-display__price-range-from">
+                        <label for="Filter-Mobile-{{ filter.min_value.param_name }}" class="text-[10px] text-[#555]">Desde</label>
+                        <div class="border border-[#4a4a49] rounded-sm p-1">
+                          <span>{{ cart.currency.symbol }}</span>
+                          <input name="{{ filter.min_value.param_name }}"
+                            id="Filter-Mobile-{{ filter.min_value.param_name }}"
+                            {% if filter.min_value.value -%}
+                              value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                            {%- endif %}
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                            max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                            class="border-none outline-none"
+                          >
+                        </div>  
+                      </div>
+                      <div class="filter-group-display__price-range-to">
+                        <label for="Filter-Mobile-{{ filter.max_value.param_name }}" class="text-[10px] text-[#555]">Hasta</label>
+                        <div class="border border-[#4a4a49] rounded-sm p-1">
+                          <span>{{ cart.currency.symbol }}</span>
+                          <input name="{{ filter.max_value.param_name }}"
+                            id="Filter-{{ filter.max_value.param_name }}"
+                            {% if filter.max_value.value -%}
+                              value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                            {%- endif %}
+                            type="number"
+                            placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                            min="0"
+                            max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                            class="border-none outline-none"
+                          >   
+                        </div>  
+                      </div>
+                    </div>
+                {%- endcase -%}
+              </div>
+            </details>
+          {%- endfor -%}
+        </form>
+      </div>
+      <div class="filter-group-display__submit flex gap-x-2 justify-end py-4">
+        <input type="submit" value="Filtrar" class="block border bg-[#a00] text-[white] bord[#a00] uppercase px-4 py-1 cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold" form="Form-{{ section.id }}">
+        <input type="reset" value="Limpiar" class="block border border-[#a00] bg-[#fff] text-[#a00] uppercase px-4 py-1 text-base cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold" form="Form-{{ section.id }}">
+      </div>
+    </div>
+  </div>
+</div>  

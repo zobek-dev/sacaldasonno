@@ -1,0 +1,47 @@
+<div>
+  <div class="wrapper">
+    <icon-carousel>
+      <div class="icon-carousel icon-carousel-{{ section.id }} overflow-hidden relative py-4">
+        <ul class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <li class="swiper-slide flex justify-center items-center gap-x-2">
+              <img src="{{ block.settings.image | img_url: '30x' }}" alt="{{ block.settings.text | escape }}">
+              <span class="uppercase text-base tracking-[1px]">{{ block.settings.text | escape }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="swiper-button-next text-[#4a4a49]"></div>
+        <div class="swiper-button-prev text-[#4a4a49]"></div>
+      </div>
+    </icon-carousel>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Iconos Home",
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "icon",
+        "name": "Icono",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Inserta el icono"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Titulo del icono"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Iconos Home"
+      }
+    ]
+  }
+{% endschema %}

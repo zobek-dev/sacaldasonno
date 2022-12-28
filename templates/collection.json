@@ -1,11 +1,31 @@
 {
   "sections": {
+    "heading": {
+      "type": "heading-collection"
+    },
     "main": {
       "type": "main-collection",
       "settings": {}
+    },
+    "porque":{
+      "type": "collection-porque"
+    },
+    "single": {
+      "type": "single-cita"
+    },
+    "consejos": {
+      "type": "collection-consejos"
+    },
+    "faqs": {
+      "type": "collection-faqs"
     }
   },
   "order": [
-    "main"
+    "heading",  
+    "main",
+    "porque",
+    "single",
+    "consejos",
+    "faqs"
   ]
 }

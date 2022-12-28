@@ -1,0 +1,84 @@
+<div class="py-4 my-8">
+  <div class="wrapper" x-data="{
+    open: false,
+    toggleModal(event){
+      this.open = !this.open;
+      $refs.modal.classList.toggle('invisible');
+      this.open ? $refs.modal_content.innerHTML = event.target.dataset.content : $refs.modal_content.innerHTML = '';
+    }
+  }"
+  @toggle-modal-cards.window="toggleModal($event)"
+  >
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for block in section.blocks %}
+        <li class="text-center">
+          <img src="{{ block.settings.image | img_url: '270x' }} " alt="{{ block.settings.image.alt | escape }}" class="rounded-[50%] mx-auto">
+          <h4 class="mb-4 uppercase font-bold text-[18px]">{{ block.settings.title | escape }}</h4>
+          {{ block.settings.content }}
+          {% if block.settings.modal %}
+            <button class="border-none bg-transparent text-[#a00] w-max uppercase text-[18px] font-bold my-8 hover:opacity-70 transition-opacity duration-200 ease-in-out" data-content="{{ block.settings.modal_content }}" @click="$dispatch('toggle-modal-cards')">
+              Más información&nbsp;&plus;
+            </button>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="fixed invisible top-0 left-0 h-full w-full z-[9999] flex justify-center items-center" x-ref="modal">
+      <div class="block">
+        <div class="bg-[rgba(10,10,10,.5)] absolute top-0 left-0 right-0 bottom-0" @click="$dispatch('toggle-modal-cards')"></div>
+        <div class="bg-white relative w-[90vw] sm:w-[70vw] lg:w-[50vw] px-4 py-8 max-h-[70vh] overflow-y-scroll">
+          <button class="absolute right-2 top-2 text-[#a00]" @click="$dispatch('toggle-modal-cards')" aria-label="Cerrar el modal">
+            {% render 'icon-close' %}
+            <span class="sr-only">Cerrar modal</span>
+          </button>
+          <div x-ref="modal_content">
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Productos Consejos",
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "name": "Consejo",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id":"image",
+            "label": "Agrega una imagen"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Inserta el título",
+            "default": "Lorem ipsum dolor sit amet."
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "default":"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum!</p>",
+            "label": "Inserta el contenido"
+          },
+          {
+            "type": "checkbox",
+            "id": "modal",
+            "default": true,
+            "label": "Consejo en modal"
+          },
+          {
+            "type": "richtext",
+            "id": "modal_content",
+            "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.</p>",
+            "label": "Agregar contenido del modal"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

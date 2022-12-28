@@ -1,0 +1,48 @@
+<div class="my-8">
+  <div class="wrapper">
+    <h2 class="text-[20px] lg:text-[30px] uppercase font-bold text-center py-8">{{ section.settings.title | escape }}</h2>
+    <featured-products>
+      <div class="featured-products featured-products-{{ section.id }} relative overflow-hidden py-4">
+        <ul class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% render 'card-product', product: all_products[block.settings.handle], class: 'swiper-slide' %}
+          {% endfor %}
+        </ul>
+        <div class="swiper-button-next text-[#4a4a49]"></div>
+        <div class="swiper-button-prev text-[#4a4a49]"></div>
+      </div>
+    </featured-products>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Productos Destacados",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titulo de la sección"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "producto",
+        "settings": [
+          {
+            "type": "product",
+            "id": "handle",
+            "label": "Selecciona un producto."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Productos Destacados",
+        "category": "carousel"
+      }
+    ]
+  }
+{% endschema %}

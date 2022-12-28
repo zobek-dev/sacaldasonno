@@ -1,0 +1,24 @@
+<div class="py-8 my-8">
+  <div class="wrapper">
+    <div class="relative max-w-[1100px] mx-auto text-center">
+      <span class="absolute -top-4 left-4">{% render 'icon-quotes', class: '' %}</span>
+      <div class="text-sm leading-[1.2] lg:text-[30px] font-bold tracking-[1px]">
+        {{ section.settings.content }}
+      </div>
+      <span class="absolute -bottom-4 right-4">{% render 'icon-quotes', class: 'rotate-180' %}</span>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Single Cita",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Ingresa contenido para la cita",
+        "default": "<p>Las investigaciones lo confirman: dormir bien es esencial para afrontar mejor la jornada y un sueño regenerador es la clave del bienestar. Scaldasonno ayuda a dormir bien porque crea en la cama un hábitat confortable con el calor justo que facilita el relax y un descanso de calidad.</p>"
+      }
+    ]
+  }
+{% endschema %}

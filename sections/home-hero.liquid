@@ -1,0 +1,120 @@
+<div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gradient-{{ section.id }}">
+    <div class="overflow-hidden origin-top-left skew-y-[-6deg] md:skew-y-[0] md:skew-x-[-12deg]">
+      <picture>
+        <source srcset="{{ section.settings.image_desktop | img_url: 'master' }}" media="(min-width: 1024px)">
+        <source srcset="{{ section.settings.image_tablet | img_url: 'master' }}" media="(min-width: 768px)">
+        <img srcset="{{ section.settings.image_mobile | img_url: 'master' }}" alt="{{ section.settings.bajada | escape }}" class="img-banner-{{ section.id }} block max-w-none origin-top-left skew-y-[6deg] md:skew-y-[0] md:skew-x-[12deg] w-[100%] lg:w-[125%] lg:ml-[-130px]">
+      </picture>
+    </div>
+    <div class="flex justify-center items-center px-8">
+      <div class="my-4 py-2 lg:my-0 lg:py-0">
+        <h1 style="color:{{ section.settings.title_color }}" class="font-gobold text-[20px] mb-4 lg:text-[35px]">
+          {{ section.settings.title | escape }}
+        </h1>
+        <p style="color:{{ section.settings.text_color }}" class="font-bold leading-[1.2] uppercase text-[13px] lg:text-[30px]">{{ section.settings.bajada | escape }}</p>
+        <a href="{{ section.settings.button_link }}" class="block my-8 py-2 px-4 w-max rounded-[10px] uppercase font-bold transition-opacity duration-200 ease-in-out hover:opacity-70" style="background: {{ section.settings.button_color }}; color: {{ section.settings.button_text_color }};">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .gradient-{{ section.id }}{
+    background: linear-gradient(270deg, {{ section.settings.gradient_end }} 0%, {{ section.settings.gradient_ini }} 40%);
+  }
+  @media(min-width: 1024px){
+    .img-banner-{{ section.id }}{
+      min-width: calc(100% - 130px);
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Home Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Imagen para desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_tablet",
+        "label": "Imagen para tablet"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Imagen para mobile"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titulo para el hero",
+        "default": "Lorem ipsum, dolor"
+      },
+      {
+        "type": "text",
+        "id": "bajada",
+        "label": "Bajada del texto",
+        "default": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, placeat!"
+      }, {
+        "type": "color",
+        "id": "gradient_ini",
+        "label": "Color inicial del gradiente",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "gradient_end",
+        "label": "Color final del gradiente",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label":"Color del texto del titulo",
+        "default":"#FC7C0D"
+      },  
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Color del texto",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "color del boton",
+        "default": "#aa0000"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Color del texto del boton",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Texto del boton",
+        "default": "Llamado a la acción"
+      },
+      {
+        "type":  "url",
+        "id": "button_link",
+        "label": "Link del boton."
+      }
+    ],
+    "blocks": [],
+    "presets":[
+      {
+        "name": "Home Hero"
+      }
+    ]
+  }
+{% endschema %}

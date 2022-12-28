@@ -109,3 +109,64 @@ class ProductConsejosCarousel extends HTMLElement{
 }
 
 customElements.define('carousel-consejos', ProductConsejosCarousel);
+
+class HomeIcons extends HTMLElement{
+  constructor(){
+    super()
+    this.carousel = this.querySelector('.icon-carousel');
+    this.next = this.querySelector('.swiper-button-next');
+    this.prev = this.querySelector('.swiper-button-prev');
+
+    this.swiper = new Swiper(this.carousel, {
+      modules: [Navigation],
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: this.next,
+        prevEl: this.prev
+      },
+      breakpoints:{
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 16
+        }
+      }
+    })
+  }
+}
+
+customElements.define('icon-carousel', HomeIcons)
+
+class FeaturedProduct extends HTMLElement{
+  constructor(){
+    super();
+
+    this.carousel = this.querySelector('.featured-products'); 
+    this.next = this.querySelector('.swiper-button-next');
+    this.prev = this.querySelector('.swiper-button-prev');
+
+    this.swiper = new Swiper(this.carousel, {
+      modules: [Navigation],
+      slidesPerView: 2,
+      spaceBetween: 16,
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 4,
+        },
+      },
+      navigation: {
+        nextEl: this.next,
+        prevEl: this.prev
+      }
+    })
+  }
+}
+
+customElements.define('featured-products', FeaturedProduct)

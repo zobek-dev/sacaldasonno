@@ -1,0 +1,17 @@
+/* Drawer Cart component*/
+
+.drawer-filter{
+  @apply invisible transition-[visibility] duration-200 ease-linear;
+}
+
+.drawer-filter.active{
+  @apply visible;
+}
+
+.filter-inner{
+  @apply translate-x-full transition-transform duration-200 ease-linear;
+}
+
+.drawer-filter.active .filter-inner{
+  @apply translate-x-0;
+}

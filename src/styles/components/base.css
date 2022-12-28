@@ -23,3 +23,8 @@ summary::-webkit-details-marker {
 .description a{
   @apply text-[#a00] font-bold
 }
+
+
+.filter-group[open] svg{
+  @apply rotate-180;
+}

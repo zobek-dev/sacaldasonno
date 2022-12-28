@@ -1,0 +1,71 @@
+<div class="wrapper">
+  <div class="max-w-[1200px] mx-auto my-8">
+    <h2 class="text-[20px] lg:text-[30px] uppercase font-bold text-center my-8">
+      {{ section.settings.title | escape }}
+    </h2>
+    <div class="text-center my-8">
+      {{ section.settings.content }}
+    </div>
+    <ul class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {% for block in section.blocks %}
+        <li class="px-4 flex flex-col items-center text-center">
+          <img
+            src="{{ block.settings.image | img_url: '67x' }}"
+            alt="{{ block.settings.title | escape }}"
+            width="67"
+            height="{{ 67 | divided_by: block.settings.image.aspect_ratio }}"
+            loading="lazy">
+          <h3  class="text-[18px] lg:text-[26px] uppercase font-bold text-center my-4">{{ block.settings.title | escape }}</h3>
+          <div>
+            {{ block.settings.content }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Beneficios Home",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título de la sección",
+        "default": "Conoce los Beneficios del calor"
+      }, {
+        "type": "richtext",
+        "id": "content",
+        "label": "Agregar contenido",
+        "default": "<p>Imetec es la empresa italiana especializada en calor que desde hace más de 40 años cuida el bienestar de las personas con productos que mejoran la vida todos los días: calor que hace bien al sueño y al cuerpo, relajante y regenerador.La empresa Imetec está presente en las más importantes innovaciones patentadas en este campo, pioneras en términos de prestaciones, seguridad, soluciones textiles: ideas que han rediseñado el significado del bienestar doméstico.</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "beneficio",
+        "name": "Beneficio",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Insertar icono"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Insertar título"
+          }, {
+            "type": "richtext",
+            "id": "content",
+            "label": "Insertar contenido"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Beneficios Home"
+      }
+    ]
+  }
+{% endschema %}

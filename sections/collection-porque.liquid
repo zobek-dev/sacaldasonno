@@ -1,0 +1,61 @@
+<div class="bg-[#E9E9E9] py-12 my-12 w-full">
+  <div class="wrapper">
+    <h2 class="mt-4 mb-8 text-center text-[20px] font-bold uppercase lg:text-[30px]">{{ section.settings.title | escape }}</h2>
+    <ul class="text-center block">
+      {% for block in section.blocks %}
+        <li class="inline-block max-w-[300px] mr-4 mb-4 mt-4 ml-4">
+          <img 
+          src="{{ block.settings.image | img_url: '150x' }}" 
+          alt="{{ block.settings.image.alt | escape }}" 
+          width="150" height="{{ 150 | divided_by: block.settings.image.aspect_ratio | ceil }}" 
+          loading="lazy"
+          class="mx-auto">
+          <h3 class="my-4 uppercase font-bold text-[18px] lg:text-[25px]">{{ block.settings.title | escape }}</h3>
+          <div class="prose">
+            {{ block.settings.content }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Porque utilizar",
+    "max_blocks": 5,
+    "settings":[
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título de la sección",
+        "default": "¿Por qué utilizar Scaldasonno?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "respuesta",
+        "name": "Respuesta",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Insertar un icono"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Inserta un título",
+            "default": "Lorem ipsum dolor sit."
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quia minima repudiandae reprehenderit sint totam?</p>",
+            "label":"Inserta el contenido"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
