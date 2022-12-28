@@ -1,6 +1,153 @@
-<h1>{{ product.title | escape }}</h1>
-<form action="{{ routes.cart_add_url }}" method="POST">
+{%- liquid
+  assign on_sale = false
+  assign month = 30 | times: 24 | times: 60 | times: 60
+  assign date_created = product.created_at | date: "%Y-%m-%d"
+  assign dead_line = "now" | date: "%s" | minus: month | date: "%Y-%m-%d"
+  if product.compare_at_price_max > product.price
+    assign on_sale = true
+  endif
+-%}
+
+<div>
+  <div class="wrapper">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 mt-8">
+      <div class="col-span-1 lg:col-span-6 mb-8 lg:sticky lg:top-20 lg:self-start">
+        {% render 'breadcrumb' %}
+        <gallery-thumbnail data-count="{{ product.images.size }}">
+          <div class="gallery gallery-{{ section.id }} overflow-hidden relative mb-4">
+            <ul class="swiper-wrapper">
+              {% for image in product.images %}
+                <li class="swiper-slide flex flex-col items-center">
+                  <a href="{{ image | img_url: '1200x' }}" class="fslightbox" data-fslightbox="gallery-product">
+                    <img
+                    src="{{ image | img_url: '900x' }}"
+                    alt="{{ image.alt | escape }}"
+                    loading="lazy"
+                    class="w-full object-cover object-center aspect-square"
+                    >
+                  </a>  
+                </li>
+              {% endfor %}
+            </ul>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <style>
+            .gallery-{{ section.id }} .swiper-button-next,
+            .gallery-{{ section.id }} .swiper-button-prev
+            {
+              color:#000;
+            } 
+          </style>
+          <div class="thumbnail thumbnail-{{ section.id }} overflow-hidden relative">
+            <ul class="swiper-wrapper">
+              {% for image in product.images %}
+                <li class="swiper-slide cursor-pointer">
+                    <img
+                    src="{{ image | img_url: '200x' }}"
+                    alt="{{ image.alt | escape }}"
+                    width="200"
+                    height="{{ 200 | divided_by: image.aspect_ratio | ceil }}"
+                    loading="lazy"
+                    class="w-full aspect-square object-center object-cover"
+                    >
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <style>
+            .thumbnail-{{ section.id }} .swiper-slide{
+              opacity: 0.7;
+              border: 1px solid #ccc;
+            } 
+
+            .thumbnail-{{ section.id }} .swiper-slide-active{
+              opacity: 1;
+              border: 1px solid #a00;
+            }
+          </style>
+        </gallery-thumbnail>
+      </div>
+      <div class="col-span-1 lg:col-span-6 lg:pt-8">
+        <h1 class="uppercase text-[30px] leading-[1.2] font-bold mb-8">{{ product.title | escape }}</h1>
+        <div class="flex gap-y-4 w-max flex-col">
+          <div class="flex gap-x-4 items-center">
+            {% if on_sale %}
+              <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
+              <span class="text-[#a00] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
+              <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+              <s class="text-xs decoration-[#a00]">{{ product.compare_at_price_max | money }}</s>
+            {% else %}
+              <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+              <span class="text-[#a00] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
+              {% endif %}
+          </div>
+          <div x-data="{
+              minus(){
+                $refs.quantity_input.stepDown();
+              },
+              plus(){
+                $refs.quantity_input.stepUp();
+              },
+              addToCart(){
+                let formData = new FormData($refs.product_form);
+                fetch('/cart/add.js', {
+                  method: 'POST',
+                  body: formData
+                })
+                .then(response => response.json())
+                .then(response => {
+                  $dispatch('update-cart');
+                  $dispatch('toggle-cart');
+                })
+                .catch(error => console.error('Error', error))
+              }  
+            }"
+            class="flex gap-x-4 flex-row justify-start items-center"
+            >
+              <form action="{{ routes.cart_add_url }}" method="POST" id="Product-Form-{{ product.selected_or_first_available_variant.id }}" x-ref="product_form" class="hidden">
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">    
+              </form>
+              <div class="flex border border-[#4a4a49] w-max items-center">
+                <button @click="minus" class="h-full px-3 py-4 border-r border-[#4a4a49]">
+                  {% render 'icon-minus', class: 'w-3' %}
+                </button>
+                <input type="number" name="quantity" class="h-full w-[50px] lg:w-[70px] outline-none text-center" min="1" value="1" form="Product-Form-{{ product.selected_or_first_available_variant.id }}" x-ref="quantity_input" >
+                <button @click="plus" class="h-full px-3 py-3 border-l border-[#4a4a49]">
+                  {% render 'icon-plus', class: 'w-3' %}
+                </button>
+              </div>
+              <button type="button" name="add" {% if product.available %}@click.prevent="addToCart"{% endif %}  form="Product-Form-{{ product.selected_or_first_available_variant.id }}" class="block text-white uppercase text-sm lg:text-base font-semibold text-center py-2 px-4 w-max {% if product.available %}bg-[#a00]{% else %}bg-[#4a4a49]{% endif %}" {% unless product.available %}disabled{% endunless %}> 
+                {% unless product.available %}
+                  <span>No Disponible</span>   
+                {% else %}
+                  <span>Agregar a la Bolsa</span>   
+                {% endunless %}
+              </button>
+          </div> 
+        </div>
+        {% if product.description != blank %}
+          <div class="description mb-8">
+            <h2 class="uppercase font-semibold text-2xl my-4">Descripción</h2>
+            <div class="prose">
+              {{ product.description }}
+            </div> 
+          </div>        
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} <h1>{{ product.title | escape }}</h1>
+  <form action="{{ routes.cart_add_url }}" method="POST">
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
   <input type="hidden" name="quantity" value="1">
   <button type="submit" name="add">ADD TO CART</button>
-</form>
+</form> {% endcomment %}
+{% schema %}
+  {
+    "name": "Main Product",
+    "settings": []
+  }
+{% endschema %}

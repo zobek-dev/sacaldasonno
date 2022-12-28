@@ -19,3 +19,7 @@ summary::-webkit-details-marker {
 .detail-drawer[open] svg{
   @apply rotate-180;
 }
+
+.description a{
+  @apply text-[#a00] font-bold
+}

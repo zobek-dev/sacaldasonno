@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/*Swiper Slide*/
+
+@import '../../node_modules/swiper/swiper-bundle.min.css';
+
 @import './components/base.css';
 @import './components/drawer-menu.css';
 @import './components/drawer-cart.css';

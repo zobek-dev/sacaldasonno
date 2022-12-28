@@ -1,0 +1,59 @@
+<div class="py-8 bg-[#e9e9e9] mt-8">
+  <caracteristicas-carousel>
+    <div class="wrapper">
+      <div class="caracteristica-carousel caracteristica-carousel-{{ section.id }} overflow-hidden relative">
+        <ul class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <li class="swiper-slide px-4">
+              <img
+                src="{{ block.settings.image | img_url: '120x' }}"
+                alt="{{ block.settings.image.alt | escape }}"
+                width="120"
+                height="{{ 120 | divided_by: block.settings.image.aspect_ratio | ceil }}"
+                loading="lazy"
+                class="aspect-square object-contain object-center rounded-[50%] mx-auto">
+              <div class="mt-4 text-center px-4 lg:px-0">
+                {{ block.settings.content }}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+    <style>
+      .caracteristica-carousel-{{ section.id }} .swiper-button-next,
+      .caracteristica-carousel-{{ section.id }} .swiper-button-prev{
+        color: #000;
+      }
+    </style>
+  </caracteristicas-carousel>
+</div>
+<div class="w-full text-center bg-[#a00] text-white uppercase text-bold text-[14px] lg:text-[30px] py-1 tracking-[1.5px]">
+  <span>Inimitable 1° en Italia</span>
+</div>
+{% schema %}
+  {
+    "name": "Fichas de Características",
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "name": "Ficha de Característica",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Inserta un icono para la Característica."
+          }, {
+            "type": "richtext",
+            "id": "content",
+            "label": "Contendio de la caracteristica.",
+            "default": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis error ipsam.</p>"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

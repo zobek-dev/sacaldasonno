@@ -1,5 +1,165 @@
+<div class="bg-[#b5b5b5] py-4 flex justify-center items-center">
+  {% render 'imetec', class: 'w-[82px] h-[28px] lg:w-[164px] lg:h-[56px]' %}
+</div>
+<footer class="bg-white pt-12 pb-8">
+  <div class="wrapper">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'contact' %}
+          <div class="col-span-1">
+            <div>
+              {% render 'mar-del-sur', class: 'w-full' %}
+            </div>
+            <h3 class="mb-4 uppercase text-base font-bold">{{ block.settings.title | escape }}</h3>
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}">
+              {% endif %}
+              <span class="font-medium text-[15px] tracking-[1.5px]">
+                {{ block.settings.text_link | escape }}
+              </span>
+              {% if block.settings.link != blank %}
+              </a>
+            {% endif %}
+            {% render 'social-list' %}
+          </div>
+          {% when 'menu' %}
+          <div class="col-span-1">
+            <h3 class="mb-4 lg:my-4 uppercase text-base font-bold">{{ linklists[block.settings.menu].title | escape }}</h3>
+            <ul>
+              {% for link in linklists[block.settings.menu].links %}
+                <li>
+                  <a href="{{ link.url }}" class="block font-medium text-[15px] tracking-[1.5px] my-2 hover:opacity-70 transition-opacity duration-200 ease-in-out">
+                    {{ link.title | escape }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% when 'payments' %}
+          <div class="col-span-1">
+            <h3 class="mb-4 lg:my-4 uppercase text-base font-bold">{{ block.settings.title }}</h3>
+            <ul>
+              {% if block.settings.pay_method_one_text != blank %}
+                <li class="mb-2">
+                  {% if block.settings.pay_method_one_image != blank %}
+                    {{ block.settings.pay_method_one_image }}
+                    <span class="sr-only">{{ block.settings.pay_method_one_text | escape }}</span>
+                  {% else %}
+                    <span class="text-[15px] font-medium tracking-[1.5px]">{{ block.settings.pay_method_one_text | escape }}</span>
+                  {% endif %}
+                </li>
+              {% endif %}
+              {% if block.settings.pay_method_two_text != blank %}
+                <li class="mb-2">
+                  {% if block.settings.pay_method_two_image != blank %}
+                    {{ block.settings.pay_method_two_image }}
+                    <span class="sr-only">{{ block.settings.pay_method_two_text | escape }}</span>
+                  {% else %}
+                    <span class="text-[15px] font-medium tracking-[1.5px]">{{ block.settings.pay_method_two_text | escape }}</span>
+                  {% endif %}
+                </li>
+              {% endif %}
+              {% if block.settings.pay_method_three_text != blank %}
+                <li class="mb-2">
+                  {% if block.settings.pay_method_three_image != blank %}
+                    {{ block.settings.pay_method_three_image }}
+                    <span class="sr-only">{{ block.settings.pay_method_three_text | escape }}</span>
+                  {% else %}
+                    <span class="text-[15px] font-medium tracking-[1.5px]">{{ block.settings.pay_method_three_text | escape }}</span>
+                  {% endif %}
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    <div class="text-center mt-12">
+      <p class="text-xs">&copy;Scaldasonno {{ 'now' | date: '%Y' }}, diseñado y desarrollado por
+        <a
+          href="https://mediahuella.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline">Mediahuella</a>.</p>
+    </div>
+  </div>
+</footer>
 {% schema %}
   {
-    "name": "Footer"
+    "name": "Footer",
+    "max_blocks": 5,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "contact",
+        "name": "Links Contacto",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Título para bloque de contacto",
+            "default": "Contacto"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link para contacto"
+          }, {
+            "type": "text",
+            "id": "text_link",
+            "label": "Texto para el link",
+            "default": "¡Escríbenos aquí!"
+          }
+        ]
+      }, {
+        "type": "menu",
+        "name": "Links del footer",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Selecciona un menu para el footer"
+          }
+        ]
+      }, {
+        "type": "payments",
+        "name": "Metodos de pago",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titulo de los metodos",
+            "default": "Métodos de Pago"
+          },
+          {
+            "type": "text",
+            "id": "pay_method_one_text",
+            "label": "Título Metodo de pago 1"
+          },
+          {
+            "type": "liquid",
+            "id": "pay_method_one_image",
+            "label": "imagen del metodo de pago 1"
+          },
+          {
+            "type": "text",
+            "id": "pay_method_two_text",
+            "label": "Título Metodo de pago 2"
+          }, {
+            "type": "liquid",
+            "id": "pay_method_two_image",
+            "label": "imagen del metodo de pago 2"
+          }, {
+            "type": "text",
+            "id": "pay_method_three_text",
+            "label": "Título Metodo de pago 3"
+          }, {
+            "type": "liquid",
+            "id": "pay_method_three_image",
+            "label": "imagen del metodo de pago 3"
+          }
+        ]
+      }
+    ]
   }
 {% endschema %}

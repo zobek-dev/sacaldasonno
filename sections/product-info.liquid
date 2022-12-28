@@ -1,0 +1,59 @@
+<div class="flex flex-col gap-y-8 pb-6 mb-12">
+  <div class="grid grid-cols-1 lg:grid-cols-5 overflow-hidden gap-y-4 items-center">
+    <div class="row-start-2 row-end-3 lg:col-span-2 lg:row-start-auto lg:row-end-auto pr-4 lg:pr-8 lg:pl-[15vw] pl-4">
+      <h4 class="font-bold text-[18px] uppercase mb-4">{{ section.settings.title_left | escape }}</h4>
+      {{ section.settings.content_left }}
+    </div>
+    <div class="h-[120px] md:h-[150px] lg:h-[354px] w-[75%] lg:w-[100%] bg-center bg-no-repeat bg-cover rounded-tl-[50px] rounded-bl-[50px] md:rounded-tl-[141px] md:rounded-bl-[141px] lg:rounded-tl-[161px] lg:rounded-bl-[161px] lg:col-span-3 row-start-1 row-end-2 lg:row-start-auto lg:row-end-auto translate-x-1/3 lg:translate-x-0" style="background-image: url({{ section.settings.image_left | img_url: '1600x' }})">
+    </div>
+  </div>  
+  <div class="grid grid-cols-1 lg:grid-cols-5 overflow-hidden gap-y-4 items-center">
+    <div class="h-[120px] md:h-[150px] lg:h-[354px] w-[75%] lg:w-[100%] bg-center bg-no-repeat bg-cover rounded-tr-[50px] rounded-br-[50px] md:rounded-tr-[141px] md:rounded-br-[141px] lg:rounded-tr-[161px] lg:rounded-br-[161px] lg:col-span-3 row-start-1 row-end-2 lg:row-start-auto lg:row-end-auto" 
+     style="background-image: url({{ section.settings.image_right | img_url: '1600x' }})">
+    </div>
+    <div class="row-start-2 row-end-3 lg:col-span-2 lg:row-start-auto lg:row-end-auto pr-4 lg:pl-8 lg:pr-[15vw] pl-4">
+      <h4 class="font-bold text-[18px] uppercase mb-4">{{ section.settings.title_right | escape }}</h4>
+      {{ section.settings.content_right }}
+    </div>
+  </div>  
+</div>
+{% schema %}
+  {
+    "name": "Info Producto",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_left",
+        "label": "titulo de la izquierda",
+        "default": "Lorem, ipsum dolor."
+      },
+      {
+        "type": "richtext",
+        "id": "content_left",
+        "label": "contenido de la izquierda",
+        "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eaque tempora modi, nihil totam necessitatibus hic tempore excepturi soluta accusantium.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_left",
+        "label": "Imagen de la izquierda"
+      },
+      {
+        "type": "text",
+        "id": "title_right",
+        "label": "Titulo de la derecha",
+        "default": "Lorem, ipsum dolor."
+      }, {
+        "type": "richtext",
+        "id": "content_right",
+        "label": "contenido de la derecha",
+        "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eaque tempora modi, nihil totam necessitatibus hic tempore excepturi soluta accusantium.</p>"
+      }, {
+        "type": "image_picker",
+        "id": "image_right",
+        "label": "Imagen de la derecha"
+      }
+    ],
+    "blocks": []
+  }
+{% endschema %}

@@ -3,9 +3,25 @@
     "main": {
       "type": "main-product",
       "settings": {}
+    },
+    "caracteristicas":{
+      "type": "product-caracteristicas" 
+    },
+    "info":{
+      "type": "product-info"
+    },
+    "consejos":{
+      "type": "product-consejos"
+    }, 
+    "recomendaciones": {
+      "type": "product-recommendations"
     }
   },
   "order": [
-    "main"
+    "main",
+    "caracteristicas",
+    "info",
+    "consejos",
+    "recomendaciones"
   ]
 }
