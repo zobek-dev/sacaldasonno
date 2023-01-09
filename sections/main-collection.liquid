@@ -9,6 +9,9 @@
 @keyup.escape="$dispatch('toggle-filter')"
 >
   <div class="wrapper">
+    <div class="pt-4">
+      {% render 'breadcrumb' %}
+    </div>
     <div class="flex justify-between items-center py-4">
       <button class="flex gap-x-2 items-center border border-[#a00] text-white bg-[#a00] text-sm font-semibold py-2 px-2 lg:hidden uppercase" @click="$dispatch('toggle-filter')">
         <span>Ordenar y filtrar</span>
@@ -17,7 +20,7 @@
       <div class="active-filters hidden lg:block">                               
         {% for filter in collection.filters -%}                                                                                                    {%- if filter.type == "price_range" -%}
             {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
-              <a href="{{ filter.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
+              <a href="{{ filter.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm lg:text-base tracking-[1.5px] mr-2 mb-2">
                 <span class="flex gap-x-2 items-center">
                   {%- assign min_value = filter.min_value.value | default: 0 -%}
                   {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
@@ -29,7 +32,7 @@
             {%- endif -%}
           {%- else -%}
             {%- for filter_value in filter.active_values -%}
-              <a href="{{ filter_value.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
+              <a href="{{ filter_value.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm lg:text-base tracking-[1.5px] mr-2 mb-2">
                 <span class="flex gap-x-2 items-center">
                   {{ filter.label }}: {{ filter_value.label }}
                   {% render 'icon-close-small' %}
@@ -39,16 +42,16 @@
             {%- endfor -%}
           {%- endif- %}
         {%- endfor -%}
-        <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="inline-flex underline underline-offset-2 mr-2 mb-2 text-sm tracking-[1.5px]">Quitar Todos</a>
+        <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="inline-flex underline underline-offset-2 mr-2 mb-2 text-sm lg:text-base tracking-[1.5px]">Quitar Todos</a>
       </div>
 
       <div class="flex items-center gap-x-2">
         <span class="text-sm hidden md:block">Ordenar por:</span>
-        <select id="sort-by" class="hidden lg:block text-sm px-1 py-1 bg-white border border-[#4a4a49] rounded-sm">
+        <select id="sort-by" class="hidden lg:block text-sm lg:text-base px-1 py-1 bg-white border border-[#4a4a49] rounded-sm">
           {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
           {% for option in collection.sort_options %}
-            <option value="{{ option.value }}" class="text-sm" {% if option.value == sort_by %}selected="selected"{% endif %}>
+            <option value="{{ option.value }}" class="text-sm lg:text-base" {% if option.value == sort_by %}selected="selected"{% endif %}>
               {{ option.name }}
             </option>
           {% endfor %}
@@ -179,7 +182,7 @@
       {% endpaginate %}
     </div>
   </div>
-  {% render 'drawer-filter' %}
+  {% render 'drawer-filter', object: collection, template: template %}
 </div>
 {% schema %}
   {

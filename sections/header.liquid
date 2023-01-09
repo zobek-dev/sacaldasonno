@@ -1,5 +1,10 @@
-<div class="z-[999]">
-  <div class="relative block py-4 lg:py-0" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+<div class="header" x-data="{
+    atTop: false
+  }"
+  :class="{'header' : !atTop, 'header-fixed': atTop}"
+  @scroll.window="atTop = (window.pageYOffset < 50) ? false : true"
+>
+  <div class="relative block py-4" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
     <div class="wrapper">
       <div class="grid items-center grid-header">
         <div x-data="{
@@ -31,42 +36,35 @@
                   open: false, 
                   handleOpen(){
                     this.open = !this.open;  
-                    this.open ? $refs.detail.setAttribute('open', true) : $refs.detail.removeAttribute('open');
-                    this.open ? $refs.overlay.classList.remove('hidden'): $refs.overlay.classList.add('hidden')
-                    this.open ? $refs.caret.firstElementChild.classList.add('rotate-180') : $refs.caret.firstElementChild.classList.remove('rotate-180');
-                    this.open ? $refs.caret.classList.add('text-[#a00]') : $refs.caret.classList.remove('text-[#a00]');
-                  }
-                  }">
-                  <div class="hidden absolute bg-[rgba(10,10,10,.5)] top-full left-0 w-full h-[80vh] z-[998]" x-ref="overlay"></div>
+                    this.open ? $refs.detail.setAttribute('open', true) : $refs.detail.removeAttribute('open');  
+                  }}">
                   <details 
                   x-ref="detail"
-                  class="px-2"
+                  class="px-2 detail-submenu relative"
                   @mouseover="handleOpen"
                   @mouseout="handleOpen"
                   >
                     <summary class="flex items-center gap-x-1">
-                      <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-8 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                      <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-2 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
                         {{ link.title | escape }}
                       </a>
                       <span x-ref="caret">{% render 'icon-caret', class: 'w-3' %}</span>
                     </summary>
-                    <div class="w-full absolute top-full left-0 z-[999]">
-                      <div class="bg-white py-8 w-full border-t border-gray-400" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
-                        <ul class="wrapper">
-                          {% for childlink in link.links %}
-                            <li>
-                              <a href="{{ childlink.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-1 {% if childlink.current %}text-[#a00]{% endif %}" {% if childlink.current %}aria-current="page"{% endif %}>
-                                {{ childlink.title | escape }}
-                              </a> 
-                            </li>
-                          {% endfor %}
-                        </ul>
-                      </div> 
-                    </div>
+                    <div class="w-[250px] absolute top-full left-0 z-[999] bg-white py-4 px-4 border-t border-gray-400" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                      <ul>
+                        {% for childlink in link.links %}
+                          <li>
+                            <a href="{{ childlink.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-1 {% if childlink.current %}text-[#a00]{% endif %}" {% if childlink.current %}aria-current="page"{% endif %}>
+                              {{ childlink.title | escape }}
+                            </a> 
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div> 
                   </details>
                 </div>         
                 {% else %}
-                  <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 px-4 font-semibold uppercase text-[15px] py-8 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 px-4 font-semibold uppercase text-[15px] py-2 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
                     {{ link.title | escape }}
                   </a>  
                 {% endif %}
@@ -100,6 +98,11 @@
               {% render 'icon-close', class: 'w-[19.2px] h-[19.2px] lg:w-[24px] lg:h-[24px] fill-black hidden', xref: 'search_close' %}
             </a>
             {% render 'search-bar' %}
+          </div>
+          <div>
+            <a href="{{ routes.account_login_url }}">
+              {% render 'icon-user', class: 'w-[24px] h-[24px] lg:w-[30px] lg:h-[30px]' %}
+            </a>
           </div>
           <div x-data="{
             open: false,
@@ -142,17 +145,11 @@
               {% render 'drawer-cart' %}
             {% endif %}
           </div>
-          <div>
-            <a href="{{ routes.account_login_url }}">
-              {% render 'icon-user', class: 'w-[24px] h-[24px] lg:w-[30px] lg:h-[30px]' %}
-            </a>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 {% schema %}
   {
@@ -162,4 +159,4 @@
     "settings": [
     ]
   }
-{% endschema %}
+{% endschema %} 

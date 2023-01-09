@@ -76,7 +76,7 @@
               <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
               <span class="text-[#a00] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
               <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
-              <s class="text-xs decoration-[#a00]">{{ product.compare_at_price_max | money }}</s>
+              <s class="text-sm decoration-[#a00]">{{ product.compare_at_price_max | money }}</s>
             {% else %}
               <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
               <span class="text-[#a00] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
@@ -117,11 +117,11 @@
                   {% render 'icon-plus', class: 'w-3' %}
                 </button>
               </div>
-              <button type="button" name="add" {% if product.available %}@click.prevent="addToCart"{% endif %}  form="Product-Form-{{ product.selected_or_first_available_variant.id }}" class="block text-white uppercase text-sm lg:text-base font-semibold text-center py-2 px-4 w-max {% if product.available %}bg-[#a00]{% else %}bg-[#4a4a49]{% endif %}" {% unless product.available %}disabled{% endunless %}> 
+              <button type="button" name="add" {% if product.available %}@click.prevent="addToCart"{% endif %}  form="Product-Form-{{ product.selected_or_first_available_variant.id }}" class="block text-white uppercase tracking-[1px] text-base lg:text-base font-semibold text-center py-2 px-4 w-max {% if product.available %}bg-[#a00] transition-colors duration-200 ease-in-out hover:text-[#a00] hover:bg-[#efd4d4] {% else %}bg-[#4a4a49]{% endif %}" {% unless product.available %}disabled{% endunless %}> 
                 {% unless product.available %}
                   <span>No Disponible</span>   
                 {% else %}
-                  <span>Agregar a la Bolsa</span>   
+                  <span>Agregar al Carrito</span>   
                 {% endunless %}
               </button>
           </div> 

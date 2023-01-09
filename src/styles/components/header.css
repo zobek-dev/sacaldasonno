@@ -1,0 +1,7 @@
+.header{
+  @apply relative w-full z-[999] bg-[#ffffff] transition-all duration-300 ease-in-out;
+}
+
+.header-fixed{
+  @apply fixed top-0 left-0 w-full z-[999] bg-[#ffffff];  
+}

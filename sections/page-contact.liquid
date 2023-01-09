@@ -1,0 +1,180 @@
+<div>
+  <div class="wrapper">
+    <div class="pt-4">
+      {% render 'breadcrumb' %}
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center mb-20">
+      <div class="md:pr-8">
+        <h1 class="uppercase mb-4 text-center md:text-start text-[22px] lg:text-[30px] font-bold">{{ section.settings.title | escape }}</h1>
+        <h2 class="uppercase mb-2 text-start text-[18px] lg:text-[20px] font-bold">{{ section.settings.subtitle | escape }}</h2>
+        {% if section.settings.address_link != blank %}
+          <a
+            href="{{ section.settings.address_link }}"
+            target="_blank"
+            rel="noopener noreferrer">
+          {% endif %}
+          <span>{{ section.settings.address | escape }}</span>
+          {% if section.settings.address_link != blank %}
+          </a>
+        {% endif %}
+        <div>
+          <h2 class="uppercase my-4 text-start text-[18px] lg:text-[20px] font-bold">
+            ¿En qué podemos ayudarte?
+          </h2>
+          <ul>
+            <li>
+              <details class="contact-details mb-2 border border-[#a00]">
+                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
+                  <span>Ventas Online</span>
+                  {% render 'icon-plus', class: 'w-3 plus' %} 
+                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
+                </summary>
+                <ul class="px-4 py-2">
+                  <li>
+                    <a href="/pages/formulario#corregir-datos-de-compra" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      Corregir datos de compra
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/formulario#anular-compra" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      Anular compra
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/formulario#no-he-recibido-mi-boleta" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      No he recibido mi boleta
+                    </a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details class="contact-details mb-2 border border-[#a00]">
+                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
+                  <span>Despacho de productos</span>
+                  {% render 'icon-plus', class: 'w-3 plus' %} 
+                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
+                </summary>
+                <ul class="px-4 py-2">
+                  <li>
+                    <a href="/pages/formulario#no-he-recibido-mi-pedido" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      No he recibido mi pedido
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/formulario#mi-pedido-ha-sido-dañado" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      Mi pedido ha sido dañado
+                    </a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details class="contact-details mb-2 border border-[#a00]">
+                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
+                  <span>Servicio técnico</span>
+                  {% render 'icon-plus', class: 'w-3 plus' %} 
+                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
+                </summary>
+                <ul class="px-4 py-2">
+                  <li>
+                    <a href="/pages/formulario#mantencion" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      Mantención
+                    </a>
+                  </li>
+                </ul>
+              </details>
+            </li> 
+            <li>
+              <details class="contact-details mb-2 border border-[#a00]">
+                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
+                  <span>Uso de productos</span>
+                  {% render 'icon-plus', class: 'w-3 plus' %} 
+                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
+                </summary>
+                <ul class="px-4 py-2">
+                  <li>
+                    <a href="/pages/formulario#calientacamas" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      Calientacamas
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/formulario#mantas-electricas" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      Mantas Electricas
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/formulario#almohadillas" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      Almohadillas
+                    </a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details class="contact-details mb-2 border border-[#a00]">
+                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
+                  <span>Otro</span>
+                  {% render 'icon-plus', class: 'w-3 plus' %} 
+                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
+                </summary>
+                <ul class="px-4 py-2">
+                  <li>
+                    <a href="/pages/formulario#consultas-generales" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
+                      Consultas generales
+                    </a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+               
+          </ul>
+        </div>
+
+        <!--Formulario -->
+      </div>
+      <div class="h-max">
+        <img
+          src="{{ section.settings.image | img_url: 'master' }}"
+          alt="Conctáctanos"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.width | divided_by: sections.settings.image.aspect_ratio | ceil }}"
+          loading="lazy">
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Página de contacto",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título para la página.",
+        "default": "Contáctanos"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitulo para la sección.",
+        "default": "Encuentrános"
+      },
+      {
+        "type": "text",
+        "id": "address",
+        "label": "Dirección de encuentranos",
+        "default": "IV Centenario 776 , Las Condes."
+      },
+      {
+        "type": "url",
+        "id": "address_link",
+        "label": "Link de la dirección"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Inserta la imagen para la página de contactos."
+      }
+    ]
+  }
+{% endschema %}

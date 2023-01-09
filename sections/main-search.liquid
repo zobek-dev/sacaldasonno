@@ -1,1 +1,218 @@
-<h1>Search</h1>
+<div class="wrapper flex flex-col min-h-[90vh]">
+  <div class="mb-8">
+    <h1 class="text-center font-bold uppercase my-8 text-[22px] lg:text-[35px]">Resultados para "{{ search.terms }}"</h1>
+    <form action="{{ routes.search_url }}">
+      <div class="border border-[#4a4a49] group focus-within:border-[#a00] focus-within:border-[2px] max-w-[600px] flex mx-auto gap-x-2 py-2 px-2 rounded-sm">
+        <button type="submit">
+          {% render 'icon-search', class: 'w-4' %}
+        </button>
+        <input 
+          type="text" 
+          placeholder="Búscar en la tienda" 
+          name="q" 
+          value="{{ search.terms | escape }}"
+          class="outline-none border-none"
+        >
+        <input type="hidden" name="options[prefix]" value="last">
+        <input type="hidden" name="type" value="product">
+      </div>
+    </form>
+  </div>
+  {% if search.performed and search.results_count > 0 %}
+    <div x-data="{
+      open:false,
+      toggleFilter(){
+        this.open = !this.open;
+        $refs.drawer_filter.classList.toggle('active')
+      }
+    }"
+    @toggle-filter.window="toggleFilter"
+    @keyup.escape="$dispatch('toggle-filter')"
+    >
+    <div class="flex justify-between items-center py-4">
+      <button class="flex gap-x-2 items-center border border-[#a00] text-white bg-[#a00] text-sm font-semibold py-2 px-2 lg:hidden uppercase" @click="$dispatch('toggle-filter')">
+        <span>Ordenar y filtrar</span>
+        {% render 'icon-filter', class: 'w-4' %}
+      </button>
+      <div class="active-filters hidden lg:block">                               
+        {% for filter in search.filter -%}                                                                                                    {%- if filter.type == "price_range" -%}
+            {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+              <a href="{{ filter.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
+                <span class="flex gap-x-2 items-center">
+                  {%- assign min_value = filter.min_value.value | default: 0 -%}
+                  {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                  {{ min_value | money }} - {{ max_value | money }}
+                  {% render 'icon-close-small' %}
+                  <span class="sr-only">Quitar Filtro</span>
+                </span> 
+              </a>
+            {%- endif -%}
+          {%- else -%}
+            {%- for filter_value in filter.active_values -%}
+              <a href="{{ filter_value.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
+                <span class="flex gap-x-2 items-center">
+                  {{ filter.label }}: {{ filter_value.label }}
+                  {% render 'icon-close-small' %}
+                  <span class="sr-only">Quitar Filtro</span>
+                </span>   
+              </a>
+            {%- endfor -%}
+          {%- endif- %}
+        {%- endfor -%}
+        <a href="{{ routes.search_url }}?sort_by={{ search.sort_by }}&q={{ search.terms }}&options%5Bprefix%5D=last&type=product" class="inline-flex underline underline-offset-2 mr-2 mb-2 text-sm tracking-[1.5px]">Quitar Todos</a>
+      </div>
+
+      <div class="flex items-center gap-x-2">
+        <span class="text-sm hidden md:block">Ordenar por:</span>
+        <select id="sort-by" class="hidden lg:block text-sm px-1 py-1 bg-white border border-[#4a4a49] rounded-sm">
+          {% assign sort_by = search.sort_by | search: collection.default_sort_by %}
+
+          {% for option in search.sort_options %}
+            <option value="{{ option.value }}" class="text-sm" {% if option.value == sort_by %}selected="selected"{% endif %}>
+              {{ option.name }}
+            </option>
+          {% endfor %}
+        </select>
+        <span class="text-sm">{{ search.results_count }} resultados</span>
+        <script>
+          Shopify.queryParams = {};
+
+          // Preserve existing query parameters
+          if (location.search.length) {
+            var params = location.search.substr(1).split('&');
+
+            for (var i = 0; i < params.length; i++) {
+              var keyValue = params[i].split('=');
+
+              if (keyValue.length) {
+                Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+              }
+            }
+          }
+
+          // Update sort_by query parameter on select change
+          document.querySelector('#sort-by').addEventListener('change', function(e) {
+            var value = e.target.value;
+
+            Shopify.queryParams.sort_by = value;
+            location.search = new URLSearchParams(Shopify.queryParams).toString();
+          });
+        </script>   
+      </div>
+    </div>
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <aside class="hidden lg:block lg:col-span-1 h-max py-8 pr-4 lg:sticky lg:top-12 lg:self-start">
+          <h2 class="text-base uppercase font-semibold pb-4 border-b border-[#4a4a49]">Filtrar por</h2>
+          <form class="filter-form">
+            <input type="hidden" name="q" value="{{ search.terms }}">
+            <input type="hidden" name="type" value="product">
+            <input type="hidden" name="options[prefix]" value="last">
+            {%- for filter in search.filters -%}
+              <details class="filter-group border-b border-[#4a4a49] py-3">
+                <summary class="flex cursor-pointer justify-between items-center tracking-[1px]">
+                  <div>
+                    <span>{{ filter.label }}</span>
+          
+                    {%- if filter.active_values.size > 0 -%}
+                      <span>({{ filter.active_values.size }})</span>
+                    {%- endif -%}
+                  </div>
+                  {% render 'icon-caret', class: 'w-3' %}
+                </summary>
+          
+                <div class="filter-group-display pt-3">     
+                  {%- case filter.type -%}
+                    {%- when 'boolean' or 'list' -%}
+                      <ul class="filter-group-display__list">
+                        {%- for filter_value in filter.values -%}
+                          <li class="filter-group-display__list-item mb-1">
+                            <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                            <input type="checkbox"
+                              name="{{ filter_value.param_name }}"
+                              value="{{ filter_value.value }}"
+                              id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                              {% if filter_value.active -%}checked{%- endif %}
+                              {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                              class="accent-[#4a4a49] cursor-pointer"
+                            >&nbsp;&nbsp;{{ filter_value.label }}</label>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- when 'price_range' -%}
+                      <div class="filter-group-display__price-range mb-1 flex gap-x-2">
+                        <div class="filter-group-display__price-range-from">
+                          <label for="Filter-{{ filter.min_value.param_name }}" class="text-[10px] text-[#555]">Desde</label>
+                          <div class="border border-[#4a4a49] rounded-sm p-1">
+                            <span>{{ cart.currency.symbol }}</span>
+                            <input name="{{ filter.min_value.param_name }}"
+                              id="Filter-{{ filter.min_value.param_name }}"
+                              {% if filter.min_value.value -%}
+                                value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                              {%- endif %}
+                              type="number"
+                              placeholder="0"
+                              min="0"
+                              max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                              class="border-none outline-none"
+                            >
+                          </div>  
+                        </div>
+                        <div class="filter-group-display__price-range-to">
+                          <label for="Filter-{{ filter.max_value.param_name }}" class="text-[10px] text-[#555]">Hasta</label>
+                          <div class="border border-[#4a4a49] rounded-sm p-1">
+                            <span>{{ cart.currency.symbol }}</span>
+                            <input name="{{ filter.max_value.param_name }}"
+                              id="Filter-{{ filter.max_value.param_name }}"
+                              {% if filter.max_value.value -%}
+                                value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                              {%- endif %}
+                              type="number"
+                              placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                              min="0"
+                              max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                              class="border-none outline-none"
+                            >   
+                          </div>  
+                        </div>
+                      </div>
+                  {%- endcase -%}
+                </div>
+              </details>
+            {%- endfor -%}
+            <div class="my-8">
+              <div class="filter-group-display__submit flex gap-x-2">
+                <input type="submit" value="Filtrar" class="block border bg-[#a00] text-[white] border-[#a00] uppercase px-4 py-1 cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold">
+                <input type="reset" value="Limpiar" class="block border border-[#a00] bg-[#fff] text-[#a00] uppercase px-4 py-1 text-base cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold">
+              </div>
+            </div>
+          </form>
+        </aside>
+        {% paginate search.results by 12 %}
+        <div class="col-span-2 md:col-span-3">
+          <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+            {% for product in search.results %}
+              {% render 'card-product', product: product %} 
+            {% endfor %}
+          </ul>
+          {% if paginate.parts > 1 %}
+            {% render 'pagination' %}
+          {% endif %}
+        </div>
+        {% endpaginate %}
+      </div>
+    </div>
+    {% render 'drawer-filter', object: search, template: template %}    
+  {% else %}
+  <div class="flex-1 flex justify-center items-center">
+    <p class="text-center">No se han encontrado resultados.</p>
+  </div>
+  {% endif %}  
+</div>
+
+
+{% schema %}
+  {
+    "name": "Búsqueda"
+  }
+{% endschema %}

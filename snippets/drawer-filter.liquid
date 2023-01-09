@@ -1,7 +1,12 @@
+{% comment %}
+  @object: Object, recibe el objeto a iterar dependendiendo del template.
+  @template: String, recibe el string del template donde se esta iterando. 
+{% endcomment %}
 <div class="drawer-filter fixed z-[9999] w-[100vw] h-full top-0 left-0 flex justify-end bg-[rgba(10,10,10,.5)]" x-ref="drawer_filter">
   <div class="block">
     <div class="fixed top-0 left-0 right-0 bottom-0" @click="$dispatch('toggle-filter')"></div>
     <div class="filter-inner bg-white h-full w-[420px] px-4 flex flex-col justify-between z-[9999]" style="max-width: calc(100vw - 3rem);">
+ 
       <div class="flex justify-between items-center py-4">
         <h2 class="text-base lg:text-xl font-bold uppercase">Ordenar y filtrar</h2>
         <button aria-label="Cerrar el carrito" @click="$dispatch('toggle-filter')" class="text-[#a00]">
@@ -10,7 +15,7 @@
         </button>
       </div>
       <div class="active-filters block">                               
-        {% for filter in collection.filters -%}                                                                                                    {%- if filter.type == "price_range" -%}
+        {% for filter in object.filters -%}                                                                                                    {%- if filter.type == "price_range" -%}
             {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
               <a href="{{ filter.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
                 <span class="flex gap-x-2 items-center">
@@ -34,22 +39,27 @@
             {%- endfor -%}
           {%- endif- %}
         {%- endfor -%}
-        <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="inline-flex underline underline-offset-2 mr-1 text-sm tracking-[1.5px]">Quitar Todos</a>
+        <a {% if template == 'search' %}href="{{ routes.search_url }}?sort_by={{ object.sort_by }}&q={{ object.terms }}&options%5Bprefix%5D=last&type=product"{% else %}href="{{ object.url }}?sort_by={{ object.sort_by }}"{% endif %} class="inline-flex underline underline-offset-2 mr-1 text-sm tracking-[1.5px]">Quitar Todos</a>
       </div>
       <div class="flex flex-1 overflow-y-scroll">
         <form id="Form-{{ section.id }}" class="block w-full">
           <h3 class="text-base font-semibold uppercase my-3">Ordenar Por</h3>
           <select id="sort-by-mobile" name="sort_by" class="p-1 text-base bg-white border border-[#4a4a49] rounded-sm w-full">
-            {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+            {% assign sort_by = object.sort_by | default: object.default_sort_by %}
 
-            {% for option in collection.sort_options %}
+            {% for option in object.sort_options %}
               <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
                 {{ option.name }}
               </option>
             {% endfor %}
           </select>
           <h3 class="text-base font-semibold uppercase my-3">Filtrar por</h3>
-          {%- for filter in collection.filters -%}
+          {%- for filter in object.filters -%}
+            {% if template == 'search' %}
+            <input type="hidden" name="q" value="{{ object.terms }}">
+            <input type="hidden" name="type" value="product">
+            <input type="hidden" name="options[prefix]" value="last">
+            {% endif %}
             <details class="filter-group border-b border-[#4a4a49] py-3">
               <summary class="flex cursor-pointer justify-between items-center tracking-[1px]">
                 <div>

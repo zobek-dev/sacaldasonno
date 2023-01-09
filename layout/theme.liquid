@@ -61,12 +61,12 @@
     </script>
 </head>
 <body class="font-barlow text-[#4a4a49]">
-  {% section 'announcement-bar' %}
+  {% section 'announcement-bar-backup' %}
   {% section 'header' %}  
   <main class="min-h-[90vh]">
     {{ content_for_layout }}
   </main> 
-  {% section 'footer' %}
+  {% section 'footer' %} 
   <!--PREDICTIVE SEARCH-->  
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
 </body>

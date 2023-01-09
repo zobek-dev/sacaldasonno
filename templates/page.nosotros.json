@@ -1,0 +1,22 @@
+{
+  "sections":{
+    "heading":{
+      "type": "heading"
+    },
+    "main":{
+      "type": "page-nosotros"
+    },
+    "cita": {
+      "type": "single-cita"
+    },
+    "consejos": {
+      "type": "collection-consejos"
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "cita",
+    "consejos"
+  ]
+} 

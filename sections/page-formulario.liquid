@@ -1,0 +1,118 @@
+<div 
+  x-data="{
+    getHashParam(){
+      let subject = '';
+      let param = window.location.hash.replace('#','').split('-');
+      const fixed = param.map(el => el.charAt(0).toUpperCase() + el.slice(1,el.length));
+      fixed.forEach(el => subject += el + ' ');
+      $refs.category.innerText = subject;
+    } 
+   }
+  "
+  x-init="getHashParam"
+>
+  <div class="wrapper">
+    <div class="pt-4">
+      {% render 'breadcrumb' %}
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center mb-20">
+      <div class="md:pr-8">
+        <h1 class="uppercase mb-4 text-center md:text-start text-[22px] lg:text-[30px] font-bold">
+          Contáctanos
+        </h1>
+        <h2 class="uppercase my-4 text-start text-[18px] lg:text-[20px] font-bold">
+          Formulario de contacto
+        </h2>
+        {% form 'contact'%}
+          {{ form.errors | default_errors }}
+         
+          {% if form.posted_successfully? %}
+            <p class="posted-sucess">Hemos recibido tu mensaje, te contactarémos a la brevedad.</p>
+          {% endif %}  
+          <input type="hidden" name="contact[Categoria]" x-ref="category">
+          <div class="mb-4">
+            <input type="text" class="flex w-full border border-[#777] px-4 py-2 focus:outline-[#a00] rounded-[4px]" placeholder="Nombre completo" name="contact[Nombre Completo]" required>
+          </div> 
+          <div class="mb-4"> 
+            <input type="text" class="flex w-full border border-[#777] px-4 py-2 focus:outline-[#a00] rounded-[4px]" placeholder="Número de pedido" name="contact[Numero de Pedido]" required>
+          </div>
+          <div class="mb-4">
+            <input type="email" class="flex w-full border border-[#777] px-4 py-2 focus:outline-[#a00] rounded-[4px]" placeholder="Correo Electrónico" name="contact[email]" required>
+          </div>  
+          <div class="mb-4">
+            <input type="text" class="flex w-full border border-[#777] px-4 py-2 focus:outline-[#a00] rounded-[4px]" placeholder="Número de teléfono" name="contact[Telefono]" required>
+          </div>
+          <div class="mb-8">  
+            <textarea name="contact[body]" class="flex w-full border border-[#777] px-4 py-2 focus:outline-[#a00] rounded-[4px]" placeholder="Mensaje" cols="auto" rows="auto" required class="textarea-field"></textarea>
+          </div>
+          <div class="flex justify-end">  
+           <input type="Submit" class="bg-[#a00] text-white w-max block px-4 py-2 font-semibold tracking-[1px] cursor-pointer transition-colors duration-200 ease-in-out hover:text-[#a00] hover:bg-[#EFD4D4] uppercase" value="Enviar">
+          </div>
+        {% endform %} 
+
+
+        <!--Formulario -->
+      </div>
+      <div class="h-max">
+        <img
+          src="{{ section.settings.image | img_url: 'master' }}"
+          alt="Conctáctanos"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.width | divided_by: sections.settings.image.aspect_ratio | ceil }}"
+          loading="lazy">
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Formulario Contacto",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Inserta una imagen para la página"
+      }
+    ]
+  }
+{% endschema %}
+
+{% comment %} <div class="wrapper page-formulario">
+  <h1 class="form-title">Contáctanos</h1>
+  <div class="layout">
+    <div class="form-content">
+      <h2 class="form-subtitle">Formulario de contacto</h2>
+      {% form 'contact'%}
+        {{ form.errors | default_errors }}
+        this input is hidden because we need to receve the category from url hash 
+        with javascript 
+       
+        {% if form.posted_successfully? %}
+          <p class="posted-sucess">Hemos recibido tu mensaje, te contactarémos a la brevedad.</p>
+        {% endif %}  
+        <input type="hidden" name="contact[categoria]">
+        <div>
+          <input type="text" class="input-field" placeholder="Nombre completo" name="contact[Nombre Completo]" required>
+        </div> 
+        <div> 
+          <input type="text" class="input-field" placeholder="Número de pedido" name="contact[Numero de Pedido]" required>
+        </div>
+        <div>
+          <input type="email" class="input-field" placeholder="Correo Electrónico" name="contact[email]" required>
+        </div>  
+        <div>
+          <input type="text" class="input-field" placeholder="Número de teléfono" name="contact[Telefono]" required>
+        </div>
+        <div>  
+          <textarea name="contact[body]" placeholder="Mensaje" cols="auto" rows="auto" required class="textarea-field"></textarea>
+        </div>  
+        <div class="submit">
+         <input type="Submit" class="submit-form" value="Enviar">
+        </div>
+      {% endform %}
+    </div>
+    <div class="form-image">
+      <img src="https://cdn.shopify.com/s/files/1/0595/5869/1024/files/img_1.jpg?v=1657024395" alt="contactanos" width="100%">
+    </div>
+  </div>
+</div> {% endcomment %}

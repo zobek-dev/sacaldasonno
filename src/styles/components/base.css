@@ -2,6 +2,21 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
 .wrapper{
   @apply max-w-[1320px] mx-auto px-4 lg:px-8
 }
@@ -26,5 +41,17 @@ summary::-webkit-details-marker {
 
 
 .filter-group[open] svg{
+  @apply rotate-180;
+}
+
+.contact-details[open] > summary .plus{
+  @apply hidden;
+}
+
+.contact-details[open] > summary .minus{
+  @apply block;
+}
+
+.detail-submenu[open] > summary svg{
   @apply rotate-180;
 }
