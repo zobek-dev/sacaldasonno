@@ -16,7 +16,9 @@ Recibe:
 -%}
 
 <li class="{{ class }}" x-data="{
+  loading:false,
   addToCart(){
+    loading = true;
     let formData = new FormData($refs.product_form);
     fetch('/cart/add.js', {
       method: 'POST',
@@ -28,9 +30,11 @@ Recibe:
       $dispatch('toggle-cart');
     })
     .catch(error=> console.error('Error ', error))
+    .finally(()=> loading = false)
   } 
 }">
   <div clas="relative">
+    {% render 'loader' %}
     <a href="{{ product.url }}" class="relative">
       {% if on_sale %}
         {% assign percentage = product.compare_at_price_max | minus: product.price | times: 100 | divided_by: product.compare_at_price_max %}

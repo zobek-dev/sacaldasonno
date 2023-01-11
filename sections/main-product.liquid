@@ -83,6 +83,7 @@
               {% endif %}
           </div>
           <div x-data="{
+              loading: false,
               minus(){
                 $refs.quantity_input.stepDown();
               },
@@ -90,6 +91,7 @@
                 $refs.quantity_input.stepUp();
               },
               addToCart(){
+                loading = true;
                 let formData = new FormData($refs.product_form);
                 fetch('/cart/add.js', {
                   method: 'POST',
@@ -101,10 +103,12 @@
                   $dispatch('toggle-cart');
                 })
                 .catch(error => console.error('Error', error))
+                .finally(()=>loading=false)
               }  
             }"
-            class="flex gap-x-4 flex-row justify-start items-center"
+            class="flex gap-x-4 flex-row justify-start items-center relative"
             >
+              {% render 'loader' %}
               <form action="{{ routes.cart_add_url }}" method="POST" id="Product-Form-{{ product.selected_or_first_available_variant.id }}" x-ref="product_form" class="hidden">
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">    
               </form>
@@ -139,12 +143,6 @@
   </div>
 </div>
 
-{% comment %} <h1>{{ product.title | escape }}</h1>
-  <form action="{{ routes.cart_add_url }}" method="POST">
-  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-  <input type="hidden" name="quantity" value="1">
-  <button type="submit" name="add">ADD TO CART</button>
-</form> {% endcomment %}
 {% schema %}
   {
     "name": "Main Product",

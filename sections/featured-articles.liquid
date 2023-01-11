@@ -1,0 +1,55 @@
+<div class="wrapper py-4">
+  <h2 class="uppercase my-4 lg:my-8 text-[20px] lg:text-[30px] text-center font-gobold tracking-[1px]">{{ section.settings.title | escape }}</h2>
+  <articles-carousel>
+    <div class="articles-carousel articles-carousel__{{ section.id }} overflow-hidden relative">
+      <ul class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% render 'article-card', article: articles[block.settings.article], class: 'swiper-slide' %}         
+        {% endfor %}
+      </ul>
+      <div class="swiper-button-next text-[#4a4a49]"></div>
+      <div class="swiper-button-prev text-[#4a4a49]"></div>
+    </div>
+  </articles-carousel>
+  <a href="{{ section.settings.link_blog }}" class="block mx-auto my-4 bg-[#a00] text-white font-gobold font-bold text-sm w-max px-4 py-2 uppercase transition-colors duration-200 ease-in-out hover:bg-[#EFD4D4] hover:text-[#a00]">
+    Ver todo
+  </a>
+</div>
+
+{% schema %}
+  {
+    "name": "Articulos Destacados",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Ingresa el título",
+        "default": "Mira Nuestro Blog"
+      },
+      {
+        "type": "url",
+        "id": "link_blog",
+        "label": "Selecciona link del blog."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "featured",
+        "name": "Articulo",
+        "settings": [
+          {
+            "type": "article",
+            "id": "article",
+            "label": "Selecciona un artículo"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Artículos Destacados"
+      }
+    ]
+  }
+{% endschema %}

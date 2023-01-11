@@ -94,7 +94,7 @@ class ProductConsejosCarousel extends HTMLElement{
     super();
 
     this.carousel = this.querySelector('.carousel-consejos');
-
+    
     this.swiper = new Swiper(this.carousel, {
       slidesPerView: 1, 
       spaceBetween:16,
@@ -169,4 +169,34 @@ class FeaturedProduct extends HTMLElement{
   }
 }
 
-customElements.define('featured-products', FeaturedProduct)
+customElements.define('featured-products', FeaturedProduct);
+
+class ArticlesCarousel extends HTMLElement{
+  constructor(){
+    super();
+
+    this.carousel = this.querySelector('.articles-carousel');
+    this.next = this.querySelector('.swiper-button-next');
+    this.prev = this.querySelector('.swiper-button-prev');
+
+    this.swiper = new Swiper(this.carousel, {
+      modules:[Navigation],
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: this.next,
+        prevEl: this.prev
+      },
+      breakpoints: {
+        500:{
+          slidesPerView: 2,
+        },
+        1024:{
+          slidesPerView: 3,
+        },
+      }
+    })
+  }
+}
+
+customElements.define('articles-carousel', ArticlesCarousel);

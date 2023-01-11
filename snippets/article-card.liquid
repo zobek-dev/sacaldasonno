@@ -1,0 +1,30 @@
+{% comment %}
+  @article: Recibe el articulo
+  @class: Recibe el string de clase
+{% endcomment %}
+
+{% liquid 
+  assign index = article.created_at | date: '%m' | times: 1 | minus: 1 
+  assign year = article.created_at | date: '%Y'
+  assign day = article.created_at | date: '%d'
+  assign months = 'Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre' | split: ','
+  assign fixed_date = months[index]
+%}
+
+<li class="{{ class }} border border-[#555] p-4">
+  <a href="{{ article.url }}" class="block">
+    <img
+      src="{{ article.image | img_url: '400x' }}"
+      alt="{{ article.title | escape }}"
+      loading="lazy"
+      class="aspect-[4/3] object-cover object-center"
+      width="400"
+      height="{{ 400 | divided_by: article.image.aspect_ratio | ceil }}">
+    <h3 class="uppercase font-bold text-base mt-4 line-clamp-1">{{ article.title | escape }}</h3>
+    <span class="text-sm font-light block mb-2">Publicado: {{ day | append: ' de ' | append: fixed_date | append: ', ' | append: year }}</span> 
+    <div class="line-clamp-3 mt-2 mb-4">
+      {{ article.excerpt | strip_html }}  
+    </div>
+    <span class="float-right block bg-[#a00] text-white font-gobold font-bold text-sm w-max px-4 py-2 uppercase transition-colors duration-200 ease-in-out hover:bg-[#EFD4D4] hover:text-[#a00]">Leer más</span>
+  </a>
+</li>

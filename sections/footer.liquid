@@ -1,15 +1,18 @@
-<div class="bg-[#b5b5b5] py-4 flex justify-center items-center">
-  {% render 'imetec', class: 'w-[82px] h-[28px] lg:w-[164px] lg:h-[56px]' %}
+<div class="bg-[#b5b5b5] py-4 flex justify-center items-center text-white">
+  <div class="wrapper">
+    <h3 class="text-center uppercase font-gobold tracking-[1.5px] text-[16px] lg:text-[30px]">Distribuidor oficial de imetec en Chile</h3>
+  </div>
 </div>
-<footer class="bg-white pt-12 pb-8">
+<footer class="bg-white pt-4 lg:pt-12 pb-8">
   <div class="wrapper">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'contact' %}
           <div class="col-span-1">
-            <div>
-              {% render 'mar-del-sur', class: 'w-full' %}
+            <div class="mb-4">
+              {% render 'mar-del-sur', class: 'w-[200px]' %}
+              <span class="uppercase font-bold text-base">Distribuidor oficial en Chile</span>
             </div>
             <h3 class="mb-4 uppercase text-base font-bold">{{ block.settings.title | escape }}</h3>
             {% if block.settings.link != blank %}

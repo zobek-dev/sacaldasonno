@@ -1,1 +1,172 @@
-<h1>Login</h1>
+<div class="wrapper h-full">
+  <div class="max-w-[450px] mx-auto h-full flex justify-center items-center" x-data="{
+    recover: false,
+    toggle(){
+      !recover 
+    }
+  }"
+  >
+    <div x-show="recover" class="block w-full">
+      <h1 id="recover" class="font-gobold text-[20px] lg:text-[30px] uppercase mb-2 text-center" tabindex="-1">
+      {{ 'customer.recover_password.title' | t }}
+      </h1>
+      <p class="mb-4 text-center">
+        {{ 'customer.recover_password.subtext' | t }}
+      </p>
+  
+      {%- form 'recover_customer_password' -%}
+        {% assign recover_success = form.posted_successfully? %}
+        <div class="flex flex-col-reverse mb-4">
+          <input
+            type="email"
+            value=""
+            name="email"
+            id="RecoverEmail"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+            {% if form.errors %}
+              aria-invalid="true"
+              aria-describedby="RecoverEmail-email-error"
+              autofocus
+            {% endif %}
+            placeholder="{{ 'customer.login_page.email' | t }}"
+          >
+          <label for="RecoverEmail" class="mb-1 uppercase font-bold text-sm">
+            {{ 'customer.login_page.email' | t }}
+          </label>
+        </div>
+         
+        {%- if form.errors -%}
+          <small id="RecoverEmail-email-error" class="flex gap-x-2 items-start mb-4">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 13 13" class="w-4 h-4">
+              <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+              <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+              <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+              <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+            </svg>
+            {{ form.errors.messages.form }}
+          </small>
+        {%- endif -%}
+        <div class="flex items-center justify-between gap-2">
+          <a href="#login" @click="() => recover = !recover" class="underline tracking-[1px] transition-opacity duration-200 ease-in-out hover:opacity-70">
+            {{ 'customer.login_page.cancel' | t }}
+          </a>
+          <button class="block bg-[#a00] text-white font-gobold tracking-[1px] font-bold w-max px-4 py-2 uppercase transition-colors duration-200 ease-in-out hover:bg-[#EFD4D4] hover:text-[#a00]">
+            {{ 'customer.login_page.submit' | t }}
+          </button>
+        </div>
+      {%- endform -%}
+    </div>
+  
+    <div x-show="!recover" class="block w-full">
+      <h1 class="font-gobold text-[20px] lg:text-[30px] text-center uppercase mb-8" id="login" tabindex="-1">
+        {{ 'customer.login_page.title' | t }}
+      </h1>
+      <div>
+        {%- if recover_success == true -%}
+          <h3 class="flex gap-x-1 items-start mb-4" tabindex="-1" autofocus>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 13 13" class="w-4 h-4">
+              <path d="M6.5 12.35C9.73087 12.35 12.35 9.73086 12.35 6.5C12.35 3.26913 9.73087 0.65 6.5 0.65C3.26913 0.65 0.65 3.26913 0.65 6.5C0.65 9.73086 3.26913 12.35 6.5 12.35Z" fill="#428445" stroke="white" stroke-width="0.7"/>
+              <path d="M5.53271 8.66357L9.25213 4.68197" stroke="white"/>
+              <path d="M4.10645 6.7688L6.13766 8.62553" stroke="white">
+            </svg>
+            {{ 'customer.recover_password.success' | t }}
+          </h3>
+        {%- endif -%}
+         
+        {%- form 'customer_login', novalidate: 'novalidate', class: 'block w-full' -%}
+          {%- if form.errors -%}
+            <div class="mb-4">
+              <h2 class="flex gap-x-1 items-center" tabindex="-1" autofocus>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 13 13" class="w-4 h-4">
+                  <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+                  <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+                  <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+                  <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+                </svg>
+                <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>    
+              </h2>
+              <p>{{ 'templates.contact.form.error_heading' | t }}</p>
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}     
+          <div class="flex flex-col-reverse mb-4">
+            <input
+              type="email"
+              name="customer[email]"
+              id="CustomerEmail"
+              autocomplete="email"
+              autocorrect="off"
+              autocapitalize="off"
+              class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+              {% if form.errors contains 'form' %}
+                aria-invalid="true"
+              {% endif %}
+              placeholder="{{ 'customer.login_page.email' | t }}"
+            >
+            <label for="CustomerEmail" class="mb-1 uppercase font-bold text-sm">
+              {{ 'customer.login_page.email' | t }}
+            </label>
+          </div>
+            
+          {%- if form.password_needed -%}
+            <div class="flex flex-col-reverse mb-4">
+              <input
+                type="password"
+                value=""
+                name="customer[password]"
+                id="CustomerPassword"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                autocomplete="current-password"
+                {% if form.errors contains 'form' %}
+                  aria-invalid="true"
+                {% endif %}
+                placeholder="{{ 'customer.login_page.password' | t }}"
+              >
+              <label for="CustomerPassword" class="mb-1 uppercase font-bold text-sm">
+                {{ 'customer.login_page.password' | t }}
+              </label>
+            </div>
+              
+            <a href="#recover" @click="() => recover = !recover" class="block underline tracking-[1px] mb-4">
+              {{ 'customer.login_page.forgot_password' | t }}
+            </a>
+          {%- endif -%}
+          <div class="flex mb-4 items-end flex-col lg:flex-row lg:justify-between lg:items-center">
+            <button class="block bg-[#a00] text-white font-gobold tracking-[1px] font-bold w-max px-4 py-2 uppercase transition-colors duration-200 ease-in-out hover:bg-[#EFD4D4] hover:text-[#a00]">
+              {{ 'customer.login_page.sign_in' | t }}
+            </button>
+            <span class="block mt-2 lg:mt-0">
+              ¿No tienes cuenta?
+              <a href="{{ routes.account_register_url }}" class="text-[#a00] underline transition-opacity duration-200 ease-in-out hover:opacity-70">
+              {{ 'customer.login_page.create_account' | t }}
+              </a>
+            </span>          
+          </div>
+        {%- endform -%}
+      </div>
+    </div> 
+    {%- if shop.checkout.guest_login -%}
+      <div>
+        <hr>
+        <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+  
+        {%- form 'guest_login' -%}
+          <button>
+            {{ 'customer.login_page.guest_continue' | t }}
+          </button>
+        {%- endform -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>  
+
+{% schema %}
+  {
+    "name": "Login",
+    "class": "login-page",
+    "settings": []
+  }
+{% endschema %}

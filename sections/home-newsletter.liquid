@@ -1,8 +1,8 @@
-<div class="py-8 my-12">
+<div class="py-8 my-4 lg:my-12">
   <div class="wrapper">
     <div class="max-w-[1100px] mx-auto">
       <h2 class="text-center uppercase tracking-[1px] text-[22px] max-w-[680px] mx-auto lg:text-[30px] leading-[1.2] font-gobold mb-4">{{ section.settings.title | escape }}</h2>
-      <div class="text-center mb-4 text-base">
+      <div class="text-center mb-8 text-base">
         {{ section.settings.content }}
       </div>
       {% form 'customer', class: 'newsletter-form' %}
@@ -13,7 +13,7 @@
               id="NewsletterForm--{{ section.id }}"
               type="email"
               name="contact[email]"
-              class="border-none outline-none flex-1 p-3"
+              class="border-none outline-none flex-1 p-2 lg:p-3"
               value="{{ form.email }}"
               aria-required="true"
               autocorrect="off"
@@ -31,7 +31,7 @@
             >
             <button
               type="submit"
-              class="bg-[#a00] text-white border-transparent uppercase py-2 px-4 w-max flex gap-x-1 items-center font-bold tracking-[1px] transition-colors duration-200 ease-in-out hover:bg-[#EFD4D4] hover:text-[#a00]"
+              class="bg-[#a00] text-white text-xs lg:text-base border-transparent uppercase py-2 px-4 w-max flex gap-x-1 items-center font-bold tracking-[1px] transition-colors duration-200 ease-in-out hover:bg-[#EFD4D4] hover:text-[#a00]"
               name="commit"
               id="Subscribe"
               aria-label="{{ 'newsletter.button_label' | t }}"

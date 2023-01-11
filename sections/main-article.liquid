@@ -1,1 +1,29 @@
-<h1>Article</h1>
+{% liquid 
+  assign index = article.created_at | date: '%m' | times: 1 | minus: 1 
+  assign year = article.created_at | date: '%Y'
+  assign day = article.created_at | date: '%d'
+  assign months = 'Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre' | split: ','
+  assign fixed_date = months[index]
+%}
+
+<div class="wrapper">
+  <div class="max-w-[587px] mx-auto block mb-20">
+    <div class="pt-4">
+      {% render 'breadcrumb' %}
+    </div>
+    <h1 class="text-center uppercase font-gobold my-8 text-[22px] lg:text-[35px] tracking-[1.5px]">
+      {{ article.title | escape }}
+    </h1>
+    <img
+      src="{{ article.image | img_url: '587x' }}"
+      alt="{{ article.title | escape }}"
+      width="587"
+      height="{{ 587 | divided_by: article.image.aspect_ratio | ceil }}"
+      loading="lazy">
+    <span class="text-sm font-light block mt-2">Publicado: {{ day | append: ' de ' | append: fixed_date | append: ', ' | append: year }}</span>  
+    <span class="text-sm font-light block mb-2">Autor: {{ article.author }}</span>
+    <div class="prose w-full">
+      {{ article.content}}
+    </div>
+  </div>
+</div>
