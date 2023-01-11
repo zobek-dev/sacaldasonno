@@ -36,7 +36,7 @@
                 scope="col"
                 role="columnheader"
                 class="w-1/2 pr-0 uppercase text-right pb-2 text-sm border-b-[0.5px] border-[#4a4a49]">
-                Total
+                Precio
               </th>
               <th
                 id="CartDrawer-ColumnQuantity"
@@ -151,22 +151,27 @@
                   headers="CartDrawer-ColumnQuatity">
                   <div class="flex flex-wrap items-center gap-4 text-[#4a4a49]">
                     <div 
-                    x-data="{ quantity: {{ item.quantity }}}"
-                    class="flex items-center group border-[0.5px] border-[#4a4a49]"
+                    x-data="{ quantity: {{ item.quantity }}, loading: false}"
+                    class="flex items-center group border-[0.5px] border-[#4a4a49] relative"
                     >
+                      {% render 'loader' %}
                       <button
                         name="minus"
                         type="button"
                         class="block px-4 h-[25px]"
-                        @click.debounce="fetch('/cart/change.js', {
+                        @click.debounce.300ms="()=> {
+                        loading = true;  
+                        fetch('/cart/change.js', {
                           method: 'POST',
                           headers: {'Content-Type': 'application/json'},
                           body: JSON.stringify({ quantity: --quantity, line: {{ forloop.index }}})
-                          })
-                          .then(response => response.json())
-                          .then(data => $dispatch('update-cart'))
-                          .catch(error => console.error('Error', error));
-                          ">
+                        })
+                        .then(response => response.json())
+                        .then(data => $dispatch('update-cart'))
+                        .catch(error => console.error('Error', error))
+                        .finally(() => loading = false)
+                        }"
+                      >
                         {% render 'icon-minus', class: 'w-3' %}
                       </button>
                       <input
@@ -184,32 +189,40 @@
                         name="plus"
                         type="button"
                         class="block px-4 h-[25px]"
-                        @click.debounce="fetch('/cart/change.js', {
+                        @click.debounce.300ms="()=> { 
+                          loading = true 
+                          fetch('/cart/change.js', {
                             method: 'POST',
                             headers: {'Content-Type': 'application/json'},
                             body: JSON.stringify({ quantity: ++quantity, line: {{ forloop.index }}})
                           })
                           .then(response => response.json())
                           .then(data => $dispatch('update-cart'))
-                          .catch(error => console.error('Error', error));
-                          ">
+                          .catch(error => console.error('Error', error))
+                          .finally(()=> loading = false)
+                          }">
                         {% render 'icon-plus', class: 'w-3' %}
                       </button>
                     </div>
-                    <div id="CartDrawer-Remove-{{ item.index | plus: 1 }}" x-data="{ index: {{ item.index | plus: 1 }}}">
+                    <div id="CartDrawer-Remove-{{ item.index | plus: 1 }}" x-data="{ index: {{ item.index | plus: 1 }}, loading: false}">
+                      {% render 'loader' %}
                       <button
                         type="button"
                         class=""
                         aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
-                        @click.debounce="fetch('/cart/change.js', {
+                        @click="()=> {
+                          loading = true;
+                          fetch('/cart/change.js', {
                             method: 'POST',
                             headers: {'Content-Type': 'application/json'},
                             body: JSON.stringify({ quantity: 0, line: {{ forloop.index }}})
                           })
                           .then(response => response.json())
                           .then(data => $dispatch('update-cart'))
-                          .catch(error => console.error('Error', error));
-                          ">
+                          .catch(error => console.error('Error', error))
+                          .finally(() => loading = false)
+                        }"
+                      >
                         {% render 'icon-remove', class: 'w-4' %}
                       </button>
                     </div>

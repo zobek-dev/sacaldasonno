@@ -34,15 +34,15 @@ Recibe:
     <a href="{{ product.url }}" class="relative">
       {% if on_sale %}
         {% assign percentage = product.compare_at_price_max | minus: product.price | times: 100 | divided_by: product.compare_at_price_max %}
-        <span class="text-white uppercase font-gobold bg-[#a00] absolute top-0 right-0 z-[99] py-1 px-2">{{ percentage }}% off</span>  
+        <span class="text-white uppercase font-gobold-italic bg-[#a00] absolute top-0 right-0 z-[99] py-1 px-2">{{ percentage }}% off</span>  
       {% endif %}
       {% if date_created > dead_line %}
-        <span class="absolute bottom-0 left-0 text-white uppercase font-gobold bg-[#a00] z-[99] py-1 px-2">
+        <span class="absolute font-gobold-italic bottom-0 left-0 text-white uppercase bg-[#a00] z-[99] py-1 px-2">
           Nuevo
         </span>
       {% endif %}
       {% unless product.available %}
-        <div class="absolute top-0 left-0 bottom-0 right-0 bg-[rgba(74,74,73,.62)] text-white uppercase font-gobold z-[99] flex justify-center items-center">
+        <div class="absolute top-0 left-0 bottom-0 right-0 bg-[rgba(74,74,73,.62)] text-white uppercase font-gobold-italic z-[99] flex justify-center items-center">
           <span class="bg-[#4B4F54] py-2 px-2">Agotado</span>
         </div>
       {% endunless %}

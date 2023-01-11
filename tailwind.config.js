@@ -16,7 +16,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       'barlow': ['Barlow', 'sans-serif'],
-      'gobold': ['Gobold-Bold', 'sans-serif']
+      'gobold': ['Gobold', 'sans-serif'],
+      'gobold-italic': ['Gobold-Italic', 'sans-serif']
     }
   },
   plugins: [

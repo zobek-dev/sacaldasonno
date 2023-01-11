@@ -14,10 +14,10 @@
           <div class="sr-only">Cerrar el menu</div>
         </button>
       </div>
-      <div class="active-filters block">                               
+      <div class="active-filters block" id="ActiveMobileFilters">                               
         {% for filter in object.filters -%}                                                                                                    {%- if filter.type == "price_range" -%}
             {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
-              <a href="{{ filter.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
+              <a href="{{ filter.url_to_remove }}#Count" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
                 <span class="flex gap-x-2 items-center">
                   {%- assign min_value = filter.min_value.value | default: 0 -%}
                   {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
@@ -29,7 +29,7 @@
             {%- endif -%}
           {%- else -%}
             {%- for filter_value in filter.active_values -%}
-              <a href="{{ filter_value.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
+              <a href="{{ filter_value.url_to_remove }}#Count" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm tracking-[1.5px] mr-2 mb-2">
                 <span class="flex gap-x-2 items-center">
                   {{ filter.label }}: {{ filter_value.label }}
                   {% render 'icon-close-small' %}
@@ -39,12 +39,12 @@
             {%- endfor -%}
           {%- endif- %}
         {%- endfor -%}
-        <a {% if template == 'search' %}href="{{ routes.search_url }}?sort_by={{ object.sort_by }}&q={{ object.terms }}&options%5Bprefix%5D=last&type=product"{% else %}href="{{ object.url }}?sort_by={{ object.sort_by }}"{% endif %} class="inline-flex underline underline-offset-2 mr-1 text-sm tracking-[1.5px]">Quitar Todos</a>
+        <a {% if template == 'search' %}href="{{ routes.search_url }}?sort_by={{ object.sort_by }}&q={{ object.terms }}&options%5Bprefix%5D=last&type=product"{% else %}href="{{ object.url }}?sort_by={{ object.sort_by }}#Count"{% endif %} class="inline-flex underline underline-offset-2 mr-1 text-sm tracking-[1.5px]">Quitar Todos</a>
       </div>
       <div class="flex flex-1 overflow-y-scroll">
-        <form id="Form-{{ section.id }}" class="block w-full">
+        <form id="Form-{{ section.id }}" class="block w-full" x-ref="filter_drawer">
           <h3 class="text-base font-semibold uppercase my-3">Ordenar Por</h3>
-          <select id="sort-by-mobile" name="sort_by" class="p-1 text-base bg-white border border-[#4a4a49] rounded-sm w-full">
+          <select id="sort-by-Mobile" name="sort_by" class="p-1 text-base bg-white border border-[#4a4a49] rounded-sm w-full" @input.debounce.300ms="$dispatch('filter')">
             {% assign sort_by = object.sort_by | default: object.default_sort_by %}
 
             {% for option in object.sort_options %}
@@ -64,10 +64,6 @@
               <summary class="flex cursor-pointer justify-between items-center tracking-[1px]">
                 <div>
                   <span>{{ filter.label }}</span>
-        
-                  {%- if filter.active_values.size > 0 -%}
-                    <span>({{ filter.active_values.size }})</span>
-                  {%- endif -%}
                 </div>
                 {% render 'icon-caret', class: 'w-3' %}
               </summary>
@@ -86,6 +82,7 @@
                             {% if filter_value.active -%}checked{%- endif %}
                             {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
                             class="accent-[#4a4a49] cursor-pointer"
+                            @input.debounce.300ms="$dispatch('filter')"
                           >&nbsp;&nbsp;{{ filter_value.label }}</label>
                         </li>
                       {%- endfor -%}
@@ -106,6 +103,7 @@
                             min="0"
                             max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                             class="border-none outline-none"
+                            @input.debounce.300ms="$dispatch('filter')"
                           >
                         </div>  
                       </div>
@@ -123,6 +121,7 @@
                             min="0"
                             max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                             class="border-none outline-none"
+                            @input.debounce.300ms="$dispatch('filter')"
                           >   
                         </div>  
                       </div>
@@ -134,8 +133,9 @@
         </form>
       </div>
       <div class="filter-group-display__submit flex gap-x-2 justify-end py-4">
-        <input type="submit" value="Filtrar" class="block border bg-[#a00] text-[white] bord[#a00] uppercase px-4 py-1 cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold" form="Form-{{ section.id }}">
-        <input type="reset" value="Limpiar" class="block border border-[#a00] bg-[#fff] text-[#a00] uppercase px-4 py-1 text-base cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold" form="Form-{{ section.id }}">
+        <button class="block border bg-[#a00] text-[white] bord[#a00] uppercase px-4 py-1 cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold" @click="$dispatch('toggle-filter')">
+          Continuar
+        </button>
       </div>
     </div>
   </div>

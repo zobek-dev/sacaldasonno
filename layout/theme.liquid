@@ -50,8 +50,12 @@
 
     <style>
       @font-face {
-        font-family: 'Gobold-Bold';
+        font-family: 'Gobold-Italic';
         src: url({{ 'gobold_bold_italic-webfont.woff2' | asset_url }}) format('woff2');
+      }
+      @font-face {
+        font-family: 'Gobold';
+        src: url({{ 'gobold.woff2' | asset_url }}) format('woff2');
       }
     </style>
     <script>
@@ -61,7 +65,7 @@
     </script>
 </head>
 <body class="font-barlow text-[#4a4a49]">
-  {% section 'announcement-bar-backup' %}
+  {% section 'announcement-bar' %}
   {% section 'header' %}  
   <main class="min-h-[90vh]">
     {{ content_for_layout }}

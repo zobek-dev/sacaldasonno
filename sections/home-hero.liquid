@@ -7,13 +7,13 @@
         <img srcset="{{ section.settings.image_mobile | img_url: 'master' }}" alt="{{ section.settings.bajada | escape }}" class="img-banner-{{ section.id }} block max-w-none origin-top-left skew-y-[6deg] md:skew-y-[0] md:skew-x-[12deg] w-[100%] lg:w-[125%] lg:ml-[-130px]">
       </picture>
     </div>
-    <div class="flex justify-center items-center px-8">
+    <div class="flex lg:justify-start items-center px-8">
       <div class="my-4 py-2 lg:my-0 lg:py-0">
-        <h1 style="color:{{ section.settings.title_color }}" class="font-gobold text-[20px] mb-4 lg:text-[35px]">
+        <h1 style="color:{{ section.settings.title_color }}" class="font-gobold font-[900] text-[24px] mb-4 lg:text-[35px] uppercase tracking-[2px]">
           {{ section.settings.title | escape }}
         </h1>
         <p style="color:{{ section.settings.text_color }}" class="font-bold leading-[1.2] uppercase text-[13px] lg:text-[30px]">{{ section.settings.bajada | escape }}</p>
-        <a href="{{ section.settings.button_link }}" class="block my-8 py-2 px-4 w-max rounded-[10px] uppercase font-bold transition-opacity duration-200 ease-in-out hover:opacity-70" style="background: {{ section.settings.button_color }}; color: {{ section.settings.button_text_color }};">
+        <a href="{{ section.settings.button_link }}" class="block my-4 py-2 px-4 w-max uppercase font-bold transition-opacity font-gobold-italic duration-200 tracking-[1.5px] text-[20px] ease-in-out hover:opacity-70" style="background: {{ section.settings.button_color }}; color: {{ section.settings.button_text_color }};">
           {{ section.settings.button_text }}
         </a>
       </div>

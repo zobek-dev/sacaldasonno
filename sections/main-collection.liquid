@@ -1,11 +1,43 @@
 <div x-data="{
+  loading: false,
   open:false,
   toggleFilter(){
     this.open = !this.open;
-    $refs.drawer_filter.classList.toggle('active')
+    $refs.drawer_filter.classList.toggle('active');
+  },
+  applySortAndFilter(event){
+    this.loading = true;
+
+    const sort = $refs.sort.value;
+    const isMobile = event.target.id.includes('Mobile') ? true : false;
+    const form = !isMobile ? $refs.filter_desktop : $refs.filter_drawer;
+
+    const queryParams = new URLSearchParams(new FormData(form)).toString();
+    let url = !isMobile ? '/collections/{{ collection.handle }}?sort_by=' + sort + '&' + queryParams:'/collections/{{ collection.handle }}?' + queryParams; 
+
+    fetch(url)
+    .then(response => response.text())
+    .then( data => {
+      const div = document.createElement('div');
+      div.innerHTML = data;
+      const htmlData = div.querySelector('#ProductGrid').innerHTML;
+      const activeFilters = div.querySelector('#ActiveFilters').innerHTML;
+      const productCount = div.querySelector('#Count').textContent;
+      const mobileActiveFilters = div.querySelector('#ActiveMobileFilters').innerHTML;
+
+      document.querySelector('#ProductGrid').innerHTML = htmlData;
+      document.querySelector('#ActiveFilters').innerHTML = activeFilters;
+      document.querySelector('#Count').innerText = productCount;
+      document.querySelector('#ActiveMobileFilters').innerHTML = mobileActiveFilters;
+
+      history.replaceState(null,null,url);
+    })
+    .catch(error => console.error('Error:', error))
+    .finally(() => this.loading = false)
   }
 }"
 @toggle-filter.window="toggleFilter"
+@filter.window="applySortAndFilter($event)"
 @keyup.escape="$dispatch('toggle-filter')"
 >
   <div class="wrapper">
@@ -17,7 +49,7 @@
         <span>Ordenar y filtrar</span>
         {% render 'icon-filter', class: 'w-4' %}
       </button>
-      <div class="active-filters hidden lg:block">                               
+      <div class="active-filters hidden lg:block" id="ActiveFilters">                               
         {% for filter in collection.filters -%}                                                                                                    {%- if filter.type == "price_range" -%}
             {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
               <a href="{{ filter.url_to_remove }}" class="inline-flex items-center w-max px-4 py-1 rounded-3xl border border-[#4a4a49] text-sm lg:text-base tracking-[1.5px] mr-2 mb-2">
@@ -46,8 +78,8 @@
       </div>
 
       <div class="flex items-center gap-x-2">
-        <span class="text-sm hidden md:block">Ordenar por:</span>
-        <select id="sort-by" class="hidden lg:block text-sm lg:text-base px-1 py-1 bg-white border border-[#4a4a49] rounded-sm">
+        <span class="text-base hidden md:block">Ordenar por:</span>
+        <select id="sort-by" x-ref="sort" class="hidden lg:block text-sm lg:text-base px-1 py-1 bg-white border border-[#4a4a49] rounded-sm" @input.debounce.300ms="$dispatch('filter')">
           {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
           {% for option in collection.sort_options %}
@@ -56,47 +88,19 @@
             </option>
           {% endfor %}
         </select>
-        <span class="text-sm">{{ collection.products.size }} productos</span>
-        <script>
-          Shopify.queryParams = {};
-
-          // Preserve existing query parameters
-          if (location.search.length) {
-            var params = location.search.substr(1).split('&');
-
-            for (var i = 0; i < params.length; i++) {
-              var keyValue = params[i].split('=');
-
-              if (keyValue.length) {
-                Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
-              }
-            }
-          }
-
-          // Update sort_by query parameter on select change
-          document.querySelector('#sort-by').addEventListener('change', function(e) {
-            var value = e.target.value;
-
-            Shopify.queryParams.sort_by = value;
-            location.search = new URLSearchParams(Shopify.queryParams).toString();
-          });
-        </script>   
+        <span class="text-sm lg:text-base" id="Count">{{ collection.products.size }} productos</span>
       </div>
       
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <aside class="hidden lg:block lg:col-span-1 h-max py-8 pr-4 lg:sticky lg:top-12 lg:self-start">
         <h2 class="text-base uppercase font-semibold pb-4 border-b border-[#4a4a49]">Filtrar por</h2>
-        <form class="filter-form">
+        <form class="filter-form" x-ref="filter_desktop">
           {%- for filter in collection.filters -%}
             <details class="filter-group border-b border-[#4a4a49] py-3">
               <summary class="flex cursor-pointer justify-between items-center tracking-[1px]">
                 <div>
                   <span>{{ filter.label }}</span>
-        
-                  {%- if filter.active_values.size > 0 -%}
-                    <span>({{ filter.active_values.size }})</span>
-                  {%- endif -%}
                 </div>
                 {% render 'icon-caret', class: 'w-3' %}
               </summary>
@@ -115,6 +119,7 @@
                             {% if filter_value.active -%}checked{%- endif %}
                             {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
                             class="accent-[#4a4a49] cursor-pointer"
+                            @input.debounce.300ms="$dispatch('filter')"
                           >&nbsp;&nbsp;{{ filter_value.label }}</label>
                         </li>
                       {%- endfor -%}
@@ -135,6 +140,7 @@
                             min="0"
                             max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                             class="border-none outline-none"
+                            @input.debounce.300ms="$dispatch('filter')"
                           >
                         </div>  
                       </div>
@@ -152,6 +158,7 @@
                             min="0"
                             max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                             class="border-none outline-none"
+                            @input.debounce.300ms="$dispatch('filter')"
                           >   
                         </div>  
                       </div>
@@ -160,16 +167,19 @@
               </div>
             </details>
           {%- endfor -%}
-          <div class="my-8">
-            <div class="filter-group-display__submit flex gap-x-2">
-              <input type="submit" value="Filtrar" class="block border bg-[#a00] text-[white] border-[#a00] uppercase px-4 py-1 cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold">
-              <input type="reset" value="Limpiar" class="block border border-[#a00] bg-[#fff] text-[#a00] uppercase px-4 py-1 text-base cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold">
+          <noscript>
+            <div class="my-8">
+              <div class="filter-group-display__submit flex gap-x-2">
+                <input type="submit" value="Filtrar" class="block border bg-[#a00] text-[white] border-[#a00] uppercase px-4 py-1 cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold">
+                <input type="reset" value="Limpiar" class="block border border-[#a00] bg-[#fff] text-[#a00] uppercase px-4 py-1 text-base cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out font-semibold">
+              </div>
             </div>
-          </div>
+          </noscript>
         </form>
       </aside>
       {% paginate collection.products by 12 %}
-      <div class="col-span-2 md:col-span-3">
+      <div class="col-span-2 md:col-span-3 relative" id="ProductGrid">
+        {% render 'loader' %}
         <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
           {% for product in collection.products %}
             {% render 'card-product', product: product %} 

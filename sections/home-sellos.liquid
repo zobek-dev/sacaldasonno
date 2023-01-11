@@ -1,8 +1,8 @@
-<div class="py-8 bg-[#B5B5B5] text-white my-8 lg:my-12">
+<div class="py-12 bg-[#B5B5B5] text-white my-8 lg:my-12">
   <div class="wrapper">
     <ul class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {% for block in section.blocks %}
-        <li class="flex items-center text-center flex-col lg:px-8">
+        <li class="flex items-center text-center flex-col">
           <img
             src="{{ block.settings.image | img_url: '150x' }}"
             alt="{{ block.settings.title | escape }}"
@@ -10,8 +10,8 @@
             height="{{ 150 | divided_by: block.settings.title.aspect_ratio | ceil }}"
             loading="lazy"
             class="mb-4">
-          <h3 class="mb-2 uppercase font-bold text-20px text-center">{{ block.settings.title | escape }}</h3>  
-          <p>
+          <h3 class="mb-2 uppercase font-extrabold text-base text-center">{{ block.settings.title | escape }}</h3>  
+          <p class="text-base">
             {{ block.settings.content | escape }}
           </p>
         </li>

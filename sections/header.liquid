@@ -99,8 +99,10 @@
             </a>
             {% render 'search-bar' %}
           </div>
+          {% if shop.customer_accounts_enabled %}
+          {% endif %}
           <div>
-            <a href="{{ routes.account_login_url }}">
+            <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
               {% render 'icon-user', class: 'w-[24px] h-[24px] lg:w-[30px] lg:h-[30px]' %}
             </a>
           </div>
