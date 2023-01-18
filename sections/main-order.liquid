@@ -10,7 +10,7 @@
       <a href="{{ routes.account_url }}" class="text-left text-[#a00] block w-max mb-4 underline underline-offset-2 transition-opacity duration-200 ease-in-out hover:opacity-70">{{ 'customer.account.return' | t }}</a>
     </div>
   
-    <div class="flex flex-col lg:flex-row lg:items-center gap-8 mt-8">
+    <div class="flex flex-col lg:flex-row lg:items-center gap-4 sm:gap-8 mt-8">
       <div class="flex-1">
         <h2 class="uppercase font-medium text-[18px] lg:text-[24px] text-left leading-[1.1]">{{ 'customer.order.title' | t: name: order.name }}</h2>
         {%- assign order_date = order.created_at | time_tag: format: 'date_at_time' -%}
@@ -27,26 +27,27 @@
           </caption>
           <thead role="rowgroup" class="border-t border-r border-l border-[#ccc] hidden sm:table-header-group align-middle">
             <tr role="row">
-              <th id="ColumnProduct" scope="col" role="columnheader" class="p-4 text-left uppercase">{{ 'customer.order.product' | t }}</th>
-              <th id="ColumnSku" scope="col" role="columnheader" class="p-4 text-left uppercase">{{ 'customer.order.sku' | t }}</th>
-              <th id="ColumnPrice" scope="col" role="columnheader" class="p-4 text-left uppercase">{{ 'customer.order.price' | t }}</th>
-              <th id="ColumnQuantity" scope="col" role="columnheader" class="p-4 text-left uppercase">{{ 'customer.order.quantity' | t }}</th>
-              <th id="ColumnTotal" scope="col" role="columnheader" class="p-4 text-left uppercase">{{ 'customer.order.total' | t }}</th>
+              <th id="ColumnProduct" scope="col" role="columnheader" class="p-4 text-left uppercase text-sm">{{ 'customer.order.product' | t }}</th>
+              <th id="ColumnSku" scope="col" role="columnheader" class="p-4 text-left uppercase text-sm">{{ 'customer.order.sku' | t }}</th>
+              <th id="ColumnPrice" scope="col" role="columnheader" class="p-4 text-right uppercase text-sm">{{ 'customer.order.price' | t }}</th>
+              <th id="ColumnQuantity" scope="col" role="columnheader" class="p-4 text-right uppercase text-sm">{{ 'customer.order.quantity' | t }}</th>
+              <th id="ColumnTotal" scope="col" role="columnheader" class="p-4 text-right uppercase text-sm">{{ 'customer.order.total' | t }}</th>
             </tr>
-          </thead>
-          <tbody role="rowgroup" class="border border-[#ccc]">
+          </thead> 
+          <tbody role="rowgroup" class="block sm:table-row-group sm:border sm:border-[#ccc] w-full">
             {%- for line_item in order.line_items -%}
-              <tr role="row">
+              <tr role="row" class="flex flex-col sm:table-row w-full sm:w-max">
                 <td
                   id="Row{{ line_item.key }}"
                   headers="ColumnProduct"
                   role="rowheader"
                   scope="row"
                   data-label="{{ 'customer.order.product' | t }}"
+                  class="flex items-center sm:table-cell w-full sm:w-auto py-4 sm:px-4 text-right sm:text-left before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm"
                 >
                   <div>
                     {%- if line_item.url != blank -%}
-                      <a href="{{ line_item.url }}">{{ line_item.title }}</a>
+                      <a href="{{ line_item.url }}" class="underline">{{ line_item.title }}</a>
                     {%- else -%}
                       <p>{{ line_item.title }}</p>
                     {%- endif -%}
@@ -120,6 +121,7 @@
                   headers="Row{{ line_item.key }} ColumnSku"
                   role="cell"
                   data-label="{{ 'customer.order.sku' | t }}"
+                  class="flex items-center sm:table-cell w-full sm:w-auto py-4 sm:px-4 text-right  before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm"
                 >
                   {{ line_item.sku }}
                 </td>
@@ -127,6 +129,7 @@
                   headers="Row{{ line_item.key }} ColumnPrice"
                   role="cell"
                   data-label="{{ 'customer.order.price' | t }}"
+                  class="flex items-center sm:table-cell w-full sm:w-auto py-4 sm:px-4 text-right  before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm"
                 >
                   {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
                     <dl>
@@ -182,6 +185,7 @@
                   headers="Row{{ line_item.key }} ColumnQuantity"
                   role="cell"
                   data-label="{{ 'customer.order.quantity' | t }}"
+                  class="flex items-center sm:table-cell w-full sm:w-auto py-4 sm:px-4 text-right  before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm"
                 >
                   {{ line_item.quantity }}
                 </td>
@@ -189,6 +193,7 @@
                   headers="Row{{ line_item.key }} ColumnTotal"
                   role="cell"
                   data-label="{{ 'customer.order.total' | t }}"
+                  class="flex items-center sm:table-cell w-full sm:w-auto py-4 sm:px-4 text-right  before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm" 
                 >
                   {%- if line_item.original_line_price != line_item.final_line_price -%}
                     <dl>
@@ -212,19 +217,19 @@
               </tr>
             {%- endfor -%}
           </tbody>
-          <tfoot role="rowgroup" class="border-b border-r border-l border-[#ccc]">
-            <tr role="row" class="border-b border-[#ccc]">
-              <td id="RowSubtotal" role="rowheader" scope="row" colspan="4">
+          <tfoot role="rowgroup" class="block sm:table-footer-group w-full sm:border-b sm:border-r sm:border-l sm:border-[#ccc] py-8">
+            <tr role="row" class="block sm:table-row w-full">
+              <td id="RowSubtotal" role="rowheader" scope="row" colspan="4" class="hidden sm:table-cell sm:px-4 text-sm">
                 {{ 'customer.order.subtotal' | t }}
               </td>
-              <td headers="RowSubtotal" role="cell" data-label="{{ 'customer.order.subtotal' | t }}">
+              <td headers="RowSubtotal" role="cell"  class="flex items-center sm:table-cell w-full sm:w-auto  sm:px-4 text-right before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm" data-label="{{ 'customer.order.subtotal' | t }}">
                 {{ order.line_items_subtotal_price | money }}
               </td>
             </tr>
             {%- if order.cart_level_discount_applications != blank -%}
-              <tr role="row" class="border-b border-[#ccc]">
+              <tr role="row" class="block sm:table-row w-full">
                 {%- for discount_application in order.cart_level_discount_applications -%}
-                  <td id="RowDiscount" role="rowheader" scope="row" colspan="4">
+                  <td id="RowDiscount" role="rowheader" scope="row" class="hidden sm:table-cell sm:px-4 pt-4 text-sm" colspan="4">
                     {{ 'customer.order.discount' | t }}
                     <span class="cart-discount">
                       <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
@@ -233,7 +238,7 @@
                       {{- discount_application.title -}}
                     </span>
                   </td>
-                  <td headers="RowDiscount" role="cell" data-label="{{ 'customer.order.discount' | t }}">
+                  <td headers="RowDiscount" role="cell" class="flex items-center sm:table-cell w-full sm:w-auto py-4 sm:px-4 text-right before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm" data-label="{{ 'customer.order.discount' | t }}">
                     <div>
                       <span>-{{ discount_application.total_allocated_amount | money }}</span>
                       <span class="cart-discount">
@@ -248,22 +253,23 @@
               </tr>
             {%- endif -%}
             {%- for shipping_method in order.shipping_methods -%}
-              <tr role="row" class="border-b border-[#ccc]">
-                <td id="RowShipping" role="rowheader" scope="row" colspan="4">
+              <tr role="row" class="block sm:table-row w-full">
+                <td id="RowShipping" role="rowheader" class="hidden sm:table-cell sm:px-4 text-sm" scope="row" colspan="4">
                   {{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})
                 </td>
                 <td
                   headers="RowShipping"
                   role="cell"
                   data-label="{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})"
+                  class="flex items-center sm:table-cell w-full sm:w-auto sm:px-4 text-right before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm"
                 >
                   {{ shipping_method.price | money }}
                 </td>
               </tr>
             {%- endfor -%}
             {%- for tax_line in order.tax_lines -%}
-              <tr role="row" class="border-b border-[#ccc]">
-                <td id="RowTax" role="rowheader" scope="row" colspan="4">
+              <tr role="row" class="block sm:table-row w-full">
+                <td id="RowTax" role="rowheader" scope="row" class="hidden sm:table-cell sm:px-4 text-sm" colspan="4">
                   {{ 'customer.order.tax' | t }} ({{ tax_line.title }}
                   {{ tax_line.rate | times: 100 }}%)
                 </td>
@@ -271,41 +277,42 @@
                   headers="RowTax"
                   role="cell"
                   data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)"
+                  class="flex items-center sm:table-cell w-full sm:w-auto sm:px-4 text-right before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm"
                 >
                   {{ tax_line.price | money }}
                 </td>
               </tr>
             {%- endfor -%}
             {%- if order.total_duties -%}
-              <tr role="row" class="border-b border-[#ccc]">
-                <td id="RowDuties" role="rowheader" scope="row" colspan="4">{{ 'customer.order.total_duties' | t }}</td>
-                <td headers="RowDuties" role="cell" data-label="{{ 'customer.order.total_duties' | t }}">
+              <tr role="row" class="block sm:table-row w-full">
+                <td id="RowDuties" role="rowheader" scope="row" class="hidden sm:table-cell sm:px-4  text-sm" colspan="4">{{ 'customer.order.total_duties' | t }}</td>
+                <td headers="RowDuties" role="cell" class="flex items-center sm:table-cell w-full sm:w-auto  sm:px-4 text-right before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-sm sm:before:content-[''] sm:before:grow-0 text-sm" data-label="{{ 'customer.order.total_duties' | t }}">
                   {{ order.total_duties | money }}
                 </td>
               </tr>
             {%- endif -%}
-            <tr role="row">
-              <td id="RowTotal" role="rowheader" scope="row" colspan="3">{{ 'customer.order.total' | t }}</td>
-              <td headers="RowTotal" role="cell" colspan="2" data-label="{{ 'customer.order.total' | t }}">
+            <tr role="row" class="block sm:table-row w-full sm:pt-4">
+              <td id="RowTotal" role="rowheader" scope="row" class="hidden sm:table-cell sm:px-4 text-[22px]" colspan="3">{{ 'customer.order.total' | t }}</td>
+              <td headers="RowTotal" role="cell" colspan="2" class="flex items-center sm:table-cell w-full py-4 sm:w-auto sm:px-4 text-right before:content-[attr(data-label)] before:grow before:text-left before:uppercase before:font-semibold before:text-[22px] sm:before:content-[''] sm:before:grow-0 text-[22px] font-medium" data-label="{{ 'customer.order.total' | t }}">
                 {{ order.total_price | money_with_currency }}
               </td>
             </tr>
           </tfoot>
         </table>
       </div>
-      <div>
-        <div>
-          <h2>{{ 'customer.order.billing_address' | t }}</h2>
-          <p>
-            <strong>{{ 'customer.order.payment_status' | t }}:</strong>
+      <div class="mb-12">
+        <div class="mb-4">
+          <h2 class="font-medium text-[22px] mb-2">{{ 'customer.order.billing_address' | t }}</h2>
+          <p class="flex items-center gap-1-x font-normal">
+            <strong class="font-medium">{{ 'customer.order.payment_status' | t }}:</strong>
             {{ order.financial_status_label }}
           </p>
           {{ order.billing_address | format_address }}
         </div>
-        <div>
-          <h2>{{ 'customer.order.shipping_address' | t }}</h2>
-          <p>
-            <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
+        <div class="mb-4">
+          <h2 class="font-medium text-[22px] mb-2">{{ 'customer.order.shipping_address' | t }}</h2>
+          <p class="flex items-center gap-1-x font-normal">
+            <strong class="font-medium">{{ 'customer.order.fulfillment_status' | t }}:</strong>
             {{ order.fulfillment_status_label }}
           </p>
           {{ order.shipping_address | format_address }}
