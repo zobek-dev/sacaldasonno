@@ -1,1 +1,424 @@
-<h1>Addresses</h1>
+<div class="wrapper py-12">
+  {%- paginate customer.addresses by 5 -%}
+    <div class="customer addresses section-{{ section.id }}-padding" data-customer-addresses>
+      <svg style="display: none">
+        <symbol id="icon-caret" viewBox="0 0 10 6">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+        </symbol>
+      </svg>
+      <h1 class="font-gobold uppercase font-bold tracking-[1px] text-[20px] lg:text-[30px] text-center mt-8 mb-2">{{ 'customer.addresses.title' | t }}</h1>
+      <a href="{{ routes.account_url }}" class="text-center text-[#a00] block w-max mx-auto mb-4 underline underline-offset-2 transition-opacity duration-200 ease-in-out hover:opacity-70">
+        {{ 'customer.account.return' | t }}
+      </a>
+  
+      <div data-address 
+        x-data="{ 
+          open:false, 
+          province:false
+        }" 
+        class="max-w-[450px] mx-auto">
+        <button
+          type="button"
+          class="block mx-auto bg-[#a00] font-gobold font-bold text-white px-4 py-2 uppercase tracking-[1.5px] mb-8 transition-colors duration-200 ease-in-out hover:bg-[#efd4d4] hover:text-[#a00]"
+          aria-expanded="false"
+          aria-controls="AddAddress"
+          @click="()=> open = true" 
+        >
+          {{ 'customer.addresses.add_new' | t }}
+        </button>
+        <div id="AddAddress" x-show="open" class="mb-12">
+          <h2 id="AddressNewHeading" class="uppercase font-bold text-[16px] lg:text-[20px] mb-4">{{ 'customer.addresses.add_new' | t }}</h2>
+          {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
+            <div class="field flex flex-col-reverse mb-4">
+              <input
+                type="text"
+                id="AddressFirstNameNew"
+                name="address[first_name]"
+                value="{{ form.first_name }}"
+                autocomplete="given-name"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                placeholder="{{ 'customer.addresses.first_name' | t }}"
+              >
+              <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+            </div>
+            <div class="field flex flex-col-reverse mb-4">
+              <input
+                type="text"
+                id="AddressLastNameNew"
+                name="address[last_name]"
+                value="{{ form.last_name }}"
+                autocomplete="family-name"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                placeholder="{{ 'customer.addresses.last_name' | t }}"
+              >
+              <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+            </div>
+            <div class="field flex flex-col-reverse mb-4">
+              <input
+                type="text"
+                id="AddressCompanyNew"
+                name="address[company]"
+                value="{{ form.company }}"
+                autocomplete="organization"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                placeholder="{{ 'customer.addresses.company' | t }}"
+              >
+              <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
+            </div>
+            <div class="field flex flex-col-reverse mb-4">
+              <input
+                type="text"
+                id="AddressAddress1New"
+                name="address[address1]"
+                value="{{ form.address1 }}"
+                autocomplete="address-line1"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                placeholder="{{ 'customer.addresses.address1' | t }}"
+              >
+              <label for="AddressAddress1New">{{ 'customer.addresses.address1' | t }}</label>
+            </div>
+            <div class="field flex flex-col-reverse mb-4">
+              <input
+                type="text"
+                id="AddressAddress2New"
+                name="address[address2]"
+                value="{{ form.address2 }}"
+                autocomplete="address-line2"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                placeholder="{{ 'customer.addresses.address2' | t }}"
+              >
+              <label for="AddressAddress2New">{{ 'customer.addresses.address2' | t }}</label>
+            </div>
+            <div class="field flex flex-col-reverse mb-4">
+              <input
+                type="text"
+                id="AddressCityNew"
+                name="address[city]"
+                value="{{ form.city }}"
+                autocomplete="address-level2"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                placeholder="{{ 'customer.addresses.city' | t }}"
+              >
+              <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
+            </div>
+            <div class="field flex flex-col mb-4">
+              <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+              <div class="border border-[#4a4a49] flex group group-focus:outline-[#a00]">
+                <select
+                  id="AddressCountryNew"
+                  name="address[country]"
+                  data-default="{{ form.country }}"
+                  autocomplete="country"
+                  class="bg-white flex-1 outline-none border-none px-2 py-2"
+                  @input="(event)=>{ 
+                    $refs.provinces.innerHTML='';
+                    let provinces = JSON.parse(event.target.querySelector(`[value='${event.target.value}']`).dataset.provinces)  
+                    if(provinces.length > 0){
+                      province = true;
+                      $refs.provinces.innerHTML=`<option value='---' data-provinces='[]'>---</option>`;
+                      provinces.forEach(el => {
+                        const option = document.createElement('option');
+                        option.value = el[0]
+                        option.innerText = el[1]
+                        $refs.provinces.appendChild(option);
+                      }) 
+                    }else{
+                      province=false;
+                    }
+                  }"
+                >
+                  {{ all_country_option_tags }}
+                </select>
+              </div>
+            </div>
+            <div id="AddressProvinceContainerNew" class="field flex flex-col mb-4" x-show="province">
+              <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+              <div class="border border-[#4a4a49] flex group group-focus:outline-[#a00]">
+                <select
+                  id="AddressProvinceNew"
+                  name="address[province]"
+                  data-default="{{ form.province }}"
+                  autocomplete="address-level1"
+                  class="bg-white flex-1 outline-none border-none px-2 py-2"
+                  x-ref="provinces"
+                ></select>
+              </div>
+            </div>
+            <div class="field flex flex-col-reverse mb-4">
+              <input
+                type="text"
+                id="AddressZipNew"
+                name="address[zip]"
+                value="{{ form.zip }}"
+                autocapitalize="characters"
+                autocomplete="postal-code"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                placeholder="{{ 'customer.addresses.zip' | t }}"
+              >
+              <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+            </div>
+            <div class="field flex flex-col-reverse mb-4">
+              <input
+                type="tel"
+                id="AddressPhoneNew"
+                name="address[phone]"
+                value="{{ form.phone }}"
+                autocomplete="tel"
+                class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                placeholder="{{ 'customer.addresses.phone' | t }}"
+              >
+              <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+            </div>
+            <div class="mb-4">
+              {{ form.set_as_default_checkbox }}
+              <label for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
+            </div>
+            <div class="flex gap-x-2 justify-center items-center">
+              <button class="block bg-[#a00] font-gobold font-bold text-white px-4 py-2 uppercase tracking-[1.5px] transition-colors duration-200 ease-in-out hover:bg-[#efd4d4] hover:text-[#a00]">{{ 'customer.addresses.add' | t }}</button>
+              <button type="reset" @click="()=> open = false" class="block bg-[#fff] font-gobold font-bold text-[#a00] border border-[#a00] px-4 py-2 uppercase tracking-[1.5px] transition-opacity duration-200 ease-in-out hover:opacity-70">{{ 'customer.addresses.cancel' | t }}</button>
+            </div>
+          {%- endform -%}
+        </div>
+      </div>
+  
+      <ul role="list" class="max-w-[450px] mx-auto pb-2">
+        {%- for address in customer.addresses -%}
+          <li data-address x-data="{ open: false, province: true }" class="text-center mb-8">
+            {%- if address == customer.default_address -%}
+              <h2 class="font-bold">{{ 'customer.addresses.default' | t }}</h2>
+            {%- endif -%}
+            {{ address | format_address }}
+            <div class="flex justify-center gap-x-2 mt-4">
+              <button
+                type="button"
+                id="EditFormButton_{{ address.id }}"
+                aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+                aria-controls="EditAddress_{{ address.id }}"
+                aria-expanded="false"
+                class="block bg-[#fff] font-gobold font-bold text-[#a00] border border-[#a00] px-4 py-2 uppercase tracking-[1.5px] transition-opacity duration-200 ease-in-out hover:opacity-70"
+                data-address-id="{{ address.id }}"
+                @click="()=> open = true"
+              >
+                {{ 'customer.addresses.edit' | t }}
+              </button>
+              <button
+                type="button"
+                aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+                data-target="{{ address.url }}"
+                data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+                class="block bg-[#fff] font-gobold font-bold text-[#a00] border border-[#a00] px-4 py-2 uppercase tracking-[1.5px] transition-opacity duration-200 ease-in-out hover:opacity-70"
+                @click="(event)=>{if(confirm(event.target.dataset.confirmMessage)){
+                    Shopify.postLink(event.target.dataset.target, {
+                      parameters: {_method: 'delete'},
+                    });
+                  }}">
+                {{ 'customer.addresses.delete' | t }}
+              </button>
+            </div>
+            
+            <div id="EditAddress_{{ address.id }}" class="text-left" x-show="open">
+              <h2 class="text-left">{{ 'customer.addresses.edit_address' | t }}</h2>
+              {%- form 'customer_address', address -%}
+                <div class="field flex flex-col-reverse mb-4">
+                  <input
+                    type="text"
+                    id="AddressFirstName_{{ form.id }}"
+                    name="address[first_name]"
+                    value="{{ form.first_name }}"
+                    autocomplete="given-name"
+                    placeholder="{{ 'customer.addresses.first_name' | t }}"
+                    class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                  >
+                  <label for="AddressFirstName_{{ form.id }}" class="text-left">{{ 'customer.addresses.first_name' | t }}</label>
+                </div>
+                <div class="field flex flex-col-reverse mb-4">
+                  <input
+                    type="text"
+                    id="AddressLastName_{{ form.id }}"
+                    name="address[last_name]"
+                    value="{{ form.last_name }}"
+                    autocomplete="family-name"
+                    placeholder="{{ 'customer.addresses.last_name' | t }}"
+                    class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                  >
+                  <label for="AddressLastName_{{ form.id }}" class="text-left">{{ 'customer.addresses.last_name' | t }}</label>
+                </div>
+                <div class="field flex flex-col-reverse mb-4">
+                  <input
+                    type="text"
+                    id="AddressCompany_{{ form.id }}"
+                    name="address[company]"
+                    value="{{ form.company }}"
+                    autocomplete="organization"
+                    placeholder="{{ 'customer.addresses.company' | t }}"
+                    class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                  >
+                  <label for="AddressCompany_{{ form.id }}" class="text-left">{{ 'customer.addresses.company' | t }}</label>
+                </div>
+                <div class="field flex flex-col-reverse mb-4">
+                  <input
+                    type="text"
+                    id="AddressAddress1_{{ form.id }}"
+                    name="address[address1]"
+                    value="{{ form.address1 }}"
+                    autocomplete="address-line1"
+                    class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                    placeholder="{{ 'customer.addresses.address1' | t }}"
+                  >
+                  <label for="AddressAddress1_{{ form.id }}" class="text-left">{{ 'customer.addresses.address1' | t }}</label>
+                </div>
+                <div class="field flex flex-col-reverse mb-4">
+                  <input
+                    type="text"
+                    id="AddressAddress2_{{ form.id }}"
+                    name="address[address2]"
+                    value="{{ form.address2 }}"
+                    autocomplete="address-line2"
+                    class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                    placeholder="{{ 'customer.addresses.address2' | t }}"
+                  >
+                  <label for="AddressAddress2_{{ form.id }}" class="text-left">{{ 'customer.addresses.address2' | t }}</label>
+                </div>
+                <div class="field flex flex-col-reverse mb-4">
+                  <input
+                    type="text"
+                    id="AddressCity_{{ form.id }}"
+                    name="address[city]"
+                    value="{{ form.city }}"
+                    class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                    autocomplete="address-level2"
+                    placeholder="{{ 'customer.addresses.city' | t }}"
+                  >
+                  <label for="AddressCity_{{ form.id }}" class="text-left">{{ 'customer.addresses.city' | t }}</label>
+                </div>
+                <div class="field flex flex-col mb-4">
+                  <label for="AddressCountry_{{ form.id }}" class="text-left">
+                    {{ 'customer.addresses.country' | t }}
+                  </label>
+                  <div 
+                  class="border border-[#4a4a49] flex group group-focus:outline-[#a00]" 
+                  x-init="()=>{document.querySelector('#AddressCountry_{{ form.id }}').querySelector(`option[value='${document.querySelector('#AddressCountry_{{ form.id }}').dataset.default}']`).setAttribute('selected', true)}">
+                    <select
+                      id="AddressCountry_{{ form.id }}"
+                      name="address[country]"
+                      data-address-country-select
+                      data-default="{{ form.country }}"
+                      data-form-id="{{ form.id }}"
+                      autocomplete="country"
+                      class="bg-white flex-1 outline-none border-none px-2 py-2"
+                      @input="()=>{ 
+                        const addressCountry = document.querySelector('#AddressCountry_{{ form.id }}');
+                        const addressProvince = document.querySelector('#AddressProvince_{{ form.id }}');
+
+                        let arr = JSON.parse(addressCountry.querySelector(`option[value='${addressCountry.value}']`).dataset.provinces);
+
+                        addressProvince.innerHTML = '';
+
+                        if(arr.length > 0){
+                          province = true;
+                          addressProvince.innerHTML = `<option value='---'>---</value>`
+                          arr.forEach(el => {
+                            const option = document.createElement('option');
+                            option.value = el[0];
+                            option.innerText = el[1];
+                            addressProvince.appendChild(option)
+                          })
+                        }else{
+                          province = false;
+                        }
+                      }"
+                    > 
+                      {{ all_country_option_tags }}
+                    </select>
+                  </div>
+                </div>
+                <div id="AddressProvinceContainer_{{ form.id }}" x-show="province" class="field flex flex-col mb-4">
+                  <label for="AddressProvince_{{ form.id }}" class="text-left">
+                    {{ 'customer.addresses.province' | t }}
+                  </label>
+                  <div class="border border-[#4a4a49] flex group group-focus:outline-[#a00]">
+                    <select
+                      id="AddressProvince_{{ form.id }}"
+                      name="address[province]"
+                      data-default="{{ form.province }}"
+                      autocomplete="address-level1"
+                      class="bg-white flex-1 outline-none border-none px-2 py-2"
+                      x-init="()=>{
+                        const provinceSelect = document.querySelector('#AddressProvince_{{ form.id }}');
+                        const countrySelect = document.querySelector('#AddressCountry_{{ form.id }}');
+                        
+                        const prov = JSON.parse(countrySelect.querySelector('option[selected]').dataset.provinces);
+
+                        console.log(prov.length);
+
+                        if(prov.length > 0){
+                          provinceSelect.innerHTML = `<option value='---'>---</option>`
+                          prov.forEach(el => {
+                            const option = document.createElement('option');
+                            option.setAttribute('value',el[0]);
+                            option.innerText = el[1];
+                            provinceSelect.appendChild(option);
+                          })
+                          let options = provinceSelect.querySelectorAll('option');
+                          options.forEach(option => {
+                            console.log(provinceSelect.dataset.default.includes);
+                            if(provinceSelect.dataset.default.includes(option.value)){
+                              option.setAttribute('selected', true);
+                              return;
+                            }
+                          })
+                        }else{
+                          province = false;
+                        }
+                      }"
+                    ></select>
+                  </div>
+                </div>
+                <div class="field flex flex-col-reverse mb-4">
+                  <input
+                    type="text"
+                    id="AddressZip_{{ form.id }}"
+                    name="address[zip]"
+                    value="{{ form.zip }}"
+                    autocapitalize="characters"
+                    autocomplete="postal-code"
+                    class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                    placeholder="{{ 'customer.addresses.zip' | t }}"
+                  >
+                  <label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label>
+                </div>
+                <div class="field flex flex-col-reverse mb-4">
+                  <input
+                    type="tel"
+                    id="AddressPhone_{{ form.id }}"
+                    name="address[phone]"
+                    value="{{ form.phone }}"
+                    autocomplete="tel"
+                    placeholder="{{ 'customer.addresses.phone' | t }}"
+                    class="border border-[#4a4a49] px-2 py-2 focus:outline-[#a00]"
+                    class="bg-white flex-1 outline-none border-none px-2 py-2"
+                  >
+                  <label for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}</label>
+                </div>
+                <div class="flex justify-start gap-x-1 items-center">
+                  {{ form.set_as_default_checkbox }}
+                  <label for="address_default_address_{{ form.id }}">
+                    {{ 'customer.addresses.set_default' | t }}
+                  </label>
+                </div>
+                <div class="flex justify-center gap-x-2 my-8">
+                  <button class="block bg-[#a00] font-gobold font-bold text-white px-4 py-2 uppercase tracking-[1.5px] transition-colors duration-200 ease-in-out hover:bg-[#efd4d4] hover:text-[#a00]">{{ 'customer.addresses.update' | t }}</button>
+                  <button type="reset" @click="() => open = false" class="block bg-[#fff] font-gobold font-bold text-[#a00] border border-[#a00] px-4 py-2 uppercase tracking-[1.5px] transition-opacity duration-200 ease-in-out hover:opacity-70">{{ 'customer.addresses.cancel' | t }}</button>
+                </div>
+              {%- endform -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+  
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}  
+    </div>
+  {%- endpaginate -%}
+</div>

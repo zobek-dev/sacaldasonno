@@ -60,3 +60,7 @@ input[type=number] {
 .login-page{
   @apply h-[60vh];
 }
+
+input[type="checkbox"], input[type="radio"]{
+  @apply accent-[#a00];
+}
