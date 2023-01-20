@@ -1,19 +1,13 @@
-<div>
+<div class="hidden lg:block">
   <div class="wrapper">
-    <icon-carousel>
-      <div class="icon-carousel icon-carousel-{{ section.id }} overflow-hidden relative py-4">
-        <ul class="swiper-wrapper">
-          {% for block in section.blocks %}
-            <li class="swiper-slide flex justify-center items-center gap-x-2">
-              <img src="{{ block.settings.image | img_url: '30x' }}" alt="{{ block.settings.text | escape }}">
-              <span class="uppercase text-base tracking-[1px]">{{ block.settings.text | escape }}</span>
-            </li>
-          {% endfor %}
-        </ul>
-        <div class="swiper-button-next text-[#4a4a49] w-2 h-2 after:text-[16px] after:content-['next'] top-3/4"></div>
-        <div class="swiper-button-prev text-[#4a4a49] w-2 h-2 after:text-[16px] after:content-['next'] top-3/4" style="transform: rotate(180deg)"></div>
-      </div>
-    </icon-carousel>
+      <ul class="flex justify-evenly items-center py-4">
+        {% for block in section.blocks %}
+          <li class="flex justify-center items-center gap-x-2">
+            <img src="{{ block.settings.image | img_url: '30x' }}" alt="{{ block.settings.text | escape }}">
+            <span class="uppercase text-base tracking-[1px]">{{ block.settings.text | escape }}</span>
+          </li>
+        {% endfor %}
+      </ul>
   </div>
 </div>
 

@@ -74,9 +74,9 @@
           <div class="flex gap-x-4 items-center">
             {% if on_sale %}
               <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
-              <span class="text-[#a00] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
+              <span class="text-[#4a4a49] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
               <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
-              <s class="text-sm decoration-[#a00]">{{ product.compare_at_price_max | money }}</s>
+              <s class="text-sm sm:text-base lg:text-[18px] text-[#a00] decoration-[#a00]">{{ product.compare_at_price_max | money }}</s>
             {% else %}
               <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
               <span class="text-[#a00] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>

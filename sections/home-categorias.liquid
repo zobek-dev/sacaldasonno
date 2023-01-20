@@ -1,14 +1,14 @@
-<div class="py-4 my-8 lg:py-8 lg:my-12">
+<div class="py-4 my-4 lg:py-8 lg:my-8">
   <div class="wrapper">
     <h2 class="uppercase mb-8 text-[20px] lg:text-[30px] text-center font-gobold tracking-[1px]">Categorías Destacadas</h2>
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4 grid-rows-2">
       {% for block in section.blocks %}
-      <li class="col-span-1 max-h-[567px] relative overflow-hidden {% if forloop.last %}lg:col-span-2 lg:col-start-1 lg:col-end-3{% endif %}">
-          <img src="{{ block.settings.image | img_url: 'master'}}" alt="{{ collections[block.settings.coll].title | escape }}" class="w-full object-cover object-center aspect-square {% if forloop.last %}lg:aspect-video{% endif %}" loading="lazy">
+      <li class="col-span-1 max-h-[567px] relative overflow-hidden {% if forloop.first %}lg:col-span-2 lg:col-start-1 lg:col-end-3{% endif %}">
+          <img src="{{ block.settings.image | img_url: 'master'}}" alt="{{ collections[block.settings.coll].title | escape }}" class="w-full object-cover object-center aspect-square {% if forloop.first %}lg:aspect-video{% endif %}" loading="lazy">
           <div class="absolute bg-[rgba(10,10,10,.2)] top-0 left-0 w-full h-full flex flex-col justify-end items-center text-white pb-20">
             {% assign collection = collections[block.settings.coll] %}
             <h3 class="text-[36px] font-gobold uppercase">{{ collection.title | escape }}</h3>
-            <a href="{{ collection.url }}" class="my-4 block uppercase text-[18px] font-gobold text-white bg-[#a00] py-2 px-4 rounded-sm transition-color duration-200 ease-in-out hover:bg-[#EFD4D4] hover:text-[#a00]">Ver Productos</a>
+            <a href="{{ collection.url }}" class="mt-8 mb-4 block uppercase text-[18px] font-gobold text-white bg-[#a00] py-2 px-4 rounded-sm transition-color duration-200 ease-in-out hover:bg-[#EFD4D4] hover:text-[#a00]">Ver Productos</a>
           </div>
         </li>
       {% endfor %}  

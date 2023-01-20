@@ -59,7 +59,7 @@ Recibe:
     </a> 
   </div>
   <a href="{{ product.url }}">
-    <span class="uppercase line-clamp-2 my-4 font-semibold leading-none {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% endif %}">{{ product.title }}</span>
+    <span class="uppercase line-clamp-2 my-2 lg:my-4 font-semibold leading-none {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% endif %}">{{ product.title }}</span>
   </a>
   <div class="flex justify-between items-end">
     <form action="{{ routes.cart_add_url }}" method="POST" id="Product-Form-{{ product.selected_or_first_available_variant.id }}" x-ref="product_form" class="hidden">
@@ -68,17 +68,17 @@ Recibe:
     <div class="flex gap-x-1 sm:gap-x-1 lg:gap-x-3 items-center">
       {% if on_sale %}
         <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
-        <span class="font-gobold uppercase font-black text-[18px] lg:text-[25px] {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[#a00]{% endif %}">{{ product.price | money }}</span>
+        <span class="font-gobold uppercase font-black text-[14px] lg:text-[25px] {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[#4a4a49]{% endif %}">{{ product.price | money }}</span>
         <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
-        <s class="text-xs sm:text-sm {% if product.available == false %}text-[rgba(74,74,73,0.37)] decoration-[text-[rgba(74,74,73,0.37)]]{% else %}decoration-[#a00]{% endif %}">{{ product.compare_at_price_max | money }}</s>
+        <s class="text-xs sm:text-base lg:text-[18px] font-medium {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[#a00] decoration-[#a00]{% endif %}">{{ product.compare_at_price_max | money }}</s>
       {% else %}
         <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="font-gobold uppercase font-black text-[18px] lg:text-[25px] {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[#a00]{% endif %}">{{ product.price | money }}</span>
+        <span class="font-gobold uppercase font-black text-[16px] lg:text-[25px] {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[#4a4a49]{% endif %}">{{ product.price | money }}</span>
       {% endif %} 
     </div>
-    <button type="button" class="flex center border border-transparent py-1 px-2 {% if product.available %}bg-[#a00] text-white hover:bg-[#EFD4D4] hover:text-[#a00] transition-color duration-200 ease-in-out{% else %}bg-[rgba(74,74,73,.37)] text-[#4a4a49]{% endif %}" name="add" form="Product-Form-{{ product.selected_or_first_available_variant.id }}" {% unless product.available %}disabled{% endunless %} {% if product.available %}@click="addToCart"{% endif %}>
-      {% render 'icon-bag' %}
+    {% comment %} <button type="button" class="flex center border border-transparent py-1 px-2 {% if product.available %}bg-[#a00] text-white hover:bg-[#EFD4D4] hover:text-[#a00] transition-color duration-200 ease-in-out{% else %}bg-[rgba(74,74,73,.37)] text-[#4a4a49]{% endif %}" name="add" form="Product-Form-{{ product.selected_or_first_available_variant.id }}" {% unless product.available %}disabled{% endunless %} {% if product.available %}@click="addToCart"{% endif %}>
+      {% render 'icon-bag', class: 'w-4 lg:w-5' %}
       <span class="sr-only">Agregar al carro</span>
-    </button>
+    </button> {% endcomment %}
   </div>
 </li>
