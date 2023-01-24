@@ -64,3 +64,11 @@ input[type=number] {
 input[type="checkbox"], input[type="radio"]{
   @apply accent-[#a00];
 }
+
+.faq-details summary svg{
+  @apply transition-transform duration-[150ms] ease-in-out
+}
+
+.faq-details[open] summary svg{
+  @apply rotate-45;
+}

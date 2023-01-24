@@ -1,0 +1,75 @@
+<div class="wrapper">
+  <div class="flex flex-col sm:flex-row-reverse sm: justify-between sm:items-center gap-4 md:gap-8 items-center mb-12">
+    <div class="sm:col-start-2 sm:col-end-3 h-max sm:max-w-[50vw]">
+      <img
+        src="{{ section.settings.image | img_url: '546x' }}"
+        alt="{{ section.settings.title | escape }}"
+        width="546"
+        height="{{ 546 | divided_by: section.settings.image.aspect_ratio | ceil }}"
+        class="sm:aspect-[16/16] object-cover object-center w-[100%]"
+        loading="lazy"
+        >
+    </div>
+    <div class="sm:col-start-1 sm:col-end-2 flex-1 w-full">
+      <h2 class="text-[18px] lg:text-[24px] uppercase font-bold mt-4 mb-8">{{ section.settings.title }}</h2>
+      <ul>
+        {% for block in section.blocks %}
+        <li class="border-b border-[#ccc] {% if forloop.first %}border-t{% endif %}">
+            <details class="faq-details">
+              <summary class="flex justify-between items-center">
+                <span class="text-[16px] lg:text-[18px] uppercase font-bold">{{ block.settings.title | escape }}</span>
+                {% render 'icon-plus-circle', class: 'w-8' %}
+              </summary>
+              <div class="pb-2">
+                {{ block.settings.content }}
+              </div>
+            </details>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Faq",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título de la sección",
+        "default": "Lorem ipsum dolor."
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Imagen de la sección"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Faq",
+        "name": "Faq",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Pregunta frecuente",
+            "default": "Lorem ipsum dolor sit amet."
+          }, {
+            "type": "richtext",
+            "id": "content",
+            "label": "Respuesta de la pregunta",
+            "default": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Faq"
+      }
+    ]
+  }
+{% endschema %}

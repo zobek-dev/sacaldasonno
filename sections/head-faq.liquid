@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <h1 class="text-center uppercase text-[20px] lg:text-[30px] my-8 font-bold">{{ section.settings.title | escape  }}</h1>
+</div>
+{% schema %}
+  {
+    "name": "Head Faq",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título para las preguntas frecuentes",
+        "default": "Preguntas Frecuentes"
+      }
+    ]
+  }
+{% endschema %}

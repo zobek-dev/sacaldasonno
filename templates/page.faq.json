@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "head": {
+      "type": "head-faq"
+    }
+  },
+  "order": [
+    "head"
+  ]
+}

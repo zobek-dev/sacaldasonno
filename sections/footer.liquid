@@ -7,7 +7,7 @@
 </div>
 <footer class="bg-white pt-4 lg:pt-12 pb-8">
   <div class="wrapper">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-{{ section.blocks.size }} ">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'contact' %}

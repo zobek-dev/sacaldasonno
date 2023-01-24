@@ -3,7 +3,7 @@
     <div class="pt-4">
       {% render 'breadcrumb' %}
     </div>
-    <h2 class="text-[22px] lg:text-[35px] font-gobold font-bold text-center mt-12 mb-8">{{ section.settings.title | escape }}</h2>
+    <h2 class="text-[22px] lg:text-[35px] font-gobold uppercase text-center mt-12 mb-8">{{ section.settings.title | escape }}</h2>
     <ul class="block text-center">
       {% for block in section.blocks %}
         <li class="inline-block max-w-full lg:max-w-[45vw] xl:max-w-[25vw] lg:px-4 xl:px-8 mb-8">
@@ -15,7 +15,7 @@
             loading="lazy"
             class="mx-auto"
           >
-          <h3 class="py-4 text-[20px] lg:text-[30px] font-bold uppercase">{{ block.settings.title | escape }}</h3>
+          <h3 class="py-4 text-[18px] lg:text-[24px] font-bold uppercase">{{ block.settings.title | escape }}</h3>
           <div>
             {{ block.settings.content }}
           </div>

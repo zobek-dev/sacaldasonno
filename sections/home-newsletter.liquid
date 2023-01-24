@@ -1,8 +1,10 @@
 <div class="py-8 my-4 lg:my-12">
   <div class="wrapper">
-    <div class="max-w-[1100px] mx-auto">
+    <div class="max-w-[1100px] mx-auto" x-data="{
+      acepted: false
+    }">
       <h2 class="text-center uppercase tracking-[1px] text-[22px] max-w-[680px] mx-auto lg:text-[30px] leading-[1.2] font-gobold mb-4">{{ section.settings.title | escape }}</h2>
-      <div class="text-center mb-8 text-base">
+      <div class="text-center mb-4 text-base">
         {{ section.settings.content }}
       </div>
       {% form 'customer', class: 'newsletter-form' %}
@@ -47,6 +49,15 @@
             </small>
           {%- endif -%}
         </div>
+        <div class="flex gap-x-1 justify-center items-center mt-4">
+          <input type="checkbox" id="Accepted">
+          <label for="Accepted">He leído y acepto las <a href="/policies/privacy-policy" target="_blank" class="underline underline-offset-2">políticas de privacidad.</a></label>
+        </div>
+        <small class="flex items-center gap-x-1 justify-center" style="display:none;" id="Politics-error">
+          {%- render 'icon-error', class: 'w-4' -%}
+          Debes aceptar las políticas de privacidad.
+        </small>
+        
         {%- if form.posted_successfully? -%}
           <h3
             class="text-center text-xs flex gap-x-1 items-center justify-center my-2"
@@ -60,9 +71,27 @@
         {%- endif -%}
       {% endform %}
     </div>
-   
   </div>
 </div>
+
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const accept = document.querySelector('#Accepted');
+    const form = document.querySelector('.newsletter-form');
+    const suscribe = document.querySelector('#Subscribe');
+    const error = document.querySelector('#Politics-error');
+
+    error.style.display='none';
+
+    suscribe.addEventListener('click', (event) => {
+      if(!accept.checked){
+        event.preventDefault();
+        error.style.display='flex';
+      }
+    })
+  })
+</script>
 {% schema %}
   {
     "name": "Home Newsletter",
