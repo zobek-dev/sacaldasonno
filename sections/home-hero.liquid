@@ -12,7 +12,7 @@
         <h1 style="color:{{ section.settings.title_color }}" class="font-gobold font-[900] text-[24px] mb-4 lg:text-[35px] uppercase tracking-[2px]">
           {{ section.settings.title | escape }}
         </h1>
-        <p style="color:{{ section.settings.text_color }}" class="font-bold leading-[1.2] uppercase text-[13px] lg:text-[30px]">{{ section.settings.bajada | escape }}</p>
+        <h2 style="color:{{ section.settings.text_color }}" class="font-bold leading-[1.2] uppercase text-[20px] lg:text-[30px]">{{ section.settings.bajada | escape }}</h2>
         <a href="{{ section.settings.button_link }}" class="block my-4 py-2 px-4 w-max uppercase font-bold transition-opacity font-gobold-italic duration-200 tracking-[1.5px] text-[20px] ease-in-out hover:opacity-70" style="background: {{ section.settings.button_color }}; color: {{ section.settings.button_text_color }};">
           {{ section.settings.button_text }}
         </a>
@@ -20,7 +20,6 @@
     </div>
   </div>
 </div>
-
 
 <style>
   .gradient-{{ section.id }}{

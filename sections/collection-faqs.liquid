@@ -2,20 +2,19 @@
   <div class="wrapper">
     <div class="max-w-[1100px] mx-auto text-[#262626]">
       <h2 class="uppercase font-bold text-[22px] lg:text-[30px] my-4">Preguntas Frecuentes</h2>
-      <ul class="border-t-[0.5px] border-[#4b4f54]">
+      <ul>
         {% for block in section.blocks %}
-        <li >
-          <details class="py-4 border-b-[0.5px] border-[#4b4f54] cursor-pointer faq-detail">
-            <summary class="flex items-center justify-between w-full">
-              <span class="uppercase font-bold text-[18px] lg:text-[20px]">{{ block.settings.title | escape }}</span>
-              {% render 'icon-plus-circle' class: 'plus w-[44px] h-[44px]'%}
-              {% render 'icon-close-circle' class: 'minus w-[33px] h-[33px]'%}
-            </summary>
-            <div class="pt-3 text-base">
-              {{ block.settings.content }}
-            </div>
-          </details>
-        </li> 
+          <li class="border-b border-[#ccc] {% if forloop.first %}border-t{% endif %}">
+            <details class="faq-details">
+              <summary class="flex justify-between items-center">
+                <span class="text-[16px] lg:text-[18px] uppercase font-bold">{{ block.settings.title | escape }}</span>
+                {% render 'icon-plus-circle', class: 'w-8' %}
+              </summary>
+              <div class="pb-2">
+                {{ block.settings.content }}
+              </div>
+            </details>
+          </li>
         {% endfor %}
       </ul>
     </div>

@@ -1,10 +1,11 @@
 {
   "sections": {
     "main": {
-      "type":"page-formulario"
+      "type": "page-formulario",
+      "settings": {}
     }
   },
-  "order":[
-    "main"    
-  ]  
+  "order": [
+    "main"
+  ]
 }

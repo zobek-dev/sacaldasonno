@@ -1,5 +1,5 @@
 <div
-  class="product-recommendations py-4 my-8"
+  class="product-recommendations py-2 my-4 lg:py-4 lg:my-8"
   data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related"
 >
   {%- if recommendations.performed? and recommendations.products_count > 0 -%}

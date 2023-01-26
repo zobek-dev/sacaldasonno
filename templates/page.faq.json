@@ -1,7 +1,8 @@
 {
   "sections": {
     "head": {
-      "type": "head-faq"
+      "type": "head-faq",
+      "settings": {}
     }
   },
   "order": [

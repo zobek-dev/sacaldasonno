@@ -94,13 +94,16 @@ class ProductConsejosCarousel extends HTMLElement{
     super();
 
     this.carousel = this.querySelector('.carousel-consejos');
+    this.count = Number(this.dataset.count);
+
+    console.log(this.count)
     
     this.swiper = new Swiper(this.carousel, {
       slidesPerView: 1, 
       spaceBetween:16,
       breakpoints: {
         1024: {
-          slidesPerView:4,
+          slidesPerView:this.count,
           spaceBetween:16
         }
       }

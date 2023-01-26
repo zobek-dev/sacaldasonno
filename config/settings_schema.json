@@ -4,8 +4,8 @@
     "theme_name": "Scaldasonno",
     "theme_version": "1.0.1",
     "theme_author": "Mediahuella",
-    "theme_documentation_url": "https://medaihuella.com/documentation",
-    "theme_support_url": "https://medaihuella.com/support"
+    "theme_documentation_url": "https:\/\/medaihuella.com\/documentation",
+    "theme_support_url": "https:\/\/medaihuella.com\/support"
   },
   {
     "name": "t:settings_schema.cart.name",

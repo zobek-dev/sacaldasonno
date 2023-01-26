@@ -1,26 +1,26 @@
 {
   "sections": {
     "heading": {
-      "type": "heading",
+      "type": "heading-collection",
       "settings": {}
     },
     "main": {
-      "type": "page-nosotros",
-      "settings": {}
-    },
-    "cita": {
-      "type": "single-cita",
+      "type": "main-collection",
       "settings": {}
     },
     "consejos": {
       "type": "collection-consejos",
+      "settings": {}
+    },
+    "faqs": {
+      "type": "collection-faqs",
       "settings": {}
     }
   },
   "order": [
     "heading",
     "main",
-    "cita",
-    "consejos"
+    "consejos",
+    "faqs"
   ]
 }

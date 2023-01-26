@@ -1,0 +1,120 @@
+<div class="wrapper">
+  <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-4 gap-x-0 lg:gap-x-8 lg:gap-y-0">
+    <div class="lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2">
+      <img
+        src="{{ section.settings.image_top | img_url: '950x' }}"
+        alt="{{ section.settings.title_top | escape}}"
+        height="{{ 950 | divided_by: section.settings.image_top.aspect_ratio | ceil }}"
+        width="950"
+        loading="lazy">
+    </div>
+    <div class="lg:col-span-1 pb-4">
+      <h4 class="font-bold text-[18px] uppercase mb-4">{{ section.settings.title_top | escape }}</h4>
+      {{ section.settings.content_top }}
+    </div>
+  </div>
+  <div class="py-12 lg:py-14">
+    <div class="wrapper">
+      <div class="relative max-w-[650px] mx-auto text-center">
+        <span class="absolute -top-4 left-4">{% render 'icon-quotes', class: '' %}</span>
+        <div class="text-sm leading-[1.2] lg:text-[30px] font-bold tracking-[1px] uppercase">
+          {{ section.settings.middle_text }}
+        </div>
+        <span class="absolute -bottom-4 right-4">{% render 'icon-quotes', class: 'rotate-180' %}</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-y-8 lg:gap-y-0 pb-2 mb-8 lg:pb-6 lg:mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 lg:gap-8">
+      <div class="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2">
+        <img
+          src="{{ section.settings.image_left | img_url: '950x' }}"
+          alt="{{ section.settings.title_left | escape}}"
+          height="{{ 950 | divided_by: section.settings.image_left.aspect_ratio | ceil }}"
+          width="950"
+          loading="lazy">
+      </div>
+      <div class="">
+        <h4 class="font-bold text-[18px] uppercase mb-4">{{ section.settings.title_left | escape }}</h4>
+        {{ section.settings.content_left }}
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-4 gap-x-0 lg:gap-x-8 lg:gap-y-0">
+      <div class="lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2">
+        <img
+          src="{{ section.settings.image_right | img_url: '950x' }}"
+          alt="{{ section.settings.title_right | escape}}"
+          height="{{ 950 | divided_by: section.settings.image_right.aspect_ratio | ceil }}"
+          width="950"
+          loading="lazy">
+      </div>
+      <div class="lg:col-span-1 pb-4">
+        <h4 class="font-bold text-[18px] uppercase mb-4">{{ section.settings.title_right | escape }}</h4>
+        {{ section.settings.content_right }}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Info mantas",
+    "settings":[
+      {
+        "type": "image_picker",
+        "id": "image_top",
+        "label": "Inserta imagen de arriba"
+      },
+      {
+        "type": "text",
+        "id":"title_top",
+        "label": "Inserta titulo de arriba",
+        "default": "Lorem, ipsum dolor."
+      },
+      { 
+        "type": "richtext",
+        "id": "content_top",
+        "label": "Inserta titulo de arriba",
+        "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eaque tempora modi, nihil totam necessitatibus hic tempore excepturi soluta accusantium.</p>"
+      },
+      {
+        "type": "text", 
+        "id": "middle_text",
+        "label": "Inserta el texto intermedio"
+      },
+      {
+        "type": "text",
+        "id": "title_left",
+        "label": "titulo de la izquierda",
+        "default": "Lorem, ipsum dolor."
+      },
+      {
+        "type": "richtext",
+        "id": "content_left",
+        "label": "contenido de la izquierda",
+        "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eaque tempora modi, nihil totam necessitatibus hic tempore excepturi soluta accusantium.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_left",
+        "label": "Imagen de la izquierda"
+      },
+      {
+        "type": "text",
+        "id": "title_right",
+        "label": "Titulo de la derecha",
+        "default": "Lorem, ipsum dolor."
+      }, {
+        "type": "richtext",
+        "id": "content_right",
+        "label": "contenido de la derecha",
+        "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eaque tempora modi, nihil totam necessitatibus hic tempore excepturi soluta accusantium.</p>"
+      }, {
+        "type": "image_picker",
+        "id": "image_right",
+        "label": "Imagen de la derecha"
+      }
+    ]
+  }
+{% endschema %}

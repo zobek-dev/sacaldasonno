@@ -10,10 +10,10 @@
       {% for block in section.blocks %}
         <li class="px-4 flex flex-col items-center text-center">
           <img
-            src="{{ block.settings.image | img_url: '67x' }}"
+            src="{{ block.settings.image | img_url: '77x' }}"
             alt="{{ block.settings.title | escape }}"
-            width="67"
-            height="{{ 67 | divided_by: block.settings.image.aspect_ratio }}"
+            width="77"
+            height="{{ 77 | divided_by: block.settings.image.aspect_ratio }}"
             loading="lazy">
           <h3  class="text-[18px] lg:text-[26px] uppercase font-bold text-center my-4">{{ block.settings.title | escape }}</h3>
           <div>

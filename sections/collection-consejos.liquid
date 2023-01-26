@@ -13,7 +13,7 @@
       {% for block in section.blocks %}
         <li class="text-center">
           <img src="{{ block.settings.image | img_url: '270x' }} " alt="{{ block.settings.image.alt | escape }}" class="rounded-[50%] mx-auto">
-          <h4 class="mb-4 uppercase font-bold text-[18px]">{{ block.settings.title | escape }}</h4>
+          <h4 class="my-4 uppercase font-bold text-[18px]">{{ block.settings.title | escape }}</h4>
           {{ block.settings.content }}
           {% if block.settings.modal %}
             <button class="border-none bg-transparent text-[#a00] w-max uppercase text-[18px] font-bold my-8 hover:opacity-70 transition-opacity duration-200 ease-in-out" data-content="{{ block.settings.modal_content }}" @click="$dispatch('toggle-modal-cards')">

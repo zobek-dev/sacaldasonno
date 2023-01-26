@@ -14,7 +14,7 @@
       <h2 class="text-[18px] lg:text-[24px] uppercase font-bold mt-4 mb-8">{{ section.settings.title }}</h2>
       <ul>
         {% for block in section.blocks %}
-        <li class="border-b border-[#ccc] {% if forloop.first %}border-t{% endif %}">
+          <li class="border-b border-[#ccc] {% if forloop.first %}border-t{% endif %}">
             <details class="faq-details">
               <summary class="flex justify-between items-center">
                 <span class="text-[16px] lg:text-[18px] uppercase font-bold">{{ block.settings.title | escape }}</span>

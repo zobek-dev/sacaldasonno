@@ -6,19 +6,8 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center mb-20">
       <div class="md:pr-8">
         <h1 class="uppercase mb-4 text-center md:text-start text-[22px] lg:text-[30px] font-bold">{{ section.settings.title | escape }}</h1>
-        <h2 class="uppercase mb-2 text-start text-[18px] lg:text-[20px] font-bold">{{ section.settings.subtitle | escape }}</h2>
-        {% if section.settings.address_link != blank %}
-          <a
-            href="{{ section.settings.address_link }}"
-            target="_blank"
-            rel="noopener noreferrer">
-          {% endif %}
-          <span>{{ section.settings.address | escape }}</span>
-          {% if section.settings.address_link != blank %}
-          </a>
-        {% endif %}
         <div>
-          <h2 class="uppercase my-4 text-start text-[18px] lg:text-[20px] font-bold">
+          <h2 class="my-4 text-start text-[18px] lg:text-[20px] font-bold">
             ¿En qué podemos ayudarte?
           </h2>
           <ul>
