@@ -1,3 +1,65 @@
 {
-  "current": {}
+  "current": {
+    "social_facebook_link": "https:\/\/www.facebook.com\/ScaldasonnoChile",
+    "social_instagram_link": "https:\/\/www.instagram.com\/scaldasonnochile\/",
+    "social_youtube_link": "https:\/\/www.youtube.com\/user\/ImetecItalyOfficial",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "text": "Bienvenidos a nuestra tienda",
+          "link": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "60341347-bdc1-4d17-a548-c561a1492c64": {
+            "type": "contact",
+            "settings": {
+              "title": "Contacto",
+              "link": "",
+              "text_link": "¡Escríbenos aquí!"
+            }
+          },
+          "6cd4e98c-0865-4f1e-aa28-bef5a0a1629f": {
+            "type": "menu",
+            "settings": {
+              "menu": "informaci-n"
+            }
+          },
+          "363cf017-b8ab-421f-813d-157f6a8b9b3e": {
+            "type": "menu",
+            "settings": {
+              "menu": "politicas"
+            }
+          },
+          "fb0689d3-1868-406f-aeeb-a8425c0d6ad5": {
+            "type": "payments",
+            "settings": {
+              "title": "Métodos de Pago",
+              "pay_method_one_text": "Tarjeta de Crédito\/Débito",
+              "pay_method_one_image": "",
+              "pay_method_two_text": "Mercado pago",
+              "pay_method_two_image": "{% render 'mercado-pago', class: 'w-[150px]' %}",
+              "pay_method_three_text": "",
+              "pay_method_three_image": ""
+            }
+          }
+        },
+        "block_order": [
+          "60341347-bdc1-4d17-a548-c561a1492c64",
+          "6cd4e98c-0865-4f1e-aa28-bef5a0a1629f",
+          "363cf017-b8ab-421f-813d-157f6a8b9b3e",
+          "fb0689d3-1868-406f-aeeb-a8425c0d6ad5"
+        ],
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
 }

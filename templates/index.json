@@ -3,9 +3,277 @@
     "main": {
       "type": "main-index",
       "settings": {}
+    },
+    "6d039727-5eef-443e-a084-d2a448f903cb": {
+      "type": "home-hero",
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/home-desktop_2.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/home-tablet_1.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/home-movil_1.jpg",
+        "title": "Scaldasonno",
+        "bajada": "El calor que siempre haz soñado",
+        "gradient_ini": "#ffffff",
+        "gradient_end": "#ffffff",
+        "title_color": "#4a4a49",
+        "text_color": "#4a4a49",
+        "button_color": "#4a4a49",
+        "button_text_color": "#ffffff",
+        "button_text": "Descubre más",
+        "button_link": "shopify:\/\/collections\/calientacamas"
+      }
+    },
+    "4e0fee28-e16c-4802-9402-cc8e410a5f50": {
+      "type": "home-iconos",
+      "blocks": {
+        "99bef9f3-d4e5-46df-8c4a-dac0140fddf8": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2_Mesa_de_trabajo_1_2.png",
+            "text": "Servicio al cliente"
+          }
+        },
+        "89b2f0c6-fd3b-403e-b9f6-65fec5b20390": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2-03_2.png",
+            "text": "Despachos"
+          }
+        },
+        "0d221d6a-7364-4b9c-ad00-6b4a9dba3c5a": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2-02_2.png",
+            "text": "Medios de pago"
+          }
+        },
+        "ff641f0b-3a38-4123-b6c0-cdced1e3f475": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2-04_1.png",
+            "text": "Garantía de satisfacción"
+          }
+        }
+      },
+      "block_order": [
+        "99bef9f3-d4e5-46df-8c4a-dac0140fddf8",
+        "89b2f0c6-fd3b-403e-b9f6-65fec5b20390",
+        "0d221d6a-7364-4b9c-ad00-6b4a9dba3c5a",
+        "ff641f0b-3a38-4123-b6c0-cdced1e3f475"
+      ],
+      "settings": {}
+    },
+    "f7f21698-652b-4ff2-96de-9917ab786b5a": {
+      "type": "home-featured-products",
+      "blocks": {
+        "1b2662d9-76d3-4ec1-a122-e7d5729c7330": {
+          "type": "product",
+          "settings": {
+            "handle": "scaldasonno-active-individual"
+          }
+        },
+        "538654e7-6a4b-4ff3-ae3f-7bd39fa4954b": {
+          "type": "product",
+          "settings": {
+            "handle": "manta-electrica-tartan-scaldasonno"
+          }
+        },
+        "8cd5bbf8-eda7-4e99-9468-e17730f24734": {
+          "type": "product",
+          "settings": {
+            "handle": "almohadilla-termica-rectangular-con-bolsillo"
+          }
+        },
+        "325825f0-0936-416b-b44a-40dc3fad4a84": {
+          "type": "product",
+          "settings": {
+            "handle": "almohadilla-termica-cervical"
+          }
+        }
+      },
+      "block_order": [
+        "1b2662d9-76d3-4ec1-a122-e7d5729c7330",
+        "538654e7-6a4b-4ff3-ae3f-7bd39fa4954b",
+        "8cd5bbf8-eda7-4e99-9468-e17730f24734",
+        "325825f0-0936-416b-b44a-40dc3fad4a84"
+      ],
+      "settings": {
+        "title": "Mira nuestros productos destacados"
+      }
+    },
+    "26118325-e776-4745-970d-3d17469317ee": {
+      "type": "home-beneficios",
+      "blocks": {
+        "b28f7bed-ad9f-4daf-b085-41578d3ac867": {
+          "type": "beneficio",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2_2.png",
+            "title": "Regenerador",
+            "content": "<p>La manta eléctrica ha valorizado el relax con el confort del calor que nos acaricia.<\/p>"
+          }
+        },
+        "3dcee0c6-7cd9-42ed-894f-05f45c9d6d96": {
+          "type": "beneficio",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/55555-03_1.png",
+            "title": "Relajante",
+            "content": "<p>El calientacamas de Imetec ha cambiado el modo de dormir, favoreciendo un sueño de calidad gracias al calor personalizado.<\/p>"
+          }
+        },
+        "3eeaf776-8bc2-4478-9634-e0e1c07c1cf4": {
+          "type": "beneficio",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/55555-02_1.png",
+            "title": "Bienestar",
+            "content": "<p>La nueva generación de almohadillas eléctricas ha evolucionado el bienestar terapéutico gracias al calor inteligente.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b28f7bed-ad9f-4daf-b085-41578d3ac867",
+        "3dcee0c6-7cd9-42ed-894f-05f45c9d6d96",
+        "3eeaf776-8bc2-4478-9634-e0e1c07c1cf4"
+      ],
+      "settings": {
+        "title": "Conoce los Beneficios del calor",
+        "content": "<p>Imetec es la empresa italiana especializada en calor que desde hace más de 40 años cuida el bienestar de las personas con productos que mejoran la vida todos los días: calor que hace bien al sueño y al cuerpo, relajante y regenerador.La empresa Imetec está presente en las más importantes innovaciones patentadas en este campo, pioneras en términos de prestaciones, seguridad, soluciones textiles: ideas que han rediseñado el significado del bienestar doméstico.<\/p>"
+      }
+    },
+    "46b57673-ac3d-42a2-b9b3-a344ff270a39": {
+      "type": "home-categorias",
+      "blocks": {
+        "ba010b25-44dd-4715-8b7c-9904ee8e62fc": {
+          "type": "category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-8_Mesa_de_trabajo_1.png",
+            "coll": "calientacamas"
+          }
+        },
+        "9cbfa717-f33a-4bf5-85f2-2de5eb24ef02": {
+          "type": "category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sistema-electro-block-plaid-adapto-velvet-tartan_approfondimento_2_2.jpg",
+            "coll": "mantas-electricas"
+          }
+        },
+        "69d1963f-d9d7-4db4-a88e-8f3514fbf24e": {
+          "type": "category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/termoforo-rettangolare-intellisense-micro-peluche-con-tasca-16780a_gallery_3_1_2.jpg",
+            "coll": "almohadillas"
+          }
+        }
+      },
+      "block_order": [
+        "ba010b25-44dd-4715-8b7c-9904ee8e62fc",
+        "9cbfa717-f33a-4bf5-85f2-2de5eb24ef02",
+        "69d1963f-d9d7-4db4-a88e-8f3514fbf24e"
+      ],
+      "settings": {}
+    },
+    "ced39aef-4ee6-41f4-b01d-7347f25e682a": {
+      "type": "featured-articles",
+      "blocks": {
+        "8b9f2151-8a72-4ff4-8d6b-85d2377feab0": {
+          "type": "featured",
+          "settings": {
+            "article": "noticias\/lorem-ipsum-dolor-sit-amet-1"
+          }
+        },
+        "32133191-4a21-4d17-a3c2-9f9f683cd998": {
+          "type": "featured",
+          "settings": {
+            "article": "noticias\/lorem-ipsum-dolor"
+          }
+        },
+        "ba7c538b-cfbd-4c55-b774-70dbe53a93c0": {
+          "type": "featured",
+          "settings": {
+            "article": "noticias\/lorem-ipsum-dolor-sit-amet"
+          }
+        }
+      },
+      "block_order": [
+        "8b9f2151-8a72-4ff4-8d6b-85d2377feab0",
+        "32133191-4a21-4d17-a3c2-9f9f683cd998",
+        "ba7c538b-cfbd-4c55-b774-70dbe53a93c0"
+      ],
+      "settings": {
+        "title": "Mira Nuestro Blog",
+        "link_blog": "shopify:\/\/blogs\/noticias"
+      }
+    },
+    "e3d8d3d8-1d4b-4452-b6bd-ef718fa34de7": {
+      "type": "home-sellos",
+      "blocks": {
+        "0acf1b3d-43f4-4643-afdf-d76295834596": {
+          "type": "sello",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/0220_1.png",
+            "title": "Máxima seguridad",
+            "content": "Todos los productos Imetec cumplen con las normas internacionales de seguridad más estrictas, ya que cuentan con el exclusivo dispositivo de seguridad total Electro Block©."
+          }
+        },
+        "d1cbee44-9e53-4b80-8b6c-111a395aba99": {
+          "type": "sello",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/030_1.png",
+            "title": "40 años de experiencia",
+            "content": "Scaldasonno nace de Imetec, una empresa italiana líder en el mercado con 40 años de experiencia, con un compromiso constante en investigación y desarrollo, que garantiza la innovación tecnológica innovadora en la vanguardia para la seguridad, prestaciones y acabados textiles."
+          }
+        },
+        "8b72e4fd-a39e-4af5-aa44-07150364c57f": {
+          "type": "sello",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/011_1.png",
+            "title": "Máxima Comodidad",
+            "content": "Tecnología térmica desarrollada en Italia, tejidos de alta calidad, prestaciones personalizadas y programables para hacer la vida más simple y agradable."
+          }
+        }
+      },
+      "block_order": [
+        "0acf1b3d-43f4-4643-afdf-d76295834596",
+        "d1cbee44-9e53-4b80-8b6c-111a395aba99",
+        "8b72e4fd-a39e-4af5-aa44-07150364c57f"
+      ],
+      "settings": {}
+    },
+    "1674754739960fe6b0": {
+      "type": "apps",
+      "blocks": {
+        "df0b75c3-2618-4233-aec4-28c44a1917d1": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "df0b75c3-2618-4233-aec4-28c44a1917d1"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "bc75def8-a32d-46b8-96b4-3ae1d718503e": {
+      "type": "home-newsletter",
+      "settings": {
+        "title": "Entérate de todas nuestras novedades, sé parte del mundo scaldasonno imetec bienestar",
+        "content": "<p>Suscribete al boletín informativo para recibir adelantos sobre las novedades del mundo Scaldasonno y de las ofertas especiales<\/p>"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "6d039727-5eef-443e-a084-d2a448f903cb",
+    "4e0fee28-e16c-4802-9402-cc8e410a5f50",
+    "f7f21698-652b-4ff2-96de-9917ab786b5a",
+    "26118325-e776-4745-970d-3d17469317ee",
+    "46b57673-ac3d-42a2-b9b3-a344ff270a39",
+    "ced39aef-4ee6-41f4-b01d-7347f25e682a",
+    "e3d8d3d8-1d4b-4452-b6bd-ef718fa34de7",
+    "1674754739960fe6b0",
+    "bc75def8-a32d-46b8-96b4-3ae1d718503e"
   ]
 }

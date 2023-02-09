@@ -2,7 +2,16 @@
   "sections": {
     "heading": {
       "type": "heading-collection",
-      "settings": {}
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/desktop-03.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/tablet-03.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/movil-03.jpg",
+        "bajada": "Disfruta de un calor envolvente",
+        "gradient_ini": "#ffffff",
+        "gradient_end": "#ffffff",
+        "title_color": "#4a4a49",
+        "text_color": "#4a4a49"
+      }
     },
     "main": {
       "type": "main-collection",
@@ -10,10 +19,148 @@
     },
     "consejos": {
       "type": "collection-consejos",
+      "blocks": {
+        "6b0730e4-50a5-4cd6-be47-90feb6f0bedc": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_2.png",
+            "title": "Tecnología intelllisense",
+            "content": "<p>Adapta automáticamente la temperatura elegida a los diversos modos de uso, para mantener siempre el confort deseado.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "35581033-e38b-4229-ab5b-65fc09a9d84a": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/23.png",
+            "title": "Formas anatómicas",
+            "content": "<p>Las almohadillas térmicas Imetec actúan como una banda calefactora con forma específica para la espalda, los hombros, el cuello, el abdomen y las piernas, los pies.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "d2abb653-6075-46ef-beb7-72802c2dbf7f": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/11.png",
+            "title": "Máxima seguridad",
+            "content": "<p>Las almohadillas térmicas Imetec cumplen con las normas internacionales de seguridad más estrictas gracias al dispositivo de seguridad total Electro Block®.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "62ce3321-77b2-4e44-a8f2-2ab69ea0c4e5": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/15.png",
+            "title": "Calentamiento Rápido",
+            "content": "<p>Las almohadillas térmicas Imetec alcanzan la temperatura deseada rápidamente para poder gozar de los beneficios del calor sin tiempos de espera. El control digital permite seleccionar 5 temperaturas.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Las almohadillas térmicas Imetec alcanzan la temperatura deseada rápidamente para poder gozar de los beneficios del calor sin tiempos de espera. El control digital permite seleccionar 5 temperaturas.<\/p>"
+          }
+        },
+        "f8d55fe4-fa11-4e71-b212-7a99bad03a3f": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/17_1.png",
+            "title": "Cómo lavar tu almohadilla",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum!<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "68931c1a-22a5-4903-80a4-059a1f856c84": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/27.png",
+            "title": "Diseños exclusivos y ergonómicos",
+            "content": "<p>Tejido de microfibra, antialérgico y transpirable.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6b0730e4-50a5-4cd6-be47-90feb6f0bedc",
+        "35581033-e38b-4229-ab5b-65fc09a9d84a",
+        "d2abb653-6075-46ef-beb7-72802c2dbf7f",
+        "62ce3321-77b2-4e44-a8f2-2ab69ea0c4e5",
+        "f8d55fe4-fa11-4e71-b212-7a99bad03a3f",
+        "68931c1a-22a5-4903-80a4-059a1f856c84"
+      ],
       "settings": {}
     },
     "faqs": {
       "type": "collection-faqs",
+      "blocks": {
+        "07524f9c-9e18-4749-aef8-69bb969f2bf0": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede lavar?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "1291bc1c-04f2-45bf-ad92-ccafa978c841": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede utilizar en animales?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "f016a20b-fe92-4e63-b941-bd35ccda4fce": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Mantiene el calor después de desenchufarlo?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "bdba1f03-1f4e-426f-81ce-020ee03caaa5": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Su utilización es segura?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "169a4118-8e41-4d6d-93b4-4866bf6adaeb": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Cuánta corriente consume?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "f437c9dd-bfe2-462a-8ed9-b683918919f9": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Para qué sirve la almohadilla eléctrica?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "f683ca6f-9538-494c-933a-10e04f79f166": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Dónde se coloca la almohadillla eléctrica?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "cb53bb39-1b6a-4ef2-bfcd-b7a4792a715c": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede poner la almohadilla eléctrica en la cama?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "07524f9c-9e18-4749-aef8-69bb969f2bf0",
+        "1291bc1c-04f2-45bf-ad92-ccafa978c841",
+        "f016a20b-fe92-4e63-b941-bd35ccda4fce",
+        "bdba1f03-1f4e-426f-81ce-020ee03caaa5",
+        "169a4118-8e41-4d6d-93b4-4866bf6adaeb",
+        "f437c9dd-bfe2-462a-8ed9-b683918919f9",
+        "f683ca6f-9538-494c-933a-10e04f79f166",
+        "cb53bb39-1b6a-4ef2-bfcd-b7a4792a715c"
+      ],
       "settings": {}
     }
   },

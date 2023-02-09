@@ -2,7 +2,9 @@
   "sections": {
     "main": {
       "type": "page-formulario",
-      "settings": {}
+      "settings": {
+        "image": "shopify:\/\/shop_images\/plaid-riscaldabile-adapto-velvet-tartan-16856_gallery_5_2.jpg"
+      }
     }
   },
   "order": [

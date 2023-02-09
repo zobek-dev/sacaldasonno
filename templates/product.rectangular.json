@@ -6,15 +6,81 @@
     },
     "caracteristicas": {
       "type": "product-caracteristicas",
+      "blocks": {
+        "6f04f683-e730-4c86-aaf3-b5311c227a60": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/tecnologia-intellisense.png",
+            "content": "<p><strong>Tecnología Imetec<br\/>Intellisense<\/strong><\/p>"
+          }
+        },
+        "41322288-b21c-4f77-b37c-dec86499409c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/autospegnimento_1_1.png",
+            "content": "<p><strong>Autoapagado :<br\/>3 horas<\/strong><\/p>"
+          }
+        },
+        "1f12b36a-aae8-43e7-843c-c34d06f2b2a6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/comando-dig-5-temp_1.png",
+            "content": "<p><strong>Mando digital de 5<br\/>temperaturas con calentamiento ultrarápido.<\/strong><\/p>"
+          }
+        },
+        "f52f481f-0af5-4190-ab1e-f2ba4f312d08": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-RisparmioEnergetico.png",
+            "content": "<p><strong>Bajo consumo<br\/>energético<\/strong><\/p>"
+          }
+        },
+        "5e1c5d49-572f-4649-a8d0-012cf9456983": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-elettroblock.png",
+            "content": "<p><strong>Sistema de seguridad Electro Block®<br\/><\/strong><\/p>"
+          }
+        },
+        "a3f39724-3ae1-467d-b844-71b8a266b512": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/TEJIDO_HIPOALERGENICO.png",
+            "content": "<p><strong>Suave tejido de <\/strong><\/p><p><strong>microfibra lavable, <\/strong><\/p><p><strong>analérgica y respirable.<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6f04f683-e730-4c86-aaf3-b5311c227a60",
+        "41322288-b21c-4f77-b37c-dec86499409c",
+        "1f12b36a-aae8-43e7-843c-c34d06f2b2a6",
+        "f52f481f-0af5-4190-ab1e-f2ba4f312d08",
+        "5e1c5d49-572f-4649-a8d0-012cf9456983",
+        "a3f39724-3ae1-467d-b844-71b8a266b512"
+      ],
       "settings": {}
     },
     "info": {
       "type": "product-info",
-      "settings": {}
+      "settings": {
+        "title_left": "Tecnología Intelisense",
+        "content_left": "<p>A diferencia de la usada en las almohadillas térmicas tradicionales, aprovecha de manera innovadora las funciones de un micro-procesador para obtener una prestación única. La almohadilla térmica Imetec Intellisense, de hecho garantiza prestaciones de calentamiento óptimas y en toda seguridad, tanto cuando está apoyado en la barriga como cuando está colocado en la espalda. Selecciona la temperatura preferida entre 5 disponibles e Imetec Intellisense cuidará de tu bienestar.<\/p>",
+        "image_left": "shopify:\/\/shop_images\/Sin_titulo-8-08.png",
+        "title_right": "Gracias al bolsillo, disfruta de calor envolvente incluso en las manos",
+        "content_right": "<p>El práctico bolsillo para las manos tiene una doble utilidad: te permite tener las manos calentitas y sujetar cómodamente la almohadilla.<\/p>",
+        "image_right": "shopify:\/\/shop_images\/Sin_titulo-8-09.png"
+      }
     },
     "info-bottom": {
       "type": "product-info",
-      "settings": {}
+      "settings": {
+        "title_left": "Máxima seguridad, máximo relax",
+        "content_left": "<p>A las 3 horas, la almohadilla se apaga automáticamente; en caso de anomalía, el sistema de seguridad Electro Block® la apaga inmediatamente. La tecnología Intellisense® controla la temperatura 50 veces por segundo. Por eso, el calor, además de ser bueno, es inteligente”.<\/p>",
+        "image_left": "shopify:\/\/shop_images\/Sin_titulo-8-17.png",
+        "title_right": "Doble tejido: Micropeluche y felpa",
+        "content_right": "<p>Estos tejidos son muy suaves al tacto y cálidos, y contribuyen a conservar el calor de forma homogénea. Además, son hipoalergénicos, transpirables y puede lavarse a 30º de temperatura.<\/p>",
+        "image_right": "shopify:\/\/shop_images\/Sin_titulo-8-16.png"
+      }
     },
     "recomendaciones": {
       "type": "product-recommendations",

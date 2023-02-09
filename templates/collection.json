@@ -7,30 +7,10 @@
     "main": {
       "type": "main-collection",
       "settings": {}
-    },
-    "porque": {
-      "type": "collection-porque",
-      "settings": {}
-    },
-    "single": {
-      "type": "single-cita",
-      "settings": {}
-    },
-    "consejos": {
-      "type": "collection-consejos",
-      "settings": {}
-    },
-    "faqs": {
-      "type": "collection-faqs",
-      "settings": {}
     }
   },
   "order": [
     "heading",
-    "main",
-    "porque",
-    "single",
-    "consejos",
-    "faqs"
+    "main"
   ]
 }

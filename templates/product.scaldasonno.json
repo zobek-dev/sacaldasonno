@@ -6,14 +6,110 @@
     },
     "caracteristicas": {
       "type": "product-caracteristicas",
+      "blocks": {
+        "a3125ef8-0957-4882-8767-984f5e13cef4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ico-temp-4_1.png",
+            "content": "<p><strong>Mando de 4 temperaturas, pantalla LED.<\/strong><\/p>"
+          }
+        },
+        "f71886da-ca6f-4914-90d5-73367dc39d2f": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/TEJIDO_HIPOALERGENICO.png",
+            "content": "<p><strong>Tejido acolchado suave y respirable.<\/strong><\/p>"
+          }
+        },
+        "5e51ca3e-5978-461f-b05b-bf14adc1421a": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SE_FIJA.png",
+            "content": "<p><strong>Se fija con facilidad al colchón.<\/strong><\/p>"
+          }
+        },
+        "3545477a-a861-4998-959b-94dc4a7dcb59": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CALENTAMIENTO_RAPIDO.png",
+            "content": "<p><strong>Ultra Rápido<\/strong><\/p>"
+          }
+        },
+        "c7d45c6a-af76-4536-976f-98ccc872f514": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-RisparmioEnergetico.png",
+            "content": "<p><strong>Bajo Consumo Energético<\/strong><\/p>"
+          }
+        },
+        "6dff1a8c-32e7-4761-8bb4-8d707ed86f01": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/autospegnimento_1_1.png",
+            "content": "<p><strong>Función de autoapagado: 9 horas<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a3125ef8-0957-4882-8767-984f5e13cef4",
+        "f71886da-ca6f-4914-90d5-73367dc39d2f",
+        "5e51ca3e-5978-461f-b05b-bf14adc1421a",
+        "3545477a-a861-4998-959b-94dc4a7dcb59",
+        "c7d45c6a-af76-4536-976f-98ccc872f514",
+        "6dff1a8c-32e7-4761-8bb4-8d707ed86f01"
+      ],
       "settings": {}
     },
     "info": {
       "type": "product-info",
-      "settings": {}
+      "settings": {
+        "title_left": "Active safety control",
+        "content_left": "<p>Scaldasonno Active tiene un innovador sistema de control electrónico <strong>ACTIVE SAFETY CONTROL <\/strong>que monitorea la temperatura automáticamente 25 veces por segundo para una máxima seguridad y un comfort extraordinario. Se calienta rápidamente y permite elegir el calor que quiera entre 4 niveles de temperatura.<\/p>",
+        "image_left": "shopify:\/\/shop_images\/Sin_titulo-8-02.png",
+        "title_right": "El placer de entrar en una cama calentita",
+        "content_right": "<p>Prepaárate para entrar en una cama ya calentita y acogedora. Gracias a sus 150 W de potencia, se calienta en poquísmo tiempo.<\/p>",
+        "image_right": "shopify:\/\/shop_images\/home-desktop_1.jpg"
+      }
     },
     "consejos": {
       "type": "product-consejos",
+      "blocks": {
+        "b9107e7f-3e1b-4c6a-938a-24ee7663bcca": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/26.png",
+            "title": "Tejido acolchado suave y respirable",
+            "content": "<p>Este Scaldasonno se ha realizado en tejido acolchado suave y respirable para el máximo confort durante la noche. Gracias a las practicas esquinas elásticas se adapta fácilmente al colchón.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "0cb4a30c-4c52-48d3-9b81-6c11960f4364": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/22.png",
+            "title": "El calor ideal y de bajo consumo",
+            "content": "<p>Elige el calor que prefieras seleccionando una de las 4 temperaturas disponibles. Cuando alcanza el nivel de temperatura seleccionado, Active solo consume la energía necesaria para mantenerla.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "ecb3a95d-a297-4026-af9a-34282958f75c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/28.png",
+            "title": "Como lavar tu calientacamas",
+            "content": "<p>Se recomienda no lavar tu calientacamas más de 2 o 3 veces al año ya que se acelera el desgaste del producto.<\/p>",
+            "modal": true,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b9107e7f-3e1b-4c6a-938a-24ee7663bcca",
+        "0cb4a30c-4c52-48d3-9b81-6c11960f4364",
+        "ecb3a95d-a297-4026-af9a-34282958f75c"
+      ],
       "settings": {}
     },
     "recomendaciones": {

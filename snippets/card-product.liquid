@@ -7,9 +7,10 @@ Recibe:
 
 {%- liquid
   assign on_sale = false
-  assign month = 30 | times: 24 | times: 60 | times: 60
+  assign month = 1 | times: 24 | times: 60 | times: 60
   assign date_created = product.created_at | date: "%Y-%m-%d"
   assign dead_line = "now" | date: "%s" | minus: month | date: "%Y-%m-%d"
+ 
   if product.compare_at_price_max > product.price
     assign on_sale = true
   endif
@@ -70,7 +71,7 @@ Recibe:
         <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
         <span class="font-gobold uppercase font-black text-[14px] lg:text-[25px] {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[#4a4a49]{% endif %}">{{ product.price | money }}</span>
         <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
-        <s class="text-xs sm:text-base lg:text-[18px] font-medium {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[#a00] decoration-[#a00]{% endif %}">{{ product.compare_at_price_max | money }}</s>
+        <s class="text-xs sm:text-base lg:text-xl font-medium {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[rgba(74,74,73,0.37)] decoration-[rgba(74,74,73,0.37)]{% endif %}">{{ product.compare_at_price_max | money }}</s>
       {% else %}
         <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="font-gobold uppercase font-black text-[16px] lg:text-[25px] {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% else %}text-[#4a4a49]{% endif %}">{{ product.price | money }}</span>

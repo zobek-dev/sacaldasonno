@@ -2,18 +2,156 @@
   "sections": {
     "heading": {
       "type": "heading",
-      "settings": {}
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/nosotros-desktop.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/nosotros-tablet.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/nosotros-movil.jpg",
+        "title": "nosotros",
+        "bajada": "El calor que siempre has soñado",
+        "gradient_ini": "#ffffff",
+        "gradient_end": "#ffffff",
+        "title_color": "#4a4a49",
+        "text_color": "#4a4a49",
+        "button_color": "#4a4a49",
+        "button_text_color": "#ffffff",
+        "button_text": "Descubre más",
+        "button_link": "shopify:\/\/pages\/nosotros"
+      }
     },
     "main": {
       "type": "page-nosotros",
-      "settings": {}
+      "blocks": {
+        "5491c9aa-dfb6-4b10-b56f-08c10e7e8c54": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2_Mesa_de_trabajo_1_1.png",
+            "title": "Mejora la calidad de sueño",
+            "content": "<p>Con Scaldasonno puedes crear en tu cama el clima perfecto, ni demasiado caliente ni demasiado frío, el que necesitas para dormirte y descansar en el mejor modo posible y despertarte con la energía que necesitas para enfrentar la jornada.<br\/><\/p>"
+          }
+        },
+        "dec8bc2a-e98f-46c4-b6a4-34306ab9e37a": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/55555-03_1.png",
+            "title": "El placer de entrar en una cama caliente",
+            "content": "<p>Scaldasonno elimina la desagradable sensación de frío que se siente apenas tocamos las sábanas, dándote el placer único de encontrar siempre la cama calentita y acogedora, con el calor adecuado que favorece el buen dormir.<br\/><br\/><\/p>"
+          }
+        },
+        "da17d9df-f1c0-4d32-8aaa-99300d276c28": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2-03_1_1.png",
+            "title": "Elimina la humedad",
+            "content": "<p>La humedad en la cama es perjudicial para el sueño, el cuerpo y favorece el desarrollo de los ácaros que provocan alergias. Scaldasonno con su calor delicado y constante, calienta el colchón y la sábana y absorbe la humedad creando un ambiente más saludable para dormir.<br\/><\/p>"
+          }
+        },
+        "143b9dfb-d704-4abb-953b-d0262562da60": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/55555-02_1.png",
+            "title": "Favorece la relajación de los músculos",
+            "content": "<p>El calor es, desde siempre, una fuente de bienestar que brinda muchos beneficios al cuerpo. El calor liberado por Scaldasonno facilita la circulación sanguínea y favorece la relajación y la reducción de las tensiones musculares.<\/p>"
+          }
+        },
+        "e2b5e9b8-4e58-4389-b252-a05ad24ab0f0": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2_2.png",
+            "title": "Máximo confor con el mínimo consumo",
+            "content": "<p>Scaldasonno asegura el placer de quedarse dormido y dormir en una cama caliente, con pocos centavos por noche, manteniendo la temperatura de la habitación fresca.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5491c9aa-dfb6-4b10-b56f-08c10e7e8c54",
+        "dec8bc2a-e98f-46c4-b6a4-34306ab9e37a",
+        "da17d9df-f1c0-4d32-8aaa-99300d276c28",
+        "143b9dfb-d704-4abb-953b-d0262562da60",
+        "e2b5e9b8-4e58-4389-b252-a05ad24ab0f0"
+      ],
+      "settings": {
+        "title": "5 Motivos para utilizar scaldasonno"
+      }
     },
     "cita": {
       "type": "single-cita",
-      "settings": {}
+      "settings": {
+        "content": "<p>Las investigaciones lo confirman: dormir bien es esencial para afrontar mejor la jornada y un sueño regenerador es la clave del bienestar. Scaldasonno ayuda a dormir bien porque crea en la cama un hábitat confortable con el calor justo que facilita el relax y un descanso de calidad.<\/p>",
+        "color": "#d9d9d9"
+      }
     },
     "consejos": {
       "type": "collection-consejos",
+      "blocks": {
+        "fb01182e-cf7f-4fcc-ae00-7cab7f82bc72": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/10.png",
+            "title": "Tecnologías made in italy",
+            "content": "<p>Desde el lanzamiento del primer modelo en 1978 en Italia, Scaldasonno es sinónimo de la categoría calientacamas y marca de referencia de la evolución tecnológica del producto.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "0afcc84b-0271-46d4-a08e-9be8154243c5": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_2.png",
+            "title": "Máxima ds seguridad",
+            "content": "<p>Scaldasonno cumple con las normas internacionales de seguridad más estrictas gracias al exclusivo dispositivo de seguridad total Electro Block®.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "a9b3b35b-7224-49cb-b391-69f7322a4a82": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/25.png",
+            "title": "El confort de los mejores tejidos italianos",
+            "content": "<p>Scaldasonno utiliza los mejores tejidos para ofrecer el máximo confort durante el descanso.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "7fb6da70-1bc6-467b-98fd-738a12aafb69": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_1.png",
+            "title": "Control digital",
+            "content": "<p>El control digital es el corazón tecnológico de Scaldasonno: programa la temperatura, realiza el precalentamiento y el apagado automático.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "02480e44-5b66-45fa-acb3-917f63c095b0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/17.png",
+            "title": "Cóḿo lavar tu calientacamas",
+            "content": "<p>Se recomienda no lavar tu calientacamas más de 2 o 3 veces al año ya que se acelera el desgaste del producto.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "c2f11794-2df3-4493-9e68-3f09476b87f9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/22_2.png",
+            "title": "Bajo consumo energético",
+            "content": "<p>Scaldasonno tiene un bajo consumo de energía que le permite dormir en una cama temperada todo el invierno con pocos centavos por noche. Además permite apagar o disminuir la calefacción mientras está durmiendo.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fb01182e-cf7f-4fcc-ae00-7cab7f82bc72",
+        "0afcc84b-0271-46d4-a08e-9be8154243c5",
+        "a9b3b35b-7224-49cb-b391-69f7322a4a82",
+        "7fb6da70-1bc6-467b-98fd-738a12aafb69",
+        "02480e44-5b66-45fa-acb3-917f63c095b0",
+        "c2f11794-2df3-4493-9e68-3f09476b87f9"
+      ],
       "settings": {}
     }
   },

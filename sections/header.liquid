@@ -45,7 +45,7 @@
                   @mouseout="handleOpen"
                   >
                     <summary class="flex items-center gap-x-1">
-                      <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-2 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                      <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-2 whitespace-nowrap {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
                         {{ link.title | escape }}
                       </a>
                       <span x-ref="caret">{% render 'icon-caret', class: 'w-3' %}</span>
@@ -64,7 +64,7 @@
                   </details>
                 </div>         
                 {% else %}
-                  <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 px-4 font-semibold uppercase text-[15px] py-2 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="block whitespace-nowrap hover:underline hover:text-[#a00] hover:underline-offset-2 px-4 font-semibold uppercase text-[15px] py-2 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
                     {{ link.title | escape }}
                   </a>  
                 {% endif %}

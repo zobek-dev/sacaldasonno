@@ -2,7 +2,16 @@
   "sections": {
     "heading": {
       "type": "heading-collection",
-      "settings": {}
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/desktop-02_1.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/movil-02.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/tzblet-02.jpg",
+        "bajada": "El placer de un cálido y tierno abrazo",
+        "gradient_ini": "#ffffff",
+        "gradient_end": "#ffffff",
+        "title_color": "#4a4a49",
+        "text_color": "#4a4a49"
+      }
     },
     "main": {
       "type": "main-collection",
@@ -10,18 +19,141 @@
     },
     "porque": {
       "type": "collection-porque",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "title": "¿Por qué utilizar Scaldasonno?"
+      }
     },
     "single": {
       "type": "single-cita",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "content": "<p>Las investigaciones lo confirman: dormir bien es esencial para afrontar mejor la jornada y un sueño regenerador es la clave del bienestar. Scaldasonno ayuda a dormir bien porque crea en la cama un hábitat confortable con el calor justo que facilita el relax y un descanso de calidad.<\/p>",
+        "color": "#ffffff"
+      }
     },
     "consejos": {
       "type": "collection-consejos",
+      "blocks": {
+        "688c1e9d-8540-47cd-9b98-da36eb520761": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7.png",
+            "title": "Tecnología patentada adapto",
+            "content": "<p>La Tecnología patentada Adapto garantiza calentamiento rápido, control de temperatura constante y máxima seguridad.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "fc4ebd01-d0f0-4046-9aff-1d838ea91154": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_2.png",
+            "title": "Máxima seguridad",
+            "content": "<p>La manta Imetec cumple con las normas internacionales de seguridad más estrictas gracias al dispositivo de seguridad total Electro Block®.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "f07735e4-468a-42f7-8e12-3627fa7feb50": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/25_1.png",
+            "title": "Tejido muy suave",
+            "content": "<p>La manta Imetec te mima con los tejidos suaves de alta calidad con los cuales está hecha: terminaciones y colores que visten el sofá, el sillón y la cama siendo un complemento de decoración moderno para tu hogar.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "5c3c314c-a716-416d-9259-e11a194a33bc": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/17.png",
+            "title": "Lavable",
+            "content": "<p>La manta eléctrica se puede lavar a mano o en lavadora a una temperatura máxima de 30 °C como una manta tradicional. Basta desenchufar el control y seguir las instrucciones indicadas en la etiqueta del tejido.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "688c1e9d-8540-47cd-9b98-da36eb520761",
+        "fc4ebd01-d0f0-4046-9aff-1d838ea91154",
+        "f07735e4-468a-42f7-8e12-3627fa7feb50",
+        "5c3c314c-a716-416d-9259-e11a194a33bc"
+      ],
       "settings": {}
     },
     "faqs": {
       "type": "collection-faqs",
+      "blocks": {
+        "3223eb7b-1577-46eb-81a5-8ffdff688250": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Qué es una manta eléctrica?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "5e260d1b-82ad-4029-a2b7-c6d2fd061338": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se apaga sola?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "4576b14e-9c84-4f97-b0f5-dc748ab8fbfa": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Su utilización es segura?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "36bbcf02-a884-4b48-a345-5d01bc48a4f0": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede lavar?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "b541ba01-6ae9-4e87-b27d-e776c77a791d": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede utilizar también apagada?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "48281e97-7898-42e2-a21e-f0343500971f": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede utilizar también en la cama?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "e61c0a70-792c-4f5e-89ed-ebc817b9c15d": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Qué longitud tiene el cable eléctrico?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "e7fcff0f-4612-4f35-bee3-fd9549e5e9ab": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede utilizar al aire libre?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3223eb7b-1577-46eb-81a5-8ffdff688250",
+        "5e260d1b-82ad-4029-a2b7-c6d2fd061338",
+        "4576b14e-9c84-4f97-b0f5-dc748ab8fbfa",
+        "36bbcf02-a884-4b48-a345-5d01bc48a4f0",
+        "b541ba01-6ae9-4e87-b27d-e776c77a791d",
+        "48281e97-7898-42e2-a21e-f0343500971f",
+        "e61c0a70-792c-4f5e-89ed-ebc817b9c15d",
+        "e7fcff0f-4612-4f35-bee3-fd9549e5e9ab"
+      ],
       "settings": {}
     }
   },

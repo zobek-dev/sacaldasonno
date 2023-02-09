@@ -2,7 +2,16 @@
   "sections": {
     "heading": {
       "type": "heading-collection",
-      "settings": {}
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/desktop-01_2.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/movil-01_2.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/movil-01_2_b9331923-1b32-4cf9-9deb-2c799fa40d2c.jpg",
+        "bajada": "El placer de un cálido y tierno abrazo",
+        "gradient_ini": "#ffffff",
+        "gradient_end": "#ffffff",
+        "title_color": "#4a4a49",
+        "text_color": "#4a4a49"
+      }
     },
     "main": {
       "type": "main-collection",
@@ -10,18 +19,210 @@
     },
     "porque": {
       "type": "collection-porque",
-      "settings": {}
+      "blocks": {
+        "07d8d61a-16fa-46ee-824a-7fe7a86aa475": {
+          "type": "respuesta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2_Mesa_de_trabajo_1_1.png",
+            "title": "Mejora la calidad de sueño",
+            "content": "<p>Con Scaldasonno puedes crear en tu cama el clima perfecto, ni demasiado caliente ni demasiado frío, el que necesitas para dormirte y descansar en el mejor modo posible y despertarte con la energía que necesitas para enfrentar la jornada.<\/p>"
+          }
+        },
+        "19defcb0-389c-4101-8a55-b6c6e90633e0": {
+          "type": "respuesta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2-02_1.png",
+            "title": "El placer de tener una cama caliente",
+            "content": "<p>Scaldasonno elimina la desagradable sensación de frío que se siente apenas tocamos las sábanas, dándote el placer único de encontrar siempre la cama calentita y acogedora, con el calor adecuado que favorece el buen dormir.<\/p>"
+          }
+        },
+        "88867bbf-a06d-4672-9a64-320beace0043": {
+          "type": "respuesta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2-03_1.png",
+            "title": "Elimina la humedad",
+            "content": "<p>La humedad en la cama es perjudicial para el sueño, el cuerpo y favorece el desarrollo de los ácaros que provocan alergias. Scaldasonno con su calor delicado y constante, calienta el colchón y la sábana y absorbe la humedad creando un ambiente más saludable para dormir.<\/p>"
+          }
+        },
+        "c5d7393b-6ec7-4e63-a02d-f7cc8394a512": {
+          "type": "respuesta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2-06.png",
+            "title": "Favorece la relajación de los músculos",
+            "content": "<p>El calor es, desde siempre, una fuente de bienestar que brinda muchos beneficios al cuerpo. El calor liberado por Scaldasonno facilita la circulación sanguínea y favorece la relajación y la reducción de las tensiones musculares.<\/p>"
+          }
+        },
+        "ddf5f5da-069f-45a1-97c5-90b652b44ebd": {
+          "type": "respuesta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sin_titulo-2_1.png",
+            "title": "Máximo confort con mínimo consumo",
+            "content": "<p>Scaldasonno asegura el placer de quedarse dormido y dormir en una cama caliente, con pocos centavos por noche, manteniendo la temperatura de la habitación fresca.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "07d8d61a-16fa-46ee-824a-7fe7a86aa475",
+        "19defcb0-389c-4101-8a55-b6c6e90633e0",
+        "88867bbf-a06d-4672-9a64-320beace0043",
+        "c5d7393b-6ec7-4e63-a02d-f7cc8394a512",
+        "ddf5f5da-069f-45a1-97c5-90b652b44ebd"
+      ],
+      "settings": {
+        "title": "¿Por qué utilizar Scaldasonno?"
+      }
     },
     "single": {
       "type": "single-cita",
-      "settings": {}
+      "settings": {
+        "content": "<p>Las investigaciones lo confirman: dormir bien es esencial para afrontar mejor la jornada y un sueño regenerador es la clave del bienestar. Scaldasonno ayuda a dormir bien porque crea en la cama un hábitat confortable con el calor justo que facilita el relax y un descanso de calidad.<\/p>",
+        "color": "#ffffff"
+      }
     },
     "consejos": {
       "type": "collection-consejos",
+      "blocks": {
+        "495689d8-2816-4a15-9862-78761b2fb597": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_1.png",
+            "title": "Tecnologías made in italy",
+            "content": "<p>Desde el lanzamiento del primer modelo en 1978 en Italia, Scaldasonno es sinónimo de la categoría calientacamas y marca de referencia de la evolución tecnológica del producto.<br\/><\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "6ae471e6-beb2-422c-8694-9ca208b88a14": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_1.png",
+            "title": "Máxima seguridad",
+            "content": "<p>Scaldasonno cumple con las normas internacionales de seguridad más estrictas gracias al exclusivo dispositivo de seguridad total Electro Block®.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "56d7bd4d-5e1c-4eec-94b4-e9e12d50e552": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/25.png",
+            "title": "El confor de los mejores tejidos Italianos",
+            "content": "<p>Scaldasonno utiliza los mejores tejidos para ofrecer el máximo confort durante el descanso.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "3e017b76-0e20-44cb-9809-ef18056d1da6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_1.png",
+            "title": "Control Digital",
+            "content": "<p>El control digital es el corazón tecnológico de Scaldasonno: programa la temperatura, realiza el precalentamiento y el apagado automático.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "b83b4e52-37f8-4c88-bc37-130631826349": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/17.png",
+            "title": "Cómo lavar tu calientacamas",
+            "content": "<p>Se recomienda no lavar tu calientacamas más de 2 o 3 veces al año ya que se acelera el desgaste del producto.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        },
+        "b5ac96e8-3a25-484a-b87e-36ce6574b9a3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/22_2.png",
+            "title": "Bajo consumo eléctrico",
+            "content": "<p>Scaldasonno tiene un bajo consumo de energía que le permite dormir en una cama temperada todo el invierno con pocos centavos por noche. Además permite apagar o disminuir la calefacción mientras está durmiendo.<\/p>",
+            "modal": false,
+            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "495689d8-2816-4a15-9862-78761b2fb597",
+        "6ae471e6-beb2-422c-8694-9ca208b88a14",
+        "56d7bd4d-5e1c-4eec-94b4-e9e12d50e552",
+        "3e017b76-0e20-44cb-9809-ef18056d1da6",
+        "b83b4e52-37f8-4c88-bc37-130631826349",
+        "b5ac96e8-3a25-484a-b87e-36ce6574b9a3"
+      ],
       "settings": {}
     },
     "faqs": {
       "type": "collection-faqs",
+      "blocks": {
+        "740dcbc9-a4b1-4c11-a44c-58304dbde248": {
+          "type": "faq",
+          "settings": {
+            "title": "¿En qué colchones puede colocarlse?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "c50aa13d-6462-445e-930c-cd6eef22fba6": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Puede permanecer encendido toda la noche?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "387a2133-1a47-42db-a47e-93b3934ed7f9": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Cómo funciona?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "e637ce74-aa34-48a7-ab31-9f95255b1966": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Su utilización es segura?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "7dba094a-943e-47db-bb15-3ef19f51176d": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede lavar?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "01ace58a-603d-472e-a44d-dbb9c43cc411": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Lo pueden utilizar todos los miembros de la familia?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "4b4f437c-11a1-4dd4-86e1-8bf16026afb9": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Cuánto tarda en calentarse?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "b565b264-aee9-4b32-a1c2-85c54d2fa747": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Se puede secar en la secadora?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "740dcbc9-a4b1-4c11-a44c-58304dbde248",
+        "c50aa13d-6462-445e-930c-cd6eef22fba6",
+        "387a2133-1a47-42db-a47e-93b3934ed7f9",
+        "e637ce74-aa34-48a7-ab31-9f95255b1966",
+        "7dba094a-943e-47db-bb15-3ef19f51176d",
+        "01ace58a-603d-472e-a44d-dbb9c43cc411",
+        "4b4f437c-11a1-4dd4-86e1-8bf16026afb9",
+        "b565b264-aee9-4b32-a1c2-85c54d2fa747"
+      ],
       "settings": {}
     }
   },

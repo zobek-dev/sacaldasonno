@@ -1,5 +1,5 @@
 import Alpine from 'alpinejs';
-import Swiper, {Navigation, Pagination, Controller} from 'swiper';
+import Swiper, {Navigation, Pagination, Controller, Autoplay} from 'swiper';
 import fslightbox from 'fslightbox';
 
 window.Alpine = Alpine;
@@ -22,8 +22,6 @@ class GalleryThumbnail extends HTMLElement{
     this.next = this.querySelector('.swiper-button-next');
     this.prev = this.querySelector('.swiper-button-prev');
     this.count = Number(this.dataset.count);
-    
-    console.log(this.count);
 
     this.gall = new Swiper(this.gallery, {
       modules: [Controller, Navigation],
@@ -290,3 +288,33 @@ Shopify.CountryProvinceSelector.prototype = {
     }
   }
 };
+
+class Slideshow extends HTMLElement{
+  constructor(){
+    super()
+    this.carousel = this.querySelector('.slideshow');
+    this.next = this.querySelector('.btn-next');
+    this.prev = this.querySelector('.btn-prev');
+    this.pagination = this.querySelector('.swiper-pagination')
+
+    this.swiper = new Swiper(this.carousel, {
+      modules: [Navigation, Pagination, Autoplay],
+      loop: true, 
+      navigation: {
+        nextEl: this.next,
+        prevEl: this.prev
+      },
+      pagination: {
+        el: this.pagination,
+        clickable: true
+      },
+      speed: 500, 
+      autoplay: 
+      {
+        delay: 4000,
+      },
+    })
+  } 
+}
+
+customElements.define('slideshow-carousel', Slideshow);

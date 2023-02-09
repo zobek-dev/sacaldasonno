@@ -2,10 +2,232 @@
   "sections": {
     "head": {
       "type": "head-faq",
-      "settings": {}
+      "settings": {
+        "title": "Preguntas Frecuentes"
+      }
+    },
+    "e69c74d7-6535-4465-8ac8-a47ca5e8f334": {
+      "type": "section-faq",
+      "blocks": {
+        "5f70c9ed-3efa-4fd8-9e2f-46111deee6d4": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿En qué colchones puede colocarse?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "e16aff17-a07b-4973-abad-29b3aab476af": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Puede permanecer encendido toda la noche?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "6c210f60-8340-41d9-a66f-ff5715f069c1": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Cómo funciona?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "36908c73-9586-4353-8133-93881fd7389a": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Su utilización es segura?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "cc810287-9095-4b29-aaff-2fd2b74eed76": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Se puede lavar?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "5b9e9c13-89fc-46c9-a09e-124a81ef2be7": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Lo pueden utilizar todos los miembros de la familia?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "e2ff81c9-67d0-49b3-adc3-f9b47da48309": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Cómo funciona el modelo matrimonial?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "147646cf-82a9-43ec-9fa5-e4b3fa02b09f": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Cuánto tarda en calentarse?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5f70c9ed-3efa-4fd8-9e2f-46111deee6d4",
+        "e16aff17-a07b-4973-abad-29b3aab476af",
+        "6c210f60-8340-41d9-a66f-ff5715f069c1",
+        "36908c73-9586-4353-8133-93881fd7389a",
+        "cc810287-9095-4b29-aaff-2fd2b74eed76",
+        "5b9e9c13-89fc-46c9-a09e-124a81ef2be7",
+        "e2ff81c9-67d0-49b3-adc3-f9b47da48309",
+        "147646cf-82a9-43ec-9fa5-e4b3fa02b09f"
+      ],
+      "settings": {
+        "title": "Scaldasonno",
+        "image": "shopify:\/\/shop_images\/sistema-sicurezza-electro-block-coprimaterasso-adapto-maxi-trapuntato-anallergico_1.jpg"
+      }
+    },
+    "cf55fac8-2ca0-46ed-95af-e85b8d005d41": {
+      "type": "section-faq",
+      "blocks": {
+        "cb7d3652-7f88-4262-932c-2c958834239f": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Qué es una manta eléctrica?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "42e1504d-0569-46d6-a441-991d829b29c4": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Se apaga sola?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "564db6be-0401-42c5-b92f-71010a8c11d0": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Su utilización es segura?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "bf31ed48-7bf5-461a-82a0-6c2c8e353f26": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Se puede lavar?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "0d33d3cc-45eb-4d81-816a-212e8889c5bc": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Se puede utilizar también en la cama?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "1e4dfe71-3afe-4525-ac55-22d7df7cf482": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Qué longitud tiene el cable eléctrico?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "147e6f9f-d855-425d-94f5-5317f439996b": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Se puede utilizar al aire libre?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "cb7d3652-7f88-4262-932c-2c958834239f",
+        "42e1504d-0569-46d6-a441-991d829b29c4",
+        "564db6be-0401-42c5-b92f-71010a8c11d0",
+        "bf31ed48-7bf5-461a-82a0-6c2c8e353f26",
+        "0d33d3cc-45eb-4d81-816a-212e8889c5bc",
+        "1e4dfe71-3afe-4525-ac55-22d7df7cf482",
+        "147e6f9f-d855-425d-94f5-5317f439996b"
+      ],
+      "settings": {
+        "title": "Mantas Eléctricas",
+        "image": "shopify:\/\/shop_images\/massima-sicurezza_1_1.jpg"
+      }
+    },
+    "f4e0a154-98de-4d9e-89fc-d9d99fdf3f68": {
+      "type": "section-faq",
+      "blocks": {
+        "10fec60b-b438-45a4-bb14-91291d2af9d2": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Se puede lavar?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "7a8f20a4-8987-44fe-8c0a-266f1987b80f": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Puede utilizarse en animales?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "54416ac5-047d-4691-b783-05ce63f77d18": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Mantiene el calor despúes de desenchufarlo?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "f94b03fe-1028-4ec4-875b-2d25ea9302dd": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Su utilización es segura?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "20938af8-d445-4b77-98ac-66ae6f2abd09": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Cuánta corriente consume?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "9ee2c30e-8d6f-46f5-814c-fd5bc7cbc8ce": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Para qué sirve la almohadilla eléctrica?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "b2fc457c-e5df-4660-87c8-e5f81664dcca": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Dónde se coloca a la almohadilla eléctrica?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        },
+        "4563f9d5-7f61-49bb-8f98-cb6e96c29273": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Se puede poner la almohadilla eléctrica en la cama?",
+            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "10fec60b-b438-45a4-bb14-91291d2af9d2",
+        "7a8f20a4-8987-44fe-8c0a-266f1987b80f",
+        "54416ac5-047d-4691-b783-05ce63f77d18",
+        "f94b03fe-1028-4ec4-875b-2d25ea9302dd",
+        "20938af8-d445-4b77-98ac-66ae6f2abd09",
+        "9ee2c30e-8d6f-46f5-814c-fd5bc7cbc8ce",
+        "b2fc457c-e5df-4660-87c8-e5f81664dcca",
+        "4563f9d5-7f61-49bb-8f98-cb6e96c29273"
+      ],
+      "settings": {
+        "title": "Almohadillas",
+        "image": "shopify:\/\/shop_images\/termoforo-rettangolare-intellisense-micro-peluche-con-tasca-16780a_gallery_6_1_2.jpg"
+      }
     }
   },
   "order": [
-    "head"
+    "head",
+    "e69c74d7-6535-4465-8ac8-a47ca5e8f334",
+    "cf55fac8-2ca0-46ed-95af-e85b8d005d41",
+    "f4e0a154-98de-4d9e-89fc-d9d99fdf3f68"
   ]
 }
