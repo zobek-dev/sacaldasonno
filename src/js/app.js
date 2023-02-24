@@ -92,11 +92,12 @@ class ProductConsejosCarousel extends HTMLElement{
     super();
 
     this.carousel = this.querySelector('.carousel-consejos');
+    this.next = this.querySelector('.swiper-button-next');
+    this.prev = this.querySelector('.swiper-button-prev');
     this.count = Number(this.dataset.count);
-
-    console.log(this.count)
     
     this.swiper = new Swiper(this.carousel, {
+      modules: [Navigation],
       slidesPerView: 1, 
       spaceBetween:16,
       breakpoints: {
@@ -104,6 +105,10 @@ class ProductConsejosCarousel extends HTMLElement{
           slidesPerView:this.count,
           spaceBetween:16
         }
+      },
+      navigation: {
+        nextEl: this.next,
+        prevEl: this.prev
       }
     })
   }

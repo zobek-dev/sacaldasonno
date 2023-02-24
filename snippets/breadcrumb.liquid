@@ -27,7 +27,7 @@
         {% endif %}
 
         <li>
-          <a href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+          <a href="{{ product.url }}" aria-current="page" class="line-clamp-1">{{ product.title }}</a>
         </li>
 
         {% when 'collection' and collection.handle %}

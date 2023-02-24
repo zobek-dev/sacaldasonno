@@ -79,7 +79,7 @@
               <s class="text-base sm:text-[18px] lg:text-xl text-[#a00] decoration-[#a00]">{{ product.compare_at_price_max | money }}</s>
             {% else %}
               <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
-              <span class="text-[#a00] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
+              <span class="text-[#4a4a49] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
               {% endif %}
           </div>
           <div x-data="{
@@ -142,6 +142,60 @@
     </div>
   </div>
 </div>
+
+{%- liquid
+if product.selected_or_first_available_variant.featured_media
+  assign seo_media = product.selected_or_first_available_variant.featured_media
+else
+  assign seo_media = product.featured_media
+endif
+-%}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "url": {{ request.origin | append: product.url | json }},
+  {% if seo_media -%}
+    "image": [
+      {{ seo_media | image_url: width: 1920 | prepend: "https:" | json }}
+    ],
+  {%- endif %}
+  "description": {{ product.description | strip_html | json }},
+  {% if product.selected_or_first_available_variant.sku != blank -%}
+    "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  {%- endif %}
+  "brand": {
+    "@type": "Brand",
+    "name": {{ product.vendor | json }}
+  },
+  "offers": [
+    {%- for variant in product.variants -%}
+      {
+        "@type" : "Offer",
+        {%- if variant.sku != blank -%}
+          "sku": {{ variant.sku | json }},
+        {%- endif -%}
+        {%- if variant.barcode.size == 12 -%}
+          "gtin12": {{ variant.barcode }},
+        {%- endif -%}
+        {%- if variant.barcode.size == 13 -%}
+          "gtin13": {{ variant.barcode }},
+        {%- endif -%}
+        {%- if variant.barcode.size == 14 -%}
+          "gtin14": {{ variant.barcode }},
+        {%- endif -%}
+        "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+        "price" : {{ variant.price | divided_by: 100.00 | json }},
+        "priceCurrency" : {{ cart.currency.iso_code | json }},
+        "url" : {{ request.origin | append: variant.url | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+
+
+</script>
 
 {% schema %}
   {
