@@ -6,7 +6,7 @@
     <h2 class="text-[22px] lg:text-[35px] font-gobold uppercase text-center mt-12 mb-8">{{ section.settings.title | escape }}</h2>
     <ul class="block text-center">
       {% for block in section.blocks %}
-        <li class="inline-block max-w-full lg:max-w-[45vw] xl:max-w-[25vw] lg:px-4 xl:px-8 mb-8">
+        <li class="inline-block max-w-full align-top lg:max-w-[45vw] xl:max-w-[25vw] lg:px-4 xl:px-8 mb-8">
           <img
             src="{{ block.settings.image | img_url: '100x' }}"
             alt="{{ block.settings.title | escape }}"

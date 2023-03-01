@@ -2,7 +2,10 @@
   <div class="wrapper">
     <ul class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {% for block in section.blocks %}
-        <li class="flex items-center text-center flex-col">
+        <li class="flex items-center text-center flex-col relative">
+          {% if block.settings.link != blank %}
+          <a href="{{ block.settings.link }}" class="absolute top-0 left-0 block w-full h-full"></a>  
+          {% endif %}
           <img
             src="{{ block.settings.image | img_url: '150x' }}"
             alt="{{ block.settings.title | escape }}"
@@ -42,6 +45,10 @@
             "id": "content",
             "label": "Inserta el contenido",
             "default": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores nesciunt accusamus error quae amet voluptatibus reprehenderit vero autem quasi in!"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link del icono."
           }
         ]
       }

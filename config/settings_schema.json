@@ -80,5 +80,16 @@
         "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
       }
     ]
+  },
+  {
+    "name": "t:settings_schema.logo.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Inserta el favicon",
+        "info": "inserta una imagen en png de formato cuadrado"
+      }
+    ]
   }
 ]

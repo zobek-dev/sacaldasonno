@@ -6,14 +6,15 @@
     <div class="text-center my-8">
       {{ section.settings.content }}
     </div>
-    <ul class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <ul class="grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
       {% for block in section.blocks %}
         <li class="px-4 flex flex-col items-center text-center">
           <img
             src="{{ block.settings.image | img_url: '77x' }}"
             alt="{{ block.settings.title | escape }}"
             width="77"
-            height="{{ 77 | divided_by: block.settings.image.aspect_ratio }}"
+            height="60"
+            class="w-[77px] h-[66px]"
             loading="lazy">
           <h3  class="text-[18px] lg:text-[26px] uppercase font-bold text-center my-4">{{ block.settings.title | escape }}</h3>
           <div>

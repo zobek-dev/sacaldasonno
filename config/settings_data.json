@@ -2,12 +2,14 @@
   "current": {
     "social_facebook_link": "https:\/\/www.facebook.com\/ScaldasonnoChile",
     "social_instagram_link": "https:\/\/www.instagram.com\/scaldasonnochile\/",
+    "social_tiktok_link": "",
     "social_youtube_link": "https:\/\/www.youtube.com\/user\/ImetecItalyOfficial",
+    "favicon": "shopify:\/\/shop_images\/favico-imetec.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "text": "Bienvenidos a nuestra tienda",
+          "text": "Diseño y Tecnología con Máxima Seguridad para ti y tu familia",
           "link": ""
         }
       },
@@ -43,11 +45,9 @@
             "settings": {
               "title": "Métodos de Pago",
               "pay_method_one_text": "Tarjeta de Crédito\/Débito",
-              "pay_method_one_image": "",
               "pay_method_two_text": "Mercado pago",
-              "pay_method_two_image": "{% render 'mercado-pago', class: 'w-[150px]' %}",
-              "pay_method_three_text": "",
-              "pay_method_three_image": ""
+              "pay_method_two_image": "shopify:\/\/shop_images\/iconos-12_1.png",
+              "pay_method_three_text": ""
             }
           }
         },

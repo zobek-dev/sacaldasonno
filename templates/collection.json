@@ -2,7 +2,13 @@
   "sections": {
     "heading": {
       "type": "heading-collection",
-      "settings": {}
+      "settings": {
+        "bajada": "Disfruta de un calor envolvente",
+        "gradient_ini": "#ffffff",
+        "gradient_end": "#ffffff",
+        "title_color": "#4a4a49",
+        "text_color": "#4a4a49"
+      }
     },
     "main": {
       "type": "main-collection",

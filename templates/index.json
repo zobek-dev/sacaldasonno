@@ -6,6 +6,7 @@
     },
     "6d039727-5eef-443e-a084-d2a448f903cb": {
       "type": "home-hero",
+      "disabled": true,
       "settings": {
         "image_desktop": "shopify:\/\/shop_images\/home-desktop_2.jpg",
         "image_tablet": "shopify:\/\/shop_images\/home-tablet_1.jpg",
@@ -21,6 +22,58 @@
         "button_text": "Descubre más",
         "button_link": "shopify:\/\/collections\/calientacamas"
       }
+    },
+    "15d9c212-6ce8-4fd0-9cf9-c773090bb162": {
+      "type": "slideshow",
+      "blocks": {
+        "afce68f8-2fbd-4490-82ce-51624432df52": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/todos-los-productos",
+            "image_desktop": "shopify:\/\/shop_images\/banner1-desktop.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner1-tablet.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/banner1-mobile.jpg",
+            "alt_text": "Tejidos ultrasuaves de alta calidad, el calor ideal para la calidez de tu hogar - ver productos"
+          }
+        },
+        "e0dbcd38-b726-43fb-b87c-123c893b9dd2": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/todos-los-productos",
+            "image_desktop": "shopify:\/\/shop_images\/banner2-desktop.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner2-tablet.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/banner2-mobile.jpg",
+            "alt_text": "Haz que tus momentos de relajación sean únicos con el placer de la calidez ideal"
+          }
+        },
+        "055db437-4fec-4ecb-b1f6-4cec19f898ab": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/mantas-electricas",
+            "image_desktop": "shopify:\/\/shop_images\/banner3-desktop.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner3-tablet_84261139-264d-4ebb-b72d-4def2cba2208.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/banner3-mobile_f6ed5d30-a36c-4a96-befe-0f414c06b22a.jpg",
+            "alt_text": "haz que tus momentos de relajación sean únicos con el plñlacer de la calidez ideal"
+          }
+        },
+        "bc0998f4-e932-476e-8003-3ddd90f4bc9f": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/products\/manta-electrica-tartan-scaldasonno",
+            "image_desktop": "shopify:\/\/shop_images\/banner4-desktop.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner4-tablet_d903ac6a-f44e-4fb7-980e-701b35fcbea8.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/banner4-mobile_aca52efd-c4f4-448d-8d43-8a6b216602d1.jpg",
+            "alt_text": "Haz que tus momentos relajación sean únicos con el placer de la calidez ideal- Ver mantas eléctrica"
+          }
+        }
+      },
+      "block_order": [
+        "afce68f8-2fbd-4490-82ce-51624432df52",
+        "e0dbcd38-b726-43fb-b87c-123c893b9dd2",
+        "055db437-4fec-4ecb-b1f6-4cec19f898ab",
+        "bc0998f4-e932-476e-8003-3ddd90f4bc9f"
+      ],
+      "settings": {}
     },
     "4e0fee28-e16c-4802-9402-cc8e410a5f50": {
       "type": "home-iconos",
@@ -65,16 +118,16 @@
     "f7f21698-652b-4ff2-96de-9917ab786b5a": {
       "type": "home-featured-products",
       "blocks": {
-        "1b2662d9-76d3-4ec1-a122-e7d5729c7330": {
-          "type": "product",
-          "settings": {
-            "handle": "scaldasonno-active-individual"
-          }
-        },
         "538654e7-6a4b-4ff3-ae3f-7bd39fa4954b": {
           "type": "product",
           "settings": {
             "handle": "manta-electrica-tartan-scaldasonno"
+          }
+        },
+        "6077622a-ca1c-4b1e-9033-1bbd5f51192c": {
+          "type": "product",
+          "settings": {
+            "handle": "calientacama-scaldasonno-maxi-adapto-1-plaza-y-1-2-190x120cm"
           }
         },
         "8cd5bbf8-eda7-4e99-9468-e17730f24734": {
@@ -83,18 +136,39 @@
             "handle": "almohadilla-termica-rectangular-con-bolsillo"
           }
         },
+        "23ac7ef7-70c8-4837-8683-5dd8e27a1981": {
+          "type": "product",
+          "settings": {
+            "handle": "calientacama-scaldasonno-purity-2-plazas-150x160-cm"
+          }
+        },
         "325825f0-0936-416b-b44a-40dc3fad4a84": {
           "type": "product",
           "settings": {
             "handle": "almohadilla-termica-cervical"
           }
+        },
+        "b743d134-4d24-4f7b-9877-1e7d7b539aac": {
+          "type": "product",
+          "settings": {
+            "handle": "calientacama-scaldasonno-active-2-plazas-150x160-cm"
+          }
+        },
+        "e361a61c-6825-4e12-b5b7-251f4b030312": {
+          "type": "product",
+          "settings": {
+            "handle": "calientacama-scaldasonno-individual-1-plaza-150x80-cm"
+          }
         }
       },
       "block_order": [
-        "1b2662d9-76d3-4ec1-a122-e7d5729c7330",
         "538654e7-6a4b-4ff3-ae3f-7bd39fa4954b",
+        "6077622a-ca1c-4b1e-9033-1bbd5f51192c",
         "8cd5bbf8-eda7-4e99-9468-e17730f24734",
-        "325825f0-0936-416b-b44a-40dc3fad4a84"
+        "23ac7ef7-70c8-4837-8683-5dd8e27a1981",
+        "325825f0-0936-416b-b44a-40dc3fad4a84",
+        "b743d134-4d24-4f7b-9877-1e7d7b539aac",
+        "e361a61c-6825-4e12-b5b7-251f4b030312"
       ],
       "settings": {
         "title": "Mira nuestros productos destacados"
@@ -124,7 +198,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/55555-02_1.png",
             "title": "Bienestar",
-            "content": "<p>La nueva generación de almohadillas eléctricas ha evolucionado el bienestar terapéutico gracias al calor inteligente.<\/p>"
+            "content": "<p>La nueva generación de almohadillas eléctricas ha evolucionado para mejorar la calidad de vida y el bienestar gracias al calor inteligente<\/p>"
           }
         }
       },
@@ -134,8 +208,8 @@
         "3eeaf776-8bc2-4478-9634-e0e1c07c1cf4"
       ],
       "settings": {
-        "title": "Conoce los Beneficios del calor",
-        "content": "<p>Imetec es la empresa italiana especializada en calor que desde hace más de 40 años cuida el bienestar de las personas con productos que mejoran la vida todos los días: calor que hace bien al sueño y al cuerpo, relajante y regenerador.La empresa Imetec está presente en las más importantes innovaciones patentadas en este campo, pioneras en términos de prestaciones, seguridad, soluciones textiles: ideas que han rediseñado el significado del bienestar doméstico.<\/p>"
+        "title": "Experimenta los Beneficios del calor",
+        "content": "<p>El calor es una fuente de bienestar que brinda muchos beneficios al cuerpo. El calor liberado por los productos Scaldasonno facilita la circulación sanguínea, favorece la relajación y la reducción de las tensiones musculares entregando seguridad a través de las innovaciones tecnológicas, diseño y calidad.<\/p>"
       }
     },
     "46b57673-ac3d-42a2-b9b3-a344ff270a39": {
@@ -210,7 +284,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/0220_1.png",
             "title": "Máxima seguridad",
-            "content": "Todos los productos Imetec cumplen con las normas internacionales de seguridad más estrictas, ya que cuentan con el exclusivo dispositivo de seguridad total Electro Block©."
+            "content": "Todos los productos Imetec cumplen con las altas y estrictas normas internacionales de seguridad incluyendo el exclusivo dispositivo de seguridad total \"Electro Block\"®.",
+            "link": ""
           }
         },
         "d1cbee44-9e53-4b80-8b6c-111a395aba99": {
@@ -218,7 +293,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/030_1.png",
             "title": "40 años de experiencia",
-            "content": "Scaldasonno nace de Imetec, una empresa italiana líder en el mercado con 40 años de experiencia, con un compromiso constante en investigación y desarrollo, que garantiza la innovación tecnológica innovadora en la vanguardia para la seguridad, prestaciones y acabados textiles."
+            "content": "Scaldasonno es una marca de Imetec, empresa italiana líder  con más de 40 años de experiencia en el mercado. El compromiso constante en investigación y desarrollo garantiza la innovación tecnológica de vanguardia que destaca la seguridad, prestaciones y calidad en sus textiles.",
+            "link": ""
           }
         },
         "8b72e4fd-a39e-4af5-aa44-07150364c57f": {
@@ -226,7 +302,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/011_1.png",
             "title": "Máxima Comodidad",
-            "content": "Tecnología térmica desarrollada en Italia, tejidos de alta calidad, prestaciones personalizadas y programables para hacer la vida más simple y agradable."
+            "content": "En Imetec nos preocupamos de entregarte la máxima protección y comodidad. Todos nuestros productos de Imetec cuentan con tecnología térmica desarrollada en Italia, textiles de alta calidad, prestaciones personalizadas y programables.",
+            "link": ""
           }
         }
       },
@@ -267,6 +344,7 @@
   "order": [
     "main",
     "6d039727-5eef-443e-a084-d2a448f903cb",
+    "15d9c212-6ce8-4fd0-9cf9-c773090bb162",
     "4e0fee28-e16c-4802-9402-cc8e410a5f50",
     "f7f21698-652b-4ff2-96de-9917ab786b5a",
     "26118325-e776-4745-970d-3d17469317ee",
