@@ -186,8 +186,8 @@ class="pb-12"
             {% render 'card-product', product: product %} 
           {% endfor %}
         </ul>
-        {% if paginate.parts > 1 %}
-          {% render 'pagination' %}
+        {% if paginate.pages > 1 %}
+          {% render 'pagination', paginate: paginate %}
         {% endif %}
       </div>
       {% endpaginate %}

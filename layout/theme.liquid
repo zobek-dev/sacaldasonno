@@ -68,7 +68,17 @@
   {% section 'announcement-bar' %}
   {% section 'header' %}  
   <main class="min-h-[60vh]">
-    {{ content_for_layout }}
+    {% comment %} {{ request.page_type }}
+    <div class="hidden">
+      {{ content_for_layout }}
+    </div> {% endcomment %}
+
+    {% case request.page_type %}
+      {% when 'policy' %}
+        {% section 'main-policies' %}
+      {% else %}
+        {{ content_for_layout }}
+    {% endcase %}
   </main> 
   {% section 'footer' %} 
   <!--PREDICTIVE SEARCH-->  

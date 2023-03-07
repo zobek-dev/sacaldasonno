@@ -12,7 +12,7 @@
 
       <ul class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {%- for product in recommendations.products -%}
-          {% render 'card-product', class: '' %}
+          {% render 'card-product', class: '', product: product %}
         {%- endfor -%}
       </ul>
     </div>   
