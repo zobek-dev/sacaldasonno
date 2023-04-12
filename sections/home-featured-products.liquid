@@ -4,8 +4,8 @@
     <featured-products>
       <div class="featured-products featured-products-{{ section.id }} relative overflow-hidden py-4">
         <ul class="swiper-wrapper">
-          {% for block in section.blocks %}
-            {% render 'card-product', product: all_products[block.settings.handle], class: 'swiper-slide' %}
+          {% for product in collections[section.settings.coll].products %}
+            {% render 'card-product', product: product , class: 'swiper-slide' %}
           {% endfor %}
         </ul>
         <div class="swiper-button-next text-[#4a4a49]"></div>
@@ -23,19 +23,11 @@
         "type": "text",
         "id": "title",
         "label": "Titulo de la sección"
-      }
-    ],
-    "blocks": [
+      },
       {
-        "type": "product",
-        "name": "producto",
-        "settings": [
-          {
-            "type": "product",
-            "id": "handle",
-            "label": "Selecciona un producto."
-          }
-        ]
+        "type": "collection",
+        "id": "coll",
+        "label": "Selecciona la colección"
       }
     ],
     "presets": [

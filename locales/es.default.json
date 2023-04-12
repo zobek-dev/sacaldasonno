@@ -440,5 +440,20 @@
       "copy_code_success": "El código se copió correctamente",
       "print_gift_card": "Imprimir"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "city_label": "Comuna",
+        "zip_code_label": "Código Postal (No es necesario)",
+        "zip_code_placeholder": "Código Postal (No es necesario)",
+        "postal_code_label": "Código Postal (No es necesario)",
+        "postal_code_placeholder": "Código Postal (No es necesario)",
+        "postcode_label": "Código Postal (No es necesario)",
+        "postcode_placeholder": "Código Postal (No es necesario)",
+        "email_or_phone_label": "Correo electrónico (obligatorio)",
+        "email_or_phone_placeholder": "Correo electrónico (obligatorio)"
+      }
+    }
   }
 }

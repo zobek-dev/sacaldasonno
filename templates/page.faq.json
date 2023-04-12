@@ -9,72 +9,72 @@
     "e69c74d7-6535-4465-8ac8-a47ca5e8f334": {
       "type": "section-faq",
       "blocks": {
+        "6c210f60-8340-41d9-a66f-ff5715f069c1": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Cómo funciona?",
+            "content": "<p>El producto debe colocarse entre el colchón y la sábana. Después de encender y precalentar, debe elegir la temperatura preferida para dormir y, para los modelos que están equipados con un temporizador, programar el apagado automático.<\/p>"
+          }
+        },
         "5f70c9ed-3efa-4fd8-9e2f-46111deee6d4": {
           "type": "Faq",
           "settings": {
             "title": "¿En qué colchones puede colocarse?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Scaldasonno es compatible con todos los colchones, incluidos el látex y la espuma viscoelástica.<\/p>"
           }
         },
         "e16aff17-a07b-4973-abad-29b3aab476af": {
           "type": "Faq",
           "settings": {
             "title": "¿Puede permanecer encendido toda la noche?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
-          }
-        },
-        "6c210f60-8340-41d9-a66f-ff5715f069c1": {
-          "type": "Faq",
-          "settings": {
-            "title": "¿Cómo funciona?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
-          }
-        },
-        "36908c73-9586-4353-8133-93881fd7389a": {
-          "type": "Faq",
-          "settings": {
-            "title": "¿Su utilización es segura?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
-          }
-        },
-        "cc810287-9095-4b29-aaff-2fd2b74eed76": {
-          "type": "Faq",
-          "settings": {
-            "title": "¿Se puede lavar?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
-          }
-        },
-        "5b9e9c13-89fc-46c9-a09e-124a81ef2be7": {
-          "type": "Faq",
-          "settings": {
-            "title": "¿Lo pueden utilizar todos los miembros de la familia?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
-          }
-        },
-        "e2ff81c9-67d0-49b3-adc3-f9b47da48309": {
-          "type": "Faq",
-          "settings": {
-            "title": "¿Cómo funciona el modelo matrimonial?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Se puede dejar encendido de forma segura toda la noche, ya que está equipado con el Electro Block®, el sistema de seguridad integrado en el elemento calefactor que, en caso de falla, apaga rápidamente el producto.<\/p>"
           }
         },
         "147646cf-82a9-43ec-9fa5-e4b3fa02b09f": {
           "type": "Faq",
           "settings": {
             "title": "¿Cuánto tarda en calentarse?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Los modelos equipados con tecnología de calentamiento rápido se calientan en minutos. Para aquellos con tecnología tradicional, hay que esperar un poco más.<\/p>"
+          }
+        },
+        "e2ff81c9-67d0-49b3-adc3-f9b47da48309": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Cómo funciona el modelo matrimonial?",
+            "content": "<p>El Calienta camas matrimonial tiene dos cuadrados de calefacción separados y dos controles, que le permiten ajustar la temperatura de manera diferente. Todos pueden encontrar de esta manera la calidez que mejor se adapte a sus necesidades.<\/p>"
+          }
+        },
+        "36908c73-9586-4353-8133-93881fd7389a": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Su utilización es segura?",
+            "content": "<p>El Sleep Warmer cumple con las estrictas normas internacionales de seguridad. Está equipado con el Electro Block®, el sistema de seguridad integrado en el elemento calefactor que, en caso de fallo, apaga rápidamente el producto.<\/p>"
+          }
+        },
+        "cc810287-9095-4b29-aaff-2fd2b74eed76": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Se puede lavar?",
+            "content": "<p>Dependiendo de la tela con la que esté hecho, Scaldasonno se puede lavar a mano o en la lavadora a un máximo de 40 ° C y utilizando un detergente neutro. Puede secarlo en la secadora o extenderlo al aire libre en posición horizontal.<\/p>"
+          }
+        },
+        "5b9e9c13-89fc-46c9-a09e-124a81ef2be7": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Lo pueden utilizar todos los miembros de la familia?",
+            "content": "<p>El calienta camas NO puede ser utilizado por niños menores de 3 años, que tienen una sensibilidad reducida al calor. La manta interior puede ser utilizada por niños entre las edades de 3 y 8 bajo supervisión y con el dispositivo de control siempre ajustado al nivel de temperatura más bajo.<\/p>"
           }
         }
       },
       "block_order": [
+        "6c210f60-8340-41d9-a66f-ff5715f069c1",
         "5f70c9ed-3efa-4fd8-9e2f-46111deee6d4",
         "e16aff17-a07b-4973-abad-29b3aab476af",
-        "6c210f60-8340-41d9-a66f-ff5715f069c1",
+        "147646cf-82a9-43ec-9fa5-e4b3fa02b09f",
+        "e2ff81c9-67d0-49b3-adc3-f9b47da48309",
         "36908c73-9586-4353-8133-93881fd7389a",
         "cc810287-9095-4b29-aaff-2fd2b74eed76",
-        "5b9e9c13-89fc-46c9-a09e-124a81ef2be7",
-        "e2ff81c9-67d0-49b3-adc3-f9b47da48309",
-        "147646cf-82a9-43ec-9fa5-e4b3fa02b09f"
+        "5b9e9c13-89fc-46c9-a09e-124a81ef2be7"
       ],
       "settings": {
         "title": "Calientacamas",
@@ -88,49 +88,57 @@
           "type": "Faq",
           "settings": {
             "title": "¿Qué es una manta eléctrica?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Es una manta suave con calor ajustable según su gusto a través del control suministrado. Se alimenta de electricidad y se puede utilizar en todas las habitaciones de la casa.<\/p>"
           }
         },
         "42e1504d-0569-46d6-a441-991d829b29c4": {
           "type": "Faq",
           "settings": {
             "title": "¿Se apaga sola?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Sí, es posible programar el plaid para que se apague mediante el práctico temporizador.<\/p>"
           }
         },
         "564db6be-0401-42c5-b92f-71010a8c11d0": {
           "type": "Faq",
           "settings": {
             "title": "¿Su utilización es segura?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Sí, la seguridad está garantizada por el exclusivo sistema de control digital Electro Block® con función de autodiagnóstico en cada puesta en marcha: verifica la eficiencia y la seguridad de todos los componentes, supervisa constantemente el plaid durante el uso y, en caso de anomalías, interviene rápidamente apagando el producto<\/p>"
           }
         },
         "bf31ed48-7bf5-461a-82a0-6c2c8e353f26": {
           "type": "Faq",
           "settings": {
             "title": "¿Se puede lavar?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>El mando del plaid es fácilmente desmontable, para permitir su lavado. El plaid se puede lavar a mano y en lavadora a 30º, con programa específico para prendas delicadas.<\/p>"
           }
         },
         "0d33d3cc-45eb-4d81-816a-212e8889c5bc": {
           "type": "Faq",
+          "disabled": true,
           "settings": {
             "title": "¿Se puede utilizar también en la cama?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>El archivo de cuadros eléctricos tiene 3,6 metros de largo.<\/p>"
           }
         },
         "1e4dfe71-3afe-4525-ac55-22d7df7cf482": {
           "type": "Faq",
           "settings": {
             "title": "¿Qué longitud tiene el cable eléctrico?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>El archivo de cuadros eléctricos tiene 3,6 metros de largo.<\/p>"
           }
         },
         "147e6f9f-d855-425d-94f5-5317f439996b": {
           "type": "Faq",
           "settings": {
             "title": "¿Se puede utilizar al aire libre?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>El plaid eléctrico se puede utilizar fácilmente en un balcón o terraza, debajo de un porche o en el jardín, cuidando de no exponerlo a temperaturas extremas, mal tiempo o humedad. Después de su uso, guarde la tela escocesa en el interior.<\/p>"
+          }
+        },
+        "50960fe5-45c0-43e3-b2cc-9c5739fd7e5f": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿El plaid es compatible para usuarios de marcapasos?",
+            "content": "<p>No, el plaid calefactable no puede ser utilizado por personas con marcapasos.<\/p>"
           }
         }
       },
@@ -141,7 +149,8 @@
         "bf31ed48-7bf5-461a-82a0-6c2c8e353f26",
         "0d33d3cc-45eb-4d81-816a-212e8889c5bc",
         "1e4dfe71-3afe-4525-ac55-22d7df7cf482",
-        "147e6f9f-d855-425d-94f5-5317f439996b"
+        "147e6f9f-d855-425d-94f5-5317f439996b",
+        "50960fe5-45c0-43e3-b2cc-9c5739fd7e5f"
       ],
       "settings": {
         "title": "Mantas Eléctricas",
@@ -155,56 +164,65 @@
           "type": "Faq",
           "settings": {
             "title": "¿Se puede lavar?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>El control de la almohadilla térmica es fácilmente extraíble para permitir su lavado. La almohadilla térmica se puede lavar a mano y en lavadora a 30°, con un programa específico para prendas delicadas.<\/p>"
           }
         },
         "7a8f20a4-8987-44fe-8c0a-266f1987b80f": {
           "type": "Faq",
           "settings": {
             "title": "¿Puede utilizarse en animales?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>No, las almohadillas térmicas no fueron diseñadas para usarse con animales.<\/p>"
           }
         },
         "54416ac5-047d-4691-b783-05ce63f77d18": {
           "type": "Faq",
           "settings": {
             "title": "¿Mantiene el calor despúes de desenchufarlo?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>No, el enchufe de la almohadilla térmica debe estar siempre enchufado para garantizar su funcionamiento.<\/p>"
           }
         },
         "f94b03fe-1028-4ec4-875b-2d25ea9302dd": {
           "type": "Faq",
           "settings": {
             "title": "¿Su utilización es segura?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Sí, la seguridad está garantizada por el exclusivo sistema de control digital Electro Block® con función de autodiagnóstico cada vez que se enciende: verifica la eficiencia y seguridad de todos los componentes, monitorea constantemente la almohadilla térmica durante el uso y, en caso de anomalías, interviene inmediatamente apagando el producto.<\/p>"
           }
         },
         "20938af8-d445-4b77-98ac-66ae6f2abd09": {
           "type": "Faq",
+          "disabled": true,
           "settings": {
             "title": "¿Cuánta corriente consume?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>El uso típico de 3 horas de la almohadilla térmica cuesta solo 2 centavos*.* El coste de 0,02 € se ha calculado teniendo en cuenta el consumo en kWh al día y el coste de la electricidad (fuente Arera, mercado energético cuarto trimestre 2022 considerando las condiciones económicas de suministro para una familia con 3 kWh de potencia y 2.700 kWh de consumo anual). consumo en c€\/kWh) suponiendo el uso de la placa térmica durante 3h.<\/p>"
           }
         },
         "9ee2c30e-8d6f-46f5-814c-fd5bc7cbc8ce": {
           "type": "Faq",
           "settings": {
             "title": "¿Para qué sirve la almohadilla eléctrica?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Se trata de un suave cojín calefactable para colocar en la zona deseada del cuerpo, con calor regulable según tus necesidades a través del mando suministrado. Se alimenta con corriente y se puede utilizar en todas las estancias de la casa.<\/p>"
           }
         },
         "b2fc457c-e5df-4660-87c8-e5f81664dcca": {
           "type": "Faq",
           "settings": {
             "title": "¿Dónde se coloca a la almohadilla eléctrica?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>Según el modelo, la almohadilla térmica puede tener una aplicación universal o específica para la zona del cuello, los hombros y la espalda.<\/p>"
           }
         },
         "4563f9d5-7f61-49bb-8f98-cb6e96c29273": {
           "type": "Faq",
+          "disabled": true,
           "settings": {
             "title": "¿Se puede poner la almohadilla eléctrica en la cama?",
-            "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur soluta quod facere eligendi ab consequatur velit ea blanditiis praesentium non.<\/p>"
+            "content": "<p>No, la almohadilla térmica ha sido diseñada solo para uso doméstico, no en la cama.<\/p>"
+          }
+        },
+        "97e33fa8-4b28-47a5-8314-28606ef667cb": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿La almohadilla térmica es compatible con los usuarios de marcapasos?",
+            "content": "<p>No, la almohadilla térmica no puede ser utilizada por personas con marcapasos.<\/p>"
           }
         }
       },
@@ -216,7 +234,8 @@
         "20938af8-d445-4b77-98ac-66ae6f2abd09",
         "9ee2c30e-8d6f-46f5-814c-fd5bc7cbc8ce",
         "b2fc457c-e5df-4660-87c8-e5f81664dcca",
-        "4563f9d5-7f61-49bb-8f98-cb6e96c29273"
+        "4563f9d5-7f61-49bb-8f98-cb6e96c29273",
+        "97e33fa8-4b28-47a5-8314-28606ef667cb"
       ],
       "settings": {
         "title": "Almohadillas",

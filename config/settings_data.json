@@ -5,6 +5,13 @@
     "social_tiktok_link": "",
     "social_youtube_link": "https:\/\/www.youtube.com\/user\/ImetecItalyOfficial",
     "favicon": "shopify:\/\/shop_images\/favico-imetec.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo-scaldasonno_1.png",
+    "checkout_sidebar_background_color": "#aa0000",
+    "checkout_heading_font": "Raleway",
+    "checkout_body_font": "Raleway",
+    "checkout_accent_color": "#aa0000",
+    "checkout_button_color": "#aa0000",
+    "checkout_error_color": "#4a4a49",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",

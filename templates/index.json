@@ -30,9 +30,9 @@
           "type": "slideshow",
           "settings": {
             "link": "shopify:\/\/collections\/todos-los-productos",
-            "image_desktop": "shopify:\/\/shop_images\/banner1-desktop.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/bannermantas-desktop.jpg",
             "image_tablet": "shopify:\/\/shop_images\/banner1-tablet.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/banner1-mobile.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/bannermantas-movil.jpg",
             "alt_text": "Tejidos ultrasuaves de alta calidad, el calor ideal para la calidez de tu hogar - ver productos"
           }
         },
@@ -117,61 +117,9 @@
     },
     "f7f21698-652b-4ff2-96de-9917ab786b5a": {
       "type": "home-featured-products",
-      "blocks": {
-        "538654e7-6a4b-4ff3-ae3f-7bd39fa4954b": {
-          "type": "product",
-          "settings": {
-            "handle": "manta-electrica-tartan-scaldasonno"
-          }
-        },
-        "6077622a-ca1c-4b1e-9033-1bbd5f51192c": {
-          "type": "product",
-          "settings": {
-            "handle": "calientacama-scaldasonno-maxi-adapto-1-plaza-y-1-2-190x120cm"
-          }
-        },
-        "8cd5bbf8-eda7-4e99-9468-e17730f24734": {
-          "type": "product",
-          "settings": {
-            "handle": "almohadilla-termica-rectangular-con-bolsillo"
-          }
-        },
-        "23ac7ef7-70c8-4837-8683-5dd8e27a1981": {
-          "type": "product",
-          "settings": {
-            "handle": "calientacama-scaldasonno-purity-2-plazas-150x160-cm"
-          }
-        },
-        "325825f0-0936-416b-b44a-40dc3fad4a84": {
-          "type": "product",
-          "settings": {
-            "handle": "almohadilla-termica-cervical"
-          }
-        },
-        "b743d134-4d24-4f7b-9877-1e7d7b539aac": {
-          "type": "product",
-          "settings": {
-            "handle": "calientacama-scaldasonno-active-2-plazas-150x160-cm"
-          }
-        },
-        "e361a61c-6825-4e12-b5b7-251f4b030312": {
-          "type": "product",
-          "settings": {
-            "handle": "calientacama-scaldasonno-individual-1-plaza-150x80-cm"
-          }
-        }
-      },
-      "block_order": [
-        "538654e7-6a4b-4ff3-ae3f-7bd39fa4954b",
-        "6077622a-ca1c-4b1e-9033-1bbd5f51192c",
-        "8cd5bbf8-eda7-4e99-9468-e17730f24734",
-        "23ac7ef7-70c8-4837-8683-5dd8e27a1981",
-        "325825f0-0936-416b-b44a-40dc3fad4a84",
-        "b743d134-4d24-4f7b-9877-1e7d7b539aac",
-        "e361a61c-6825-4e12-b5b7-251f4b030312"
-      ],
       "settings": {
-        "title": "Mira nuestros productos destacados"
+        "title": "Mira nuestros productos destacados",
+        "coll": "calientacamas"
       }
     },
     "26118325-e776-4745-970d-3d17469317ee": {
