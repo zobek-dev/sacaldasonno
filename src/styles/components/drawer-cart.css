@@ -15,3 +15,7 @@
 .drawer-cart.active .cart-inner{
   @apply translate-x-0;
 }
+
+.document-details[open] > summary > svg{
+  @apply rotate-180;
+}
