@@ -239,9 +239,6 @@
   </form>
 </div>
 <div class="pt-4 pb-4 border-t border-[#13203A]">
-  {% comment %}
-    6531399-5
-  {% endcomment %}
   <details class="document-details" open>
     <summary class="flex justify-between items-center font-gobold leading-[1.2] uppercase text-[14px] lg:text-[16px] mb-4" >
       <span>Elige el tipo de documento</span>
@@ -270,7 +267,7 @@
           value="{{ cart.attributes["RUT"] }}" 
           form="CartDrawerForm" 
           @input="()=> handleRut($event)" 
-          class="block max-w-[300px] w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
+          class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
         </div>
         <span class="text-[#a00] block text-xs mb-2" x-show="invalidRut">El rut no es válido, intenta nuevamente</span>
         <div class="flex flex-col mb-2">
@@ -283,7 +280,7 @@
           value="{{ cart.attributes["razon"] }}" 
           form="CartDrawerForm"
           @input="()=> handleRazon($event)"  
-          class="block max-w-[300px] w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
+          class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
         </div>
         <span class="text-[#a00] block text-xs mb-2" x-show="invalidRazon">El campo no puede estar vacío</span>
         <div class="flex flex-col mb-2">
@@ -296,7 +293,7 @@
           value="{{ cart.attributes["giro"] }}" 
           form="CartDrawerForm"
           @input="()=> handleGiro($event)"  
-          class="block max-w-[300px] w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
+          class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
         </div>
         <span class="text-[#a00] block text-xs mb-2" x-show="invalidGiro">El campo no puede estar vacío</span>
       </div>
