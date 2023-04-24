@@ -9,49 +9,7 @@
           <div class="sr-only">Cerrar el menu</div>
         </button>
       </div>
-      <div x-ref="cart_content" class="flex flex-col h-[90vh] relative" x-data="{
-        factura: false,
-        invalidRut: false,
-        invalidRazon: false,
-        invalidGiro: false,
-        validRut(rut){
-          let dv = rut.slice(-1);
-          let cleanRut = rut.slice(0,-1).replace(/\D/g,'');
-          let arr = cleanRut.split('').reverse();
-          let acc = 0;
-          let mult = 2;
-      
-          for(let num of arr){
-            acc += Number(num) * mult;
-            mult += 1;
-      
-            if(mult === 8) mult = 2;
-          }
-      
-          let aux = 11 - (acc % 11);
-      
-          if(dv === 'k' || dv === 'K') return aux === 0;
-          if(dv === '0') return aux === 1;
-          return aux === Number(dv); 
-        },
-        handleRut(e){
-          e.target.value.length > 0 ? this.invalidRut = true : this.invalidRut = false; 
-          if(e.target.value.length < 9 && e.target.value.length < 11) return;
-          this.validRut(e.target.value)? this.invalidRut = false : this.invalidRut = true;
-        },
-        handleRazon(e){
-          e.target.value < 1 ? this.invalidRazon = true : this.invalidRazon = false;
-        },
-        handleGiro(e){
-          e.target.value < 1 ? this.invalidGiro = true : this.invalidGiro = false;
-        },
-        handleSubmit(e){  
-          if(
-            this.factura === true && this.invalidRut === true || 
-            this.factura === true && this.invalidRazon === true || 
-            this.factura === true && this.invalidGiro === true) e.preventDefault();
-        }
-      }">
+      <div x-ref="cart_content" class="flex flex-col h-[90vh] relative">
         {% render 'cart-form' %}
       </div>
     </div>

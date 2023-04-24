@@ -452,7 +452,9 @@
         "postcode_label": "Código Postal (No es necesario)",
         "postcode_placeholder": "Código Postal (No es necesario)",
         "email_or_phone_label": "Correo electrónico (obligatorio)",
-        "email_or_phone_placeholder": "Correo electrónico (obligatorio)"
+        "email_or_phone_placeholder": "Correo electrónico (obligatorio)",
+        "address2_label": "Rut",
+        "optional_address2_label": "Ingresa tu rut"
       }
     }
   }
