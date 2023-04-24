@@ -1,0 +1,53 @@
+<div class="py-8 lg:py-12 h-full">
+  <div class="wrapper flex flex-col h-full justify-center">
+    <h1 class="font-gobold text-[18px] lg:text-[24px] text-center uppercase font-bold mb-4">{{ section.settings.title }}</h1>
+    <div class="text-center mb-4">
+      {{ section.settings.bajada }}
+    </div>
+    <div x-data="{
+          valid:false,
+          handleTracking(){
+            const code = $refs.input_code.value.replace(/\D/g,'');
+            $refs.tracking.innerHTML='';
+            this.valid=true;
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://tracking.alasxpress.com/api/SCAL%23${code}`);
+            iframe.setAttribute('width', '100%');
+            iframe.setAttribute('height', '935px');
+            iframe.setAttribute('class', 'mx-auto w-max-[750px]');
+            $refs.tracking.appendChild(iframe);
+          }
+        }">
+      <div class="block mx-auto">
+        <input
+          type="text"
+          x-ref="input_code"
+          class="border border-[#4a4a49] p-2 focus:outline-[#a00] rounded-sm w-full sm:w-[450px] mb-4 mx-auto block"
+          placeholder="Inserta el código de seguimiento">
+        <button class="block bg-[#a00] font-gobold font-bold text-white px-4 py-2 uppercase tracking-[1.5px] transition-colors duration-200 ease-in-out hover:bg-[#efd4d4] hover:text-[#a00] mx-auto" @click="handleTracking">
+          Ver Pedido
+        </button>
+      </div>
+      <div x-show="valid" x-ref="tracking"  class="my-20 block">
+        Aca va el iframe
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "tracking",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "titulo de la página"
+      }, {
+        "type": "richtext",
+        "id": "bajada",
+        "label": "Bajada del título"
+      }
+    ]
+  }
+{% endschema %}
