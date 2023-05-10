@@ -30,6 +30,13 @@
             "content": "<p>Se puede dejar encendido de forma segura toda la noche, ya que está equipado con el Electro Block®, el sistema de seguridad integrado en el elemento calefactor que, en caso de falla, apaga rápidamente el producto.<\/p>"
           }
         },
+        "36908c73-9586-4353-8133-93881fd7389a": {
+          "type": "Faq",
+          "settings": {
+            "title": "¿Su utilización es segura?",
+            "content": "<p>El Sleep Warmer cumple con las estrictas normas internacionales de seguridad. Está equipado con el Electro Block®, el sistema de seguridad integrado en el elemento calefactor que, en caso de fallo, apaga rápidamente el producto.<\/p>"
+          }
+        },
         "147646cf-82a9-43ec-9fa5-e4b3fa02b09f": {
           "type": "Faq",
           "settings": {
@@ -42,13 +49,6 @@
           "settings": {
             "title": "¿Cómo funciona el modelo matrimonial?",
             "content": "<p>El Calienta camas matrimonial tiene dos cuadrados de calefacción separados y dos controles, que le permiten ajustar la temperatura de manera diferente. Todos pueden encontrar de esta manera la calidez que mejor se adapte a sus necesidades.<\/p>"
-          }
-        },
-        "36908c73-9586-4353-8133-93881fd7389a": {
-          "type": "Faq",
-          "settings": {
-            "title": "¿Su utilización es segura?",
-            "content": "<p>El Sleep Warmer cumple con las estrictas normas internacionales de seguridad. Está equipado con el Electro Block®, el sistema de seguridad integrado en el elemento calefactor que, en caso de fallo, apaga rápidamente el producto.<\/p>"
           }
         },
         "cc810287-9095-4b29-aaff-2fd2b74eed76": {
@@ -70,9 +70,9 @@
         "6c210f60-8340-41d9-a66f-ff5715f069c1",
         "5f70c9ed-3efa-4fd8-9e2f-46111deee6d4",
         "e16aff17-a07b-4973-abad-29b3aab476af",
+        "36908c73-9586-4353-8133-93881fd7389a",
         "147646cf-82a9-43ec-9fa5-e4b3fa02b09f",
         "e2ff81c9-67d0-49b3-adc3-f9b47da48309",
-        "36908c73-9586-4353-8133-93881fd7389a",
         "cc810287-9095-4b29-aaff-2fd2b74eed76",
         "5b9e9c13-89fc-46c9-a09e-124a81ef2be7"
       ],

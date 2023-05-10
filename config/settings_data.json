@@ -16,8 +16,8 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "text": "Diseño y Tecnología con Máxima Seguridad para ti y tu familia",
-          "link": ""
+          "text": "Revisa el estado de tu pedido aquí!",
+          "link": "shopify:\/\/pages\/sigue-tu-pedido"
         }
       },
       "header": {

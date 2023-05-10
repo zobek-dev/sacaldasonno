@@ -156,72 +156,64 @@
     "faqs": {
       "type": "collection-faqs",
       "blocks": {
+        "387a2133-1a47-42db-a47e-93b3934ed7f9": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Cómo funciona?",
+            "content": "<p>El producto debe colocarse entre el colchón y la sábana. Después de encender y precalentar, debe elegir la temperatura preferida para dormir y, para los modelos que están equipados con un temporizador, programar el apagado automático.<\/p>"
+          }
+        },
         "740dcbc9-a4b1-4c11-a44c-58304dbde248": {
           "type": "faq",
           "settings": {
             "title": "¿En qué colchones puede colocarlse?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>Scaldasonno es compatible con todos los colchones, incluidos el látex y la espuma viscoelástica.<\/p>"
           }
         },
         "c50aa13d-6462-445e-930c-cd6eef22fba6": {
           "type": "faq",
           "settings": {
             "title": "¿Puede permanecer encendido toda la noche?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
-          }
-        },
-        "387a2133-1a47-42db-a47e-93b3934ed7f9": {
-          "type": "faq",
-          "settings": {
-            "title": "¿Cómo funciona?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>Se puede dejar encendido de forma segura toda la noche, ya que está equipado con el Electro Block®, el sistema de seguridad integrado en el elemento calefactor que, en caso de falla, apaga rápidamente el producto.<\/p>"
           }
         },
         "e637ce74-aa34-48a7-ab31-9f95255b1966": {
           "type": "faq",
           "settings": {
             "title": "¿Su utilización es segura?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
-          }
-        },
-        "7dba094a-943e-47db-bb15-3ef19f51176d": {
-          "type": "faq",
-          "settings": {
-            "title": "¿Se puede lavar?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
-          }
-        },
-        "01ace58a-603d-472e-a44d-dbb9c43cc411": {
-          "type": "faq",
-          "settings": {
-            "title": "¿Lo pueden utilizar todos los miembros de la familia?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>Los modelos equipados con tecnología de calentamiento rápido se calientan en minutos. Para aquellos con tecnología tradicional, hay que esperar un poco más.<\/p>"
           }
         },
         "4b4f437c-11a1-4dd4-86e1-8bf16026afb9": {
           "type": "faq",
           "settings": {
             "title": "¿Cuánto tarda en calentarse?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>Los modelos equipados con tecnología de calentamiento rápido se calientan en minutos. Para aquellos con tecnología tradicional, hay que esperar un poco más.<\/p>"
           }
         },
-        "b565b264-aee9-4b32-a1c2-85c54d2fa747": {
+        "7dba094a-943e-47db-bb15-3ef19f51176d": {
           "type": "faq",
           "settings": {
-            "title": "¿Se puede secar en la secadora?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "title": "¿Se puede lavar?",
+            "content": "<p>Dependiendo de la tela con la que esté hecho, Scaldasonno se puede lavar a mano o en la lavadora a un máximo de 40 ° C y utilizando un detergente neutro. Puede secarlo en la secadora o extenderlo al aire libre en posición horizontal.<\/p>"
+          }
+        },
+        "01ace58a-603d-472e-a44d-dbb9c43cc411": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Lo pueden utilizar todos los miembros de la familia?",
+            "content": "<p>El calienta camas NO puede ser utilizado por niños menores de 3 años, que tienen una sensibilidad reducida al calor. La manta interior puede ser utilizada por niños entre las edades de 3 y 8 bajo supervisión y con el dispositivo de control siempre ajustado al nivel de temperatura más bajo.<\/p>"
           }
         }
       },
       "block_order": [
+        "387a2133-1a47-42db-a47e-93b3934ed7f9",
         "740dcbc9-a4b1-4c11-a44c-58304dbde248",
         "c50aa13d-6462-445e-930c-cd6eef22fba6",
-        "387a2133-1a47-42db-a47e-93b3934ed7f9",
         "e637ce74-aa34-48a7-ab31-9f95255b1966",
-        "7dba094a-943e-47db-bb15-3ef19f51176d",
-        "01ace58a-603d-472e-a44d-dbb9c43cc411",
         "4b4f437c-11a1-4dd4-86e1-8bf16026afb9",
-        "b565b264-aee9-4b32-a1c2-85c54d2fa747"
+        "7dba094a-943e-47db-bb15-3ef19f51176d",
+        "01ace58a-603d-472e-a44d-dbb9c43cc411"
       ],
       "settings": {}
     }

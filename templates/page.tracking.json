@@ -1,7 +1,11 @@
 {
   "sections": {
     "main": {
-      "type": "main-tracking"
+      "type": "main-tracking",
+      "settings": {
+        "title": "Sigue tu pedido",
+        "bajada": "<p>Acá podrás hacer seguimiento a tu pedido.<\/p>"
+      }
     }
   },
   "order": [

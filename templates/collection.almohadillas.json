@@ -98,56 +98,49 @@
           "type": "faq",
           "settings": {
             "title": "¿Se puede lavar?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>El control de la almohadilla térmica es fácilmente extraíble para permitir su lavado. La almohadilla térmica se puede lavar a mano y en lavadora a 30°, con un programa específico para prendas delicadas.<\/p>"
           }
         },
         "1291bc1c-04f2-45bf-ad92-ccafa978c841": {
           "type": "faq",
           "settings": {
             "title": "¿Se puede utilizar en animales?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>No, las almohadillas térmicas no fueron diseñadas para usarse con animales.<\/p>"
           }
         },
         "f016a20b-fe92-4e63-b941-bd35ccda4fce": {
           "type": "faq",
           "settings": {
             "title": "¿Mantiene el calor después de desenchufarlo?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>El control de la almohadilla térmica es fácilmente extraíble para permitir su lavado. La almohadilla térmica se puede lavar a mano y en lavadora a 30°, con un programa específico para prendas delicadas.<\/p>"
           }
         },
         "bdba1f03-1f4e-426f-81ce-020ee03caaa5": {
           "type": "faq",
           "settings": {
             "title": "¿Su utilización es segura?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
-          }
-        },
-        "169a4118-8e41-4d6d-93b4-4866bf6adaeb": {
-          "type": "faq",
-          "settings": {
-            "title": "¿Cuánta corriente consume?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>El control de la almohadilla térmica es fácilmente extraíble para permitir su lavado. La almohadilla térmica se puede lavar a mano y en lavadora a 30°, con un programa específico para prendas delicadas.<\/p>"
           }
         },
         "f437c9dd-bfe2-462a-8ed9-b683918919f9": {
           "type": "faq",
           "settings": {
             "title": "¿Para qué sirve la almohadilla eléctrica?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>El control de la almohadilla térmica es fácilmente extraíble para permitir su lavado. La almohadilla térmica se puede lavar a mano y en lavadora a 30°, con un programa específico para prendas delicadas.<\/p>"
           }
         },
         "f683ca6f-9538-494c-933a-10e04f79f166": {
           "type": "faq",
           "settings": {
             "title": "¿Dónde se coloca la almohadillla eléctrica?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "content": "<p>El control de la almohadilla térmica es fácilmente extraíble para permitir su lavado. La almohadilla térmica se puede lavar a mano y en lavadora a 30°, con un programa específico para prendas delicadas.<\/p>"
           }
         },
         "cb53bb39-1b6a-4ef2-bfcd-b7a4792a715c": {
           "type": "faq",
           "settings": {
-            "title": "¿Se puede poner la almohadilla eléctrica en la cama?",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+            "title": "¿La almohadilla térmica es compatible con los usuarios de marcapasos?",
+            "content": "<p>No, la almohadilla térmica no puede ser utilizada por personas con marcapasos.<\/p>"
           }
         }
       },
@@ -156,7 +149,6 @@
         "1291bc1c-04f2-45bf-ad92-ccafa978c841",
         "f016a20b-fe92-4e63-b941-bd35ccda4fce",
         "bdba1f03-1f4e-426f-81ce-020ee03caaa5",
-        "169a4118-8e41-4d6d-93b4-4866bf6adaeb",
         "f437c9dd-bfe2-462a-8ed9-b683918919f9",
         "f683ca6f-9538-494c-933a-10e04f79f166",
         "cb53bb39-1b6a-4ef2-bfcd-b7a4792a715c"
