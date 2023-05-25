@@ -454,7 +454,7 @@
         "email_or_phone_label": "Correo electrónico (obligatorio)",
         "email_or_phone_placeholder": "Correo electrónico (obligatorio)",
         "address2_label": "Rut",
-        "optional_address2_label": "Ingresa tu rut"
+        "optional_address2_label": "Ingresa tu rut con guión y sin puntos (ej: 11111111-1)"
       }
     }
   }
