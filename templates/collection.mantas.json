@@ -115,6 +115,22 @@
             "content": "<p>El mando del plaid es fácilmente desmontable, para permitir su lavado. El plaid se puede lavar a mano y en lavadora a 30º, con programa específico para prendas delicadas.<\/p>"
           }
         },
+        "b541ba01-6ae9-4e87-b27d-e776c77a791d": {
+          "type": "faq",
+          "disabled": true,
+          "settings": {
+            "title": "¿Se puede utilizar también apagada?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
+        "48281e97-7898-42e2-a21e-f0343500971f": {
+          "type": "faq",
+          "disabled": true,
+          "settings": {
+            "title": "¿Se puede utilizar también en la cama?",
+            "content": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit reiciendis eligendi consequatur voluptatum, possimus consectetur!<\/p>"
+          }
+        },
         "e61c0a70-792c-4f5e-89ed-ebc817b9c15d": {
           "type": "faq",
           "settings": {
@@ -126,13 +142,13 @@
           "type": "faq",
           "settings": {
             "title": "¿Se puede utilizar al aire libre?",
-            "content": "<p>El plaid eléctrico se puede utilizar fácilmente en un balcón o terraza, debajo de un porche o en el jardín, cuidando de no exponerlo a temperaturas extremas, mal tiempo o humedad. Después de su uso, guarde la tela escocesa en el interior<\/p>"
+            "content": "<p>El plaid eléctrico se puede utilizar fácilmente en un balcón o terraza, debajo de un porche o en el jardín, cuidando de no exponerlo a temperaturas extremas, mal tiempo o humedad. Después de su uso, guarde la tela escocesa en el interior.<\/p>"
           }
         },
-        "b541ba01-6ae9-4e87-b27d-e776c77a791d": {
+        "2b45ef05-b00f-45c0-8822-3e973b92d63e": {
           "type": "faq",
           "settings": {
-            "title": "¿El plaid es compatible para usuarios de marcapasos?",
+            "title": "¿El Plaid es compatible para usuarios de marcapasos?",
             "content": "<p>No, el plaid calefactable no puede ser utilizado por personas con marcapasos.<\/p>"
           }
         }
@@ -142,9 +158,11 @@
         "5e260d1b-82ad-4029-a2b7-c6d2fd061338",
         "4576b14e-9c84-4f97-b0f5-dc748ab8fbfa",
         "36bbcf02-a884-4b48-a345-5d01bc48a4f0",
+        "b541ba01-6ae9-4e87-b27d-e776c77a791d",
+        "48281e97-7898-42e2-a21e-f0343500971f",
         "e61c0a70-792c-4f5e-89ed-ebc817b9c15d",
         "e7fcff0f-4612-4f35-bee3-fd9549e5e9ab",
-        "b541ba01-6ae9-4e87-b27d-e776c77a791d"
+        "2b45ef05-b00f-45c0-8822-3e973b92d63e"
       ],
       "settings": {}
     }
