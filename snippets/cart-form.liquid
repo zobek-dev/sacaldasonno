@@ -255,7 +255,7 @@
           Factura
         </label>
       </div>
-      <div class="flex flex-col mb-4">
+      <div class="flex flex-col mb-4" x-show="type == 'factura'">
         <h4 class="flex justify-between items-center font-gobold leading-[1.2] uppercase text-[14px] mb-4" x-text="type == 'factura' ? 'Ingresa los datos de facturación' : 'Ingresa los datos de boleta'"></h4>
         <div class="flex flex-col mb-2">
           <label class="font-bold text-sm mb-1 uppercase" for="rut">RUT</label>
@@ -270,7 +270,7 @@
           class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
         </div>
         <span class="text-[#a00] block text-xs mb-2" x-show="invalidRut">El rut no es válido, intenta nuevamente</span>
-        <div class="flex flex-col mb-2" x-show="type == 'factura'">
+        <div class="flex flex-col mb-2" >
           <label class="font-bold text-sm mb-1 uppercase" for="razon">Razón social</label>
           <input 
           id="razon" 
@@ -283,7 +283,7 @@
           class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
         </div>
         <span class="text-[#a00] block text-xs mb-2" x-show="invalidRazon">El campo no puede estar vacío</span>
-        <div class="flex flex-col mb-2" x-show="type == 'factura'">
+        <div class="flex flex-col mb-2">
           <label class="font-bold text-sm mb-1 uppercase" for="giro">Giro</label>
           <input 
           id="giro" 

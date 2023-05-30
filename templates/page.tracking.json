@@ -4,7 +4,7 @@
       "type": "main-tracking",
       "settings": {
         "title": "Sigue tu pedido",
-        "bajada": "<p>Acá podrás hacer seguimiento a tu pedido.<\/p>"
+        "bajada": "<p>Acá podrás hacer seguimiento a tu pedido, ingresando el Código SCAL#XXXX<\/p>"
       }
     }
   },
