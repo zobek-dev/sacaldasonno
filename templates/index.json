@@ -26,11 +26,20 @@
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162": {
       "type": "slideshow",
       "blocks": {
+        "f562e883-d33e-44f6-90f9-c3d4284cc323": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/mantas-electricas",
+            "image_desktop": "shopify:\/\/shop_images\/BannerWebGenerico.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/mantastico-t02.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/2m_334a2068-3863-4a42-b9ab-78f1c5823d0f.png",
+            "alt_text": ""
+          }
+        },
         "afce68f8-2fbd-4490-82ce-51624432df52": {
           "type": "slideshow",
-          "disabled": true,
           "settings": {
-            "link": "shopify:\/\/collections\/todos-los-productos",
+            "link": "shopify:\/\/collections\/calor-textil",
             "image_desktop": "shopify:\/\/shop_images\/bannermantas-desktop.jpg",
             "image_tablet": "shopify:\/\/shop_images\/bannermantas-movil.jpg",
             "image_mobile": "shopify:\/\/shop_images\/bannermantas-movil.jpg",
@@ -50,11 +59,10 @@
         },
         "055db437-4fec-4ecb-b1f6-4cec19f898ab": {
           "type": "slideshow",
-          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
             "image_desktop": "shopify:\/\/shop_images\/banner3-desktop.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/banner3-tablet_84261139-264d-4ebb-b72d-4def2cba2208.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner3-mobile_f6ed5d30-a36c-4a96-befe-0f414c06b22a.jpg",
             "image_mobile": "shopify:\/\/shop_images\/banner3-mobile_f6ed5d30-a36c-4a96-befe-0f414c06b22a.jpg",
             "alt_text": "haz que tus momentos de relajación sean únicos con el plñlacer de la calidez ideal"
           }
@@ -70,40 +78,35 @@
             "alt_text": "Haz que tus momentos relajación sean únicos con el placer de la calidez ideal- Ver mantas eléctrica"
           }
         },
-        "f562e883-d33e-44f6-90f9-c3d4284cc323": {
-          "type": "slideshow",
-          "settings": {
-            "link": "shopify:\/\/collections\/all",
-            "image_desktop": "shopify:\/\/shop_images\/Mesa_de_trabajo_8_2x_84023523-5d80-4ca0-a2d6-a4b8cee8968b.png",
-            "image_mobile": "shopify:\/\/shop_images\/Mesa_de_trabajo_10_2x_ee5424eb-c1e9-4e65-b423-c0ee688f106c.png",
-            "alt_text": ""
-          }
-        },
         "23b65292-2a1c-487f-8e21-cec7f84b59d8": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calor-textil",
             "image_desktop": "shopify:\/\/shop_images\/calientacamas-desktop.png",
+            "image_tablet": "shopify:\/\/shop_images\/calientacamas-movil.png",
             "image_mobile": "shopify:\/\/shop_images\/diadelamadre-02-movil_1_2x_f9c115e9-0374-40b0-ab75-c42444156994.png",
             "alt_text": ""
           }
         },
         "c459b626-1cad-48dc-b3b7-427a09854e8e": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calor-textil",
             "image_desktop": "shopify:\/\/shop_images\/despacho-gratis-desktop.png",
+            "image_tablet": "shopify:\/\/shop_images\/Mesa_de_trabajo_7_2x_cc41b0f0-883a-43c1-804f-53b83985b109.png",
             "image_mobile": "shopify:\/\/shop_images\/Mesa_de_trabajo_7_2x_cc41b0f0-883a-43c1-804f-53b83985b109.png",
             "alt_text": ""
           }
         }
       },
       "block_order": [
+        "f562e883-d33e-44f6-90f9-c3d4284cc323",
         "afce68f8-2fbd-4490-82ce-51624432df52",
         "e0dbcd38-b726-43fb-b87c-123c893b9dd2",
         "055db437-4fec-4ecb-b1f6-4cec19f898ab",
         "bc0998f4-e932-476e-8003-3ddd90f4bc9f",
-        "f562e883-d33e-44f6-90f9-c3d4284cc323",
         "23b65292-2a1c-487f-8e21-cec7f84b59d8",
         "c459b626-1cad-48dc-b3b7-427a09854e8e"
       ],

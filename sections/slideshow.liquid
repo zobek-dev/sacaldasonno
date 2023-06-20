@@ -4,15 +4,15 @@
       {% for block in section.blocks %}
         <li class="swiper-slide">
           {% if block.settings.link != blank %}
-          <a href="{{ block.settings.link }}">
-          {% endif %}
+            <a href="{{ block.settings.link }}">
+            {% endif %}
             <picture>
               <source media="(min-width: 829px)" srcset="{{ block.settings.image_desktop | img_url: 'master' }}">
-              <source media="(min-width: 399px)" srcset="{{ block.settings.image_tablet | img_url: 'master' }}">
+              <source media="(min-width: 450px)" srcset="{{ block.settings.image_tablet | img_url: 'master' }}">
               <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="{{ block.settings.alt_text | escape }}">
             </picture>
-          {% if block.settings.link != blank %}
-          </a>
+            {% if block.settings.link != blank %}
+            </a>
           {% endif %}
         </li>
       {% endfor %}
