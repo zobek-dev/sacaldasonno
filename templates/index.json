@@ -31,8 +31,17 @@
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
             "image_desktop": "shopify:\/\/shop_images\/BannerWebGenerico.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/mantastico-t02.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/2m_334a2068-3863-4a42-b9ab-78f1c5823d0f.png",
+            "image_tablet": "shopify:\/\/shop_images\/d.png",
+            "image_mobile": "shopify:\/\/shop_images\/2m_13ac5313-edf7-424e-b0da-af8b08b8168e.png",
+            "alt_text": ""
+          }
+        },
+        "23b65292-2a1c-487f-8e21-cec7f84b59d8": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/calor-textil",
+            "image_desktop": "shopify:\/\/shop_images\/CALIENTACAMASACTIVE-DESKTOP.png",
+            "image_mobile": "shopify:\/\/shop_images\/CALIENTACAMAS-MOVIL_0995b252-8603-45d9-95a3-1f041972e377.png",
             "alt_text": ""
           }
         },
@@ -41,8 +50,8 @@
           "settings": {
             "link": "shopify:\/\/collections\/calor-textil",
             "image_desktop": "shopify:\/\/shop_images\/bannermantas-desktop.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/bannermantas-movil.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/bannermantas-movil.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/Web_1920_8.png",
+            "image_mobile": "shopify:\/\/shop_images\/3m.png",
             "alt_text": "Tejidos ultrasuaves de alta calidad, el calor ideal para la calidez de tu hogar - ver productos"
           }
         },
@@ -62,8 +71,8 @@
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
             "image_desktop": "shopify:\/\/shop_images\/banner3-desktop.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/banner3-mobile_f6ed5d30-a36c-4a96-befe-0f414c06b22a.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/banner3-mobile_f6ed5d30-a36c-4a96-befe-0f414c06b22a.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/Web_1920_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/01m.png",
             "alt_text": "haz que tus momentos de relajación sean únicos con el plñlacer de la calidez ideal"
           }
         },
@@ -76,17 +85,6 @@
             "image_tablet": "shopify:\/\/shop_images\/banner4-tablet_d903ac6a-f44e-4fb7-980e-701b35fcbea8.jpg",
             "image_mobile": "shopify:\/\/shop_images\/banner4-mobile_aca52efd-c4f4-448d-8d43-8a6b216602d1.jpg",
             "alt_text": "Haz que tus momentos relajación sean únicos con el placer de la calidez ideal- Ver mantas eléctrica"
-          }
-        },
-        "23b65292-2a1c-487f-8e21-cec7f84b59d8": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/calor-textil",
-            "image_desktop": "shopify:\/\/shop_images\/calientacamas-desktop.png",
-            "image_tablet": "shopify:\/\/shop_images\/calientacamas-movil.png",
-            "image_mobile": "shopify:\/\/shop_images\/diadelamadre-02-movil_1_2x_f9c115e9-0374-40b0-ab75-c42444156994.png",
-            "alt_text": ""
           }
         },
         "c459b626-1cad-48dc-b3b7-427a09854e8e": {
@@ -103,11 +101,11 @@
       },
       "block_order": [
         "f562e883-d33e-44f6-90f9-c3d4284cc323",
+        "23b65292-2a1c-487f-8e21-cec7f84b59d8",
         "afce68f8-2fbd-4490-82ce-51624432df52",
         "e0dbcd38-b726-43fb-b87c-123c893b9dd2",
         "055db437-4fec-4ecb-b1f6-4cec19f898ab",
         "bc0998f4-e932-476e-8003-3ddd90f4bc9f",
-        "23b65292-2a1c-487f-8e21-cec7f84b59d8",
         "c459b626-1cad-48dc-b3b7-427a09854e8e"
       ],
       "settings": {}
