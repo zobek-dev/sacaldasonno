@@ -11,7 +11,7 @@
             $refs.tracking.innerHTML='';
             this.valid=true;
             const iframe = document.createElement('iframe');
-            iframe.setAttribute('src', `https://tracking.alasxpress.com/api/SCAL%23${code}`);
+            iframe.setAttribute('src', `https://app.urbanoexpress.cl/plugin/etracking/etracking/?guia=WB${code}`);
             iframe.setAttribute('width', '100%');
             iframe.setAttribute('height', '935px');
             iframe.setAttribute('class', 'mx-auto w-max-[750px]');
@@ -34,6 +34,8 @@
     </div>
   </div>
 </div>
+
+{% comment %} 172113222 {% endcomment %}
 
 {% schema %}
   {
