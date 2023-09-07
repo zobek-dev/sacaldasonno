@@ -1,110 +1,178 @@
 <!DOCTYPE html>
 <html lang="{{ request.locale.iso_code }}">
-<head>
+  <head>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KFFB2SGV');</script>
-<!-- End Google Tag Manager -->
-
-  
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="">
-  <link rel="canonical" href="{{ canonical_url }}">
-  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  {% if settings.favicon != blank %}
-    <!--FAVICON-->
-    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-  {% endif %}
-  <!--TITLE-->    
-  <title>
-    {{ page_title }}
-    {% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
-    {% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}
-    {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
-  </title>
-  <!--DESCRIPTION-->
-  {% if page_description %}
-    <meta name="description" content="{{ page_description | escape }}">
-  {% endif %}
-  <!--METATAGS-->
-  {% render 'meta-tags' %}
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,2001,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  </noscript>
-  <!--GOOGLE-FONT BARLOW-->  
-  <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900display=swap" >
-  <!--LOAD JAVASCRIPT -->
-  <script src="{{ 'app.js' | asset_url }}" defer></script>
-  <!--LOAD SHOPIFY HOOK -->
-  {{ content_for_header }}
-  <!--LOAD MAIN CSS -->
-  {{ 'main.css' | asset_url | stylesheet_tag }}
-  <!--DESIGN-MODE-->
-  <style>
-    @font-face {
-      font-family: 'Gobold-Italic';
-      src: url({{ 'gobold_bold_italic-webfont.woff2' | asset_url }}) format('woff2');
-    }
-    @font-face {
-      font-family: 'Gobold';
-      src: url({{ 'gobold.woff2' | asset_url }}) format('woff2');
-    }
-  </style>
-  <script>
-    if (Shopify.designMode) {
-      document.documentElement.classList.add('shopify-design-mode');
-    }
-  </script>
-  <!-- Meta Pixel Code -->
+    <!-- Google Tag Manager -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2017123091981095');
-    fbq('track', 'PageView');
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer'
+            ? '&l=' + l
+            : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KFFB2SGV');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2017123091981095&ev=PageView&noscript=1"
-    /></noscript>
-  <!-- End Meta Pixel Code --> 
-</head>
-<body class="font-barlow text-[#4a4a49]">
-  {% section 'announcement-bar' %}
-  {% section 'header' %}  
-  <main class="min-h-[60vh]">
-    {% comment %} {{ request.page_type }}
-    <div class="hidden">
-      {{ content_for_layout }}
-    </div> {% endcomment %}
+    <!-- End Google Tag Manager -->
 
-    {% case request.page_type %}
-      {% when 'policy' %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link
+      rel="preconnect"
+      href="https://cdn.shopify.com"
+      crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+    {% if settings.favicon != blank %}
+      <!--FAVICON-->
+      <link
+        rel="icon"
+        type="image/png"
+        href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {% endif %}
+    <!--TITLE-->
+    <title>
+      {{ page_title }}
+      {% if current_tags %}
+        &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
+      {% if current_page != 1 %}
+        &ndash; Page {{ current_page }}{% endif %}
+      {% unless page_title contains shop.name %}
+        &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    <!--DESCRIPTION-->
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+    <!--METATAGS-->
+    {% render 'meta-tags' %}
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,2001,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </noscript>
+    <!--GOOGLE-FONT BARLOW-->
+    <link rel="stylesheet"
+      media="print"
+      onload="this.onload=null;this.removeAttribute('media');"
+      href="https://fonts.googleapis.com/css2family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900display=swap">
+    <!--LOAD JAVASCRIPT -->
+    <script src="{{ 'app.js' | asset_url }}" defer></script>
+    <!--LOAD SHOPIFY HOOK -->
+    {{ content_for_header }}
+    <!--LOAD MAIN CSS -->
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+    <!--DESIGN-MODE-->
+    <style>
+      @font-face {
+        font-family: 'Gobold-Italic';
+        src: url('{{ 'gobold_bold_italic-webfont.woff2' | asset_url }}') format('woff2');
+      }
+      @font-face {
+        font-family: 'Gobold';
+        src: url('{{ 'gobold.woff2' | asset_url }}') format('woff2');
+      }
+    </style>
+    <script>
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f, b, e, v, n, t, s) {
+        if (f.fbq) 
+          return;
+        
+        n = f.fbq = function() {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments)
+        };
+        if (! f._fbq) 
+          f._fbq = n;
+        
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2017123091981095');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=2017123091981095&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body class="font-barlow text-[#4a4a49]">
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+      <main class="min-h-[60vh]">
+      {% comment %} {{ request.page_type }}
+      <div class="hidden">
+      {{ content_for_layout }}
+      </div> {% endcomment %}
+
+      {% case request.page_type %}
+        {% when 'policy' %}
         {% section 'main-policies' %}
       {% else %}
         {{ content_for_layout }}
-    {% endcase %}
-  </main> 
-  {% section 'footer' %} 
-  <!--PREDICTIVE SEARCH-->  
-  <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+      {% endcase %}
+    </main>
+    {% section 'footer' %}
+    <!--PREDICTIVE SEARCH-->
+    <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFFB2SGV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
-</body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KFFB2SGV"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {% comment %} <!--GOBOT PLUGIN-->
+    <div class="qa-gobots"></div>
+
+    <script>
+      window.GOBOTS_PRODUCT = {{ product | json }}
+    </script>
+
+    <script>
+      window.PRODUCT_ID = {{ product.id | json }};
+      window.PRODUCT_IMAGE = {{ product.images[0] | json }};
+      window.PRODUCT_NAME = {{ product.title | json }};
+    </script>
+
+    <script
+      async
+      id="gobots-qa-plugin"
+      src="https://qa-plugin-stg.gobots.com.br/plugin/bundle.js"
+      url="https://qa-plugin.gobots.com.br/?storeKey=8234eb7f-1654-45bc-a170-1fc5e9af14da"
+      data-store="SHOPIFY"
+      label-color="000000"
+      btn-color="AA0000"
+      lang="es"
+      btn-text-color="FFFFFF"></script>  {% endcomment %}
+  </body>
 </html>
