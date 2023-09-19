@@ -26,6 +26,16 @@
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162": {
       "type": "slideshow",
       "blocks": {
+        "c459b626-1cad-48dc-b3b7-427a09854e8e": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/calor-textil",
+            "image_desktop": "shopify:\/\/shop_images\/SANTANDER-DESKTOP_2.png",
+            "image_tablet": "shopify:\/\/shop_images\/SANTANDER-TABLET.png",
+            "image_mobile": "shopify:\/\/shop_images\/SANTANDER-MOBILE.png",
+            "alt_text": ""
+          }
+        },
         "23b65292-2a1c-487f-8e21-cec7f84b59d8": {
           "type": "slideshow",
           "settings": {
@@ -76,17 +86,6 @@
             "alt_text": "Caleintacamas maxi Scaldasonno"
           }
         },
-        "c459b626-1cad-48dc-b3b7-427a09854e8e": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/calor-textil",
-            "image_desktop": "shopify:\/\/shop_images\/despacho-gratis-desktop.png",
-            "image_tablet": "shopify:\/\/shop_images\/Mesa_de_trabajo_7_2x_cc41b0f0-883a-43c1-804f-53b83985b109.png",
-            "image_mobile": "shopify:\/\/shop_images\/Mesa_de_trabajo_7_2x_cc41b0f0-883a-43c1-804f-53b83985b109.png",
-            "alt_text": ""
-          }
-        },
         "bc0998f4-e932-476e-8003-3ddd90f4bc9f": {
           "type": "slideshow",
           "disabled": true,
@@ -100,12 +99,12 @@
         }
       },
       "block_order": [
+        "c459b626-1cad-48dc-b3b7-427a09854e8e",
         "23b65292-2a1c-487f-8e21-cec7f84b59d8",
         "f562e883-d33e-44f6-90f9-c3d4284cc323",
         "055db437-4fec-4ecb-b1f6-4cec19f898ab",
         "e0dbcd38-b726-43fb-b87c-123c893b9dd2",
         "afce68f8-2fbd-4490-82ce-51624432df52",
-        "c459b626-1cad-48dc-b3b7-427a09854e8e",
         "bc0998f4-e932-476e-8003-3ddd90f4bc9f"
       ],
       "settings": {}

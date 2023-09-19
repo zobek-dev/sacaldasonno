@@ -61,7 +61,8 @@
       <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,2001,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </noscript>
     <!--GOOGLE-FONT BARLOW-->
-    <link rel="stylesheet"
+    <link
+    rel="stylesheet"
       media="print"
       onload="this.onload=null;this.removeAttribute('media');"
       href="https://fonts.googleapis.com/css2family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900display=swap">
@@ -93,6 +94,8 @@
         if (f.fbq) 
           return;
         
+
+
         n = f.fbq = function() {
           n.callMethod
             ? n.callMethod.apply(n, arguments)
@@ -101,6 +104,8 @@
         if (! f._fbq) 
           f._fbq = n;
         
+
+
         n.push = n;
         n.loaded = !0;
         n.version = '2.0';
@@ -137,6 +142,32 @@
         {{ content_for_layout }}
       {% endcase %}
     </main>
+
+    <!--GOBOT PLUGIN-->
+    {% if request.page_type == 'product' %}
+      <div class="qa-gobots"></div>
+
+      <script>
+        window.GOBOTS_PRODUCT = {{ product | json }}
+      </script>
+
+      <script>
+        window.PRODUCT_ID = {{ product.id | json }};
+        window.PRODUCT_IMAGE = {{ product.images[0] | json }};
+        window.PRODUCT_NAME = {{ product.title | json }};
+      </script>
+
+      <script
+        async
+        id="gobots-qa-plugin"
+        src="https://qa-plugin-stg.gobots.com.br/plugin/bundle.js"
+        url="https://qa-plugin.gobots.com.br/?storeKey=8234eb7f-1654-45bc-a170-1fc5e9af14da"
+        data-store="SHOPIFY"
+        label-color="000000"
+        btn-color="AA0000"
+        lang="es"
+        btn-text-color="FFFFFF"></script>
+    {% endif %}
     {% section 'footer' %}
     <!--PREDICTIVE SEARCH-->
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
@@ -150,29 +181,5 @@
         style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-
-    {% comment %} <!--GOBOT PLUGIN-->
-    <div class="qa-gobots"></div>
-
-    <script>
-      window.GOBOTS_PRODUCT = {{ product | json }}
-    </script>
-
-    <script>
-      window.PRODUCT_ID = {{ product.id | json }};
-      window.PRODUCT_IMAGE = {{ product.images[0] | json }};
-      window.PRODUCT_NAME = {{ product.title | json }};
-    </script>
-
-    <script
-      async
-      id="gobots-qa-plugin"
-      src="https://qa-plugin-stg.gobots.com.br/plugin/bundle.js"
-      url="https://qa-plugin.gobots.com.br/?storeKey=8234eb7f-1654-45bc-a170-1fc5e9af14da"
-      data-store="SHOPIFY"
-      label-color="000000"
-      btn-color="AA0000"
-      lang="es"
-      btn-text-color="FFFFFF"></script>  {% endcomment %}
   </body>
 </html>
