@@ -10,7 +10,13 @@
     },
     "info": {
       "type": "product-info",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "title_left": "Lorem, ipsum dolor.",
+        "content_left": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eaque tempora modi, nihil totam necessitatibus hic tempore excepturi soluta accusantium.<\/p>",
+        "title_right": "Lorem, ipsum dolor.",
+        "content_right": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eaque tempora modi, nihil totam necessitatibus hic tempore excepturi soluta accusantium.<\/p>"
+      }
     },
     "consejos": {
       "type": "product-consejos",

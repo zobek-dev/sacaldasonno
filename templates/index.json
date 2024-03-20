@@ -26,8 +26,29 @@
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162": {
       "type": "slideshow",
       "blocks": {
+        "23b65292-2a1c-487f-8e21-cec7f84b59d8": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/calor-textil",
+            "image_desktop": "shopify:\/\/shop_images\/BANNER_GENERAL_CALOR_TEXTL-02.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/BANNER_GENERAL_CALOR_TEXTL-01.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/BANNER_GENERAL_CALOR_TEXTL-01.jpg",
+            "alt_text": ""
+          }
+        },
+        "e0dbcd38-b726-43fb-b87c-123c893b9dd2": {
+          "type": "slideshow",
+          "settings": {
+            "link": "",
+            "image_desktop": "shopify:\/\/shop_images\/BANNER_PROXIMAMENTE_PRODUCTOS_NUEVOS_CALIENTACAMAS_ECO_-_ALMOHADILLA_-02.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/BANNER_PROXIMAMENTE_PRODUCTOS_NUEVOS_CALIENTACAMAS_ECO_-_ALMOHADILLA_-01.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/BANNER_PROXIMAMENTE_PRODUCTOS_NUEVOS_CALIENTACAMAS_ECO_-_ALMOHADILLA_-01.jpg",
+            "alt_text": ""
+          }
+        },
         "c459b626-1cad-48dc-b3b7-427a09854e8e": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calor-textil",
             "image_desktop": "shopify:\/\/shop_images\/SANTANDER-DESKTOP_2.png",
@@ -36,28 +57,9 @@
             "alt_text": ""
           }
         },
-        "23b65292-2a1c-487f-8e21-cec7f84b59d8": {
-          "type": "slideshow",
-          "settings": {
-            "link": "shopify:\/\/collections\/calor-textil",
-            "image_desktop": "shopify:\/\/shop_images\/DCTO50-DESKTOP.png",
-            "image_tablet": "shopify:\/\/shop_images\/DCTO50-TABLET.png",
-            "image_mobile": "shopify:\/\/shop_images\/DCTO50-MOVIL.png",
-            "alt_text": ""
-          }
-        },
-        "f562e883-d33e-44f6-90f9-c3d4284cc323": {
-          "type": "slideshow",
-          "settings": {
-            "link": "shopify:\/\/collections\/mantas-electricas",
-            "image_desktop": "shopify:\/\/shop_images\/MANTA-ELECTRICA-DESKTOP.png",
-            "image_tablet": "shopify:\/\/shop_images\/MANTA-ELECTRICA-TABLET.png",
-            "image_mobile": "shopify:\/\/shop_images\/MANTA-ELECTRICA-MOVIL.png",
-            "alt_text": ""
-          }
-        },
         "055db437-4fec-4ecb-b1f6-4cec19f898ab": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calientacamas",
             "image_desktop": "shopify:\/\/shop_images\/C-ACTIVE-DESKTOP.png",
@@ -66,18 +68,20 @@
             "alt_text": "haz que tus momentos de relajación sean únicos con el plñlacer de la calidez ideal"
           }
         },
-        "e0dbcd38-b726-43fb-b87c-123c893b9dd2": {
+        "f562e883-d33e-44f6-90f9-c3d4284cc323": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
-            "link": "shopify:\/\/collections\/almohadillas",
-            "image_desktop": "shopify:\/\/shop_images\/almohadillas-desktop.png",
-            "image_tablet": "shopify:\/\/shop_images\/almohadillas-tablet.png",
-            "image_mobile": "shopify:\/\/shop_images\/almohadillas-movil.png",
-            "alt_text": "Almohadilla rectangular"
+            "link": "shopify:\/\/collections\/mantas-electricas",
+            "image_desktop": "shopify:\/\/shop_images\/MANTAS_ELECTRICAS_Escritorio.png",
+            "image_tablet": "shopify:\/\/shop_images\/MANTAS_ELECTRICAS_Tablet.png",
+            "image_mobile": "shopify:\/\/shop_images\/MANTAS_ELECTRICAS_Mobile.png",
+            "alt_text": ""
           }
         },
         "afce68f8-2fbd-4490-82ce-51624432df52": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calientacamas-maxi",
             "image_desktop": "shopify:\/\/shop_images\/calientacamas-maxi-desktop.png",
@@ -99,11 +103,11 @@
         }
       },
       "block_order": [
-        "c459b626-1cad-48dc-b3b7-427a09854e8e",
         "23b65292-2a1c-487f-8e21-cec7f84b59d8",
-        "f562e883-d33e-44f6-90f9-c3d4284cc323",
-        "055db437-4fec-4ecb-b1f6-4cec19f898ab",
         "e0dbcd38-b726-43fb-b87c-123c893b9dd2",
+        "c459b626-1cad-48dc-b3b7-427a09854e8e",
+        "055db437-4fec-4ecb-b1f6-4cec19f898ab",
+        "f562e883-d33e-44f6-90f9-c3d4284cc323",
         "afce68f8-2fbd-4490-82ce-51624432df52",
         "bc0998f4-e932-476e-8003-3ddd90f4bc9f"
       ],
@@ -302,8 +306,9 @@
         "df0b75c3-2618-4233-aec4-28c44a1917d1": {
           "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
-            "heading_size": 20,
-            "feed_width": 100,
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
             "html_area": ""
           }
         }

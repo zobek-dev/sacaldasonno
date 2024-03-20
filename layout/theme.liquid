@@ -96,6 +96,7 @@
         
 
 
+
         n = f.fbq = function() {
           n.callMethod
             ? n.callMethod.apply(n, arguments)
@@ -104,6 +105,7 @@
         if (! f._fbq) 
           f._fbq = n;
         
+
 
 
         n.push = n;
@@ -157,6 +159,8 @@
         window.PRODUCT_NAME = {{ product.title | json }};
       </script>
 
+
+
       <script
         async
         id="gobots-qa-plugin"
@@ -167,7 +171,22 @@
         btn-color="AA0000"
         lang="es"
         btn-text-color="FFFFFF"></script>
+
+      <script>
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            console.log(document
+              .querySelector('.qa-gobots iframe')
+              .contentWindow
+              .document
+              .body
+              .querySelector('[name="countryCode"]'))
+            document.querySelectorAll('[name="countryCode"]')[0].value = "56"
+          }, 10000)
+        })
+      </script>
     {% endif %}
+
     {% section 'footer' %}
     <!--PREDICTIVE SEARCH-->
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>

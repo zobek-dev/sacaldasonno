@@ -30,6 +30,7 @@
             <p class="posted-sucess">Hemos recibido tu mensaje, te contactarémos a la brevedad.</p>
           {% endif %}  
           <input type="hidden" name="contact[Categoria]" x-ref="category">
+          <input type="hidden" name="contact[Nombre Tienda]" value="{{ shop.name }}">
           <div class="mb-4">
             <input type="text" class="flex w-full border border-[#777] px-4 py-2 focus:outline-[#a00] rounded-[4px]" placeholder="Nombre completo" name="contact[Nombre Completo]" required>
           </div> 

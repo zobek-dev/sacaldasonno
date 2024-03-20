@@ -58,10 +58,12 @@
         "fcc48306-a4c5-4ce5-85b9-68f1dbf3f4ad",
         "a53c3c7f-ece2-4aea-b891-4117efe4617e"
       ],
+      "disabled": true,
       "settings": {}
     },
     "info": {
       "type": "product-info-mantas",
+      "disabled": true,
       "settings": {
         "image_top": "shopify:\/\/shop_images\/Sin_titulo-8-05.png",
         "title_top": "Tecnología patentada Adapto",

@@ -58,10 +58,12 @@
         "c7d45c6a-af76-4536-976f-98ccc872f514",
         "6dff1a8c-32e7-4761-8bb4-8d707ed86f01"
       ],
+      "disabled": true,
       "settings": {}
     },
     "info": {
       "type": "product-info",
+      "disabled": true,
       "settings": {
         "title_left": "Active safety control",
         "content_left": "<p>Scaldasonno Active tiene un innovador sistema de control electrónico <strong>ACTIVE SAFETY CONTROL <\/strong>que monitorea la temperatura automáticamente 25 veces por segundo para una máxima seguridad y un comfort extraordinario. Se calienta rápidamente y permite elegir el calor que quiera entre 4 niveles de temperatura.<\/p>",
@@ -110,6 +112,7 @@
         "0cb4a30c-4c52-48d3-9b81-6c11960f4364",
         "ecb3a95d-a297-4026-af9a-34282958f75c"
       ],
+      "disabled": true,
       "settings": {}
     },
     "recomendaciones": {

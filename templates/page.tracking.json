@@ -4,7 +4,7 @@
       "type": "main-tracking",
       "settings": {
         "title": "Sigue tu pedido",
-        "bajada": "<p>Acá podrás hacer seguimiento a tu pedido, ingresando el de seguimiento<\/p>"
+        "bajada": "<p>Acá podrás hacer seguimiento a tu pedido, ingresando el número de seguimiento<\/p>"
       }
     }
   },
