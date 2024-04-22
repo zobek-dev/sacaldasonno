@@ -6,6 +6,19 @@
     },
     "caracteristicas": {
       "type": "product-caracteristicas",
+      "blocks": {
+        "slide_kBEkMP": {
+          "type": "slide",
+          "repeater": "{{ product.metafields.custom.caracteristicas.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "content": "{{ block.repeater.caracteristica | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "slide_kBEkMP"
+      ],
       "settings": {}
     },
     "info": {

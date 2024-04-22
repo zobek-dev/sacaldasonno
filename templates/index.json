@@ -28,6 +28,7 @@
       "blocks": {
         "23b65292-2a1c-487f-8e21-cec7f84b59d8": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calor-textil",
             "image_desktop": "shopify:\/\/shop_images\/BANNER_GENERAL_CALOR_TEXTL-02.jpg",
@@ -38,6 +39,7 @@
         },
         "e0dbcd38-b726-43fb-b87c-123c893b9dd2": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "",
             "image_desktop": "shopify:\/\/shop_images\/BANNER_PROXIMAMENTE_PRODUCTOS_NUEVOS_CALIENTACAMAS_ECO_-_ALMOHADILLA_-02.jpg",
@@ -68,37 +70,65 @@
             "alt_text": "haz que tus momentos de relajación sean únicos con el plñlacer de la calidez ideal"
           }
         },
-        "f562e883-d33e-44f6-90f9-c3d4284cc323": {
+        "bc0998f4-e932-476e-8003-3ddd90f4bc9f": {
           "type": "slideshow",
-          "disabled": true,
           "settings": {
-            "link": "shopify:\/\/collections\/mantas-electricas",
-            "image_desktop": "shopify:\/\/shop_images\/MANTAS_ELECTRICAS_Escritorio.png",
-            "image_tablet": "shopify:\/\/shop_images\/MANTAS_ELECTRICAS_Tablet.png",
-            "image_mobile": "shopify:\/\/shop_images\/MANTAS_ELECTRICAS_Mobile.png",
-            "alt_text": ""
+            "link": "shopify:\/\/collections\/el-accesorio-perfecto",
+            "image_desktop": "shopify:\/\/shop_images\/banner_20_off_dia_de_la_madre.png",
+            "image_tablet": "shopify:\/\/shop_images\/mobile_20_off_dia_de_la_madre.png",
+            "image_mobile": "shopify:\/\/shop_images\/mobile_20_off_dia_de_la_madre.png",
+            "alt_text": "Haz que tus momentos relajación sean únicos con el placer de la calidez ideal- Ver mantas eléctrica"
           }
         },
         "afce68f8-2fbd-4490-82ce-51624432df52": {
           "type": "slideshow",
-          "disabled": true,
           "settings": {
-            "link": "shopify:\/\/collections\/calientacamas-maxi",
-            "image_desktop": "shopify:\/\/shop_images\/calientacamas-maxi-desktop.png",
-            "image_tablet": "shopify:\/\/shop_images\/calientacamas-maxi-tablet.png",
-            "image_mobile": "shopify:\/\/shop_images\/calientacamas-maxi-movil.png",
-            "alt_text": "Caleintacamas maxi Scaldasonno"
+            "link": "shopify:\/\/collections\/accesorios",
+            "image_desktop": "shopify:\/\/shop_images\/desktop_almohadillas_y_calientapies_1.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/mobile_almohadillas_y_calientapies_1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/desktop_almohadillas_y_calientapies_1.jpg",
+            "alt_text": "Scaldasonno"
           }
         },
-        "bc0998f4-e932-476e-8003-3ddd90f4bc9f": {
+        "f562e883-d33e-44f6-90f9-c3d4284cc323": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/mantas-electricas",
+            "image_desktop": "shopify:\/\/shop_images\/banner_mantas_desktop_1.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/mobile_mantas_1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/mobile_mantas_1.jpg",
+            "alt_text": ""
+          }
+        },
+        "slideshow_xrzdnD": {
           "type": "slideshow",
           "disabled": true,
           "settings": {
-            "link": "shopify:\/\/products\/manta-electrica-tartan-scaldasonno",
-            "image_desktop": "shopify:\/\/shop_images\/banner4-desktop.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/banner4-tablet_d903ac6a-f44e-4fb7-980e-701b35fcbea8.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/banner4-mobile_aca52efd-c4f4-448d-8d43-8a6b216602d1.jpg",
-            "alt_text": "Haz que tus momentos relajación sean únicos con el placer de la calidez ideal- Ver mantas eléctrica"
+            "link": "shopify:\/\/collections\/all",
+            "image_desktop": "shopify:\/\/shop_images\/banner-1.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner-preparate-movil_4b199500-29df-4497-8647-24fe2faa41fb.png",
+            "image_mobile": "shopify:\/\/shop_images\/banner-preparate-movil.png",
+            "alt_text": ""
+          }
+        },
+        "slideshow_gGpDJR": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/all",
+            "image_desktop": "shopify:\/\/shop_images\/banner-3.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner-eco-movil.png",
+            "image_mobile": "shopify:\/\/shop_images\/banner-eco-movil_21209904-b13d-431f-b1a1-07a9ee2d0a98.png",
+            "alt_text": ""
+          }
+        },
+        "slideshow_WAagew": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/all",
+            "image_desktop": "shopify:\/\/shop_images\/Contenido_Scaldasonno.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner-proximamente-movil.png",
+            "image_mobile": "shopify:\/\/shop_images\/banner-proximamente-movil_b53b5f49-a8db-499b-9c6d-806241f5d24f.png",
+            "alt_text": ""
           }
         }
       },
@@ -107,9 +137,12 @@
         "e0dbcd38-b726-43fb-b87c-123c893b9dd2",
         "c459b626-1cad-48dc-b3b7-427a09854e8e",
         "055db437-4fec-4ecb-b1f6-4cec19f898ab",
-        "f562e883-d33e-44f6-90f9-c3d4284cc323",
+        "bc0998f4-e932-476e-8003-3ddd90f4bc9f",
         "afce68f8-2fbd-4490-82ce-51624432df52",
-        "bc0998f4-e932-476e-8003-3ddd90f4bc9f"
+        "f562e883-d33e-44f6-90f9-c3d4284cc323",
+        "slideshow_xrzdnD",
+        "slideshow_gGpDJR",
+        "slideshow_WAagew"
       ],
       "settings": {}
     },
@@ -204,21 +237,21 @@
         "ba010b25-44dd-4715-8b7c-9904ee8e62fc": {
           "type": "category",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Sin_titulo-8_Mesa_de_trabajo_1.png",
+            "image": "shopify:\/\/shop_images\/ccalientacamas-pareja.jpg",
             "coll": "calientacamas"
           }
         },
         "9cbfa717-f33a-4bf5-85f2-2de5eb24ef02": {
           "type": "category",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sistema-electro-block-plaid-adapto-velvet-tartan_approfondimento_2_2.jpg",
+            "image": "shopify:\/\/shop_images\/mantas.jpg",
             "coll": "mantas-electricas"
           }
         },
         "69d1963f-d9d7-4db4-a88e-8f3514fbf24e": {
           "type": "category",
           "settings": {
-            "image": "shopify:\/\/shop_images\/termoforo-rettangolare-intellisense-micro-peluche-con-tasca-16780a_gallery_3_1_2.jpg",
+            "image": "shopify:\/\/shop_images\/almohadillas.jpg",
             "coll": "almohadillas"
           }
         }

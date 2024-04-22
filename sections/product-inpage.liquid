@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="flex md:items-center flex-col-reverse {% if section.settings.reverse %} md:flex-row-reverse{% else %}md:flex-row{% endif %}">
+    <div class="w-full md:w-1/2 py-8 md:px-8 text-center flex justify-center items-center flex-col">
+      <h3 class="font-bold text-lg">{{ section.settings.title }}</h3>
+      <div class="prose">
+        {{ section.settings.content }}
+      </div>
+    </div>
+    <div class="w-full md:w-1/2">
+      {% if section.settings.image != blank %}
+        {{
+          section.settings.image
+          | image_url: width: 1000
+          | image_tag: loading: 'lazy', alt: section.settings.title, class: 'w-full h-auto object-center object-cover'
+        }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Inpage Producto",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Contenido"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "reverse",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inpage Producto"
+    }
+  ]
+}
+{% endschema %}
