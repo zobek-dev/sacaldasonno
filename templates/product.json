@@ -21,6 +21,42 @@
       ],
       "settings": {}
     },
+    "product_inpage_TezrbQ": {
+      "type": "product-inpage",
+      "settings": {
+        "image": "{{ product.metafields.custom.inpage_1.value.imagen.value }}",
+        "title": "{{ product.metafields.custom.inpage_1.value.tituio.value }}",
+        "content": "{{ product.metafields.custom.inpage_1.value.contenido | metafield_tag }}",
+        "reverse": false
+      }
+    },
+    "product_inpage_hFjUpt": {
+      "type": "product-inpage",
+      "settings": {
+        "image": "{{ product.metafields.custom.inpage_2.value.imagen.value }}",
+        "title": "{{ product.metafields.custom.inpage_2.value.tituio.value }}",
+        "content": "{{ product.metafields.custom.inpage_2.value.contenido | metafield_tag }}",
+        "reverse": true
+      }
+    },
+    "product_inpage_knenCy": {
+      "type": "product-inpage",
+      "settings": {
+        "image": "{{ product.metafields.custom.inpage_3.value.imagen.value }}",
+        "title": "{{ product.metafields.custom.inpage_3.value.tituio.value }}",
+        "content": "{{ product.metafields.custom.inpage_3.value.contenido | metafield_tag }}",
+        "reverse": false
+      }
+    },
+    "product_inpage_GjVN3d": {
+      "type": "product-inpage",
+      "settings": {
+        "image": "{{ product.metafields.custom.inpage_4.value.imagen.value }}",
+        "title": "{{ product.metafields.custom.inpage_4.value.tituio.value }}",
+        "content": "{{ product.metafields.custom.inpage_4.value.contenido | metafield_tag }}",
+        "reverse": true
+      }
+    },
     "info": {
       "type": "product-info",
       "disabled": true,
@@ -33,6 +69,7 @@
     },
     "consejos": {
       "type": "product-consejos",
+      "disabled": true,
       "settings": {}
     },
     "recomendaciones": {
@@ -43,6 +80,10 @@
   "order": [
     "main",
     "caracteristicas",
+    "product_inpage_TezrbQ",
+    "product_inpage_hFjUpt",
+    "product_inpage_knenCy",
+    "product_inpage_GjVN3d",
     "info",
     "consejos",
     "recomendaciones"

@@ -4,7 +4,7 @@
       "type": "main-tracking",
       "settings": {
         "title": "Sigue tu pedido",
-        "bajada": "<p>Acá podrás hacer seguimiento a tu pedido, ingresando el número de seguimiento<\/p>"
+        "bajada": "<p>¡Haz seguimiento a tu pedido aquí! <\/p><p>Ingresa el número de seguimiento completo, incluyendo \"MAR\" seguido del número de pedido <em><strong>(MARXXXX)<\/strong><\/em>, para obtener actualizaciones sobre el estado de tu envío.<\/p>"
       }
     }
   },
