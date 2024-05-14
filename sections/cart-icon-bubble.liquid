@@ -1,0 +1,14 @@
+{% render 'icon-cart' %}
+{% comment %}
+{% endcomment %}
+<span class="sr-only">{{ 'templates.cart.cart' | t }}</span>
+{%- if cart != empty -%}
+  <div class="cart-count-bubble bg-red-600 text-white text-xs rounded-full w-4 h-4 flex justify-center items-center absolute top-0 right-0">
+    {%- if cart.item_count < 100 -%}
+      <span aria-hidden="true">{{ cart.item_count }}</span>
+    {%- endif -%}
+    <span class="sr-only">
+      {{- 'sections.header.cart_count' | t: count: cart.item_count -}}
+    </span>
+  </div>
+{%- endif -%}
