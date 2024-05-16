@@ -1,0 +1,42 @@
+.cart {
+  position: relative;
+  display: block;
+}
+
+.cart-items-section {
+  @apply w-full;
+}
+
+.cart__empty-text,
+.is-empty .cart__contents,
+cart-items.is-empty .title-wrapper-with-link,
+.is-empty .cart__footer {
+  display: none;
+}
+
+.is-empty .cart__empty-text,
+.is-empty .cart__warnings,
+.is-empty .button {
+  display: block;
+}
+
+.button {
+  display: none;
+}
+
+.is-empty .cart__warnings {
+  @apply py-60 text-center w-full;
+}
+
+.is-empty .cart__empty-text {
+  @apply mb-4 font-medium;
+}
+
+.title-wrapper-with-link {
+  @apply flex justify-between items-center my-4;
+}
+
+.product-option dt,
+.product-option dd {
+  @apply text-xs;
+}

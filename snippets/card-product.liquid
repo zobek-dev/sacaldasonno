@@ -47,9 +47,12 @@ Recibe:
         </span>
       {% endif %}
       {% unless product.available %}
-        <div class="absolute top-0 left-0 bottom-0 right-0 bg-[rgba(74,74,73,.62)] text-white uppercase font-gobold-italic z-[99] flex justify-center items-center">
+        {% comment %} <div class="absolute top-0 left-0 bottom-0 right-0 bg-[rgba(74,74,73,.62)] text-white uppercase font-gobold-italic z-[99] flex justify-center items-center">
           <span class="bg-[#4B4F54] py-2 px-2">Agotado</span>
-        </div>
+        </div> {% endcomment %}
+        <div class="absolute top-0 left-0 bottom-0 right-0 bg-[rgba(74,74,73,.62)] text-white uppercase font-gobold-italic z-[99] flex justify-center items-center">
+          <span class="bg-[#4B4F54] py-2 px-2">Proximamente</span>
+        </div> 
       {% endunless %}
       <img
         class="aspect-square object-fit object-center w-full"
@@ -60,7 +63,7 @@ Recibe:
     </a> 
   </div>
   <a href="{{ product.url }}">
-    <span class="uppercase line-clamp-1 my-2 lg:my-4 font-semibold leading-none {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% endif %}">{{ product.title }}</span>
+    <span class="uppercase text-sm md:text-base my-2 lg:my-4 font-semibold leading-[-10px] {% if product.available == false %}text-[rgba(74,74,73,0.37)]{% endif %}">{{ product.title }}</span>
   </a>
   <div class="flex justify-between items-end">
     <form action="{{ routes.cart_add_url }}" method="POST" id="Product-Form-{{ product.selected_or_first_available_variant.id }}" x-ref="product_form" class="hidden">

@@ -13,7 +13,7 @@
           {% when 'contact' %}
           <div class="col-span-1">
             <div class="mb-4">
-              {% render 'mar-del-sur', class: 'w-[200px]' %}
+              <img src="{{ 'logo-footer.svg' | asset_url }}" width="200" height="76" loading="lazy">
             </div>
             <h3 class="mb-4 uppercase text-base font-bold">{{ block.settings.title | escape }}</h3>
             {% if block.settings.link != blank %}

@@ -68,12 +68,14 @@
         "c5d7393b-6ec7-4e63-a02d-f7cc8394a512",
         "ddf5f5da-069f-45a1-97c5-90b652b44ebd"
       ],
+      "disabled": true,
       "settings": {
         "title": "¿Por qué utilizar Scaldasonno?"
       }
     },
     "single": {
       "type": "single-cita",
+      "disabled": true,
       "settings": {
         "content": "<p>Las investigaciones lo confirman: dormir bien es esencial para afrontar mejor la jornada y un sueño regenerador es la clave del bienestar. Scaldasonno ayuda a dormir bien porque crea en la cama un hábitat confortable con el calor justo que facilita el relax y un descanso de calidad.<\/p>",
         "color": "#ffffff"
@@ -151,6 +153,7 @@
         "b83b4e52-37f8-4c88-bc37-130631826349",
         "b5ac96e8-3a25-484a-b87e-36ce6574b9a3"
       ],
+      "disabled": true,
       "settings": {}
     },
     "faqs": {
@@ -215,6 +218,7 @@
         "7dba094a-943e-47db-bb15-3ef19f51176d",
         "01ace58a-603d-472e-a44d-dbb9c43cc411"
       ],
+      "disabled": true,
       "settings": {}
     }
   },

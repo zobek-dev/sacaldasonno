@@ -89,6 +89,7 @@
         "f8d55fe4-fa11-4e71-b212-7a99bad03a3f",
         "68931c1a-22a5-4903-80a4-059a1f856c84"
       ],
+      "disabled": true,
       "settings": {}
     },
     "faqs": {
@@ -153,6 +154,7 @@
         "f683ca6f-9538-494c-933a-10e04f79f166",
         "cb53bb39-1b6a-4ef2-bfcd-b7a4792a715c"
       ],
+      "disabled": true,
       "settings": {}
     }
   },
