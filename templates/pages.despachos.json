@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-rte-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
