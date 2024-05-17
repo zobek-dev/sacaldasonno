@@ -186,6 +186,16 @@
       ],
       "settings": {}
     },
+    "countdown_TiaGXg": {
+      "type": "countdown",
+      "settings": {
+        "target_date": "2024-05-04 23:59:59",
+        "image_mobile": "shopify:\/\/shop_images\/mobile_20_off_dia_de_la_madre_16fc2384-f305-43f7-804e-adc2c4fdc73f.png",
+        "image_desktop": "shopify:\/\/shop_images\/banner_20_off_dia_de_la_madre.png",
+        "title": "Oferta relampago",
+        "link": "shopify:\/\/collections\/almohadillas"
+      }
+    },
     "f7f21698-652b-4ff2-96de-9917ab786b5a": {
       "type": "home-featured-products",
       "settings": {
@@ -366,6 +376,7 @@
     "6d039727-5eef-443e-a084-d2a448f903cb",
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162",
     "4e0fee28-e16c-4802-9402-cc8e410a5f50",
+    "countdown_TiaGXg",
     "f7f21698-652b-4ff2-96de-9917ab786b5a",
     "26118325-e776-4745-970d-3d17469317ee",
     "46b57673-ac3d-42a2-b9b3-a344ff270a39",
