@@ -1,0 +1,13 @@
+<div class="prose mx-auto my-12 py-12 px-4 md:px-0 sm:[&>div>table]:block max-w-screen-lg">
+  <h1>{{ page.title | escape }}</h1>
+  <div class="">
+    {{ page.content }}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Custom RTE page",
+  "settings": [  
+  ]
+}
+{% endschema %}

@@ -1,0 +1,486 @@
+<div class="mb-8">
+  <div class="mb-2">
+    <label class="font-bold text-sm mb-1 uppercase" for="Region">Región</label>
+    <select
+      id="Region"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+      @input="region = $event.target.value"
+    >
+      <option disabled selected>Selecciona tu región</option>
+      <option value="AP">Arica y Parinacota</option>
+      <option value="TA">Tarapacá</option>
+      <option value="AN">Antofagasta</option>
+      <option value="AT">Atacama</option>
+      <option value="CO">Coquimbo</option>
+      <option value="VS">Valparaíso</option>
+      <option value="RM">Metropolitana de Santiago</option>
+      <option value="LI">O'Higgins</option>
+      <option value="ML">Maule</option>
+      <option value="NB">Ñuble</option>
+      <option value="BI">Biobío</option>
+      <option value="AR">La Araucanía</option>
+      <option value="LR">Los Ríos</option>
+      <option value="LL">Los Lagos</option>
+      <option value="AI">Aysén</option>
+      <option value="MA">Magallanes</option>
+    </select>
+  </div>
+  <div x-show="region == 'AP'" x-cloak class="mb-2">
+    <label for="Comunas-AP" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+    <select
+      id="Comunas-AP"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Arica">Arica</option>
+      <option value="Putre">Putre</option>
+      <option value="Camarones">Camarones</option>
+    </select>
+  </div>
+  <div x-show="region == 'TA'" x-cloak class="mb-2">
+    <label for="Comunas-TA" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-TA"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="iquique">Iquique</option>
+      <option value="alto_hospicio">Alto Hospicio</option>
+      <option value="pica">Pica</option>
+      <option value="pozo_almonte">Pozo Almonte</option>
+    </select>
+  </div>
+  <div x-show="region == 'AN'" x-cloak class="mb-2">
+    <label for="Comunas-AN" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-AN"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Antofagasta">Antofagasta</option>
+      <option value="Mejillones">Mejillones</option>
+      <option value="Sierra Gorda">Sierra Gorda</option>
+      <option value="Taltal">Taltal</option>
+      <option value="Calama">Calama</option>
+      <option value="Tocopilla">Tocopilla</option>
+    </select>
+  </div>
+  <div x-show="region === 'AT'" x-cloak class="mb-2">
+    <label for="Comunas-AT" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-AT"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Alto del Carmen">Alto del Carmen</option>
+      <option value="Caldera">Caldera</option>
+      <option value="Chanaral">Chañaral</option>
+      <option value="Copiapo">Copiapó</option>
+      <option value="Diego de Almagro">Diego de Almagro</option>
+      <option value="Freirina">Freirina</option>
+      <option value="Huasco">Huasco</option>
+      <option value="Tierra Amarilla">Tierra Amarilla</option>
+      <option value="Vallenar">Vallenar</option>
+    </select>
+  </div>
+  <div x-show="region === 'CO'" x-cloak class="mb-2">
+    <label for="Comunas-CO" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-CO"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Andacollo">Andacollo</option>
+      <option value="Canela">Canela</option>
+      <option value="Combarbala">Combarbalá</option>
+      <option value="Coquimbo">Coquimbo</option>
+      <option value="Illapel">Illapel</option>
+      <option value="La Higuera">La Higuera</option>
+      <option value="La Serena">La Serena</option>
+      <option value="Los Vilos">Los Vilos</option>
+      <option value="Monte Patria">Monte Patria</option>
+      <option value="ovalle">Ovalle</option>
+      <option value="Paihuano">Paihuano</option>
+      <option value="Punitaqui">Punitaqui</option>
+      <option value="Quilimari">Quilimari</option>
+      <option value="Rio Hurtado">Río Hurtado</option>
+    </select>
+  </div>
+  <div x-show="region === 'VS'" x-cloak class="mb-2">
+    <label for="Comunas-VS" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-VS"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Algarrobo">Algarrobo</option>
+      <option value="Cabildo">Cabildo</option>
+      <option value="Calera">Calera</option>
+      <option value="Calle Larga">Calle Larga</option>
+      <option value="almacen">Cartagena</option>
+      <option value="Cartagena">Casablanca</option>
+      <option value="Catemu">Catemu</option>
+      <option value="Concon">Concón</option>
+      <option value="El Quisco">El Quisco</option>
+      <option value="El Tabo">El Tabo</option>
+      <option value="Hijuelas">Hijuelas</option>
+      <option value="La Cruz">La Cruz</option>
+      <option value="La Ligua">La Ligua</option>
+      <option value="Limache">Limache</option>
+      <option value="Llaillay">Llaillay</option>
+      <option value="Los Andes">Los Andes</option>
+      <option value="Nogales">Nogales</option>
+      <option value="Olmue">Olmué</option>
+      <option value="Panquehue">Panquehue</option>
+      <option value="Papudo">Papudo</option>
+      <option value="Petorca">Petorca</option>
+      <option value="Puchuncavi">Puchuncaví</option>
+      <option value="Putaendo">Putaendo</option>
+      <option value="Quillota">Quillota</option>
+      <option value="Quilpue">Quilpué</option>
+      <option value="Quintero">Quintero</option>
+      <option value="Rinconada">Rinconada</option>
+      <option value="San Antonio">San Antonio</option>
+      <option value="San Esteban">San Esteban</option>
+      <option value="San Felipe">San Felipe</option>
+      <option value="Santa Maria">Santa María</option>
+      <option value="Santo Domingo">Santo Domingo</option>
+      <option value="Valparaiso">Valparaíso</option>
+      <option value="Villa Alemana">Villa Alemana</option>
+      <option value="Vina del Mar">Viña del Mar</option>
+      <option value="Zapallar">Zapallar</option>
+    </select>
+  </div>
+  <div x-show="region === 'RM'" x-cloak class="mb-2">
+    <label for="Comunas-RM" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-RM"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Alhue">Alhue</option>
+      <option value="Buin">Buin</option>
+      <option value="Calera de Tango">Calera de Tango</option>
+      <option value="Cerrillos">Cerrillos</option>
+      <option value="Cerro Navia">Cerro Navia</option>
+      <option value="Colina">Colina</option>
+      <option value="Conchali">Conchalí</option>
+      <option value="Curacavi">Curacaví</option>
+      <option value="El Bosque">El Bosque</option>
+      <option value="El Monte">El Monte</option>
+      <option value="Estacion Central">Estación Central</option>
+      <option value="Huechuraba">Huechuraba</option>
+      <option value="Independencia">Independencia</option>
+      <option value="Isla de Maipo">Isla de Maipo</option>
+      <option value="La Cisterna">La Cisterna</option>
+      <option value="La Florida">La Florida</option>
+      <option value="La Granja">La Granja</option>
+      <option value="La Pintana">La Pintana</option>
+      <option value="La Reina">La Reina</option>
+      <option value="Lampa">Lampa</option>
+      <option value="Las Condes">Las Condes</option>
+      <option value="Lo Barnechea">Lo Barnechea</option>
+      <option value="Lo Espejo">Lo Espejo</option>
+      <option value="Lo Prado">Lo Prado</option>
+      <option value="Macul">Macul</option>
+      <option value="Maipu">Maipú</option>
+      <option value="Melipilla">Melipilla</option>
+      <option value="Nunoa">Ñuñoa</option>
+      <option value="Padre Hurtado">Padre Hurtado</option>
+      <option value="Paine">Paine</option>
+      <option value="Pedro Aguirre Cerda">Pedro Aguirre Cerda</option>
+      <option value="Penaflor">Peñaflor</option>
+      <option value="Penalolen">Peñalolén</option>
+      <option value="Pirque">Pirque</option>
+      <option value="Providencia">Providencia</option>
+      <option value="Pudahuel">Pudahuel</option>
+      <option value="Puente Alto">Puente Alto</option>
+      <option value="Quilicura">Quilicura</option>
+      <option value="Quinta Normal">Quinta Normal</option>
+      <option value="Recoleta">Recoleta</option>
+      <option value="Renca">Renca</option>
+      <option value="San Bernardo">San Bernardo</option>
+      <option value="San Joaquin">San Joaquín</option>
+      <option value="San Jose de Maipo">San José de Maipo</option>
+      <option value="San Miguel">San Miguel</option>
+      <option value="San Pedro">San Pedro</option>
+      <option value="San Ramon">San Ramón</option>
+      <option value="Santiago">Santiago</option>
+      <option value="Talagante">Talagante</option>
+      <option value="Tiltil">Tiltil</option>
+      <option value="Vitacura">Vitacura</option>
+    </select>
+  </div>
+  <div x-show="region === 'LI'" x-cloak class="mb-2">
+    <label for="Comunas-LI" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-LI"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Rancagua">Rancagua</option>
+      <option value="Machali">Machalí</option>
+      <option value="Requinoa">Requínoa</option>
+      <option value="Coinco">Coinco</option>
+      <option value="Coltauco">Coltauco</option>
+      <option value="Donihue">Doñihue</option>
+      <option value="Graneros">Graneros</option>
+      <option value="Las Cabras">Las Cabras</option>
+      <option value="La Estrella">La Estrella</option>
+      <option value="Litueche">Litueche</option>
+      <option value="Lo Miranda">Lo Miranda</option>
+      <option value="Machali">Machalí</option>
+      <option value="Malloa">Malloa</option>
+      <option value="Mostazal">Mostazal</option>
+      <option value="Olivar">Olivar</option>
+      <option value="Peumo">Peumo</option>
+      <option value="Pichidegua">Pichidegua</option>
+      <option value="Quinta de Tilcoco">Quinta de Tilcoco</option>
+      <option value="Rengo">Rengo</option>
+      <option value="Requinoa">Requínoa</option>
+      <option value="San Francisco de Mostazal">San Francisco de Mostazal</option>
+      <option value="SanVicente de Tagua Tagua">San Vicente de Tagua Tagua</option>
+    </select>
+  </div>
+  <div x-show="region === 'ML'" x-cloak class="mb-2">
+    <label for="Comunas-ML" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-ML"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Talca">Talca</option>
+      <option value="Constitucion">Constitución</option>
+      <option value="Curico">Curicó</option>
+      <option value="Linares">Linares</option>
+      <option value="Cauquenes">Cauquenes</option>
+      <option value="Parral">Parral</option>
+      <option value="Teno">Teno</option>
+      <option value="San Javier">San Javier</option>
+      <option value="Molina">Molina</option>
+      <option value="Talcahuano">Talcahuano</option>
+      <option value="Colbun">Colbún</option>
+      <option value="Longavi">Longaví</option>
+      <option value="San Clemente">San Clemente</option>
+      <option value="Pelarco">Pelarco</option>
+      <option value="Rauco">Rauco</option>
+      <option value="Maule">Maule</option>
+      <option value="Yerbas Buenas">Yerbas Buenas</option>
+      <option value="San Rafael">San Rafael</option>
+      <option value="Romeral">Romeral</option>
+      <option value="Sagrada Familia">Sagrada Familia</option>
+      <option value="Curepto">Curepto</option>
+      <option value="Empedrado">Empedrado</option>
+      <option value="Pencahue">Pencahue</option>
+    </select>
+  </div>
+  <div x-show="region === 'NB'" x-cloak class="mb-2">
+    <label for="Comunas-NB" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-NB"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Chillan">Chillán</option>
+      <option value="ChillanViejo">Chillán Viejo</option>
+      <option value="Bulnes">Bulnes</option>
+      <option value="Cobquecura">Cobquecura</option>
+      <option value="Coelemu">Coelemu</option>
+      <option value="Coihueco">Coihueco</option>
+      <option value="ElCarmen">El Carmen</option>
+      <option value="Ninhue">Ninhue</option>
+      <option value="Niquen">Ñiquén</option>
+      <option value="Pemuco">Pemuco</option>
+      <option value="Pinto">Pinto</option>
+      <option value="Portezuelo">Portezuelo</option>
+      <option value="Quillon">Quillón</option>
+      <option value="Quirihue">Quirihue</option>
+      <option value="Ranquil">Ránquil</option>
+      <option value="San Carlos">San Carlos</option>
+      <option value="San Fabian">San Fabián</option>
+      <option value="San Ignacio">San Ignacio</option>
+      <option value="Yungay">Yungay</option>
+    </select>
+  </div>
+  <div x-show="region === 'BI'" x-cloak class="mb-2">
+    <label for="Comunas-BI" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-BI"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Concepcion">Concepción</option>
+      <option value="Chiguayante">Chiguayante</option>
+      <option value="San Pedro de La Paz">San Pedro de La Paz</option>
+      <option value="Coronel">Coronel</option>
+      <option value="Talcahuano">Talcahuano</option>
+      <option value="Hualpen">Hualpén</option>
+      <option value="Hualqui">Hualqui</option>
+      <option value="Tome">Tomé</option>
+      <option value="Penco">Penco</option>
+      <option value="Florida">Florida</option>
+      <option value="Santa Juana">Santa Juana</option>
+      <option value="Tome">Tome</option>
+      <option value="Los Angeles">Los Ángeles</option>
+      <option value="Chillan">Chillán</option>
+      <option value="Talcahuano">Talcahuano</option>
+      <option value="San Carlos">San Carlos</option>
+      <option value="Cabrero">Cabrero</option>
+      <option value="Yumbel">Yumbel</option>
+      <option value="Laja">Laja</option>
+      <option value="Nacimiento">Nacimiento</option>
+      <option value="Negrete">Negrete</option>
+      <option value="Quilaco">Quilaco</option>
+      <option value="Quilleco">Quilleco</option>
+      <option value="Santa Barbara">Santa Bárbara</option>
+      <option value="Mulchen">Mulchén</option>
+      <option value="Quillon">Quillón</option>
+      <option value="Cabrero">Cabrero</option>
+      <option value="San Rosendo">San Rosendo</option>
+      <option value="Lota">Lota</option>
+    </select>
+  </div>
+  <div x-show="region === 'AR'" x-cloak class="mb-2">
+    <label for="Comunas-AR" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-AR"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Temuco">Temuco</option>
+      <option value="Angol">Angol</option>
+      <option value="Victoria">Victoria</option>
+      <option value="Villarrica">Villarrica</option>
+      <option value="Pucon">Pucón</option>
+      <option value="Loncoche">Loncoche</option>
+      <option value="Lautaro">Lautaro</option>
+      <option value="Curacautin">Curacautín</option>
+      <option value="Collipulli">Collipulli</option>
+      <option value="Traiguen">Traiguén</option>
+      <option value="Nueva Imperial">Nueva Imperial</option>
+      <option value="Carahue">Carahue</option>
+      <option value="Pitrufquen">Pitrufquén</option>
+      <option value="Gorbea">Gorbea</option>
+      <option value="Melipeuco">Melipeuco</option>
+      <option value="Perquenco">Perquenco</option>
+      <option value="Vilcun">Vilcún</option>
+      <option value="Cunco">Cunco</option>
+      <option value="Freire">Freire</option>
+      <option value="Lonquimay">Lonquimay</option>
+      <option value="Saavedra">Saavedra</option>
+    </select>
+  </div>
+  <div x-show="region === 'LR'" x-cloak class="mb-2">
+    <label for="Comunas-LR" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-LR"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Valdivia">Valdivia</option>
+      <option value="La Union">La Unión</option>
+      <option value="Rio Bueno">Río Bueno</option>
+      <option value="Lanco">Lanco</option>
+      <option value="Paillaco">Paillaco</option>
+      <option value="Los Lagos">Los Lagos</option>
+      <option value="Panguipulli">Panguipulli</option>
+      <option value="Corral">Corral</option>
+      <option value="Futrono">Futrono</option>
+      <option value="Mariquina">Mariquina</option>
+      <option value="Mafil">Máfil</option>
+      <option value="Lago Ranco">Lago Ranco</option>
+      <option value="Lanco">Lanco</option>
+    </select>
+  </div>
+  <div x-show="region === 'LL'" x-cloak class="mb-2">
+    <label for="Comunas-LL" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-LL"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Puerto Montt">Puerto Montt</option>
+      <option value="Puerto Varas">Puerto Varas</option>
+      <option value="Osorno">Osorno</option>
+      <option value="Frutillar">Frutillar</option>
+      <option value="Castro">Castro</option>
+      <option value="Ancud">Ancud</option>
+      <option value="Quellon">Quellón</option>
+      <option value="Calbuco">Calbuco</option>
+      <option value="Llanquihue">Llanquihue</option>
+      <option value="Purranque">Purranque</option>
+      <option value="Maullin">Maullín</option>
+      <option value="Los Muermos">Los Muermos</option>
+      <option value="Fresia">Fresia</option>
+      <option value="Puqueldon">Puqueldón</option>
+      <option value="Dalcahue">Dalcahue</option>
+      <option value="Hualaihue">Hualaihué</option>
+    </select>
+  </div>
+  <div x-show="region === 'AI'" x-cloak class="mb-2">
+    <label for="Comunas-AI" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-AI"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Coyhaique">Coyhaique</option>
+      <option value="Puerto Aysen">Puerto Aysén</option>
+      <option value="Cisnes">Cisnes</option>
+      <option value="Guaitecas">Guaitecas</option>
+      <option value="Cochrane">Cochrane</option>
+      <option value="O'Higgins">O'Higgins</option>
+      <option value="Chile Chico">Chile Chico</option>
+      <option value="Rio Ibanez">Río Ibáñez</option>
+    </select>
+  </div>
+  <div x-show="region === 'MA'" x-cloak class="mb-2">
+    <label for="Comunas-MA" class="font-bold text-sm mb-1 uppercase">Comuna</label>
+
+    <select
+      id="Comunas-MA"
+      @change="comuna = $event.target.value"
+      class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm"
+    >
+      <option disabled selected>Selecciona la comuna</option>
+      <option value="Punta Arenas">Punta Arenas</option>
+      <option value="Puerto Natales">Puerto Natales</option>
+      <option value="Porvenir">Porvenir</option>
+      <option value="Cerro Caste">Cerro Castillo</option>
+      <option value="Rio Verde">Río Verde</option>
+      <option value="Primavera">Primavera</option>
+      <option value="Timaukel">Timaukel</option>
+      <option value="Natales">Natales</option>
+      <option value="Torres del Paine">Torres del Paine</option>
+    </select>
+  </div>
+</div>

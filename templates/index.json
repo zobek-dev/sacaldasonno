@@ -26,123 +26,48 @@
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162": {
       "type": "slideshow",
       "blocks": {
-        "23b65292-2a1c-487f-8e21-cec7f84b59d8": {
+        "slideshow_c9VDQ4": {
           "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/calor-textil",
-            "image_desktop": "shopify:\/\/shop_images\/BANNER_GENERAL_CALOR_TEXTL-02.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/BANNER_GENERAL_CALOR_TEXTL-01.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/BANNER_GENERAL_CALOR_TEXTL-01.jpg",
-            "alt_text": ""
-          }
-        },
-        "e0dbcd38-b726-43fb-b87c-123c893b9dd2": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "",
-            "image_desktop": "shopify:\/\/shop_images\/BANNER_PROXIMAMENTE_PRODUCTOS_NUEVOS_CALIENTACAMAS_ECO_-_ALMOHADILLA_-02.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/BANNER_PROXIMAMENTE_PRODUCTOS_NUEVOS_CALIENTACAMAS_ECO_-_ALMOHADILLA_-01.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/BANNER_PROXIMAMENTE_PRODUCTOS_NUEVOS_CALIENTACAMAS_ECO_-_ALMOHADILLA_-01.jpg",
-            "alt_text": ""
-          }
-        },
-        "c459b626-1cad-48dc-b3b7-427a09854e8e": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/calor-textil",
-            "image_desktop": "shopify:\/\/shop_images\/SANTANDER-DESKTOP_2.png",
-            "image_tablet": "shopify:\/\/shop_images\/SANTANDER-TABLET.png",
-            "image_mobile": "shopify:\/\/shop_images\/SANTANDER-MOBILE.png",
-            "alt_text": ""
-          }
-        },
-        "055db437-4fec-4ecb-b1f6-4cec19f898ab": {
-          "type": "slideshow",
-          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calientacamas",
-            "image_desktop": "shopify:\/\/shop_images\/C-ACTIVE-DESKTOP.png",
-            "image_tablet": "shopify:\/\/shop_images\/C-ACTIVE-TABLET.png",
-            "image_mobile": "shopify:\/\/shop_images\/C-ACTIVE-MOVIL.png",
-            "alt_text": "haz que tus momentos de relajación sean únicos con el plñlacer de la calidez ideal"
+            "image_desktop": "shopify:\/\/shop_images\/calientacama_persona_desktop_1_5f7e2155-4c94-4250-a101-d8400523f8ea.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/calientacama_persona_mobile_6338aa43-73ce-48b8-9cb2-43e7e673b8e6.jpg",
+            "alt_text": ""
           }
         },
-        "bc0998f4-e932-476e-8003-3ddd90f4bc9f": {
+        "slideshow_PmcV66": {
           "type": "slideshow",
           "settings": {
-            "link": "shopify:\/\/collections\/el-accesorio-perfecto",
-            "image_desktop": "shopify:\/\/shop_images\/banner_20_off_dia_de_la_madre.png",
-            "image_tablet": "shopify:\/\/shop_images\/mobile_20_off_dia_de_la_madre.png",
-            "image_mobile": "shopify:\/\/shop_images\/mobile_20_off_dia_de_la_madre.png",
-            "alt_text": "Haz que tus momentos relajación sean únicos con el placer de la calidez ideal- Ver mantas eléctrica"
+            "link": "shopify:\/\/products\/almohadilla-rectangular-scaldasonno",
+            "image_desktop": "shopify:\/\/shop_images\/almohadilla_rectangular_-_desktop_1_00caca3d-fee0-48b4-818a-8d596186152c.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/almohadilal_rectangular_mobile_5a27edb0-39e9-4f50-ad3a-566d8dd2113d.jpg",
+            "alt_text": ""
           }
         },
-        "afce68f8-2fbd-4490-82ce-51624432df52": {
-          "type": "slideshow",
-          "settings": {
-            "link": "shopify:\/\/collections\/accesorios",
-            "image_desktop": "shopify:\/\/shop_images\/desktop_almohadillas_y_calientapies_1.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/mobile_almohadillas_y_calientapies_1.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/banner-02-mobile.png",
-            "alt_text": "Scaldasonno"
-          }
-        },
-        "f562e883-d33e-44f6-90f9-c3d4284cc323": {
+        "slideshow_Jnia4n": {
           "type": "slideshow",
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
-            "image_desktop": "shopify:\/\/shop_images\/banner_mantas_desktop_1.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/mobile_mantas_1.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mobile_mantas_1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/manta_desktop_1_97be10f1-4dcf-4142-bce7-41128feaba1a.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/manta_mobile_90a24b65-e0e2-4d02-bf67-a89fdc08d629.jpg",
             "alt_text": ""
           }
         },
-        "slideshow_xrzdnD": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/all",
-            "image_desktop": "shopify:\/\/shop_images\/banner-1.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/banner-preparate-movil_4b199500-29df-4497-8647-24fe2faa41fb.png",
-            "image_mobile": "shopify:\/\/shop_images\/banner-preparate-movil.png",
-            "alt_text": ""
-          }
-        },
-        "slideshow_gGpDJR": {
+        "slideshow_WyjU4P": {
           "type": "slideshow",
           "settings": {
-            "link": "shopify:\/\/collections\/all",
-            "image_desktop": "shopify:\/\/shop_images\/banner-3.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/banner-eco-movil.png",
-            "image_mobile": "shopify:\/\/shop_images\/banner-eco-movil_21209904-b13d-431f-b1a1-07a9ee2d0a98.png",
-            "alt_text": ""
-          }
-        },
-        "slideshow_WAagew": {
-          "type": "slideshow",
-          "settings": {
-            "link": "shopify:\/\/collections\/all",
-            "image_desktop": "shopify:\/\/shop_images\/Contenido_Scaldasonno.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/banner-proximamente-movil.png",
-            "image_mobile": "shopify:\/\/shop_images\/banner-proximamente-movil_b53b5f49-a8db-499b-9c6d-806241f5d24f.png",
+            "link": "shopify:\/\/collections\/calientacamas",
+            "image_desktop": "shopify:\/\/shop_images\/calientacama_desktop_1_e8229ff1-5dc3-4d82-9455-79a2569511ff.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/calientacam_mobile_4360a564-7940-417b-b727-1067faeec669.jpg",
             "alt_text": ""
           }
         }
       },
       "block_order": [
-        "23b65292-2a1c-487f-8e21-cec7f84b59d8",
-        "e0dbcd38-b726-43fb-b87c-123c893b9dd2",
-        "c459b626-1cad-48dc-b3b7-427a09854e8e",
-        "055db437-4fec-4ecb-b1f6-4cec19f898ab",
-        "bc0998f4-e932-476e-8003-3ddd90f4bc9f",
-        "afce68f8-2fbd-4490-82ce-51624432df52",
-        "f562e883-d33e-44f6-90f9-c3d4284cc323",
-        "slideshow_xrzdnD",
-        "slideshow_gGpDJR",
-        "slideshow_WAagew"
+        "slideshow_c9VDQ4",
+        "slideshow_PmcV66",
+        "slideshow_Jnia4n",
+        "slideshow_WyjU4P"
       ],
       "settings": {}
     },
@@ -188,6 +113,7 @@
     },
     "countdown_TiaGXg": {
       "type": "countdown",
+      "disabled": true,
       "settings": {
         "target_date": "2024-05-04 23:59:59",
         "image_mobile": "shopify:\/\/shop_images\/mobile_20_off_dia_de_la_madre_16fc2384-f305-43f7-804e-adc2c4fdc73f.png",

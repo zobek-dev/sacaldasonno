@@ -239,7 +239,7 @@
   </form>
 </div>
 <div class="pt-4 pb-4 border-t border-[#13203A]">
-  <details class="document-details" open>
+  {% comment %} <details class="document-details" open>
     <summary class="flex justify-between items-center font-gobold leading-[1.2] uppercase text-[14px] lg:text-[16px] mb-4" >
       <span>Elige el tipo de documento</span>
       {% render 'icon-caret', class: 'w-4' %}
@@ -298,17 +298,19 @@
         <span class="text-[#a00] block text-xs mb-2" x-show="invalidGiro">El campo no puede estar vacío</span>
       </div>
     </div>
-  </details>
+  </details> {% endcomment %}
   <div class="flex justify-between items-center mb-4">
     <h3 class="text-xl font-bold uppercase">Subtotal:</h3>
     <span id="CartTotal" class="text-xl font-gobold text-[#4a4a49]">{{ cart.total_price | money }}</span>
   </div>
   <div class="flex flex-col gap-2">    
-    <button
+    {% comment %} <button
       type="submit"
       form="CartDrawerForm"
       class="block bg-[#a00] font-gobold font-bold text-white px-4 py-2 uppercase tracking-[1.5px] transition-colors duration-200 ease-in-out hover:bg-[#efd4d4] hover:text-[#a00]"
       name="checkout">Ir a pagar</button>
+     {% endcomment %}
+    <a href="{{ routes.cart_url }}" class="block bg-[#a00] text-center font-gobold font-bold text-white px-4 py-2 uppercase tracking-[1.5px] transition-colors duration-200 ease-in-out hover:bg-[#efd4d4] hover:text-[#a00]">Ver el carrito</a>
     <button class="block bg-[#fff] font-gobold font-bold text-[#a00] border border-[#a00] px-4 py-2 uppercase tracking-[1.5px] transition-opacity duration-200 ease-in-out hover:opacity-70" @click="$dispatch('toggle-cart')">Continuar Comprando</button>
   </div>
 </div>
