@@ -432,11 +432,11 @@
         <div class="">
           <div class="flex gap-x-4 items-center mb-6">
             <label for="Boleta" class="text-sm">
-              <input type="radio" id="Boleta" value="boleta" name="attributes[shoppingcart-tags]" @change="()=>type='boleta'" form="CartDrawerForm" checked>
+              <input type="radio" id="Boleta" value="boleta" name="attributes[shoppingcart-tags]" @change="()=>type='boleta'" form="cart" checked>
               Boleta
             </label>
             <label for="Factura" class="text-sm">
-              <input type="radio" id="Factura" value="factura" name="attributes[shoppingcart-tags]" @change="()=>type='factura'" form="CartDrawerForm">
+              <input type="radio" id="Factura" value="factura" name="attributes[shoppingcart-tags]" @change="()=>type='factura'" form="cart">
               Factura
             </label>
           </div>
@@ -450,7 +450,7 @@
               name="attributes[RUT]" 
               placeholder="Ingresa tu RUT, sin puntos y con guión" 
               value="{{ cart.attributes["RUT"] }}" 
-              form="CartDrawerForm" 
+              form="cart" 
               @input="handleRut" 
               class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
             </div>
@@ -463,7 +463,7 @@
               name="attributes[razon]" 
               placeholder="Ingresa tu Razón Social" 
               value="{{ cart.attributes["razon"] }}" 
-              form="CartDrawerForm"
+              form="cart"
               @input="handleRazon"  
               class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
             </div>
@@ -476,7 +476,7 @@
               name="attributes[giro]" 
               placeholder="Ingresa tu Giro" 
               value="{{ cart.attributes["giro"] }}" 
-              form="CartDrawerForm"
+              form="cart"
               @input="handleGiro"  
               class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
             </div>
@@ -485,111 +485,85 @@
         </div>
       </div>
       <div x-data="{
-        
-        form: document.querySelector('#cart'),
-        btn: document.querySelector('#checkout'), address1:'' ,region: '', comuna: '', validAddress: false, messageAddress: '', validRegion: false, validComuna: false, init(){
-          if(!this.validAddress || !this.messageAddress || !this.validComuna) this.btn.setAttribute('disabled', 'disabled')
-          this.$watch('address1', value => {
-            if(!value.length) {
-              this.validAddress = false
-              this.btn.setAttribute('disabled', 'disabled')
-              this.messageAddress = 'Debes ingresar una dirección de envio. Intenta nuevamente'
-            }
-            this.messageAddress = ''
-            const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+\s\d+$/
-            if(regex.test(value)){
-              this.validAddress = true
-              this.messageAddress = ''
+        form: null,
+        btn: null,
+        address1: '',
+        region: '',
+        comuna: '',
+        validAddress: false,
+        messageAddress: '',
+        validRegion: false,
+        validComuna: false,
 
-              if(this.validAddress && this.validRegion && this.validComuna){
-                //checkout[shipping_address][country]=CL
-                this.btn.removeAttribute('disabled')
-                const paramsArray = []
-                const urlObj = new URL(this.form.action)
-                const params = new URLSearchParams(urlObj.search);
-                for (const [key, value] of params.entries()) {
-                  paramsArray.push({ key, value });
-                }
+        init() {
+          this.form = document.querySelector('#cart');
+          this.btn = document.querySelector('#checkout');
+          this.updateButtonState();
 
-                const items = [{key:'checkout[shipping_address][country]', value: 'CL'},{key:'checkout[shipping_address][address1]', value: this.address1},{key:'checkout[shipping_address][city]', value: this.comuna }, {key:'checkout[shipping_address][province]', value: this.region}]
+          this.$watch('address1', value => this.validateAddress(value));
+          this.$watch('region', value => this.validateRegion(value));
+          this.$watch('comuna', value => this.validateComuna(value));
+        },
 
-                items.forEach(el => {
-                  const index = paramsArray.findIndex(param => param.key === el.key);
-                  index !== -1 ? paramsArray[index].value = el.value : paramsArray.push(el)
-                })
-                let url = '{{ routes.cart_url }}'
-                let paramsObj = new URLSearchParams()
+        updateButtonState() {
+          if (this.validAddress && this.validRegion && this.validComuna) {
+            this.btn.removeAttribute('disabled');
+            this.updateFormAction();
+          } else {
+            this.btn.setAttribute('disabled', 'disabled');
+          }
+        },
 
-                paramsArray.forEach(el => paramsObj.append(el.key, el.value))
+        validateAddress(value) {
+          if (!value.length) {
+            this.validAddress = false;
+            this.messageAddress = 'Debes ingresar una dirección de envío. Intenta nuevamente';
+          } else if (/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+\s\d+$/.test(value)) {
+            this.validAddress = true;
+            this.messageAddress = '';
+          } else {
+            this.validAddress = false;
+            this.messageAddress = 'Dirección no válida, debe tener número. Intenta nuevamente';
+          }
+          this.updateButtonState();
+        },
 
-                const actionString = url + '?' + paramsObj.toString()
+        validateRegion(value) {
+          this.validRegion = value !== '';
+          this.updateButtonState();
+        },
 
-                this.form.setAttribute('action',actionString)
-              }else{
-                this.btn.setAttribute('disabled', 'disabled')
-              }
-            }else{
-              this.validAddress = false
-              this.messageAddress = 'Dirección no válida, debe tener número. Intenta nuevamente' 
-            }
-          })
-          this.$watch('region', value => {
-            if(value != '') this.validRegion = true
-            if(this.validAddress && this.validRegion && this.validComuna){
-                this.btn.removeAttribute('disabled')
-                const paramsArray = []
-                const urlObj = new URL(this.form.action)
-                const params = new URLSearchParams(urlObj.search);
-                for (const [key, value] of params.entries()) {
-                  paramsArray.push({ key, value });
-                }
-                const items = [{key:'checkout[shipping_address][country]', value: 'CL'},{key:'checkout[shipping_address][address1]', value: this.address1},{key:'checkout[shipping_address][city]', value: this.comuna }, {key:'checkout[shipping_address][province]', value: this.region}]
+        validateComuna(value) {
+          this.validComuna = value !== '';
+          this.updateButtonState();
+        },
 
-                items.forEach(el => {
-                  const index = paramsArray.findIndex(param => param.key === el.key);
-                  index !== -1 ? paramsArray[index].value = el.value : paramsArray.push(el)
-                })
+        updateFormAction() {
+          const paramsArray = [];
+          const urlObj = new URL(this.form.action);
+          const params = new URLSearchParams(urlObj.search);
 
-                let url = '{{ routes.cart_url }}'
-                let paramsObj = new URLSearchParams()
+          for (const [key, value] of params.entries()) {
+            paramsArray.push({ key, value });
+          }
 
-                paramsArray.forEach(el => paramsObj.append(el.key, el.value))
+          const items = [
+            { key: 'checkout[shipping_address][country]', value: 'CL' },
+            { key: 'checkout[shipping_address][address1]', value: this.address1 },
+            { key: 'checkout[shipping_address][city]', value: this.comuna },
+            { key: 'checkout[shipping_address][province]', value: this.region }
+          ];
 
-                const actionString = url + '?' + paramsObj.toString()
-                this.form.setAttribute('action',actionString)
-              }else{
-                this.btn.setAttribute('disabled', 'disabled')
-              }
+          items.forEach(el => {
+            const index = paramsArray.findIndex(param => param.key === el.key);
+            index !== -1 ? paramsArray[index].value = el.value : paramsArray.push(el);
+          });
 
-          })
-          this.$watch('comuna', value => {
-            if(value != '') this.validComuna = true
-            if(this.validAddress && this.validRegion && this.validComuna){
-                this.btn.removeAttribute('disabled')
-                const paramsArray = []
-                const urlObj = new URL(this.form.action)
-                const params = new URLSearchParams(urlObj.search);
-                for (const [key, value] of params.entries()) {
-                  paramsArray.push({ key, value });
-                }
-                const items = [{key:'checkout[shipping_address][country]', value: 'CL'},{key:'checkout[shipping_address][address1]', value: this.address1},{key:'checkout[shipping_address][city]', value: this.comuna }, {key:'checkout[shipping_address][province]', value: this.region}]
+          const paramsObj = new URLSearchParams();
+          paramsArray.forEach(el => paramsObj.append(el.key, el.value));
 
-                items.forEach(el => {
-                  const index = paramsArray.findIndex(param => param.key === el.key);
-                  index !== -1 ? paramsArray[index].value = el.value : paramsArray.push(el)
-                })
-
-                let url = '{{ routes.cart_url }}'
-                let paramsObj = new URLSearchParams()
-
-                paramsArray.forEach(el => paramsObj.append(el.key, el.value))
-
-                const actionString = url + '?' + paramsObj.toString()
-                this.form.setAttribute('action',actionString)
-              }else{
-                this.btn.setAttribute('disabled', 'disabled')
-              }
-          })
+          const actionString = '{{ routes.cart_url }}' + '?' + paramsObj.toString();
+          this.form.setAttribute('action', actionString);
         }
       }">
         <h4 class="flex justify-between items-center font-gobold leading-[1.2] uppercase text-[14px] mb-4">Ingresa tus datos de envío</h4>
@@ -600,7 +574,7 @@
           type="text" 
           placeholder="Ingresa tu dirección de envío" 
           x-model="address1" 
-          form="CartDrawerForm" 
+          form="cart" 
           class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
           <span class="text-[#a00] block text-xs mb-2" x-cloak x-show="messageAddress.length && !validAddress" x-text="messageAddress"></span>
         </div>

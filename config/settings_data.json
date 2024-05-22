@@ -17,7 +17,7 @@
         "type": "announcement-bar",
         "settings": {
           "text": "Revisa el estado de tu pedido aquí!",
-          "link": "https:\/\/www.scaldasonno.cl\/pages\/sigue-tu-pedido"
+          "link": ""
         }
       },
       "header": {
