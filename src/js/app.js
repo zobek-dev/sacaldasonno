@@ -1,9 +1,10 @@
 import Alpine from 'alpinejs';
 import Swiper, {Navigation, Pagination, Controller, Autoplay} from 'swiper';
 import fslightbox from 'fslightbox';
-import {validate} from "rut.js"
+import {validate, format} from "rut.js"
 
-window.validate = validate
+window.validateRut = validate
+window.formatRut = format
 
 window.Alpine = Alpine;
 Alpine.start();

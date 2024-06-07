@@ -364,9 +364,12 @@
         validRut: false,
         handleRut(e){
           this.rutMessage = ''
-          if(validate(e.target.value)){
+          if(validateRut(e.target.value) && e.target.value.length > 8){
             this.rutMessage = ''
             this.validRut = true
+            //console.log('llego acá')
+            //console.log(e.target)
+            e.target.value = formatRut(e.target.value, {dots:false})
           }else{
             this.rutMessage = 'El rut no es válido, intenta nuevamente'
             this.validRut = false

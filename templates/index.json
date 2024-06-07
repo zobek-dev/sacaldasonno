@@ -28,6 +28,7 @@
       "blocks": {
         "slideshow_c9VDQ4": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calientacamas",
             "image_desktop": "shopify:\/\/shop_images\/calientacama_persona_desktop_1_5f7e2155-4c94-4250-a101-d8400523f8ea.jpg",
@@ -37,6 +38,7 @@
         },
         "slideshow_PmcV66": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/products\/almohadilla-rectangular-scaldasonno",
             "image_desktop": "shopify:\/\/shop_images\/almohadilla_rectangular_-_desktop_1_00caca3d-fee0-48b4-818a-8d596186152c.jpg",
@@ -46,6 +48,7 @@
         },
         "slideshow_Jnia4n": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
             "image_desktop": "shopify:\/\/shop_images\/manta_desktop_1_97be10f1-4dcf-4142-bce7-41128feaba1a.jpg",
@@ -53,12 +56,44 @@
             "alt_text": ""
           }
         },
+        "slideshow_h9rFyg": {
+          "type": "slideshow",
+          "disabled": true,
+          "settings": {
+            "link": "https:\/\/scaldasonno.cl\/search?q=eco+adapto&options%5Bprefix%5D=last&type=product",
+            "image_desktop": "shopify:\/\/shop_images\/1_6185e782-f3e1-406e-80e3-2338ac3fcd18.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/2_1da436b2-7479-48af-bf2d-4210cc6a04b4.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/2_9b346420-f49c-4e51-b5c4-30a964c0c5a4.jpg",
+            "alt_text": ""
+          }
+        },
+        "slideshow_k8MfgK": {
+          "type": "slideshow",
+          "settings": {
+            "link": "https:\/\/scaldasonno.cl\/collections\/mantas-electricas",
+            "image_desktop": "shopify:\/\/shop_images\/3_0ab3b31e-6205-4504-808b-3024bf7c2c43.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/4.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/4_977bb55a-4d64-40ab-b5a5-f20c008bc614.jpg",
+            "alt_text": ""
+          }
+        },
+        "slideshow_UwkgYR": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/products\/almohadilla-lumbar-inteligente-scaldasonno",
+            "image_desktop": "shopify:\/\/shop_images\/5.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/6.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/6_f1997cc9-bbcd-4b34-9da3-dd00fb67ab3d.jpg",
+            "alt_text": ""
+          }
+        },
         "slideshow_WyjU4P": {
           "type": "slideshow",
           "settings": {
-            "link": "shopify:\/\/collections\/calientacamas",
-            "image_desktop": "shopify:\/\/shop_images\/calientacama_desktop_1_e8229ff1-5dc3-4d82-9455-79a2569511ff.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/calientacam_mobile_4360a564-7940-417b-b727-1067faeec669.jpg",
+            "link": "shopify:\/\/collections\/cyber-scaldasonno",
+            "image_desktop": "shopify:\/\/shop_images\/despacho_gratis_-_desktop_1.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/despacho_gratris_mobile.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/despacho_gratris_mobile.jpg",
             "alt_text": ""
           }
         }
@@ -67,6 +102,9 @@
         "slideshow_c9VDQ4",
         "slideshow_PmcV66",
         "slideshow_Jnia4n",
+        "slideshow_h9rFyg",
+        "slideshow_k8MfgK",
+        "slideshow_UwkgYR",
         "slideshow_WyjU4P"
       ],
       "settings": {}
@@ -115,11 +153,11 @@
       "type": "countdown",
       "disabled": true,
       "settings": {
-        "target_date": "2024-05-04 23:59:59",
-        "image_mobile": "shopify:\/\/shop_images\/mobile_20_off_dia_de_la_madre_16fc2384-f305-43f7-804e-adc2c4fdc73f.png",
-        "image_desktop": "shopify:\/\/shop_images\/banner_20_off_dia_de_la_madre.png",
-        "title": "Oferta relampago",
-        "link": "shopify:\/\/collections\/almohadillas"
+        "target_date": "2024-06-05 23:59:59",
+        "image_mobile": "shopify:\/\/shop_images\/mobile_7.jpg",
+        "image_desktop": "shopify:\/\/shop_images\/desktop_12.jpg",
+        "title": "¡solo por pocas horas!",
+        "link": "shopify:\/\/products\/calientacama-scaldasonno-eco-adapto-2-plazas"
       }
     },
     "f7f21698-652b-4ff2-96de-9917ab786b5a": {

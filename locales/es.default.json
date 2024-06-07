@@ -453,8 +453,11 @@
         "postcode_placeholder": "Código Postal (No es necesario)",
         "email_or_phone_label": "Correo electrónico (obligatorio)",
         "email_or_phone_placeholder": "Correo electrónico (obligatorio)",
-        "address2_label": "Rut",
-        "optional_address2_label": "Ingresa tu rut con guión y sin puntos (ej: 11111111-1)"
+        "company_label": "RUT (sin puntos y con guión ej: 11111111-1)",
+        "optional_company_label": "RUT (sin puntos y con guión ej: 11111111-1)"
+      },
+      "field_errors": {
+        "address_company_blank": "Debes ingresar un rut"
       }
     }
   }
