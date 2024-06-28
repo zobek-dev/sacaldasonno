@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "calienta-camas",
+      "settings": {
+        "title": "Calientacamas"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
