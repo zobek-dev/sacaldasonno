@@ -23,7 +23,8 @@
   {% endif %}
   
   {% if cart != empty %}
-  <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
+  <p class="uppercase text-sm mb-8">Solo se permite la compra de un máximo de 3 productos por pedido</p>
+  <form action="{{ routes.cart_url }}?checkout[shipping_address][country]=CL" class="cart__contents critical-hidden" method="post" id="cart">
     <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
       <div class="js-contents">
         {%- if cart != empty -%}
@@ -356,8 +357,238 @@
       </cart-note>
     {%- endif -%}
 
-    <div class="mb-8" {{ block.shopify_attributes }}>
-      <div class="flex gap-x-12 items-center">
+    <div class="max-w-sm w-full">
+      <div x-data="{
+        btn: document.querySelector('#checkout'),
+        type: 'boleta', 
+        rutMessage: '', 
+        validRut: false,
+        handleRut(e){
+          this.rutMessage = ''
+          if(validateRut(e.target.value) && e.target.value.length > 8){
+            this.rutMessage = ''
+            this.validRut = true
+            //console.log('llego acá')
+            //console.log(e.target)
+            e.target.value = formatRut(e.target.value, {dots:false})
+          }else{
+            this.rutMessage = 'El rut no es válido, intenta nuevamente'
+            this.validRut = false
+          }
+        },  
+        validRazon:false, 
+        messageRazon: '', 
+        validGiro:false, 
+        messageGiro: '', 
+        handleRazon(e){
+          this.messageRazon = ''
+          if(e.target.value.length){
+            this.messageRazon = ''
+            this.validRazon = true
+          }else {
+            this.messageRazon = 'Debes ingresar la razón social',
+            this.validRazon = false
+          }
+        }, 
+        handleGiro(e){
+          this.messageGiro = ''
+          if(e.target.value.length){
+            this.messageGiro = ''
+            this.validGiro = true
+          }else {
+            this.messageGiro = 'Debes ingresar el giro'
+            this.validGiro = false
+          }
+        },
+        init(){
+          this.$watch('type', value => {
+            if(value === 'factura'){
+              this.btn.setAttribute('disabled', 'disabled')
+            }else{
+              this.btn.removeAttribute('disabled')
+            }
+          })
+          this.$watch('validRut', value => {
+            if(this.validRut && this.validGiro && this.validRazon){
+              this.btn.removeAttribute('disabled')
+            }else{
+              this.btn.setAttribute('disabled', 'disabled')
+            }
+          })
+          this.$watch('validRazon', value => {
+            if(this.validRut && this.validGiro && this.validRazon){
+              this.btn.removeAttribute('disabled')
+            }else{
+              this.btn.setAttribute('disabled', 'disabled')
+            }
+          })
+          
+          this.$watch('validGiro', value => {
+            if(this.validRut && this.validGiro && this.validRazon){
+              this.btn.removeAttribute('disabled')
+            }else{
+              this.btn.setAttribute('disabled', 'disabled')
+            }
+          })
+        }
+      }">
+        <h3 class="mb-6 flex justify-between items-center font-gobold leading-[1.2] uppercase">Tipo de documento</h3>
+        <div class="">
+          <div class="flex gap-x-4 items-center mb-6">
+            <label for="Boleta" class="text-sm">
+              <input type="radio" id="Boleta" value="boleta" name="attributes[shoppingcart-tags]" @change="()=>type='boleta'" form="cart" checked>
+              Boleta
+            </label>
+            <label for="Factura" class="text-sm">
+              <input type="radio" id="Factura" value="factura" name="attributes[shoppingcart-tags]" @change="()=>type='factura'" form="cart">
+              Factura
+            </label>
+          </div>
+          <div class="flex flex-col mb-6" x-show="type == 'factura'">
+            <h4 class="flex justify-between items-center font-gobold leading-[1.2] uppercase text-[14px] mb-4">Ingresa los datos de facturación</h4>
+            <div class="flex flex-col mb-2">
+              <label class="font-bold text-sm mb-1 uppercase" for="rut">RUT</label>
+              <input 
+              id="rut" 
+              type="text" 
+              name="attributes[RUT]" 
+              placeholder="Ingresa tu RUT, sin puntos y con guión" 
+              value="{{ cart.attributes["RUT"] }}" 
+              form="cart" 
+              @input="handleRut" 
+              class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
+            </div>
+            <span class="text-[#a00] block text-xs mb-2" x-show="!validRut && rutMessage.length" x-text="rutMessage"></span>
+            <div class="flex flex-col mb-2" >
+              <label class="font-bold text-sm mb-1 uppercase" for="razon">Razón social</label>
+              <input 
+              id="razon" 
+              type="text" 
+              name="attributes[razon]" 
+              placeholder="Ingresa tu Razón Social" 
+              value="{{ cart.attributes["razon"] }}" 
+              form="cart"
+              @input="handleRazon"  
+              class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
+            </div>
+            <span class="text-[#a00] block text-xs mb-2" x-show="!validRazon && messageRazon.length" x-text="messageRazon"></span>
+            <div class="flex flex-col mb-2">
+              <label class="font-bold text-sm mb-1 uppercase" for="giro">Giro</label>
+              <input 
+              id="giro" 
+              type="text" 
+              name="attributes[giro]" 
+              placeholder="Ingresa tu Giro" 
+              value="{{ cart.attributes["giro"] }}" 
+              form="cart"
+              @input="handleGiro"  
+              class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
+            </div>
+            <span class="text-[#a00] block text-xs mb-2" x-show="!validGiro && messageGiro.length" x-text="messageGiro"></span>
+          </div>
+        </div>
+      </div>
+      <div x-data="{
+        form: null,
+        btn: null,
+        address1: '',
+        region: '',
+        comuna: '',
+        validAddress: false,
+        messageAddress: '',
+        validRegion: false,
+        validComuna: false,
+
+        init() {
+          this.form = document.querySelector('#cart');
+          this.btn = document.querySelector('#checkout');
+          this.updateButtonState();
+
+          this.$watch('address1', value => this.validateAddress(value));
+          this.$watch('region', value => this.validateRegion(value));
+          this.$watch('comuna', value => this.validateComuna(value));
+        },
+
+        updateButtonState() {
+          if (this.validAddress && this.validRegion && this.validComuna) {
+            this.btn.removeAttribute('disabled');
+            this.updateFormAction();
+          } else {
+            this.btn.setAttribute('disabled', 'disabled');
+          }
+        },
+
+        validateAddress(value) {
+          if (!value.length) {
+            this.validAddress = false;
+            this.messageAddress = 'Debes ingresar una dirección de envío. Intenta nuevamente';
+          } else if (/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+\s\d+$/.test(value)) {
+            this.validAddress = true;
+            this.messageAddress = '';
+          } else {
+            this.validAddress = false;
+            this.messageAddress = 'Dirección no válida, debe tener número. Intenta nuevamente';
+          }
+          this.updateButtonState();
+        },
+
+        validateRegion(value) {
+          this.validRegion = value !== '';
+          this.updateButtonState();
+        },
+
+        validateComuna(value) {
+          this.validComuna = value !== '';
+          this.updateButtonState();
+        },
+
+        updateFormAction() {
+          const paramsArray = [];
+          const urlObj = new URL(this.form.action);
+          const params = new URLSearchParams(urlObj.search);
+
+          for (const [key, value] of params.entries()) {
+            paramsArray.push({ key, value });
+          }
+
+          const items = [
+            { key: 'checkout[shipping_address][country]', value: 'CL' },
+            { key: 'checkout[shipping_address][address1]', value: this.address1 },
+            { key: 'checkout[shipping_address][city]', value: this.comuna },
+            { key: 'checkout[shipping_address][province]', value: this.region }
+          ];
+
+          items.forEach(el => {
+            const index = paramsArray.findIndex(param => param.key === el.key);
+            index !== -1 ? paramsArray[index].value = el.value : paramsArray.push(el);
+          });
+
+          const paramsObj = new URLSearchParams();
+          paramsArray.forEach(el => paramsObj.append(el.key, el.value));
+
+          const actionString = '{{ routes.cart_url }}' + '?' + paramsObj.toString();
+          this.form.setAttribute('action', actionString);
+        }
+      }">
+        <h4 class="flex justify-between items-center font-gobold leading-[1.2] uppercase text-[14px] mb-4">Ingresa tus datos de envío</h4>
+        <div class="flex flex-col">
+          <label class="font-bold text-sm mb-1 uppercase" for="address1">Dirección de envío</label>
+          <input 
+          id="address1" 
+          type="text" 
+          placeholder="Ingresa tu dirección de envío" 
+          x-model="address1" 
+          form="cart" 
+          class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
+          <span class="text-[#a00] block text-xs mb-2" x-cloak x-show="messageAddress.length && !validAddress" x-text="messageAddress"></span>
+        </div>
+        {% render 'select-region-comuna'%}
+      </div>
+      
+    </div>
+
+    <div class="mb-4 w-full max-w-sm" {{ block.shopify_attributes }}>
+      <div class="flex gap-x-12 items-center justify-between font-gobold">
         <h2 class="uppercase font-semibold">{{ 'sections.cart.subtotal' | t }}:</h2>
         <p class="font-semibold">{{ cart.total_price | money_with_currency }}</p>
       </div>
@@ -388,8 +619,9 @@
         {%- endif -%}
       </small> {% endcomment %}
     </div>
-  
-    <div class="flex gap-x-4 items-center" {{ block.shopify_attributes }}>
+
+    
+    <div class="flex gap-x-4 items-center mb-12" {{ block.shopify_attributes }}>
       <button type="submit" name="update" form="cart" class="block bg-[#fff] font-gobold font-bold text-[#a00] border border-[#a00] px-4 py-2 uppercase tracking-[1.5px] transition-opacity duration-200 ease-in-out hover:opacity-70 leading-[1.2]">
         Actualizar carrito
       </button>
@@ -443,3 +675,5 @@
     </div>  {% endcomment %}
   </div>
 </div>
+
+

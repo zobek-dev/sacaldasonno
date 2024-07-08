@@ -177,6 +177,46 @@ class FeaturedProduct extends HTMLElement{
 
 customElements.define('featured-products', FeaturedProduct);
 
+class CalientacamasCarousel extends HTMLElement {
+  constructor(){
+    super();
+
+    this.carousel = this.querySelector('.calienta-camas'); 
+    this.next = this.querySelector('.swiper-button-next');
+    this.prev = this.querySelector('.swiper-button-prev');
+
+    this.swiper = new Swiper(this.carousel, {
+      modules: [Navigation],
+      slidesPerView: 1.2,
+      spaceBetween: 0,
+      breakpoints: {
+        1000: {
+          slidesPerView: 4.2,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 3.1,
+          spaceBetween: 0,
+        },
+        530: {
+          slidesPerView: 2.1,
+          spaceBetween: 0,
+        },
+        420: {
+          slidesPerView: 1.1,
+          spaceBetween: 0,
+        },
+      },
+      navigation: {
+        nextEl: this.next,
+        prevEl: this.prev
+      }
+    })
+  }
+}
+
+customElements.define('calienta-camas', CalientacamasCarousel);
+
 class ArticlesCarousel extends HTMLElement{
   constructor(){
     super();

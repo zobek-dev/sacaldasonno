@@ -6,7 +6,7 @@
 >
   <div class="relative block py-4" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
     <div class="wrapper">
-      <div class="grid items-center grid-header">
+      <div class="flex flex-wrap items-center">
         <div x-data="{
           open: false,
           handleMenu(){
@@ -16,18 +16,18 @@
         }"
         @toggle-menu.window="handleMenu"
         @keyup.escape="$dispatch('toggle-menu')" 
-        class="block col-start-1 col-end-2 lg:hidden">
+        class="block lg:hidden">
           <button @click="$dispatch('toggle-menu')" aria-label="{{ 'sections.header.menu' | t }}">
             {% render 'icon-burger' %}
           </button>
           {% render 'drawer-menu' %}
         </div> 
-        <div class="col-start-2 col-end-5 lg:col-start-1 lg:col-end-2 flex justify-center lg:justify-start">
-          <a href="{{ routes.root_url }}">
-            {% render 'logo', class: 'w-[120px] h-[41.4px] lg:w-[200px] lg:h-[69px]' %}
+        <div class="flex justify-center flex-1 lg:flex-none lg:flex-wrap lg:justify-start">
+          <a href="{{ routes.root_url }}" class="absolute lg:relative left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:top-[unset] lg:left-[unset]">
+            {% render 'logo', class: 'w-[120px] h-[41.4px] xl:w-[150px] xl:h-[51px]' %}
           </a>
         </div> 
-        <nav class="hidden lg:flex justify-center lg:col-start-2 lg:col-end-5">
+        <nav class="hidden lg:flex lg:flex-1 justify-center">
           <ul class="flex items-center">
             {% for link in linklists.main-menu.links %}
               <li>
@@ -45,7 +45,7 @@
                   @mouseout="handleOpen"
                   >
                     <summary class="flex items-center gap-x-1">
-                      <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-2 whitespace-nowrap {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                      <a href="{{ link.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-sm xl:text-[15px] py-2 whitespace-nowrap {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
                         {{ link.title | escape }}
                       </a>
                       <span x-ref="caret">{% render 'icon-caret', class: 'w-3' %}</span>
@@ -54,7 +54,7 @@
                       <ul>
                         {% for childlink in link.links %}
                           <li>
-                            <a href="{{ childlink.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-[15px] py-1 {% if childlink.current %}text-[#a00]{% endif %}" {% if childlink.current %}aria-current="page"{% endif %}>
+                            <a href="{{ childlink.url }}" class="block hover:underline hover:text-[#a00] hover:underline-offset-2 font-semibold uppercase text-sm xl:text-[15px] py-1 {% if childlink.current %}text-[#a00]{% endif %}" {% if childlink.current %}aria-current="page"{% endif %}>
                               {{ childlink.title | escape }}
                             </a> 
                           </li>
@@ -64,7 +64,7 @@
                   </details>
                 </div>         
                 {% else %}
-                  <a href="{{ link.url }}" class="block whitespace-nowrap hover:underline hover:text-[#a00] hover:underline-offset-2 px-4 font-semibold uppercase text-[15px] py-2 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="block whitespace-nowrap hover:underline hover:text-[#a00] hover:underline-offset-2 px-4 font-semibold uppercase text-sm xl:text-[15px] py-2 {% if link.current %}text-[#a00]{% endif %}" {% if link.current %}aria-current="page"{% endif %}>
                     {{ link.title | escape }}
                   </a>  
                 {% endif %}
@@ -72,7 +72,7 @@
             {% endfor %}
           </ul>
         </nav>
-        <div class="flex justify-end items-center gap-x-1 lg:gap-x-2 col-start-5 col-end-6">
+        <div class="flex justify-end items-center gap-x-1">
           <div x-data="{
             open: false,
             toggleSearch(){
@@ -93,7 +93,7 @@
           @toggle-search.window="toggleSearch"
           @keyup.escape="$dispatch('toggle-search')"
           >
-            <a href="{{ routes.search_url }}" @click.prevent="$dispatch('toggle-search')">
+            <a href="{{ routes.search_url }}" @click.prevent="$dispatch('toggle-search')" class="block p-2">
               {% render 'icon-search', class: 'w-[19.2px] h-[19.2px] lg:w-[24px] lg:h-[24px]', xref: 'search_open' %}
               {% render 'icon-close', class: 'w-[19.2px] h-[19.2px] lg:w-[24px] lg:h-[24px] fill-black hidden', xref: 'search_close' %}
             </a>
@@ -101,7 +101,7 @@
           </div>
           {% if shop.customer_accounts_enabled %}
           <div>
-            <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
+            <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="block p-2">
               {% render 'icon-user', class: 'w-[24px] h-[24px] lg:w-[30px] lg:h-[30px]' %}
             </a>
           </div>
@@ -176,7 +176,7 @@
           @update-cart.window="updateCart"
           @keyup.escape="$dispatch('toggle-cart')"
           >
-          <a href="{{ routes.cart_url }}" {% if settings.drawer_cart %}@click.prevent="$dispatch('toggle-cart')"{% endif %} class="relative block">
+          <a href="{{ routes.cart_url }}" {% if settings.drawer_cart %}@click.prevent="$dispatch('toggle-cart')"{% endif %} class="relative block p-2">
               {% render 'icon-cart', class: 'w-[19.2px] h-[20.8px] lg:w-[24px] lg:h-[26px]' %}              
               <span aria-hidden="true" class="text-white absolute -top-1 -right-1 bg-[#a00] text-xs w-[14px] h-[14px] rounded-[50%] flex justify-center items-center font-bold {% if cart == empty %}hidden{% endif %}" x-ref="cart_count">
                 {{ cart.item_count }}

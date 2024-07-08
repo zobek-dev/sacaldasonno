@@ -1,0 +1,108 @@
+<div class="wrapper my-12" x-data="{
+  targetDate: '{{ section.settings.target_date }}',  
+  remaining: null,
+  days: null,
+  hours: null,
+  minutes: null,
+  seconds: null
+}" 
+x-init="()=>{
+    let interval;
+    if(targetDate){
+      interval = setInterval(()=>{
+        const target = new Date(targetDate).getTime();
+        const now = new Date().getTime();
+        const duration = target - now;
+        remaining = duration;
+        //days
+        days = Math.floor(duration / (1000 * 60 * 60 * 24)) < 10 ? '0' + String(Math.floor(duration / (1000 * 60 * 60 * 24))) : String(Math.floor(duration / (1000 * 60 * 60 * 24)));
+        //hours
+        hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) < 10 ? '0' + String(Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))) : String(Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        //minutes
+        minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60)) < 10 ? '0' + String(Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60))) : String(Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60)));
+        //seconds
+        seconds = Math.floor((duration % (1000 * 60)) / 1000) < 10 ? '0' + String(Math.floor((duration % (1000 * 60) / 1000))) : String(Math.floor((duration % (1000 * 60) / 1000)));
+      },1000);
+    }
+    $watch('remaining', value => {
+      console.log(value)
+      if (value <= 381) clearInterval(interval)
+    })
+}">
+  <div class="flex items-center flex-col-reverse gap-4 md:flex-row md:justify-between md:items-center">
+    <div x-show="remaining" class="flex space-x-1 text-center" x-cloak>
+      <div x-show="days > 0" class="flex flex-col bg-black text-white w-[50px] py-2 rounded-md">
+        <p class="text-xs uppercase">Días</p>
+        <p x-text="days" class="text-3xl font-bold"></p>
+      </div> 
+      <div class="flex flex-col bg-black text-white w-[50px] py-2 rounded-md">
+        <p class="text-xs uppercase">Horas</p>
+        <p x-text="hours" class="text-3xl font-bold"></p>
+      </div>
+      <div class="flex flex-col bg-black text-white w-[50px] py-2 rounded-md">
+        <p class="text-xs uppercase">Min</p>
+        <p x-text="minutes" class="text-3xl font-bold"></p>
+      </div> 
+      <div class="flex flex-col bg-black text-white w-[50px] py-2 rounded-md">
+        <p class="text-xs uppercase">Seg</p>
+        <p x-text="seconds" class="text-3xl font-bold"></p>
+      </div> 
+    </div>
+    <h2 class="font-bold uppercase text-2xl md:text-3xl text-center">
+      {{ section.settings.title | escape }}
+    </h2>
+  </div>
+  <div class="my-6">
+    {% if section.settings.link != blank %}
+      <a href="{{ section.settings.link }}">  
+    {% endif %}
+      {% if section.settings.image_mobile != blank and section.settings.image_desktop != blank %}
+        {{ section.settings.image_mobile |  image_url: width: 800 | image_tag: alt: section.settings.image_mobile.alt, loading: 'lazy', class: 'w-full h-auto object-center object-contain md:hidden' }}
+        {{ section.settings.image_desktop |  image_url: width: 1600 | image_tag: alt: section.settings.image_desktop.alt, loading: 'lazy', class: 'w-full h-auto object-center object-contain hidden md:block' }}
+      {% endif %}
+    {% if section.settings.link != blank %}
+      </a>
+    {% endif %}  
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Countdown",
+  "settings": [
+    {
+      "type": "text",
+      "id": "target_date",
+      "label": "Fecha de finalización",
+      "info": "Ej: 2024-05-04 23:59:59"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Imagen para mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Imagen para Desktop"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Lorem ipsum dolor"
+    },
+    {
+      "type":"url",
+      "id": "link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Countdown"
+    }
+  ]
+    
+}
+{% endschema %}

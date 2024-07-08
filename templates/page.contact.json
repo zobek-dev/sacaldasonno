@@ -1,17 +1,20 @@
 {
   "sections": {
+    "heading": {
+      "type": "contacto-heading",
+      "settings": {
+        "image_mobile": "shopify:\/\/shop_images\/contacto-movil.jpg",
+        "image_desktop": "shopify:\/\/shop_images\/contact.jpg",
+        "title": "<h1>Contacto<\/h1>"
+      }
+    },
     "main": {
       "type": "page-contact",
-      "settings": {
-        "title": "Contáctanos",
-        "subtitle": "Encuentrános",
-        "address": "IV Centenario 776 , Las Condes.",
-        "address_link": "",
-        "image": "shopify:\/\/shop_images\/plaid-riscaldabile-adapto-velvet-tartan-16856_gallery_5_2.jpg"
-      }
+      "settings": {}
     }
   },
   "order": [
+    "heading",
     "main"
   ]
 }

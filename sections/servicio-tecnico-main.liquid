@@ -1,0 +1,174 @@
+<div class="wrapper my-12 grid grid-cols-1 md:grid-cols-2">
+  <div class="left mt-8 md:mt-0">
+    <div class="direccion flex items-center">
+      <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[50px] min-w-[50px] max-w-[50px] max-h-[50px] md:min-h-[60px] md:min-w-[60px] md:max-h-[60px] md:max-w-[60px] md:h-[60px] md:w-[60px] rounded-full p-2 md:p-3 bg-[#494547]">
+        {% render 'icon-house' %}
+      </div>
+      <div class="w-4/5">
+        <h2 class="text-lg mb-2 font-semibold">
+          Recibimos tus productos para servicio técnico
+        </h2>
+        <p class="">Avenida Oceánica 9692, Pudahuel, Santiago.</p>
+        <p class="">
+          Horario de atención de Lunes a Viernes de 08:30 a 16:00 Hrs
+        </p>
+      </div>
+    </div>
+
+    {% comment %} IMAGEN {% endcomment %}
+    <div class="mt-14">
+      <div class="info flex items-center">
+        <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[50px] min-w-[50px] max-w-[50px] max-h-[50px] md:min-h-[60px] md:min-w-[60px] md:max-h-[60px] md:max-w-[60px] md:h-[60px] md:w-[60px] p-2">
+          {% render 'icon-locate' %}
+        </div>
+        <h2 class="text-lg font-semibold">
+          Si estás en localidades fuera de la RM
+        </h2>
+      </div>
+      {% if section.settings.image_desktop != blank %}
+        {{
+          section.settings.image_desktop
+          | image_url: width: 1600
+          | image_tag: loading: 'lazy', alt: 'starken', class: 'hidden sm:block'
+        }}
+      {% endif %}
+      {% if section.settings.image_mobile != blank %}
+        {{
+          section.settings.image_mobile
+          | image_url: width: 700
+          | image_tag: loading: 'lazy', alt: 'starken', class: 'sm:hidden'
+        }}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="right -order-1 md:order-1">
+    <div class="flex flex-col justify-left md:[&>section]:mx-7 md:[&>section]:mb-7 [&>section]:mb-4 [&>*]:w-[100%] md:[&>*]:w-[90%] [&>*]:mx-auto [&>section]:space-y-3">
+      {% comment %} LLAMANOS DESKTOP {% endcomment %}
+      <section class="flex">
+        <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px]">
+          {% render 'icon-phone' %}
+        </div>
+        <div class="info w-4/5">
+          <h2 class="text-lg font-semibold">Llámanos</h2>
+          <p>Hablemos de lunes a viernes de 08:30 a 17:00 hrs</p>
+          <a
+            class="mt-4 block w-[100%] border border-black xl:w-[60%] py-1 px-4 rounded-2xl text-center"
+          >
+            +56 2 2914 0620
+          </a>
+        </div>
+      </section>
+
+      {% comment %} WHATSAPP DESKTOP {% endcomment %}
+      <section class="flex">
+        <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full p-2 md:p-6 bg-[#edeef0]">
+          {% render 'icon-whatsapp' %}
+        </div>
+        <div class="info w-4/5">
+          <h2 class="text-lg font-semibold">Hablemos por WhatsApp</h2>
+          <p>Escríbenos de lunes a viernes de 08:30 a 17:00 hrs</p>
+          <a
+            href="https://wa.me/56229140620"
+            _blank
+            class="mt-4 block w-[100%] border border-black xl:w-[60%] py-1 px-4 rounded-2xl text-center"
+          >
+            +56 2 2914 0620
+          </a>
+        </div>
+      </section>
+
+      {% comment %} EMAIL {% endcomment %}
+      <section class="flex items-center">
+        <div class="flex items-center justify-center bg-[#edeef0] rounded-full min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] mr-4 md:mr-0">
+          <div class="border-black icon min-h-[40px] min-w-[40px] max-w-[40px] max-h-[40px] md:min-h-[50px] md:min-w-[50px] md:max-h-[50px] md:max-w-[50px] md:h-[50px] md:w-[50px] rounded-full flex">
+            {% render 'icon-envelope' %}
+          </div>
+        </div>
+        <div class="info w-4/5 md:pl-4">
+          <h3 class="text-lg font-semibold">Envíanos un e-mail</h3>
+          <a
+            href="mailto:contacto@scaldasonno.cl"
+            class="mt-4 block w-[100%] border border-black xl:w-[60%] py-1 px-4 rounded-2xl text-center"
+            >serviciotecnico@mardelsur.cl</a
+          >
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contenido",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Servicio Técnico RM"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Contenido",
+      "default": "Para todo tipo de reparación tanto en garantía (llevar boleta), como en presupuesto, debes llevarlo a nuestras sucursales ubicadas en: "
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Titulo horario",
+      "default": "Horario de atención"
+    },
+    {
+      "type": "text",
+      "id": "horario_semana",
+      "label": "Horario de atención"
+    },
+    {
+      "type": "text",
+      "id": "horario_fds",
+      "label": "Horario de atención fin de semana"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Imagen desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Imagen mobile"
+    }
+  ],
+  "presets": []
+}
+{% endschema %}
+
+{% comment %}
+  "blocks": [
+    {
+      "type": "address",
+      "name": "Dirección",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titulo"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Teléfono"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email"
+        }
+      ]
+    }
+  ],
+{% endcomment %}

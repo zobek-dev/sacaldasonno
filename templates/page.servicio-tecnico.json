@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "heading": {
+      "type": "servicio-tecnico-heading",
+      "settings": {
+        "image_mobile": "shopify:\/\/shop_images\/mujer-con-telefono-2.jpg",
+        "image_desktop": "shopify:\/\/shop_images\/mujer-con-telefono.jpg",
+        "title": "<h1>Servicio <strong>Técnico<\/strong><\/h1>"
+      }
+    },
+    "main": {
+      "type": "servicio-tecnico-main",
+      "settings": {
+        "title": "Servicio Técnico Región Metropolitana",
+        "content": "Para todo tipo de reparación tanto en garantía (llevar boleta), como en presupuesto, debes llevarlo a nuestras sucursales ubicadas en:",
+        "subtitle": "",
+        "horario_semana": "",
+        "horario_fds": "",
+        "image_desktop": "shopify:\/\/shop_images\/Servicio_tecnico_2.png",
+        "image_mobile": "shopify:\/\/shop_images\/Servicio_tecnico_3.png"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main"
+  ]
+}

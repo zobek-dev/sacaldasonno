@@ -14,7 +14,9 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
+.border-custom {
+  stroke-dasharray: 22px !important;
+}
 
 
 .wrapper{
@@ -71,4 +73,10 @@ input[type="checkbox"], input[type="radio"]{
 
 .faq-details[open] summary svg{
   @apply rotate-45;
+}
+
+.button-selected {
+  border: #BD0000 solid 1px;
+  color: #BD0000;
+  font-weight: bold;
 }

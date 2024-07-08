@@ -1,169 +1,98 @@
-<div>
-  <div class="wrapper">
-    <div class="pt-4">
-      {% render 'breadcrumb' %}
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center mb-20">
-      <div class="md:pr-8">
-        <h1 class="uppercase mb-4 text-center md:text-start text-[22px] lg:text-[30px] font-bold">{{ section.settings.title | escape }}</h1>
-        <div>
-          <h2 class="my-4 text-start text-[18px] lg:text-[20px] font-bold">
-            ¿En qué podemos ayudarte?
-          </h2>
-          <ul>
-            <li>
-              <details class="contact-details mb-2 border border-[#a00]">
-                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
-                  <span>Ventas Online</span>
-                  {% render 'icon-plus', class: 'w-3 plus' %} 
-                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
-                </summary>
-                <ul class="px-4 py-2">
-                  <li>
-                    <a href="/pages/formulario#corregir-datos-de-compra" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      Corregir datos de compra
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/pages/formulario#anular-compra" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      Anular compra
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/pages/formulario#no-he-recibido-mi-boleta" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      No he recibido mi boleta
-                    </a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details class="contact-details mb-2 border border-[#a00]">
-                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
-                  <span>Despacho de productos</span>
-                  {% render 'icon-plus', class: 'w-3 plus' %} 
-                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
-                </summary>
-                <ul class="px-4 py-2">
-                  <li>
-                    <a href="/pages/formulario#no-he-recibido-mi-pedido" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      No he recibido mi pedido
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/pages/formulario#mi-pedido-ha-sido-dañado" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      Mi pedido ha sido dañado
-                    </a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details class="contact-details mb-2 border border-[#a00]">
-                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
-                  <span>Servicio técnico</span>
-                  {% render 'icon-plus', class: 'w-3 plus' %} 
-                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
-                </summary>
-                <ul class="px-4 py-2">
-                  <li>
-                    <a href="/pages/formulario#mantencion" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      Mantención
-                    </a>
-                  </li>
-                </ul>
-              </details>
-            </li> 
-            <li>
-              <details class="contact-details mb-2 border border-[#a00]">
-                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
-                  <span>Uso de productos</span>
-                  {% render 'icon-plus', class: 'w-3 plus' %} 
-                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
-                </summary>
-                <ul class="px-4 py-2">
-                  <li>
-                    <a href="/pages/formulario#calientacamas" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      Calientacamas
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/pages/formulario#mantas-electricas" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      Mantas Electricas
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/pages/formulario#almohadillas" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      Almohadillas
-                    </a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details class="contact-details mb-2 border border-[#a00]">
-                <summary class="flex justify-between items-center text-white bg-[#a00] px-4 py-2 font-bold cursor-pointer text-[16px] tracking-[1.5px]">
-                  <span>Otro</span>
-                  {% render 'icon-plus', class: 'w-3 plus' %} 
-                  {% render 'icon-minus', class: 'w-3 minus hidden' %}
-                </summary>
-                <ul class="px-4 py-2">
-                  <li>
-                    <a href="/pages/formulario#consultas-generales" class="transition-[color] duration-200 ease-in-out hover:text-[#a00]">
-                      Consultas generales
-                    </a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-               
-          </ul>
-        </div>
+<div class="w-full wrapper flex flex-col justify-left md:[&>section]:my-7 [&>section]:my-4 my-8 sm:[&>*]:w-[85%] md:[&>*]:w-[60%] sm:[&>*]:mx-auto [&>section]:space-y-3">
+  {% render 'breadcrumb' %}
 
-        <!--Formulario -->
-      </div>
-      <div class="h-max">
-        <img
-          src="{{ section.settings.image | img_url: 'master' }}"
-          alt="Conctáctanos"
-          width="{{ section.settings.image.width }}"
-          height="{{ section.settings.image.width | divided_by: sections.settings.image.aspect_ratio | ceil }}"
-          loading="lazy">
+  <section class="flex">
+    <div class="icon -mb-2 flex justify-center items-center mr-12 lg:mr-6">
+      {% render 'icon-headphone' %}
+    </div>
+    <h2><b class="mr-2">¿Necesitas Ayuda?</b> Contáctanos</h2>
+  </section>
+
+  {% comment %} LLAMANOS DESKTOP {% endcomment %}
+  <section class="hidden sm:flex">
+    <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px]">
+      {% render 'icon-phone' %}
+    </div>
+    <div class="info w-4/5">
+      <h2 class="text-lg">Llámanos</h2>
+      <p>Hablemos de lunes a viernes de 08:30 a 17:00 hrs</p>
+      <a
+        class="mt-4 block w-max border border-black md:w-[50%] py-1 px-4 rounded-2xl text-center"
+      >
+        +56 2 2914 0620
+      </a>
+    </div>
+  </section>
+
+  {% comment %} LLAMANOS MÓVIL {% endcomment %}
+  <section class="flex sm:hidden">
+    <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px]">
+      {% render 'icon-phone' %}
+    </div>
+    <div class="info w-4/5">
+      <h2 class="text-lg">Llámanos</h2>
+      <p>+56 2 2914 0620</p>
+      <p>Hablemos de lunes a viernes de 08:30 a 17:00 hrs</p>
+      <a
+        href="tel:+56229140620"
+        class="mt-4 block w-max border border-black md:w-[50%] py-1 px-4 rounded-2xl text-center"
+      >
+        Llamar a Servicio al cliente
+      </a>
+    </div>
+  </section>
+  {% comment %} 
+  {% comment %} WHATSAPP DESKTOP {% endcomment %}
+  <section class="hidden sm:flex">
+    <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full p-2 md:p-6 bg-[#edeef0]">
+      {% render 'icon-whatsapp' %}
+    </div>
+    <div class="info w-4/5">
+      <h2 class="text-lg">Hablemos por WhatsApp</h2>
+      <p>Escríbenos de lunes a viernes de 08:30 a 17:00 hrs</p>
+      <a
+        href="https://wa.me/56229140620"
+        _blank
+        class="mt-4 block w-max border border-black md:w-[50%] py-1 px-4 rounded-2xl text-center"
+      >
+        +56 2 2914 0620
+      </a>
+    </div>
+  </section>
+
+  {% comment %} WHATSAPP MÓVIL {% endcomment %}
+  <section class="flex sm:hidden">
+    <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full p-2 md:p-6 bg-[#edeef0]">
+      {% render 'icon-whatsapp' %}
+    </div>
+    <div class="info w-4/5">
+      <h2 class="text-lg">Hablemos por WhatsApp</h2>
+      <p>Escríbenos de lunes a viernes de 08:30 a 17:00 hrs</p>
+      <a
+        href="https://wa.me/56229140620"
+        _blank
+        class="mt-4 block w-max border border-black md:w-[50%] py-1 px-4 rounded-2xl text-center"
+      >
+        Iniciar WhatsApp
+      </a>
+    </div>
+  </section>
+ {% endcomment %}
+  
+  {% comment %} EMAIL {% endcomment %}
+  <section class="flex items-center">
+    <div class="flex items-center justify-center bg-[#edeef0] rounded-full min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] mr-4">
+      <div class="border-black icon min-h-[40px] min-w-[40px] max-w-[40px] max-h-[40px] md:min-h-[50px] md:min-w-[50px] md:max-h-[50px] md:max-w-[50px] md:h-[50px] md:w-[50px] rounded-full flex">
+        {% render 'icon-envelope' %}
       </div>
     </div>
-  </div>
+    <div>
+      <h3 class="text-lg">Envíanos un e-mail</h3>
+      <a
+        href="mailto:contacto@scaldasonno.cl"
+        class="underline italic font-bold mt-4 block w-[100%] border border-black py-1 px-4 rounded-2xl text-center"
+        >contacto@scaldasonno.cl</a
+      >
+    </div>
+  </section>
 </div>
-{% schema %}
-  {
-    "name": "Página de contacto",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Título para la página.",
-        "default": "Contáctanos"
-      },
-      {
-        "type": "text",
-        "id": "subtitle",
-        "label": "Subtitulo para la sección.",
-        "default": "Encuentrános"
-      },
-      {
-        "type": "text",
-        "id": "address",
-        "label": "Dirección de encuentranos",
-        "default": "IV Centenario 776 , Las Condes."
-      },
-      {
-        "type": "url",
-        "id": "address_link",
-        "label": "Link de la dirección"
-      }, {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Inserta la imagen para la página de contactos."
-      }
-    ]
-  }
-{% endschema %}
