@@ -8,13 +8,50 @@
         "title": "<h1>Contacto<\/h1>"
       }
     },
-    "main": {
-      "type": "page-contact",
-      "settings": {}
+    "contact-title": {
+      "type": "contact-title",
+      "settings": {
+        "contact_image": "shopify:\/\/shop_images\/audifonos.png",
+        "contact-title": "<p><strong>¿Necesitas Ayuda?<\/strong><\/p>",
+        "contact": "Contáctanos"
+      }
+    },
+    "llamanos": {
+      "type": "contact-llamanos-text",
+      "settings": {
+        "image_llamanos": "shopify:\/\/shop_images\/telefono.png",
+        "llamanos-title": "Llámanos",
+        "llamanos-content": "Hablemos de lunes a viernes de 08:30 a 17:00 hrs",
+        "llamanos-number": "+56 2 2914 0620",
+        "llamanos-link": "56229140620",
+        "llamanos-number-mobile": "Llamar a Servicio al cliente"
+      }
+    },
+    "whatsapp": {
+      "type": "contact-whatsapp-text",
+      "settings": {
+        "image_whatsapp": "shopify:\/\/shop_images\/whatsapp.png",
+        "whatsapp-title": "Hablemos por WhatsApp",
+        "whatsapp-content": "Escríbenos de lunes a viernes de 08:30 a 17:00 hrs",
+        "whatsapp-number": "+56 9 7155 0317",
+        "whatsapp-link": "56971550317",
+        "whatsapp-number-mobile": "Iniciar WhatsApp"
+      }
+    },
+    "email": {
+      "type": "contact-email-text",
+      "settings": {
+        "image_email": "shopify:\/\/shop_images\/email.png",
+        "email-title": "Envíanos un e-mail",
+        "email": "contacto@scaldasonno.cl"
+      }
     }
   },
   "order": [
     "heading",
-    "main"
+    "contact-title",
+    "llamanos",
+    "whatsapp",
+    "email"
   ]
 }

@@ -1,0 +1,38 @@
+<div class="wrapper flex flex-col justify-left md:[&>section]:my-7 [&>section]:my-4 my-8 [&>*]:w-[100%] sm:[&>*]:w-[85%] md:[&>*]:w-[60%] [&>*]:mx-auto [&>section]:space-y-3">
+  {% render 'breadcrumb' %}
+
+  <section class="flex">
+    <div class="icon -mb-2 flex justify-center items-center mr-12 lg:mr-6">
+      <img class="max-h-[35px]" src="{{ section.settings.contact_image | image_url }}" width="auto" height="auto" />
+    </div>
+    <h2 class="flex">
+      <span class="mr-2">{{ section.settings.contact-title }}</span>
+      {{ section.settings.contact }}
+    </h2>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Contact",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "contact_image",
+        "label": "Imagen título de contacto"
+      },
+      {
+        "type": "richtext",
+        "id": "contact-title",
+        "label": "Título de contacto"
+      },
+      {
+        "type": "text",
+        "id": "contact",
+        "label": "Contacto"
+      }
+    ],
+    "blocks": []  
+  }
+{% endschema %}

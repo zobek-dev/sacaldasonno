@@ -56,7 +56,7 @@
     </li>
   {%- endif -%}
   {%- if settings.social_youtube_link != blank -%}
-    <li class="w-[26px] h-[26px]">
+    <li class="w-[26px] h-[26px] mt-2">
       <a href="{{ settings.social_youtube_link }}" class="list-social__link link">
         {%- render 'icon-youtube' -%}
         <span class="sr-only">{{ 'general.social.links.youtube' | t }}</span>
@@ -71,4 +71,17 @@
       </a>
     </li>
   {%- endif -%}
+  {% comment %} RENDER WHATSAPP {% endcomment %}
+  <li class="w-[26px] h-[26px]">
+    <a
+      href="http://bit.ly/Wtspmds"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="WhatsApp"
+      class="list-social__link link"
+    >
+      {% render 'icon-whatsapp' %}
+      <span class="sr-only">WhatsApp</span>
+    </a>
+  </li>
 </ul>

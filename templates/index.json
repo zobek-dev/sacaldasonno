@@ -26,18 +26,49 @@
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162": {
       "type": "slideshow",
       "blocks": {
+        "slideshow_UwkgYR": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/mantas-electricas",
+            "image_desktop": "shopify:\/\/shop_images\/MANTA_1_DESKTOP_2.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/MANTA_1_MOBILE.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/MANTA_1_MOBILE.jpg",
+            "alt_text": ""
+          }
+        },
+        "slideshow_WyjU4P": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/mantas-electricas",
+            "image_desktop": "shopify:\/\/shop_images\/MANTA_2_DESKTOP_3.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/MANTA_2_MOBILE.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/MANTA_2_MOBILE.jpg",
+            "alt_text": ""
+          }
+        },
         "slideshow_h9rFyg": {
           "type": "slideshow",
           "settings": {
             "link": "shopify:\/\/collections\/calientacamas",
-            "image_desktop": "shopify:\/\/shop_images\/desktop_-_scaldasonno_week.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/mobile_scaldasonno_week.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mobile_scaldasonno_week.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/scaldasonno_c48f2531-a4fb-415c-97f6-e9658367974f.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/banner_2_893432e2-2f3a-4324-8f03-26b78e55b71e.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/banner_2_4863b41d-0f5b-4b82-8510-dd7ee259c48a.jpg",
+            "alt_text": ""
+          }
+        },
+        "slideshow_n3CEiL": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/calor-que-conecta",
+            "image_desktop": "shopify:\/\/shop_images\/ALMOHADILLAS_DESKTOP_4.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/ALMOHADILLAS_MOBILE_1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/ALMOHADILLAS_MOBILE_1.jpg",
             "alt_text": ""
           }
         },
         "slideshow_k8MfgK": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/almohadillas",
             "image_desktop": "shopify:\/\/shop_images\/banner-almohadilla-lumbar_desktop.png",
@@ -48,6 +79,7 @@
         },
         "slideshow_c9VDQ4": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calientacamas",
             "image_desktop": "shopify:\/\/shop_images\/desktop_calientecamas_1.jpg",
@@ -69,6 +101,7 @@
         },
         "slideshow_Jnia4n": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
             "image_desktop": "shopify:\/\/shop_images\/mantas_desktop_1.jpg",
@@ -76,38 +109,17 @@
             "image_mobile": "shopify:\/\/shop_images\/mantas_mobile.jpg",
             "alt_text": ""
           }
-        },
-        "slideshow_UwkgYR": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/products\/almohadilla-lumbar-inteligente-scaldasonno",
-            "image_desktop": "shopify:\/\/shop_images\/5.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/6.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/6_f1997cc9-bbcd-4b34-9da3-dd00fb67ab3d.jpg",
-            "alt_text": ""
-          }
-        },
-        "slideshow_WyjU4P": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/cyber-scaldasonno",
-            "image_desktop": "shopify:\/\/shop_images\/despacho_gratis_-_desktop_1.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/despacho_gratris_mobile.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/despacho_gratris_mobile.jpg",
-            "alt_text": ""
-          }
         }
       },
       "block_order": [
+        "slideshow_UwkgYR",
+        "slideshow_WyjU4P",
         "slideshow_h9rFyg",
+        "slideshow_n3CEiL",
         "slideshow_k8MfgK",
         "slideshow_c9VDQ4",
         "slideshow_PmcV66",
-        "slideshow_Jnia4n",
-        "slideshow_UwkgYR",
-        "slideshow_WyjU4P"
+        "slideshow_Jnia4n"
       ],
       "settings": {}
     },
@@ -169,6 +181,47 @@
         "coll": "carrusel"
       }
     },
+    "46b57673-ac3d-42a2-b9b3-a344ff270a39": {
+      "type": "home-categorias",
+      "blocks": {
+        "ba010b25-44dd-4715-8b7c-9904ee8e62fc": {
+          "type": "category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mantas_4ef46d6b-f0e2-4ad4-b992-6cad8cf1b3be.jpg",
+            "coll": "mantas-electricas"
+          }
+        },
+        "9cbfa717-f33a-4bf5-85f2-2de5eb24ef02": {
+          "type": "category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/calientacamas1.jpg",
+            "coll": "calientacamas"
+          }
+        },
+        "69d1963f-d9d7-4db4-a88e-8f3514fbf24e": {
+          "type": "category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/almohadillas_6c07a361-6d47-4578-ad55-714662db9e50.jpg",
+            "coll": "almohadillas"
+          }
+        }
+      },
+      "block_order": [
+        "ba010b25-44dd-4715-8b7c-9904ee8e62fc",
+        "9cbfa717-f33a-4bf5-85f2-2de5eb24ef02",
+        "69d1963f-d9d7-4db4-a88e-8f3514fbf24e"
+      ],
+      "settings": {}
+    },
+    "9f59a0f5-bef0-461f-b495-bb7df5637ff9": {
+      "type": "home-full-width-image",
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/JULIO_SCALDASONNO-37.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/JULIO_SCALDASONNO-38.jpg",
+        "link": "shopify:\/\/collections\/calor-que-conecta",
+        "alt_text": ""
+      }
+    },
     "26118325-e776-4745-970d-3d17469317ee": {
       "type": "home-beneficios",
       "blocks": {
@@ -206,38 +259,6 @@
         "title": "Experimenta los Beneficios del calor",
         "content": "<p>El calor es una fuente de bienestar que brinda muchos beneficios al cuerpo. El calor liberado por los productos Scaldasonno facilita la circulación sanguínea, favorece la relajación y la reducción de las tensiones musculares entregando seguridad a través de las innovaciones tecnológicas, diseño y calidad.<\/p>"
       }
-    },
-    "46b57673-ac3d-42a2-b9b3-a344ff270a39": {
-      "type": "home-categorias",
-      "blocks": {
-        "ba010b25-44dd-4715-8b7c-9904ee8e62fc": {
-          "type": "category",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ccalientacamas-pareja.jpg",
-            "coll": "calientacamas"
-          }
-        },
-        "9cbfa717-f33a-4bf5-85f2-2de5eb24ef02": {
-          "type": "category",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/mantas.jpg",
-            "coll": "mantas-electricas"
-          }
-        },
-        "69d1963f-d9d7-4db4-a88e-8f3514fbf24e": {
-          "type": "category",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/almohadillas.jpg",
-            "coll": "almohadillas"
-          }
-        }
-      },
-      "block_order": [
-        "ba010b25-44dd-4715-8b7c-9904ee8e62fc",
-        "9cbfa717-f33a-4bf5-85f2-2de5eb24ef02",
-        "69d1963f-d9d7-4db4-a88e-8f3514fbf24e"
-      ],
-      "settings": {}
     },
     "ced39aef-4ee6-41f4-b01d-7347f25e682a": {
       "type": "featured-articles",
@@ -344,8 +365,9 @@
     "4e0fee28-e16c-4802-9402-cc8e410a5f50",
     "countdown_TiaGXg",
     "f7f21698-652b-4ff2-96de-9917ab786b5a",
-    "26118325-e776-4745-970d-3d17469317ee",
     "46b57673-ac3d-42a2-b9b3-a344ff270a39",
+    "9f59a0f5-bef0-461f-b495-bb7df5637ff9",
+    "26118325-e776-4745-970d-3d17469317ee",
     "ced39aef-4ee6-41f4-b01d-7347f25e682a",
     "e3d8d3d8-1d4b-4452-b6bd-ef718fa34de7",
     "1674754739960fe6b0",
