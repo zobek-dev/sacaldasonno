@@ -3,15 +3,15 @@
     "heading": {
       "type": "contacto-heading",
       "settings": {
-        "image_mobile": "shopify:\/\/shop_images\/contact-2-kendal.jpg",
-        "image_desktop": "shopify:\/\/shop_images\/contact-2-kendal.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/contacto.png",
+        "image_desktop": "shopify:\/\/shop_images\/contacto-mobile.jpg",
         "title": "<h1>Contacto<\/h1>"
       }
     },
     "contact-title": {
       "type": "contact-title",
       "settings": {
-        "contact_image": "shopify:\/\/shop_images\/audifonos.png",
+        "contact_image": "shopify:\/\/shop_images\/headphone-scaldasonno.png",
         "contact-title": "<p><strong>¿Necesitas Ayuda?<\/strong><\/p>",
         "contact": "Contáctanos"
       }
@@ -22,7 +22,7 @@
         "llamanos_bRtca3": {
           "type": "llamanos",
           "settings": {
-            "image_llamanos": "shopify:\/\/shop_images\/llamanos.png",
+            "image_llamanos": "shopify:\/\/shop_images\/llamanos-scal.png",
             "llamanos-title": "Llámanos",
             "llamanos-content": "Hablemos de lunes a viernes de 08:30 a 17:00 hrs",
             "llamanos-number": "+56 2 2914 0620",
@@ -33,7 +33,7 @@
         "whatsapp_NqmaYr": {
           "type": "whatsapp",
           "settings": {
-            "image_whatsapp": "shopify:\/\/shop_images\/whatsapp_3fc175d6-91a6-4067-baa3-4e5c0cc739e5.png",
+            "image_whatsapp": "shopify:\/\/shop_images\/whatsapp-scal.png",
             "whatsapp-title": "Hablemos por WhatsApp",
             "whatsapp-content": "Escríbenos de lunes a viernes de 08:30 a 17:00 hrs",
             "whatsapp-number": "+56 9 7155 0317",
@@ -44,9 +44,9 @@
         "email_p8Bj3g": {
           "type": "email",
           "settings": {
-            "image_email": "shopify:\/\/shop_images\/email_3c9a1e1c-12dc-4cb0-8503-e31d2fb85fa2.png",
+            "image_email": "shopify:\/\/shop_images\/email-scal.png",
             "email-title": "Envíanos un e-mail",
-            "email": "contacto@kendalchile.cl"
+            "email": "contacto@scaldasonno.cl"
           }
         }
       },
