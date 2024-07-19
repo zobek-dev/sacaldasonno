@@ -8,12 +8,12 @@
 
 <style>
   .heading-nosotros{
-    background-image: url({{ section.settings.image_mobile | image_url: width: 640 }});
+    background-image: url({{ section.settings.image_desktop | image_url: width: 2040 }});
   }
 
   @media(min-width: 640px){
     .heading-nosotros{
-      background-image: url({{ section.settings.image_desktop | image_url: width: 2040 }});
+      background-image: url({{ section.settings.image_mobile | image_url: width: 2040 }});
     }
   }
 </style>
