@@ -79,18 +79,20 @@
               <div
                 class="cart__ctas"
                 {{ block.shopify_attributes }}
-                x-data="
-                  {
-                    button: document.querySelector('#checkout'),
-                    canSubmit: false,
-                    handleSubmit(){
-                      this.canSubmit ? this.button.removeAttribute('disabled'): this.button.setAttribute('disabled', 'disabled')
-                    },
-                    init(){
-                      this.button.setAttribute('disabled', 'disabled')
-                    }
+                x-data="{
+                  button: null,
+                  canSubmit: false,
+                  handleSubmit(){
+                    // Si el checkbox está marcado, habilita el botón, de lo contrario, lo deshabilita
+                    this.canSubmit ? this.button.removeAttribute('disabled') : this.button.setAttribute('disabled', 'disabled');
+                  },
+                  init(){
+                    // Asegura que el botón se referencie y se deshabilite en la carga inicial
+                    this.button = document.querySelector('#checkout');
+                    this.button.setAttribute('disabled', 'disabled');
                   }
-                "
+                }"
+                x-init="init()"
               >
                 <div>
                   <div class="flex items-start mb-6">
