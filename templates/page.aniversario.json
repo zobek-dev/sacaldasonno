@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "header": {
+      "type": "banner-aniversario",
+      "settings": {
+        "image_mobile": "shopify:\/\/shop_images\/banner_mobile.png",
+        "image_desktop": "shopify:\/\/shop_images\/banner_desktop.png"
+      }
+    },
+    "main": {
+      "type": "main-aniversario",
+      "blocks": {
+        "card_marca_Hywcbr": {
+          "type": "card_marca",
+          "settings": {
+            "imagen_marca": "shopify:\/\/shop_images\/heimat_landing.png"
+          }
+        },
+        "card_marca_GVLGq6": {
+          "type": "card_marca",
+          "settings": {
+            "imagen_marca": "shopify:\/\/shop_images\/kendal_landing.png"
+          }
+        },
+        "card_marca_7wKWtF": {
+          "type": "card_marca",
+          "settings": {
+            "imagen_marca": "shopify:\/\/shop_images\/scaldassonno_landing.png"
+          }
+        },
+        "boton_marca_9Tfajx": {
+          "type": "boton_marca",
+          "settings": {
+            "imagen_marca_botones": "shopify:\/\/shop_images\/Mesa_de_trabajo_46_copia.png",
+            "texto_boton": "¡Comprar ahora!",
+            "link_boton": "https:\/\/heimat.cl\/"
+          }
+        },
+        "boton_marca_EnVzf7": {
+          "type": "boton_marca",
+          "settings": {
+            "imagen_marca_botones": "shopify:\/\/shop_images\/Mesa_de_trabajo_46.png",
+            "texto_boton": "¡Comprar ahora!",
+            "link_boton": "https:\/\/kendalchile.cl\/"
+          }
+        },
+        "boton_marca_bm6LkP": {
+          "type": "boton_marca",
+          "settings": {
+            "imagen_marca_botones": "shopify:\/\/shop_images\/Mesa_de_trabajo_46_copia_2.png",
+            "texto_boton": "¡Comprar ahora!",
+            "link_boton": "https:\/\/scaldasonno.cl\/"
+          }
+        }
+      },
+      "block_order": [
+        "card_marca_Hywcbr",
+        "card_marca_GVLGq6",
+        "card_marca_7wKWtF",
+        "boton_marca_9Tfajx",
+        "boton_marca_EnVzf7",
+        "boton_marca_bm6LkP"
+      ],
+      "settings": {
+        "logo_mds": "shopify:\/\/shop_images\/mds-logo.png",
+        "richtext_content": "<p>Lorem ipsum dolor sit amet consectetur. Nulla ligula auctor nisl morbi. Velit aenean diam tristique eget varius. Congue at dictumst massa sed interdum tellus sed. Ut in purus nunc mauris arcu vestibulum. Penatibus lacus nunc quam auctor pharetra faucibus. Dui in mauris duis commodo consectetur gravida. Justo scelerisque fermentum urna scelerisque diam diam a. Quis consectetur metus sed feugiat nec. Suspendisse pharetra et sed ullamcorper massa malesuada commodo. Dignissim vel risus tincidunt leo consectetur vel donec. Aliquam sollicitudin dictum massa nulla malesuada. Volutpat neque arcu eget scelerisque. Porttitor consectetur lacinia urna semper sed nulla sed leo duis. Malesuada risus placerat diam ac tortor.<\/p>",
+        "titulo_sorteo": "Sorteo aniversario",
+        "contenido_sorteo": "Por compras sobre $99.990 en cualquiera de nuestros sitios, estarás participarán en el sorteo de los siguientes productos:",
+        "titulo_marcas_botones": "Compra en alguna de nuestras marcas para participar",
+        "globo_1_izquierda": "shopify:\/\/shop_images\/globo-izquierda.png",
+        "globo_1_derecha": "shopify:\/\/shop_images\/globo-derecha.png",
+        "globo_mobile": "shopify:\/\/shop_images\/globos-mobile.png"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "main"
+  ]
+}
