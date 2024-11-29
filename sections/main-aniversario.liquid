@@ -93,7 +93,7 @@
             {{ section.settings.richtext_content }}
           </div>
           <div class="mb-4">
-            <h2 class="mb-4 text-center uppercase text-lg font-bold">
+            <h2 class="mb-4 text-center uppercase text-xl font-bold">
               {{ section.settings.titulo_sorteo }}
             </h2>
             <p class="text-center mx-auto">
@@ -121,15 +121,16 @@
                 <div class="mb-4 md:hidden">
                   {% assign current_boton = boton_marca_blocks[forloop.index0] %}
                   {% if current_boton %}
-                    <img
+                    {% comment %} <img
                       src="{{ current_boton.settings.imagen_marca_botones | image_url }}"
                       alt="logo mds"
                       width="auto"
                       height="100px"
-                      class="md:mb-4 mx-auto h-[100px] lg:h-[140px]">
+                      class="md:mb-4 mx-auto h-[100px] lg:h-[140px]"> {% endcomment %}
                     <a href="{{ current_boton.settings.link_boton }}" class="
                       btn-primary-scaldasonno !w-max px-8
                       {% if forloop.index == 1 %} !bg-black !border-black hover:!bg-transparent hover:!text-black {% endif %}
+                      {% if forloop.index == 2 %} !bg-[#5ABDB4] !border-[#5ABDB4] hover:!bg-transparent hover:!text-[#5ABDB4] {% endif %}
                       {% if forloop.index == boton_marca_blocks.size %} !bg-[#a00] !border-[#a00] hover:!bg-transparent hover:!text-[#a00] {% endif %}
                     ">
                       {{ current_boton.settings.texto_boton }}
@@ -149,15 +150,16 @@
             {% assign boton_marca_blocks = section.blocks | where: 'type', 'boton_marca' %}
             {% for block in boton_marca_blocks %}
               <div class="hidden md:block">
-                <img
+                {% comment %} <img
                   src="{{ block.settings.imagen_marca_botones | image_url }}"
                   alt="logo mds"
                   width="auto"
                   height="100px"
-                  class="mb-4 mx-auto h-[100px] lg:h-[120px]">
+                  class="mb-4 mx-auto h-[100px] lg:h-[120px]"> {% endcomment %}
                 <a href="{{ block.settings.link_boton }}" class="
                     btn-primary-scaldasonno
                     {% if forloop.index == 1 %} !bg-black !border-black hover:!bg-transparent hover:!text-black {% endif %}
+                    {% if forloop.index == 2 %} !bg-[#5ABDB4] !border-[#5ABDB4] hover:!bg-transparent hover:!text-[#5ABDB4] {% endif %}
                     {% if forloop.index == boton_marca_blocks.size %} !bg-[#a00] !border-[#a00] hover:!bg-transparent hover:!text-[#a00] {% endif %}
                   ">
                   {{ block.settings.texto_boton }}

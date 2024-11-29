@@ -1,0 +1,203 @@
+<div class="wrapper my-16">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'title' %}
+        <section>
+          <style>
+            .title-custom {
+              font-size: {{ block.settings.title_size }}
+               !important;
+              text-transform: {{ block.settings.text_transform }};
+            }
+          </style>
+          <div class="flex justify-center items-center text-center mb-4 relative w-max mx-auto">
+            {% if block.settings.show_icon == true %}
+              <div class="mr-3 absolute -left-8">{% render 'icon-document' %}</div>
+            {% endif %}
+            <h2 class="title-custom font-bold">{{ block.settings.titulo }}</h2>
+          </div>
+        </section>
+      {% when 'content' %}
+        <section>
+          <div class="text-center mx-auto">{{ block.settings.richtext }}</div>
+        </section>
+      {% when 'button' %}
+        <section class="flex justify-center items-center mx-auto">
+          <style>
+            .button-custom-color {
+              background-color: {{ block.settings.button_color }}
+               !important;
+              border: 1px solid{{ block.settings.button_color }};
+              text-transform: {{ block.settings.button_text_transform }};
+            }
+
+            .button-custom-color:hover {
+              color: {{ block.settings.button_color }}
+               !important;
+              border: 1px solid{{ block.settings.button_color }}!important;
+              background-color: transparent !important;
+            }
+          </style>
+          <a
+            class="btn-primary-scaldasonno button-custom-color"
+            target="_blank"
+            href="{{ block.settings.link_boton }}"
+            rel="noopener noreferrer">{{ block.settings.texto_boton }}</a>
+        </section>
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Richtext con botón",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "title",
+        "name": "Título",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_icon",
+            "label": "Mostrar ícono",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "titulo",
+            "label": "Título",
+            "default": "Título"
+          },
+          {
+            "type": "select",
+            "id": "title_size",
+            "label": "Tamaño de letra",
+            "default": "30px",
+            "options": [
+              {
+                "value": "14px",
+                "label": "Small (14px)"
+              },
+              {
+                "value": "16px",
+                "label": "Base (16px)"
+              },
+              {
+                "value": "18px",
+                "label": "Large (18px)"
+              },
+              {
+                "value": "20px",
+                "label": "xl (20px)"
+              },
+              {
+                "value": "24px",
+                "label": "2xl (24px)"
+              },
+              {
+                "value": "30px",
+                "label": "3xl (30px)"
+              },
+              {
+                "value": "36px",
+                "label": "4xl (36px)"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "text_transform",
+            "label": "Transformación de texto (mayus, minus, normal)",
+            "default": "none",
+            "options": [
+              {
+                "value": "uppercase",
+                "label": "Mayúsculas"
+              },
+              {
+                "value": "lowercase",
+                "label": "Minúsculas"
+              },
+              {
+                "value": "capitalize",
+                "label": "Capitalizar (Cada letra empieza con mayúscula)"
+              },
+              {
+                "value": "none",
+                "label": "Ninguno (se ve tal cual lo escriban)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name": "Contenido",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Richtext",
+            "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quas velit iste ullam voluptate. Vero maxime dolorum ipsam sed culpa?</p>"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "name": "Botón",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "texto_boton",
+            "label": "Texto de botón",
+            "default": "Link de botón"
+          },
+          {
+            "type": "url",
+            "id": "link_boton",
+            "label": "Link de botón"
+          },
+          {
+            "type": "color",
+            "id": "button_color",
+            "label": "Color",
+            "default": "#2B3B48"
+          },
+          {
+            "type": "select",
+            "id": "button_text_transform",
+            "label": "Transformación de texto (mayus, minus, normal)",
+            "default": "none",
+            "options": [
+              {
+                "value": "uppercase",
+                "label": "Mayúsculas"
+              },
+              {
+                "value": "lowercase",
+                "label": "Minúsculas"
+              },
+              {
+                "value": "capitalize",
+                "label": "Capitalizar (Cada letra empieza con mayúscula)"
+              },
+              {
+                "value": "none",
+                "label": "Ninguno (se ve tal cual lo escriban)"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Texto enriquecido con botón"
+      }
+    ]
+  }
+{% endschema %}

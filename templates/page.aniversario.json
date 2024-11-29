@@ -3,8 +3,8 @@
     "header": {
       "type": "banner-aniversario",
       "settings": {
-        "image_mobile": "shopify:\/\/shop_images\/banner_mobile.png",
-        "image_desktop": "shopify:\/\/shop_images\/banner_desktop.png"
+        "image_mobile": "shopify:\/\/shop_images\/banner_landing_mobile.png",
+        "image_desktop": "shopify:\/\/shop_images\/banner_landing_desktop.png"
       }
     },
     "main": {
@@ -67,14 +67,50 @@
         "titulo_sorteo": "Sorteo aniversario",
         "contenido_sorteo": "Por compras sobre $99.990 en cualquiera de nuestros sitios, estarás participarán en el sorteo de los siguientes productos:",
         "titulo_marcas_botones": "Compra en alguna de nuestras marcas para participar",
-        "globo_1_izquierda": "shopify:\/\/shop_images\/globo-izquierda.png",
-        "globo_1_derecha": "shopify:\/\/shop_images\/globo-derecha.png",
-        "globo_mobile": "shopify:\/\/shop_images\/globos-mobile.png"
+        "globo_1_izquierda": "shopify:\/\/shop_images\/globos-izquierda-mds.png",
+        "globo_1_derecha": "shopify:\/\/shop_images\/globos-derecha-mds.png",
+        "globo_mobile": "shopify:\/\/shop_images\/globos-mobile-mds.png"
       }
+    },
+    "richtext_with_button_p7TQay": {
+      "type": "richtext-with-button",
+      "blocks": {
+        "title_KxtRwt": {
+          "type": "title",
+          "settings": {
+            "show_icon": false,
+            "titulo": "Bases legales",
+            "title_size": "20px",
+            "text_transform": "uppercase"
+          }
+        },
+        "content_YmTnwd": {
+          "type": "content",
+          "settings": {
+            "richtext": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quas velit iste ullam voluptate. Vero maxime dolorum ipsam sed culpa?<\/p>"
+          }
+        },
+        "button_hVNJhn": {
+          "type": "button",
+          "settings": {
+            "texto_boton": "Revisar documentos",
+            "link_boton": "https:\/\/cdn.shopify.com\/s\/files\/1\/0710\/7202\/2811\/files\/Bases_Legales_Concurso_Aniversario_MDS.pdf?v=1731959222",
+            "button_color": "#2b3b48",
+            "button_text_transform": "uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "title_KxtRwt",
+        "content_YmTnwd",
+        "button_hVNJhn"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "header",
-    "main"
+    "main",
+    "richtext_with_button_p7TQay"
   ]
 }
