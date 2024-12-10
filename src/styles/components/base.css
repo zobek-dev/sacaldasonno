@@ -23,6 +23,10 @@ input[type=number] {
   @apply max-w-[1320px] mx-auto px-4 lg:px-8
 }
 
+.btn-primary-scaldasonno {
+  @apply transition-colors duration-200 ease-in-out block text-white text-sm mt-4 py-2 px-12 sm:px-4 text-center rounded-[32px] uppercase font-bold tracking-[1px] border mx-auto bg-[#a00] border-[#a00] hover:bg-transparent hover:text-[#a00];
+}
+
 .grid-header{
   grid-template-columns: repeat(5, minmax(50px,1fr))
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="relative">
   <style>
     .globo-izquierdo {
@@ -268,4 +269,276 @@
       }
     ]
   }
+=======
+<div class="relative">
+  <style>
+    .globo-izquierdo {
+      display: none;
+    }
+
+    .globo-derecho {
+      display: none;
+    }
+
+    @media (min-width: 1350px) {
+      .globo-izquierdo {
+        max-height: 300px;
+        display: block;
+      }
+
+      .globo-derecho {
+        max-height: 300px;
+        display: block;
+      }
+
+      .globo-izquierdo-container {
+        position: absolute;
+        left: 1rem;
+        margin-top: 5rem;
+        z-index: -2;
+      }
+
+      .globo-derecho-container {
+        position: absolute;
+        right: 1rem;
+        margin-top: 5rem;
+        z-index: -2;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .globo-izquierdo-container {
+        left: 5rem;
+      }
+
+      .globo-derecho-container {
+        right: 5rem;
+      }
+
+      .globo-izquierdo {
+        max-height: 400px;
+      }
+
+      .globo-derecho {
+        max-height: 400px;
+      }
+    }
+  </style>
+
+  {% comment %} Globos {% endcomment %}
+  <div class="globo-izquierdo-container">
+    <img
+      src="{{ section.settings.globo_1_izquierda | image_url  }}"
+      width="auto"
+      height="auto"
+      class="globo-izquierdo"
+      alt="globo">
+  </div>
+
+  <div class="globo-derecho-container">
+    <img
+      src="{{ section.settings.globo_1_derecha |  image_url  }}"
+      width="auto"
+      height="auto"
+      class="globo-derecho"
+      alt="globo">
+  </div>
+
+  <div class="wrapper my-8">
+    {% render 'breadcrumb' %}
+      <div class="mt-6">
+      {% comment %} ---- // LOGO // ---- {% endcomment %}
+      <section class="mb-8 mx-auto flex justify-center items-center overflow-hidden">
+        <img
+          src="{{ section.settings.logo_mds |  image_url  }}"
+          alt="logo mar del sur"
+          width="auto"
+          height="400px"
+          class="max-h-[80px]">
+      </section>
+
+      {% comment %} ---- // RICHTEXT Y PRIMEROS GLOBOS // ---- {% endcomment %}
+      <section class="my-8">
+        {% comment %} Texto {% endcomment %}
+        <div class="max-w-[1200px] mx-auto overflow-hidden">
+          <div class="mb-12 text-center [&>p]:text-center">
+            {{ section.settings.richtext_content }}
+          </div>
+          <div class="mb-4">
+            <h2 class="mb-4 text-center uppercase text-xl font-bold">
+              {{ section.settings.titulo_sorteo }}
+            </h2>
+            <p class="text-center mx-auto">
+              {{ section.settings.contenido_sorteo }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1200px] mx-auto overflow-hidden mb-4 md:mb-12">
+        {% comment %} ---- // CARDS MARCAS // ---- {% endcomment %}
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {% assign boton_marca_blocks = section.blocks | where: 'type', 'boton_marca' %}
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'card_marca' %}
+                <div>
+                  <img
+                    src="{{ block.settings.imagen_marca |  image_url  }}"
+                    alt="imagen mds"
+                    width="auto"
+                    height="auto"
+                    class="rounded-lg">
+                </div>
+                <div class="mb-4 md:hidden">
+                  {% assign current_boton = boton_marca_blocks[forloop.index0] %}
+                  {% if current_boton %}
+                    {% comment %} <img
+                      src="{{ current_boton.settings.imagen_marca_botones | image_url }}"
+                      alt="logo mds"
+                      width="auto"
+                      height="100px"
+                      class="md:mb-4 mx-auto h-[100px] lg:h-[140px]"> {% endcomment %}
+                    <a href="{{ current_boton.settings.link_boton }}" class="
+                      btn-primary-scaldasonno !w-max px-8
+                      {% if forloop.index == 1 %} !bg-black !border-black hover:!bg-transparent hover:!text-black {% endif %}
+                      {% if forloop.index == 2 %} !bg-[#5ABDB4] !border-[#5ABDB4] hover:!bg-transparent hover:!text-[#5ABDB4] {% endif %}
+                      {% if forloop.index == boton_marca_blocks.size %} !bg-[#a00] !border-[#a00] hover:!bg-transparent hover:!text-[#a00] {% endif %}
+                    ">
+                      {{ current_boton.settings.texto_boton }}
+                    </a>
+                  {% endif %}
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </section>
+
+        {% comment %} ---- // BOTONES MARCAS // ---- {% endcomment %}
+        <div>
+          <h2 class="mt-8 mb-4 text-center text-lg font-bold hidden md:block">
+            {{ section.settings.titulo_marcas_botones }}
+          </h2>
+          <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {% assign boton_marca_blocks = section.blocks | where: 'type', 'boton_marca' %}
+            {% for block in boton_marca_blocks %}
+              <div class="hidden md:block">
+                {% comment %} <img
+                  src="{{ block.settings.imagen_marca_botones | image_url }}"
+                  alt="logo mds"
+                  width="auto"
+                  height="100px"
+                  class="mb-4 mx-auto h-[100px] lg:h-[120px]"> {% endcomment %}
+                <a href="{{ block.settings.link_boton }}" class="
+                    btn-primary-scaldasonno
+                    {% if forloop.index == 1 %} !bg-black !border-black hover:!bg-transparent hover:!text-black {% endif %}
+                    {% if forloop.index == 2 %} !bg-[#5ABDB4] !border-[#5ABDB4] hover:!bg-transparent hover:!text-[#5ABDB4] {% endif %}
+                    {% if forloop.index == boton_marca_blocks.size %} !bg-[#a00] !border-[#a00] hover:!bg-transparent hover:!text-[#a00] {% endif %}
+                  ">
+                  {{ block.settings.texto_boton }}
+                </a>
+              </div>
+            {% endfor %}
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="globo-mobile md:hidden wrapper">
+    <img
+      src="{{ section.settings.globo_mobile |  image_url  }}"
+      alt="globo mobile"
+      width="auto"
+      height="auto">
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Página aniversario",
+    "blocks": [
+      {
+        "name": "Card marca",
+        "type": "card_marca",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "imagen_marca",
+            "label": "Imagen de marca"
+          }
+        ]
+      },
+      {
+        "name": "Boton marca",
+        "type": "boton_marca",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "imagen_marca_botones",
+            "label": "Imagen marca (botones)"
+          },
+          {
+            "type": "text",
+            "id": "texto_boton",
+            "label": "Texto de botones",
+            "default": "¡Comprar ahora!"
+          },
+          {
+            "type": "url",
+            "id": "link_boton",
+            "label": "Link de botón"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo_mds",
+        "label": "Logo mds"
+      },
+      {
+        "type": "richtext",
+        "id": "richtext_content",
+        "label": "Contenido / Richtext",
+        "default": "<p>Lorem ipsum dolor sit amet consectetur. Nulla ligula auctor nisl morbi. Velit aenean diam tristique eget varius. Congue at dictumst massa sed interdum tellus sed. Ut in purus nunc mauris arcu vestibulum. Penatibus lacus nunc quam auctor pharetra faucibus. Dui in mauris duis commodo consectetur gravida. Justo scelerisque fermentum urna scelerisque diam diam a. Quis consectetur metus sed feugiat nec. Suspendisse pharetra et sed ullamcorper massa malesuada commodo. Dignissim vel risus tincidunt leo consectetur vel donec. Aliquam sollicitudin dictum massa nulla malesuada. Volutpat neque arcu eget scelerisque. Porttitor consectetur lacinia urna semper sed nulla sed leo duis. Malesuada risus placerat diam ac tortor.</p>"
+      },
+      {
+        "type": "text",
+        "id": "titulo_sorteo",
+        "label": "Título sorteo aniversario",
+        "default": "Sorteo aniversario"
+      },
+      {
+        "type": "text",
+        "id": "contenido_sorteo",
+        "label": "Contenido sorteo",
+        "default": "Por compras sobre $99.990 en cualquiera de nuestros sitios, estarás participarán en el sorteo de los siguientes productos:"
+      },
+      {
+        "type": "text",
+        "id": "titulo_marcas_botones",
+        "label": "Título marcas compra ahora",
+        "default": "Compra en alguna de nuestras marcas para participar"
+      },
+      {
+        "type": "image_picker",
+        "id": "globo_1_izquierda",
+        "label": "Globo arriba izquierda"
+      },
+      {
+        "type": "image_picker",
+        "id": "globo_1_derecha",
+        "label": "Globo arriba derecha"
+      },
+      {
+        "type": "image_picker",
+        "id": "globo_mobile",
+        "label": "Globo en móvil"
+      }
+    ]
+  }
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
 {% endschema %}

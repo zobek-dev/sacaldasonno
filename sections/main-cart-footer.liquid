@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div
   class="bg-[#fafafa] p-5 rounded-xl{% if cart == empty %} is-empty{% endif %}"
   id="main-cart-footer"
@@ -172,4 +173,180 @@
     }
   ]
 }
+=======
+<div
+  class="bg-[#fafafa] p-5 rounded-xl{% if cart == empty %} is-empty{% endif %}"
+  id="main-cart-footer"
+  data-id="{{ section.id }}"
+>
+  <div class="">
+    <div class="cart__footer isolate section-{{ section.id }}-padding">
+      {%- if settings.show_cart_note -%}
+        <cart-note class="cart__note field">
+          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <textarea
+            class="text-area field__input"
+            name="note"
+            form="cart"
+            id="Cart-note"
+            placeholder="{{ 'sections.cart.note' | t }}"
+          >{{ cart.note }}</textarea>
+        </cart-note>
+      {%- endif -%}
+
+      <div class="cart__blocks">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'subtotal' -%}
+              <div class="js-contents mb-6" {{ block.shopify_attributes }}>
+                <div>
+                  {%- if cart.cart_level_discount_applications.size > 0 -%}
+                    <ul
+                      class="discounts list-unstyled"
+                      role="list"
+                      aria-label="{{ 'customer.order.discount' | t }}"
+                    >
+                      {%- for discount in cart.cart_level_discount_applications -%}
+                        <li class="discounts__discount discounts__discount--position">
+                          {% comment %} {%- render 'icon-discount' -%} {% endcomment %}
+                          {{ discount.title }}
+                          (-{{ discount.total_allocated_amount | money }})
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </div>
+
+                <div class="totals flex items-center justify-between mb-2">
+                  <h2 class="totals__total text-lg font-medium">
+                    {{ 'sections.cart.estimated_total' | t }}
+                  </h2>
+                  <p class="totals__total-value font-medium">
+                    {{ cart.total_price | money }}
+                  </p>
+                </div>
+
+                <small class="tax-note caption-large rte prose [&>*] text-sm w-full">
+                  {%- if cart.taxes_included
+                    and shop.shipping_policy.body != blank
+                  -%}
+                    {{
+                      'sections.cart.taxes_included_and_shipping_policy_html'
+                      | t: link: shop.shipping_policy.url
+                    }}
+                  {%- elsif cart.taxes_included -%}
+                    {{
+                      'sections.cart.taxes_included_but_shipping_at_checkout'
+                      | t
+                    }}
+                  {%- elsif shop.shipping_policy.body != blank -%}
+                    {{
+                      'sections.cart.taxes_and_shipping_policy_at_checkout_html'
+                      | t: link: shop.shipping_policy.url
+                    }}
+                  {%- else -%}
+                    {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
+                  {%- endif -%}
+                </small>
+              </div>
+            {%- else -%}
+              <div
+                class="cart__ctas"
+                {{ block.shopify_attributes }}
+                x-data="{
+                  button: null,
+                  canSubmit: false,
+                  handleSubmit(){
+                    // Si el checkbox está marcado, habilita el botón, de lo contrario, lo deshabilita
+                    this.canSubmit ? this.button.removeAttribute('disabled') : this.button.setAttribute('disabled', 'disabled');
+                  },
+                  init(){
+                    // Asegura que el botón se referencie y se deshabilite en la carga inicial
+                    this.button = document.querySelector('#checkout');
+                    this.button.setAttribute('disabled', 'disabled');
+                  }
+                }"
+                x-init="init()"
+              >
+                <div>
+                  <div class="flex items-start mb-6">
+                    <div class="flex items-center h-5">
+                      <input
+                        id="remember"
+                        type="checkbox"
+                        x-model="canSubmit"
+                        @change="handleSubmit"
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                      >
+                    </div>
+                    <label
+                      for="remember"
+                      class="ms-2 text-sm font-medium text-gray-90"
+                      >Acepto los
+                      <a
+                        href="/policies/terms-of-service"
+                        target="_blank"
+                        class="text-blue-600 hover:underline"
+                        >Terminos y condiciones</a
+                      >.</label
+                    >
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  id="checkout"
+                  class="cart__checkout-button btn-primary bg-[var(--copec-light-blue)] w-full text-white"
+                  name="checkout"
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                  form="cart"
+                >
+                  {{ 'sections.cart.checkout' | t }}
+                </button>
+                <a
+                  href="{{ routes.all_products_collection_url }}"
+                  class="btn-primary border border-gray-900 text-gray-900 bg-transparent text-center w-full mt-4"
+                >
+                  {{ 'general.continue_shopping' | t }}
+                </a>
+              </div>
+
+              {%- if additional_checkout_buttons -%}
+                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {% endfor %}
+
+        {% comment %} <div id="cart-errors"></div> {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
 {% endschema %}

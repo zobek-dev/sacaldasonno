@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="h-[299px] md:h-[398px] relative w-full heading-nosotros bg-cover bg-center bg-no-repeat" data-desktop="{{ section.settings.image_desktop | image_url: width: 2040 }}" data-mobile="{{ section.settings.image_desktop | image_url: width: 640 }}">
   <div class="absolute top-0 left-0 right-0 bottom-0 bg-[rgba(10,10,10,.35)] text-white">
     <div class="wrapper h-full flex flex-col justify-center items-center [&>h1]:uppercase [&>h1]:text-center [&>h1]:text-[20px] [&>h1]:lg:text-[35px] [&>h1]:font-light [&>h1]:tracking-[1.5px] [&>h1>strong]:font-bold">
@@ -42,4 +43,50 @@
     ],
     "blocks": []  
   }
+=======
+<div class="h-[299px] md:h-[398px] relative w-full heading-nosotros bg-cover bg-center bg-no-repeat" data-desktop="{{ section.settings.image_desktop | image_url: width: 2040 }}" data-mobile="{{ section.settings.image_desktop | image_url: width: 640 }}">
+  <div class="absolute top-0 left-0 right-0 bottom-0 bg-[rgba(10,10,10,.35)] text-white">
+    <div class="wrapper h-full flex flex-col justify-center items-center [&>h1]:uppercase [&>h1]:text-center [&>h1]:text-[20px] [&>h1]:lg:text-[35px] [&>h1]:font-light [&>h1]:tracking-[1.5px] [&>h1>strong]:font-bold">
+      {{ section.settings.title }}
+    </div>
+  </div>
+</div>
+
+<style>
+  .heading-nosotros{
+    background-image: url({{ section.settings.image_desktop | image_url: width: 2040 }});
+  }
+
+  @media(min-width: 640px){
+    .heading-nosotros{
+      background-image: url({{ section.settings.image_mobile | image_url: width: 2040 }});
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Nosotros Heading",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Imagen mobile del Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Imagen desktop del Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Titulo del heading",
+        "default": "<h1>Contacto</h1>"
+      }
+    ],
+    "blocks": []  
+  }
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
 {% endschema %}

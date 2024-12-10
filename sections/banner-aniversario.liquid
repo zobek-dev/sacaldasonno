@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div
   class="h-[300px] md:h-[400px] relative w-full heading-nosotros bg-cover bg-center bg-no-repeat"
   data-desktop="{{ section.settings.image_desktop | image_url: width: 2161 }}"
@@ -35,4 +36,43 @@
     ],
     "blocks": []
   }
+=======
+<div
+  class="h-[300px] md:h-[400px] relative w-full heading-nosotros bg-cover bg-center bg-no-repeat"
+  data-desktop="{{ section.settings.image_desktop | image_url: width: 2161 }}"
+  data-mobile="{{ section.settings.image_desktop | image_url: width: 643 }}">
+  {% comment %} <div class="absolute top-0 left-0 right-0 bottom-0 bg-[rgba(10,10,10,.35)] text-white"></div> {% endcomment %}
+</div>
+
+<style>
+  .heading-nosotros {
+    background-image: url({{ section.settings.image_mobile | image_url: width: 640 }});
+  }
+
+  @media (min-width: 640px) {
+    .heading-nosotros {
+      background-image: url({{ section.settings.image_desktop | image_url: width: 2040 }});
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Imagen mobile del Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Imagen desktop del Heading"
+      }
+    ],
+    "blocks": []
+  }
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
 {% endschema %}

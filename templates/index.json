@@ -3,6 +3,7 @@
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162": {
       "type": "slideshow",
       "blocks": {
+<<<<<<< HEAD
         "slideshow_rFDgc6": {
           "type": "slideshow",
           "settings": {
@@ -13,38 +14,61 @@
             "alt_text": ""
           }
         },
+=======
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
         "slideshow_mGchAd": {
           "type": "slideshow",
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
+<<<<<<< HEAD
             "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno-03_1.png",
             "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_8.png",
             "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_8.png",
+=======
+            "image_desktop": "shopify:\/\/shop_images\/banner-mantas-desktop_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/banner-mantas-mobile.png",
+            "image_mobile": "shopify:\/\/shop_images\/banner-mantas-mobile.png",
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
             "alt_text": ""
           }
         },
         "slideshow_TGYnaW": {
           "type": "slideshow",
           "settings": {
+<<<<<<< HEAD
             "link": "shopify:\/\/products\/almohadilla-cervical-inteligente-scaldasonno",
             "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_7_1.png",
             "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_10_1.png",
             "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_10_1.png",
+=======
+            "link": "shopify:\/\/collections\/calor-textil",
+            "image_desktop": "shopify:\/\/shop_images\/banner-ecoadapto-desktop_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/banner-ecoadapto-mobile.png",
+            "image_mobile": "shopify:\/\/shop_images\/banner-ecoadapto-mobile.png",
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
             "alt_text": ""
           }
         },
         "slideshow_4HdVd6": {
           "type": "slideshow",
           "settings": {
+<<<<<<< HEAD
             "link": "shopify:\/\/collections\/calor-textil",
             "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_6_1.png",
             "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_9_1.png",
             "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_9_1.png",
+=======
+            "link": "shopify:\/\/collections\/almohadillas",
+            "image_desktop": "shopify:\/\/shop_images\/banner-almohadillas-desktop_2.png",
+            "image_tablet": "shopify:\/\/shop_images\/banner-almohadillas-mobile.png",
+            "image_mobile": "shopify:\/\/shop_images\/banner-almohadillas-mobile.png",
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
             "alt_text": ""
           }
         },
         "slideshow_mYq6CR": {
           "type": "slideshow",
+<<<<<<< HEAD
           "settings": {
             "link": "shopify:\/\/products\/almohadilla-lumbar-inteligente-scaldasonno",
             "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_1.png",
@@ -53,6 +77,28 @@
             "alt_text": ""
           }
         },
+=======
+          "disabled": true,
+          "settings": {
+            "link": "shopify:\/\/collections\/cyber-scaldasonno",
+            "image_desktop": "shopify:\/\/shop_images\/banner-despachogratis-desktop_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/banner-despachogratis-mobile_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/banner-despachogratis-mobile_1.png",
+            "alt_text": ""
+          }
+        },
+        "slideshow_rFDgc6": {
+          "type": "slideshow",
+          "disabled": true,
+          "settings": {
+            "link": "shopify:\/\/collections\/mantas-electricas",
+            "image_desktop": "shopify:\/\/shop_images\/MANTA_CUADRILLE-_DESKTOP.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/MANTACUADRILLE_-_MOBILE.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/MANTACUADRILLE_-_MOBILE.jpg",
+            "alt_text": "Manta electrica uadrille Scaldasonno"
+          }
+        },
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
         "slideshow_BikDJr": {
           "type": "slideshow",
           "disabled": true,
@@ -77,11 +123,18 @@
         }
       },
       "block_order": [
+<<<<<<< HEAD
         "slideshow_rFDgc6",
+=======
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
         "slideshow_mGchAd",
         "slideshow_TGYnaW",
         "slideshow_4HdVd6",
         "slideshow_mYq6CR",
+<<<<<<< HEAD
+=======
+        "slideshow_rFDgc6",
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
         "slideshow_BikDJr",
         "slideshow_drHM96"
       ],
@@ -328,7 +381,10 @@
             "title_color": "",
             "alignment": "center",
             "background_color": "",
+<<<<<<< HEAD
             "feed_id": "",
+=======
+>>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
             "html_area": ""
           }
         }
