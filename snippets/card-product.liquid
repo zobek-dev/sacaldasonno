@@ -34,9 +34,14 @@ Recibe:
     .finally(()=> loading = false)
   } 
 }">
-  <div clas="relative">
-    {% render 'loader' %}
-    <a href="{{ product.url }}" class="relative block">
+<div clas="relative">
+  {% render 'loader' %}
+  <a href="{{ product.url }}" class="relative block">
+    {% comment %} ---- // CARD CONDICIÓN SI TIENE TAG ECO-ADAPTO // ---- {% endcomment %}
+    {% if product.tags contains "eco-adapto" %}
+      <img src="{{ 'ICONO-FIBRA-RECICLADA.svg' | asset_url }}" width="auto" height="auto" alt="icono" class="w-16 h-16 max-w-[64px] max-h-[64px] absolute top-0 left-0">
+    {% endif %}
+    {% comment %} ---- // CARD ZONA DE PORCENTAJE // ---- {% endcomment %}
       {% if on_sale %}
         {% assign percentage = product.compare_at_price_max | minus: product.price | times: 100 | divided_by: product.compare_at_price_max %}
         <span class="text-white uppercase font-gobold-italic bg-[#a00] absolute top-0 right-0 z-[99] py-1 px-2">{{ percentage }}% off</span>  

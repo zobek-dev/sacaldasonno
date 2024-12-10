@@ -1,0 +1,116 @@
+{
+  "sections": {
+    "header": {
+      "type": "banner-aniversario",
+      "settings": {
+        "image_mobile": "shopify:\/\/shop_images\/banner_landing_mobile.png",
+        "image_desktop": "shopify:\/\/shop_images\/banner_landing_desktop.png"
+      }
+    },
+    "main": {
+      "type": "main-aniversario",
+      "blocks": {
+        "card_marca_Hywcbr": {
+          "type": "card_marca",
+          "settings": {
+            "imagen_marca": "shopify:\/\/shop_images\/heimat_landing.png"
+          }
+        },
+        "card_marca_GVLGq6": {
+          "type": "card_marca",
+          "settings": {
+            "imagen_marca": "shopify:\/\/shop_images\/kendal_landing.png"
+          }
+        },
+        "card_marca_7wKWtF": {
+          "type": "card_marca",
+          "settings": {
+            "imagen_marca": "shopify:\/\/shop_images\/scaldassonno_landing.png"
+          }
+        },
+        "boton_marca_9Tfajx": {
+          "type": "boton_marca",
+          "settings": {
+            "imagen_marca_botones": "shopify:\/\/shop_images\/Mesa_de_trabajo_46_copia.png",
+            "texto_boton": "¡Comprar ahora!",
+            "link_boton": "https:\/\/heimat.cl\/?utm_source=REF_SCALDASONNO&utm_medium=BOTON&utm_campaign=BOTON_SCALDASONNO&utm_id=REFERIDO"
+          }
+        },
+        "boton_marca_EnVzf7": {
+          "type": "boton_marca",
+          "settings": {
+            "imagen_marca_botones": "shopify:\/\/shop_images\/Mesa_de_trabajo_46.png",
+            "texto_boton": "¡Comprar ahora!",
+            "link_boton": "https:\/\/kendalchile.cl\/?utm_source=colab_ref_Scaldasonno&utm_medium=BOTON&utm_campaign=BOTON_SCALDASONNO&utm_id=REFERIDO"
+          }
+        },
+        "boton_marca_bm6LkP": {
+          "type": "boton_marca",
+          "settings": {
+            "imagen_marca_botones": "shopify:\/\/shop_images\/Mesa_de_trabajo_46_copia_2.png",
+            "texto_boton": "¡Comprar ahora!",
+            "link_boton": "https:\/\/scaldasonno.cl\/"
+          }
+        }
+      },
+      "block_order": [
+        "card_marca_Hywcbr",
+        "card_marca_GVLGq6",
+        "card_marca_7wKWtF",
+        "boton_marca_9Tfajx",
+        "boton_marca_EnVzf7",
+        "boton_marca_bm6LkP"
+      ],
+      "settings": {
+        "logo_mds": "shopify:\/\/shop_images\/mds-logo.png",
+        "richtext_content": "<p>Con 50 años de experiencia, comercializamos los productos de reconocidas marcas como Scaldasonno, LG y Aquatherm. También innovamos, creando 2 marcas líderes en climatización como Kendal y Heimat. De esta manera, conectando el bienestar de las personas con nuestras líneas de negocio, estamos presentes en los canales de venta, retail, e-commerce, industrial, arquitectura y construcción, con cobertura nacional.<\/p>",
+        "titulo_sorteo": "¡Celebramos nuestro aniversario junto a ti!",
+        "contenido_sorteo": "Estamos cumpliendo 50 años acompañando a las familias y hoy lo celebramos junto a ti. Por compras sobre $99.990 en cualquiera de nuestros sitios, estarás participando automáticamente en un sorteo por premios increíbles. <br> Se parte de este evento desde el 09 al 15 de Diciembre y descubre si fuiste uno de los ganadores el día 18 de Diciembre.",
+        "titulo_marcas_botones": "Compra en alguna de nuestras marcas para participar",
+        "globo_1_izquierda": "shopify:\/\/shop_images\/globos-izquierda-mds.png",
+        "globo_1_derecha": "shopify:\/\/shop_images\/globos-derecha-mds.png",
+        "globo_mobile": "shopify:\/\/shop_images\/globos-mobile-mds.png"
+      }
+    },
+    "richtext_with_button_p7TQay": {
+      "type": "richtext-with-button",
+      "blocks": {
+        "title_KxtRwt": {
+          "type": "title",
+          "settings": {
+            "show_icon": true,
+            "titulo": "Bases legales",
+            "title_size": "20px",
+            "text_transform": "uppercase"
+          }
+        },
+        "content_YmTnwd": {
+          "type": "content",
+          "settings": {
+            "richtext": "<p>Revisa nuestras bases legales para mantenerte informado sobre las fechas clave y los detalles importantes del concurso.<\/p>"
+          }
+        },
+        "button_hVNJhn": {
+          "type": "button",
+          "settings": {
+            "texto_boton": "Revisar documentos",
+            "link_boton": "https:\/\/cdn.shopify.com\/s\/files\/1\/0710\/7202\/2811\/files\/Bases_Legales_Concurso_Aniversario_MDS.pdf?v=1731959222",
+            "button_color": "#2b3b48",
+            "button_text_transform": "uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "title_KxtRwt",
+        "content_YmTnwd",
+        "button_hVNJhn"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "header",
+    "main",
+    "richtext_with_button_p7TQay"
+  ]
+}

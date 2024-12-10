@@ -1,125 +1,89 @@
 {
   "sections": {
-    "main": {
-      "type": "main-index",
-      "settings": {}
-    },
-    "6d039727-5eef-443e-a084-d2a448f903cb": {
-      "type": "home-hero",
-      "disabled": true,
-      "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/home-desktop_2.jpg",
-        "image_tablet": "shopify:\/\/shop_images\/home-tablet_1.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/home-movil_1.jpg",
-        "title": "Scaldasonno",
-        "bajada": "El calor que siempre haz soñado",
-        "gradient_ini": "#ffffff",
-        "gradient_end": "#ffffff",
-        "title_color": "#4a4a49",
-        "text_color": "#4a4a49",
-        "button_color": "#4a4a49",
-        "button_text_color": "#ffffff",
-        "button_text": "Descubre más",
-        "button_link": "shopify:\/\/collections\/calientacamas"
-      }
-    },
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162": {
       "type": "slideshow",
       "blocks": {
-        "slideshow_UwkgYR": {
+        "slideshow_rFDgc6": {
           "type": "slideshow",
           "settings": {
-            "link": "shopify:\/\/collections\/mantas-electricas",
-            "image_desktop": "shopify:\/\/shop_images\/MANTA_1_DESKTOP_2.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/MANTA_1_MOBILE.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/MANTA_1_MOBILE.jpg",
+            "link": "shopify:\/\/pages\/aniversario",
+            "image_desktop": "shopify:\/\/shop_images\/banner-aniversario-desktop_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/banner-aniversario-mobile.png",
+            "image_mobile": "shopify:\/\/shop_images\/banner-aniversario-mobile.png",
             "alt_text": ""
           }
         },
-        "slideshow_WyjU4P": {
+        "slideshow_mGchAd": {
           "type": "slideshow",
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
-            "image_desktop": "shopify:\/\/shop_images\/MANTA_2_DESKTOP_3.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/MANTA_2_MOBILE.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/MANTA_2_MOBILE.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno-03_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_8.png",
+            "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_8.png",
             "alt_text": ""
           }
         },
-        "slideshow_h9rFyg": {
+        "slideshow_TGYnaW": {
           "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/products\/almohadilla-cervical-inteligente-scaldasonno",
+            "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_7_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_10_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_10_1.png",
+            "alt_text": ""
+          }
+        },
+        "slideshow_4HdVd6": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/collections\/calor-textil",
+            "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_6_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_9_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_9_1.png",
+            "alt_text": ""
+          }
+        },
+        "slideshow_mYq6CR": {
+          "type": "slideshow",
+          "settings": {
+            "link": "shopify:\/\/products\/almohadilla-lumbar-inteligente-scaldasonno",
+            "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_4.png",
+            "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_4.png",
+            "alt_text": ""
+          }
+        },
+        "slideshow_BikDJr": {
+          "type": "slideshow",
+          "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/calientacamas",
-            "image_desktop": "shopify:\/\/shop_images\/scaldasonno_c48f2531-a4fb-415c-97f6-e9658367974f.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/banner_2_893432e2-2f3a-4324-8f03-26b78e55b71e.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/banner_2_4863b41d-0f5b-4b82-8510-dd7ee259c48a.jpg",
-            "alt_text": ""
+            "image_desktop": "shopify:\/\/shop_images\/ACTIVE_DESKTOP.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/ACTIVE_MOBILE_af67fd88-20bb-42ed-904d-433d410c46ee.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/ACTIVE_MOBILE.jpg",
+            "alt_text": "Calientacamas Active Scaldasonno"
           }
         },
-        "slideshow_n3CEiL": {
-          "type": "slideshow",
-          "settings": {
-            "link": "shopify:\/\/collections\/calor-que-conecta",
-            "image_desktop": "shopify:\/\/shop_images\/ALMOHADILLAS_DESKTOP_4.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/ALMOHADILLAS_MOBILE_1.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/ALMOHADILLAS_MOBILE_1.jpg",
-            "alt_text": ""
-          }
-        },
-        "slideshow_k8MfgK": {
+        "slideshow_drHM96": {
           "type": "slideshow",
           "disabled": true,
           "settings": {
             "link": "shopify:\/\/collections\/almohadillas",
-            "image_desktop": "shopify:\/\/shop_images\/banner-almohadilla-lumbar_desktop.png",
-            "image_tablet": "shopify:\/\/shop_images\/banner-almohadilla-lumbar_mobile.png",
-            "image_mobile": "shopify:\/\/shop_images\/banner-almohadilla-lumbar_mobile.png",
-            "alt_text": ""
-          }
-        },
-        "slideshow_c9VDQ4": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/calientacamas",
-            "image_desktop": "shopify:\/\/shop_images\/desktop_calientecamas_1.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/mobile_calientacama.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mobile_calientacama.jpg",
-            "alt_text": ""
-          }
-        },
-        "slideshow_PmcV66": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/almohadillas",
-            "image_desktop": "shopify:\/\/shop_images\/almohadillas_desktop_1.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/almohadillas_mobile.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/almohadillas_mobile.jpg",
-            "alt_text": ""
-          }
-        },
-        "slideshow_Jnia4n": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "link": "shopify:\/\/collections\/mantas-electricas",
-            "image_desktop": "shopify:\/\/shop_images\/mantas_desktop_1.jpg",
-            "image_tablet": "shopify:\/\/shop_images\/mantas_mobile.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mantas_mobile.jpg",
-            "alt_text": ""
+            "image_desktop": "shopify:\/\/shop_images\/ALMOHADILLAS_DESKTOP.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/ALMOHADILLAS_MOBILE_696111a1-071c-458b-a1e1-d0b69eb37a40.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/ALMOHADILLAS_MOBILE_696111a1-071c-458b-a1e1-d0b69eb37a40.jpg",
+            "alt_text": "Almohadillas scaldasonno"
           }
         }
       },
       "block_order": [
-        "slideshow_UwkgYR",
-        "slideshow_WyjU4P",
-        "slideshow_h9rFyg",
-        "slideshow_n3CEiL",
-        "slideshow_k8MfgK",
-        "slideshow_c9VDQ4",
-        "slideshow_PmcV66",
-        "slideshow_Jnia4n"
+        "slideshow_rFDgc6",
+        "slideshow_mGchAd",
+        "slideshow_TGYnaW",
+        "slideshow_4HdVd6",
+        "slideshow_mYq6CR",
+        "slideshow_BikDJr",
+        "slideshow_drHM96"
       ],
       "settings": {}
     },
@@ -167,11 +131,34 @@
       "type": "countdown",
       "disabled": true,
       "settings": {
-        "target_date": "2024-06-05 23:59:59",
-        "image_mobile": "shopify:\/\/shop_images\/mobile_7.jpg",
-        "image_desktop": "shopify:\/\/shop_images\/desktop_12.jpg",
+        "target_date": "2024-10-02 17:59:59",
+        "image_mobile": "shopify:\/\/shop_images\/banner-pocashoras-calientapies-mobile.png",
+        "image_desktop": "shopify:\/\/shop_images\/banner-pocashoras-calientapies-desktop_1.png",
         "title": "¡solo por pocas horas!",
-        "link": "shopify:\/\/products\/calientacama-scaldasonno-eco-adapto-2-plazas"
+        "link": "shopify:\/\/products\/calientapies-gris-scaldasonno"
+      }
+    },
+    "main": {
+      "type": "main-index",
+      "settings": {}
+    },
+    "6d039727-5eef-443e-a084-d2a448f903cb": {
+      "type": "home-hero",
+      "disabled": true,
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/home-desktop_2.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/home-tablet_1.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/home-movil_1.jpg",
+        "title": "Scaldasonno",
+        "bajada": "El calor que siempre haz soñado",
+        "gradient_ini": "#ffffff",
+        "gradient_end": "#ffffff",
+        "title_color": "#4a4a49",
+        "text_color": "#4a4a49",
+        "button_color": "#4a4a49",
+        "button_text_color": "#ffffff",
+        "button_text": "Descubre más",
+        "button_link": "shopify:\/\/collections\/calientacamas"
       }
     },
     "f7f21698-652b-4ff2-96de-9917ab786b5a": {
@@ -215,6 +202,7 @@
     },
     "9f59a0f5-bef0-461f-b495-bb7df5637ff9": {
       "type": "home-full-width-image",
+      "disabled": true,
       "settings": {
         "image_desktop": "shopify:\/\/shop_images\/JULIO_SCALDASONNO-37.jpg",
         "image_mobile": "shopify:\/\/shop_images\/JULIO_SCALDASONNO-38.jpg",
@@ -339,6 +327,8 @@
             "title": "",
             "title_color": "",
             "alignment": "center",
+            "background_color": "",
+            "feed_id": "",
             "html_area": ""
           }
         }
@@ -359,11 +349,11 @@
     }
   },
   "order": [
-    "main",
-    "6d039727-5eef-443e-a084-d2a448f903cb",
     "15d9c212-6ce8-4fd0-9cf9-c773090bb162",
     "4e0fee28-e16c-4802-9402-cc8e410a5f50",
     "countdown_TiaGXg",
+    "main",
+    "6d039727-5eef-443e-a084-d2a448f903cb",
     "f7f21698-652b-4ff2-96de-9917ab786b5a",
     "46b57673-ac3d-42a2-b9b3-a344ff270a39",
     "9f59a0f5-bef0-461f-b495-bb7df5637ff9",

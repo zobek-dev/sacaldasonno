@@ -16,7 +16,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "text": "Revisa el estado de tu pedido aquí!",
+          "text": "VER ESTADO DE TU PEDIDO",
           "link": "shopify:\/\/pages\/sigue-tu-pedido"
         }
       },
@@ -32,7 +32,8 @@
             "settings": {
               "title": "Contacto",
               "link": "",
-              "text_link": "¡Escríbenos aquí!"
+              "text_link": "¡Escríbenos aquí!",
+              "logo_mds": "shopify:\/\/shop_images\/mds-logo.png"
             }
           },
           "6cd4e98c-0865-4f1e-aa28-bef5a0a1629f": {

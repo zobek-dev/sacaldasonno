@@ -13,7 +13,10 @@
           {% when 'contact' %}
           <div class="col-span-1">
             <div class="mb-4">
-              <img src="{{ 'logo-footer.svg' | asset_url }}" width="200" height="76" loading="lazy">
+              {% comment %} <img src="{{ 'logo-footer.svg' | asset_url }}" width="200" height="76" loading="lazy"> {% endcomment %}
+              {% if block.settings.logo_mds != blank %}
+                <img src="{{ block.settings.logo_mds | image_url }}" width="auto" height="auto" class="max-w-[150px] mt-3 -ml-2" alt="logo mar del sur">
+              {% endif %}
             </div>
             <h3 class="mb-4 uppercase text-base font-bold">{{ block.settings.title | escape }}</h3>
             {% if block.settings.link != blank %}
@@ -125,6 +128,11 @@
             "id": "text_link",
             "label": "Texto para el link",
             "default": "¡Escríbenos aquí!"
+          },
+          {
+            "type": "image_picker",
+            "id": "logo_mds",
+            "label": "Logo mar del sur"
           }
         ]
       }, {

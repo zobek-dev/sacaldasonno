@@ -65,9 +65,9 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/17_1.png",
             "title": "Cómo lavar tu almohadilla",
-            "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum!<\/p>",
+            "content": "<p>La almohadilla térmica puede lavarse a máquina a 30 °C en un programa estándar. Utilice solo el ciclo de centrifugado suave. NO efectúe un ciclo de centrifugado adicional.<\/p>",
             "modal": false,
-            "modal_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit eaque corporis veniam nostrum! Obcaecati quaerat veniam facilis eligendi sunt.<\/p>"
+            "modal_content": "<p>La almohadilla térmica puede lavarse a máquina a 30 °C en un programa estándar. Utilice solo el ciclo de centrifugado suave. NO efectúe un ciclo de centrifugado adicional.<\/p>"
           }
         },
         "68931c1a-22a5-4903-80a4-059a1f856c84": {
