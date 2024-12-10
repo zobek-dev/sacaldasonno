@@ -33,11 +33,7 @@
           "settings": {
             "imagen_marca_botones": "shopify:\/\/shop_images\/Mesa_de_trabajo_46_copia.png",
             "texto_boton": "¡Comprar ahora!",
-<<<<<<< HEAD
             "link_boton": "https:\/\/heimat.cl\/?utm_source=REF_SCALDASONNO&utm_medium=BOTON&utm_campaign=BOTON_SCALDASONNO&utm_id=REFERIDO"
-=======
-            "link_boton": "https:\/\/heimat.cl\/"
->>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
           }
         },
         "boton_marca_EnVzf7": {
@@ -45,11 +41,7 @@
           "settings": {
             "imagen_marca_botones": "shopify:\/\/shop_images\/Mesa_de_trabajo_46.png",
             "texto_boton": "¡Comprar ahora!",
-<<<<<<< HEAD
             "link_boton": "https:\/\/kendalchile.cl\/?utm_source=colab_ref_Scaldasonno&utm_medium=BOTON&utm_campaign=BOTON_SCALDASONNO&utm_id=REFERIDO"
-=======
-            "link_boton": "https:\/\/kendalchile.cl\/"
->>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
           }
         },
         "boton_marca_bm6LkP": {
@@ -71,15 +63,9 @@
       ],
       "settings": {
         "logo_mds": "shopify:\/\/shop_images\/mds-logo.png",
-<<<<<<< HEAD
         "richtext_content": "<p>Con 50 años de experiencia, comercializamos los productos de reconocidas marcas como Scaldasonno, LG y Aquatherm. También innovamos, creando 2 marcas líderes en climatización como Kendal y Heimat. De esta manera, conectando el bienestar de las personas con nuestras líneas de negocio, estamos presentes en los canales de venta, retail, e-commerce, industrial, arquitectura y construcción, con cobertura nacional.<\/p>",
         "titulo_sorteo": "¡Celebramos nuestro aniversario junto a ti!",
         "contenido_sorteo": "Estamos cumpliendo 50 años acompañando a las familias y hoy lo celebramos junto a ti. Por compras sobre $99.990 en cualquiera de nuestros sitios, estarás participando automáticamente en un sorteo por premios increíbles. <br> Se parte de este evento desde el 09 al 15 de Diciembre y descubre si fuiste uno de los ganadores el día 18 de Diciembre.",
-=======
-        "richtext_content": "<p>Lorem ipsum dolor sit amet consectetur. Nulla ligula auctor nisl morbi. Velit aenean diam tristique eget varius. Congue at dictumst massa sed interdum tellus sed. Ut in purus nunc mauris arcu vestibulum. Penatibus lacus nunc quam auctor pharetra faucibus. Dui in mauris duis commodo consectetur gravida. Justo scelerisque fermentum urna scelerisque diam diam a. Quis consectetur metus sed feugiat nec. Suspendisse pharetra et sed ullamcorper massa malesuada commodo. Dignissim vel risus tincidunt leo consectetur vel donec. Aliquam sollicitudin dictum massa nulla malesuada. Volutpat neque arcu eget scelerisque. Porttitor consectetur lacinia urna semper sed nulla sed leo duis. Malesuada risus placerat diam ac tortor.<\/p>",
-        "titulo_sorteo": "Sorteo aniversario",
-        "contenido_sorteo": "Por compras sobre $99.990 en cualquiera de nuestros sitios, estarás participarán en el sorteo de los siguientes productos:",
->>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
         "titulo_marcas_botones": "Compra en alguna de nuestras marcas para participar",
         "globo_1_izquierda": "shopify:\/\/shop_images\/globos-izquierda-mds.png",
         "globo_1_derecha": "shopify:\/\/shop_images\/globos-derecha-mds.png",
@@ -92,11 +78,7 @@
         "title_KxtRwt": {
           "type": "title",
           "settings": {
-<<<<<<< HEAD
             "show_icon": true,
-=======
-            "show_icon": false,
->>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
             "titulo": "Bases legales",
             "title_size": "20px",
             "text_transform": "uppercase"
@@ -105,11 +87,7 @@
         "content_YmTnwd": {
           "type": "content",
           "settings": {
-<<<<<<< HEAD
             "richtext": "<p>Revisa nuestras bases legales para mantenerte informado sobre las fechas clave y los detalles importantes del concurso.<\/p>"
-=======
-            "richtext": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quas velit iste ullam voluptate. Vero maxime dolorum ipsam sed culpa?<\/p>"
->>>>>>> 40b3866142c158b6557ce37d16d1c41b729d80e4
           }
         },
         "button_hVNJhn": {
