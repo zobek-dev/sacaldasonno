@@ -1,105 +1,148 @@
-<div class="wrapper my-12 grid grid-cols-1 md:grid-cols-2">
+<div class="wrapper my-12 flex flex-col items-center">
   {% comment %} ------ /// DIRECCIÓN /// ------ {% endcomment %}
-  <div class="left mt-8 md:mt-0">
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when 'direccion' %}
-          <div class="direccion flex items-center">
-            <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[50px] min-w-[50px] max-w-[50px] max-h-[50px] md:min-h-[60px] md:min-w-[60px] md:max-h-[60px] md:max-w-[60px] md:h-[60px] md:w-[60px] rounded-full p-2 md:p-3 bg-[#494547]">
-              <img src="{{ block.settings.icon_casa | image_url }}" width="auto" height="auto" />
-            </div>
-            <div class="w-4/5">
-              <h2 class="text-lg mb-2 font-semibold">{{ block.settings.title-direccion }}</h2>
-              <p class="">{{ block.settings.direccion }}</p>
-            </div>
-          </div>
-
-        {% when 'starken' %}
-          {% comment %} IMAGEN {% endcomment %}
-          <div class="mt-14">
-            <div class="info flex items-center">
-              <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[50px] min-w-[50px] max-w-[50px] max-h-[50px] md:min-h-[60px] md:min-w-[60px] md:max-h-[60px] md:max-w-[60px] md:h-[60px] md:w-[60px] p-2">
-                <img src="{{ block.settings.icon_location | image_url }}" width="auto" height="auto" />
-              </div>
-              <h2 class="text-lg font-semibold">{{ block.settings.location_text }}</h2>
-            </div>
-            <div class="mb-12">
-              {% if block.settings.image_starken_desktop != blank %}
-                {{
-                  block.settings.image_starken_desktop
-                  | image_url: width: 1600
-                  | image_tag: loading: 'lazy', alt: 'starken', class: 'hidden sm:block'
-                }}
-              {% endif %}
-              {% if block.settings.image_starken_mobile != blank %}
-                {{
-                  block.settings.image_starken_mobile
-                  | image_url: width: 900
-                  | image_tag: loading: 'lazy', alt: 'starken', class: 'sm:hidden'
-                }}
-              {% endif %}
-            </div>
-          </div>
-      {% endcase %}
-    {% endfor %}
+  <div class="my-8 md:mt-0">
+    <div class="direccion flex items-center justify-center">
+      <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[50px] min-w-[50px] max-w-[50px] max-h-[50px] md:min-h-[60px] md:min-w-[60px] md:max-h-[60px] md:max-w-[60px] md:h-[60px] md:w-[60px] rounded-full p-2 md:p-3 bg-[#494547]">
+        <img
+          src="{{ section.settings.icon_casa | image_url }}"
+          width="auto"
+          height="auto" />
+      </div>
+      <div class="w-4/5">
+        <h2 class="text-lg mb-2 font-semibold">{{ section.settings.title-direccion }}</h2>
+        <p class="">{{ section.settings.direccion }}</p>
+      </div>
+    </div>
   </div>
 
-  <div class="right -order-1 md:order-1">
-    <div class="flex flex-col justify-left md:[&>section]:mx-7 md:[&>section]:mb-7 [&>section]:mb-4 [&>*]:w-[100%] [&>*]:mx-auto [&>section]:space-y-3">
+  <div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-left md:[&>section]:mx-7 md:[&>section]:mb-7 [&>section]:mb-4 [&>*]:w-[100%] [&>*]:mx-auto [&>section]:space-y-3">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'llamanos' %}
-            {% comment %} LLAMANOS DESKTOP {% endcomment %}
-            <section class="flex">
-              <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full p-2 md:p-6 bg-[#edeef0]">
-                <img src="{{ block.settings.icon_llamanos | image_url }}" width="auto" height="auto" />
-              </div>
-              <div class="info w-4/5">
-                <h2 class="text-lg font-semibold">{{ block.settings.llamanos-text }}</h2>
-                <p>{{ block.settings.llamanos-content }}</p>
-                <a
-                  class="mt-4 block w-[100%] border border-black xl:w-[65%] py-1 px-4 rounded-2xl text-center"
-                  href="tel:+{{ block.settings.link-llamanos }}"
-                >
-                  {{ block.settings.telefono-llamanos }}
+            {% comment %} LLAMANOS {% endcomment %}
+            <div class="flex flex-col mt-10 shadow-md border border-gray-200 rounded-2xl py-8 min-h-[350px] sm:min-h-[300px] md:min-h-[400px] relative">
+              {% comment %} LLAMANOS DESKTOP {% endcomment %}
+              <section class="hidden sm:flex sm:flex-col sm:justify-center text-center px-4">
+                <div class="mx-auto icon flex flex-col justify-center items-center min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full">
+                  <img
+                    src="{{ block.settings.image_llamanos | image_url }}"
+                    width="auto"
+                    height="auto">
+                </div>
+                <div class="info mt-8">
+                  <h2 class="text-lg font-semibold">
+                    {{ block.settings['llamanos-title'] }}
+                  </h2>
+                  <p>{{ block.settings['llamanos-content'] }}</p>
+                </div>
+              </section>
+              <div class="hidden md:block absolute bottom-[10%] md:bottom-[20%] mx-auto w-full">
+                <a class="mt-6 block mx-auto w-full sm:w-[70%] md:w-[90%] lg:w-max border bg-[#a00] text-white py-1.5 px-2 lg:px-8 rounded-2xl text-center">
+                  {{ block.settings['llamanos-number'] }}
                 </a>
               </div>
-            </section>
+
+              {% comment %} LLAMANOS MÓVIL {% endcomment %}
+              <section class="flex flex-col justify-center text-center sm:hidden px-4">
+                <div class="mx-auto icon flex flex-col justify-center items-center min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full">
+                  <img
+                    src="{{ block.settings.image_llamanos | image_url }}"
+                    width="auto"
+                    height="auto">
+                </div>
+                <div class="info mt-8">
+                  <h2 class="text-lg font-semibold">
+                    {{ block.settings['llamanos-title'] }}
+                  </h2>
+                  <p>{{ block.settings['llamanos-number'] }}</p>
+                  <p class="mt-4 md:hidden">
+                    {{ block.settings['llamanos-content'] }}
+                  </p>
+                </div>
+              </section>
+              <div class="block md:hidden absolute bottom-[10%] md:bottom-[20%] mx-auto w-full">
+                <a href="tel:+56229140620" class="mt-4 md:mt-6 block mx-auto w-[90%] sm:w-[50%] md:w-[90%] lg:w-max border bg-[#a00] text-white py-1.5 px-2 lg:px-8 rounded-2xl text-center">
+                  {{ block.settings['llamanos-number-mobile'] }}
+                </a>
+              </div>
+            </div>
           {% when 'whatsapp' %}
-            {% comment %} WHATSAPP DESKTOP {% endcomment %}
-            <section class="flex">
-              <div class="mr-4 icon flex justify-center items-center w-1/5 min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full p-2 md:p-6 bg-[#edeef0]">
-                <img src="{{ block.settings.icon_whatsapp | image_url }}" width="auto" height="auto" />
-              </div>
-              <div class="info w-4/5">
-                <h2 class="text-lg font-semibold">{{ block.settings.whatsapp-text }}</h2>
-                <p>{{ block.settings.whatsapp-content }}</p>
+            {% comment %} WHATSAPP {% endcomment %}
+            <div class="flex flex-col mt-10 shadow-md border border-gray-200 rounded-2xl py-8 min-h-[300px] md:min-h-[400px] relative">
+              {% comment %} WHATSAPP DESKTOP {% endcomment %}
+              <section class="hidden sm:flex sm:flex-col sm:justify-center text-center px-4">
+                <div class="mx-auto icon flex flex-col justify-center items-center min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full">
+                  <img
+                    src="{{ block.settings.image_whatsapp | image_url }}"
+                    width="auto"
+                    height="auto">
+                </div>
+                <div class="info mt-8">
+                  <h2 class="text-lg font-semibold">
+                    {{ block.settings['whatsapp-title'] }}
+                  </h2>
+                  <p>{{ block.settings['whatsapp-content'] }}</p>
+                </div>
+              </section>
+              <div class="hidden md:block absolute bottom-[10%] md:bottom-[20%] mx-auto w-full">
                 <a
-                  href="https://wa.me/{{ block.settings.link_whatsapp }}"
+                  href="https://wa.me/{{ block.settings.whatsapp-link }}"
                   _blank
-                  class="mt-4 block w-[100%] border border-black xl:w-[65%] py-1 px-4 rounded-2xl text-center"
-                >
-                  {{ block.settings.telefono-whatsapp }}
+                  class="mt-4 md:mt-6 block mx-auto w-[90%] sm:w-[50%] md:w-[90%] lg:w-max border bg-[#a00] text-white py-1.5 px-2 lg:px-8 rounded-2xl text-center">
+                  {{ block.settings['whatsapp-number'] }}
                 </a>
               </div>
-            </section>
+
+              {% comment %} WHATSAPP MÓVIL {% endcomment %}
+              <section class="flex flex-col justify-center text-center sm:hidden px-4">
+                <div class="mx-auto icon flex flex-col justify-center items-center min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full">
+                  <img
+                    src="{{ block.settings.image_whatsapp | image_url }}"
+                    width="auto"
+                    height="auto">
+                </div>
+                <div class="info mt-8">
+                  <h2 class="text-lg font-semibold">
+                    {{ block.settings['whatsapp-title'] }}
+                  </h2>
+                  <p class="mt-4 md:hidden">
+                    {{ block.settings['whatsapp-content'] }}
+                  </p>
+                </div>
+              </section>
+              <div class="block md:hidden absolute bottom-[10%] md:bottom-[20%] mx-auto w-full">
+                <a
+                  href="https://wa.me/{{ block.settings.whatsapp-link }}"
+                  _blank
+                  class="mt-4 md:mt-6 block mx-auto w-[90%] sm:w-[50%] md:w-[90%] lg:w-max border bg-[#a00] text-white py-1.5 px-2 lg:px-8 rounded-2xl text-center">
+                  {{ block.settings['whatsapp-number-mobile'] }}
+                </a>
+              </div>
+            </div>
           {% when 'email' %}
             {% comment %} EMAIL {% endcomment %}
-            <section class="flex items-center">
-              <div class="flex items-center justify-center bg-[#edeef0] rounded-full min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] mr-4 md:mr-0">
-                <div class="border-black icon MOBILE min-h-[30px] max-h-[30px] min-w-[40px] max-w-[40px] DESKTOP md:min-h-[40px] md:max-h-[40px] md:min-w-[50px]  md:max-w-[50px] md:h-[50px] md:w-[50px] rounded-full flex">
-                  <img src="{{ block.settings.icon_email | image_url }}" width="auto" height="auto" />
+            <div class="flex flex-col mt-10 shadow-md border border-gray-200 rounded-2xl py-8 min-h-[250px] md:min-h-[400px] relative">
+              {% comment %} EMAIL {% endcomment %}
+              <section class="flex flex-col justify-center text-center w-full px-4">
+                <div class="mx-auto icon flex flex-col justify-center items-center min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] md:min-h-[90px] md:min-w-[90px] md:max-h-[90px] md:max-w-[90px] md:h-[90px] md:w-[90px] rounded-full">
+                  <img
+                    src="{{ block.settings.image_email | image_url }}"
+                    width="auto"
+                    height="auto">
                 </div>
+                <div class="info mt-4 md:mt-8">
+                  <h2 class="text-lg font-semibold">
+                    {{ block.settings['email-title'] }}
+                  </h2>
+                </div>
+              </section>
+              <div class="absolute bottom-[10%] md:bottom-[20%] mx-auto w-full">
+                <a href="mailto:{{ block.settings.email }}" class="mt-4 md:mt-6 block mx-auto w-[90%] sm:w-[50%] md:w-[90%] lg:w-max border bg-[#a00] text-white py-1.5 px-2 lg:px-8 rounded-2xl text-center">
+                  {{- block.settings.email -}}
+                </a>
               </div>
-              <div class="info w-4/5 md:pl-4">
-                <h3 class="text-lg font-semibold">{{ block.settings.email-text }}</h3>
-                <a
-                  href="mailto:{{ block.settings.email-content }}"
-                  class="mt-4 block w-full border border-black xl:w-[65%] py-1 px-4 rounded-2xl text-center"
-                  >{{ block.settings.email-content }}</a
-                >
-              </div>
-            </section>
+            </div>
         {% endcase %}
       {% endfor %}
     </div>
@@ -107,147 +150,151 @@
 </div>
 
 {% schema %}
-{
-  "name": "Servicio Técnico",
-  "tag": "section",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "direccion",
-      "name": "Dirección",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon_casa",
-          "label": "Ícono casa"
-        },
-        {
-          "type": "text",
-          "id": "title-direccion",
-          "label": "Título Dirección"
-        },
-        {
-          "type": "text",
-          "id": "direccion",
-          "label": "Dirección"
-        }
-      ]
-    },
-    {
-      "type": "starken",
-      "name": "Starken",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon_location",
-          "label": "Ícono mapa"
-        },
-        {
-          "type": "text",
-          "id": "location_text",
-          "label": "Texto mapa"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_starken_desktop",
-          "label": "Imagen Starken Desktop"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_starken_mobile",
-          "label": "Imagen Starken Móvil"
-        }
-      ]
-    },
-    {
-      "type": "llamanos",
-      "name": "Llámanos",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon_llamanos",
-          "label": "Ícono Llámanos"
-        },
-        {
-          "type": "text",
-          "id": "llamanos-text",
-          "label": "Título llámanos"
-        },
-        {
-          "type": "text",
-          "id": "llamanos-content",
-          "label": "Contenido llámanos"
-        },
-        {
-          "type": "text",
-          "id": "telefono-llamanos",
-          "label": "Teléfono llámanos"
-        },
-        {
-          "type": "text",
-          "id": "link-llamanos",
-          "label": "Botón para llamar (sólo poner número: 569XXXXXXXX)"
-        }
-      ]
-    },
-    {
-      "type": "whatsapp",
-      "name": "WhatsApp",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon_whatsapp",
-          "label": "Ícono WhatsApp"
-        },
-        {
-          "type": "text",
-          "id": "whatsapp-text",
-          "label": "Título WhatsApp"
-        },
-        {
-          "type": "text",
-          "id": "whatsapp-content",
-          "label": "Contenido WhatsApp"
-        },
-        {
-          "type": "text",
-          "id": "telefono-whatsapp",
-          "label": "Teléfono WhatsApp"
-        },
-        {
-          "type": "text",
-          "id": "link_whatsapp",
-          "label": "Abrir WhatsApp (sólo poner número: 569XXXXXXXX)"
-        }
-      ]
-    },
-    {
-      "type": "email",
-      "name": "Email",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon_email",
-          "label": "Ícono email"
-        },
-        {
-          "type": "text",
-          "id": "email-text",
-          "label": "Título Email"
-        },
-        {
-          "type": "text",
-          "id": "email-content",
-          "label": "Email"
-        }
-      ]
-    }
-  ],
-  "presets": []
-}
+  {
+    "name": "Servicio Técnico",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "icon_casa",
+        "label": "Ícono casa"
+      },
+      {
+        "type": "text",
+        "id": "title-direccion",
+        "label": "Título Dirección"
+      },
+      {
+        "type": "text",
+        "id": "direccion",
+        "label": "Dirección"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "starken",
+        "name": "Starken",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon_location",
+            "label": "Ícono mapa"
+          },
+          {
+            "type": "text",
+            "id": "location_text",
+            "label": "Texto mapa"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_starken_desktop",
+            "label": "Imagen Starken Desktop"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_starken_mobile",
+            "label": "Imagen Starken Móvil"
+          }
+        ]
+      },
+      {
+        "type": "llamanos",
+        "limit": 1,
+        "name": "Llámanos",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_llamanos",
+            "label": "Imagen llámanos"
+          },
+          {
+            "type": "text",
+            "id": "llamanos-title",
+            "label": "Título de llámanos"
+          },
+          {
+            "type": "text",
+            "id": "llamanos-content",
+            "label": "Descripción"
+          },
+          {
+            "type": "text",
+            "id": "llamanos-number",
+            "label": "Número de teléfono"
+          },
+          {
+            "type": "text",
+            "id": "llamanos-link",
+            "label": "Llamar a Servicio al cliente (sólo poner número: 569XXXXXXXX)"
+          },
+          {
+            "type": "text",
+            "id": "llamanos-number-mobile",
+            "label": "Botón llámanos mobile"
+          }
+        ]
+      },
+      {
+        "type": "whatsapp",
+        "limit": 1,
+        "name": "WhatsApp",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_whatsapp",
+            "label": "Imagen whatsapp"
+          },
+          {
+            "type": "text",
+            "id": "whatsapp-title",
+            "label": "Título de whatsapp"
+          },
+          {
+            "type": "text",
+            "id": "whatsapp-content",
+            "label": "Descripción"
+          },
+          {
+            "type": "text",
+            "id": "whatsapp-number",
+            "label": "Número de teléfono"
+          },
+          {
+            "type": "text",
+            "id": "whatsapp-link",
+            "label": "Iniciar whatsapp (sólo poner número: 569XXXXXXXX)"
+          },
+          {
+            "type": "text",
+            "id": "whatsapp-number-mobile",
+            "label": "Botón whatsapp mobile"
+          }
+        ]
+      },
+      {
+        "type": "email",
+        "limit": 1,
+        "name": "Email",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_email",
+            "label": "Imagen e-mail"
+          },
+          {
+            "type": "text",
+            "id": "email-title",
+            "label": "Título de llámanos"
+          },
+          {
+            "type": "text",
+            "id": "email",
+            "label": "Dirección de correo"
+          }
+        ]
+      }
+    ],
+    "presets": []
+  }
 {% endschema %}

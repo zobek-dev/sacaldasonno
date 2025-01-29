@@ -11,14 +11,6 @@
     "main": {
       "type": "servicio-tecnico-main",
       "blocks": {
-        "direccion_PCQBJQ": {
-          "type": "direccion",
-          "settings": {
-            "icon_casa": "shopify:\/\/shop_images\/casa.png",
-            "title-direccion": "Recibimos tus productos para servicio técnico",
-            "direccion": "Avenida Oceánica 9692, Pudahuel, Santiago.Horario de atención de Lunes a Viernes de 08:30 a 16:00 Hrs"
-          }
-        },
         "starken_jCLU6Q": {
           "type": "starken",
           "settings": {
@@ -31,40 +23,45 @@
         "llamanos_xKwJHV": {
           "type": "llamanos",
           "settings": {
-            "icon_llamanos": "shopify:\/\/shop_images\/telefono.png",
-            "llamanos-text": "Llámanos",
+            "image_llamanos": "shopify:\/\/shop_images\/llamanos-scal.png",
+            "llamanos-title": "Llámanos",
             "llamanos-content": "Hablemos de lunes a viernes de 08:30 a 17:00 hrs",
-            "telefono-llamanos": "+56 2 2914 0620",
-            "link-llamanos": "56229140620"
+            "llamanos-number": "+56 2 2914 0620",
+            "llamanos-link": "56229140620",
+            "llamanos-number-mobile": "+56 2 2914 0620"
           }
         },
         "whatsapp_CPiLnT": {
           "type": "whatsapp",
           "settings": {
-            "icon_whatsapp": "shopify:\/\/shop_images\/whatsapp.png",
-            "whatsapp-text": "Hablemos por WhatsApp",
+            "image_whatsapp": "shopify:\/\/shop_images\/whatsapp-scal.png",
+            "whatsapp-title": "Hablemos por WhatsApp",
             "whatsapp-content": "Escríbenos de lunes a viernes de 08:30 a 17:00 hrs",
-            "telefono-whatsapp": "+56 9 7155 0317",
-            "link_whatsapp": "56971550317"
+            "whatsapp-number": "+56 9 7155 0317",
+            "whatsapp-link": "56971550317",
+            "whatsapp-number-mobile": "Iniciar WhatsApp"
           }
         },
         "email_YwV4WU": {
           "type": "email",
           "settings": {
-            "icon_email": "shopify:\/\/shop_images\/email.png",
-            "email-text": "Envíanos un e-mail",
-            "email-content": "serviciotecnico@mardelsur.cl"
+            "image_email": "shopify:\/\/shop_images\/email-scal.png",
+            "email-title": "Envíanos un e-mail",
+            "email": "serviciotecnico@mardelsur.cl"
           }
         }
       },
       "block_order": [
-        "direccion_PCQBJQ",
         "starken_jCLU6Q",
         "llamanos_xKwJHV",
         "whatsapp_CPiLnT",
         "email_YwV4WU"
       ],
-      "settings": {}
+      "settings": {
+        "icon_casa": "shopify:\/\/shop_images\/casa.png",
+        "title-direccion": "Recibimos tus productos para servicio técnico",
+        "direccion": "Avenida Oceánica 9692, Pudahuel, Santiago.Horario de atención de Lunes a Viernes de 08:30 a 16:00 Hrs"
+      }
     }
   },
   "order": [

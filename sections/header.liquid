@@ -23,8 +23,9 @@
           {% render 'drawer-menu' %}
         </div> 
         <div class="flex justify-center flex-1 lg:flex-none lg:flex-wrap lg:justify-start">
-          <a href="{{ routes.root_url }}" class="absolute lg:relative left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:top-[unset] lg:left-[unset]">
+          <a href="{{ routes.root_url }}" class="absolute lg:relative left-1/2 top-1/2 -translate-x-full -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:top-[unset] lg:left-[unset]">
             {% render 'logo', class: 'w-[120px] h-[41.4px] xl:w-[150px] xl:h-[51px]' %}
+            {% comment %} <img src="{{ 'logo-scaldasonno-gif.gif' | asset_url }}" width="150px" height="auto" class="w-[130px] xl:w-[160px] h-auto" alt="logo scaldasonno"> {% endcomment %}
           </a>
         </div> 
         <nav class="hidden lg:flex lg:flex-1 justify-center">

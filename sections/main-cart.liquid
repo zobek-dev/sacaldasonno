@@ -481,7 +481,7 @@
             this.messageAddress = '';
           } else {
             this.validAddress = false;
-            this.messageAddress = 'Dirección no válida, debe tener número. Intenta nuevamente';
+            this.messageAddress = 'Dirección no válida, debe ser calle y número. Intenta nuevamente';
           }
           this.updateButtonState();
         },
@@ -528,7 +528,7 @@
           datos de envío</h4>
         <div class="flex flex-col">
           <label class="font-bold text-sm mb-1 uppercase" for="address1">Dirección de envío</label>
-          <input id="address1" type="text" placeholder="Ingresa tu dirección de envío" x-model="address1" form="cart"
+          <input id="address1" type="text" placeholder="Ingresa tu dirección de envío (Calle y N°)" x-model="address1" form="cart"
             class="block w-full p-2 border border-[#4a4a49] focus:outline-[#a00] placeholder:text-sm">
           <span class="text-[#a00] block text-xs mb-2" x-cloak x-show="messageAddress.length && !validAddress"
             x-text="messageAddress"></span>

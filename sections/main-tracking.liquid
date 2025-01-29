@@ -1,5 +1,5 @@
 <div class="py-8 lg:py-12 h-full -mt-8 min-h-[60vh] flex items-center justify-center">
-  <div class="wrapper flex flex-col h-full justify-center">
+  <div class="wrapper w-full flex flex-col h-full justify-center">
     <h1 class="font-gobold text-[18px] lg:text-[24px] text-center uppercase font-bold mb-4">{{ section.settings.title }}</h1>
     <div class="text-center mb-4">
       {{ section.settings.bajada }}
@@ -14,11 +14,11 @@
             iframe.setAttribute('src', `https://tracking.alasxpress.com/api/SCAL%23${code}`);
             iframe.setAttribute('width', '100%');
             iframe.setAttribute('height', '935px');
-            iframe.setAttribute('class', 'mx-auto w-max-[750px]');
+            iframe.setAttribute('class', 'mx-auto');
             $refs.tracking.appendChild(iframe);
           }
         }">
-      <div class="block mx-auto">
+      <div class="block mx-auto w-full">
         <input
           type="text"
           x-ref="input_code"
@@ -28,7 +28,7 @@
           Ver Pedido
         </button>
       </div>
-      <div x-show="valid" x-ref="tracking"  class="my-20 block">
+      <div x-show="valid" x-ref="tracking" class="w-full my-20 block">
         Aca va el iframe
       </div>
     </div>
