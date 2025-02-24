@@ -31,7 +31,10 @@
   {% endif %}
 
   {% if cart != empty %}
-    <p class="uppercase text-sm mb-8">Solo se permite la compra de un máximo de 3 productos por pedido</p>
+    <p class="text-sm mb-8">
+      Solo se permite la compra de un máximo de 3 productos por pedido. Si deseas añadir más productos, te recomendamos
+      realizar un nuevo pedido.
+    </p>
     <form
       action="{{ routes.cart_url }}?checkout[shipping_address][country]=CL"
       class="cart__contents critical-hidden"
@@ -268,7 +271,7 @@
                           </button>
 
                           <input
-                            class="outline-none text-center w-[80px] h-full border-l border-r border-[#4a4a49]"
+                            class="outline-none text-center w-[80px] h-full border-l border-r border-[#4a4a49] relative"
                             data-quantity-variant-id="{{ item.variant.id }}"
                             type="number"
                             name="updates[]"
@@ -292,7 +295,6 @@
                               }
                             "
                           >
-
                           <button
                             class="border-none bg-transparent flex justify-center items-center p-2"
                             name="plus"
@@ -304,6 +306,9 @@
                             </span>
                             {% render 'icon-plus', class: 'w-3' %}
                           </button>
+                          <span class="absolute mt-[80px] xl:mt-[70px] text-red-500 text-sm" x-show="showAlert"
+                            >Sólo se permite un máximo de 3 unidades por pedido</span
+                          >
                         </div>
 
                         <div id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
