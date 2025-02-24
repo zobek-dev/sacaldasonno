@@ -17,10 +17,10 @@
         "slideshow_TGYnaW": {
           "type": "slideshow",
           "settings": {
-            "link": "shopify:\/\/products\/almohadilla-cervical-inteligente-scaldasonno",
-            "image_desktop": "shopify:\/\/shop_images\/cervical_desktop.png",
-            "image_tablet": "shopify:\/\/shop_images\/cervical_mobile.png",
-            "image_mobile": "shopify:\/\/shop_images\/cervical_mobile.png",
+            "link": "shopify:\/\/products\/almohadilla-lumbar-inteligente-scaldasonno",
+            "image_desktop": "shopify:\/\/shop_images\/lumbar_banner_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/lumbar_mobile.png",
+            "image_mobile": "shopify:\/\/shop_images\/lumbar_mobile.png",
             "alt_text": ""
           }
         },
@@ -28,9 +28,9 @@
           "type": "slideshow",
           "settings": {
             "link": "shopify:\/\/collections\/mantas-electricas",
-            "image_desktop": "shopify:\/\/shop_images\/manta_cuadrille_desktop.png",
-            "image_tablet": "shopify:\/\/shop_images\/manta_cuadrille_mobile.png",
-            "image_mobile": "shopify:\/\/shop_images\/manta_cuadrille_mobile.png",
+            "image_desktop": "shopify:\/\/shop_images\/manta_gris_banner_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/manta_gris_mobile.png",
+            "image_mobile": "shopify:\/\/shop_images\/manta_gris_mobile.png",
             "alt_text": ""
           }
         },
@@ -38,19 +38,19 @@
           "type": "slideshow",
           "settings": {
             "link": "shopify:\/\/collections\/calor-textil",
-            "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_6_1.png",
-            "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_9_1.png",
-            "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_9_1.png",
+            "image_desktop": "shopify:\/\/shop_images\/ecoadapto_banner_1.png",
+            "image_tablet": "shopify:\/\/shop_images\/ecoadapto_mobile.png",
+            "image_mobile": "shopify:\/\/shop_images\/ecoadapto_mobile.png",
             "alt_text": ""
           }
         },
         "slideshow_mYq6CR": {
           "type": "slideshow",
           "settings": {
-            "link": "shopify:\/\/products\/almohadilla-lumbar-inteligente-scaldasonno",
-            "image_desktop": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_1.png",
-            "image_tablet": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_4.png",
-            "image_mobile": "shopify:\/\/shop_images\/Banners_Scaldasonno_Mesa_de_trabajo_1_copia_4.png",
+            "link": "shopify:\/\/collections\/almohadillas",
+            "image_desktop": "shopify:\/\/shop_images\/cervical_desktop.png",
+            "image_tablet": "shopify:\/\/shop_images\/cervical_mobile.png",
+            "image_mobile": "shopify:\/\/shop_images\/cervical_mobile.png",
             "alt_text": ""
           }
         },

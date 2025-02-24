@@ -1,12 +1,13 @@
 {
-  "editor.tabSize": 2,
   "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "emmet.includeLanguages": {
     "liquid": "html",
     "liquid-css": "css",
     "liquid-scss": "scss"
   },
-  "editor.formatOnSave": false,
   "[javascript]": {
     "editor.formatOnSave": true
   },
@@ -14,7 +15,13 @@
     "editor.formatOnSave": true
   },
   "[liquid]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "Shopify.theme-check-vscode"
   },
-  "alpine-intellisense.settings.languageScopes":"html,liquid"
+  "[json]": {
+    "editor.formatOnSave": true,
+  },
+  "[svg]": {
+    "editor.formatOnSave": true,
+  }
 }

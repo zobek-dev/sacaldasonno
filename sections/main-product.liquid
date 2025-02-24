@@ -1,8 +1,8 @@
 {%- liquid
   assign on_sale = false
   assign month = 30 | times: 24 | times: 60 | times: 60
-  assign date_created = product.created_at | date: "%Y-%m-%d"
-  assign dead_line = "now" | date: "%s" | minus: month | date: "%Y-%m-%d"
+  assign date_created = product.created_at | date: '%Y-%m-%d'
+  assign dead_line = 'now' | date: '%s' | minus: month | date: '%Y-%m-%d'
   if product.compare_at_price_max > product.price
     assign on_sale = true
   endif
@@ -18,14 +18,18 @@
             <ul class="swiper-wrapper">
               {% for image in product.images %}
                 <li class="swiper-slide flex flex-col items-center">
-                  <a href="{{ image | img_url: '1200x' }}" class="fslightbox" data-fslightbox="gallery-product">
+                  <a
+                    href="{{ image | img_url: '1200x' }}"
+                    class="fslightbox"
+                    data-fslightbox="gallery-product"
+                  >
                     <img
-                    src="{{ image | img_url: '900x' }}"
-                    alt="{{ image.alt | escape }}"
-                    loading="lazy"
-                    class="w-full object-cover object-center aspect-square"
+                      src="{{ image | img_url: '900x' }}"
+                      alt="{{ image.alt | escape }}"
+                      loading="lazy"
+                      class="w-full object-cover object-center aspect-square"
                     >
-                  </a>  
+                  </a>
                 </li>
               {% endfor %}
             </ul>
@@ -33,35 +37,36 @@
             <div class="swiper-button-prev"></div>
           </div>
           <style>
-            .gallery-{{ section.id }} .swiper-button-next,
-            .gallery-{{ section.id }} .swiper-button-prev
-            {
-              color:#000;
-            } 
+            .gallery-{{ section.id }} .swiper-button-next
+            , .gallery-{{ section.id }}
+            .swiper-button-prev {
+              color: #000;
+            }
           </style>
           <div class="thumbnail thumbnail-{{ section.id }} overflow-hidden relative">
             <ul class="swiper-wrapper">
               {% for image in product.images %}
                 <li class="swiper-slide cursor-pointer">
-                    <img
+                  <img
                     src="{{ image | img_url: '200x' }}"
                     alt="{{ image.alt | escape }}"
                     width="200"
                     height="{{ 200 | divided_by: image.aspect_ratio | ceil }}"
                     loading="lazy"
                     class="w-full aspect-square object-center object-cover"
-                    >
+                  >
                 </li>
               {% endfor %}
             </ul>
           </div>
           <style>
-            .thumbnail-{{ section.id }} .swiper-slide{
+            .thumbnail-{{ section.id }} .swiper-slide {
               opacity: 0.7;
               border: 1px solid #ccc;
-            } 
+            }
 
-            .thumbnail-{{ section.id }} .swiper-slide-active{
+            .thumbnail-{{ section.id }}
+            .swiper-slide-active {
               opacity: 1;
               border: 1px solid #a00;
             }
@@ -74,178 +79,539 @@
           <div class="flex gap-x-4 items-center">
             {% if on_sale %}
               <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
-              <span class="text-[#4a4a49] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
+              <span class="text-[#4a4a49] font-gobold uppercase font-black text-[25px] lg:text-[30px]">
+                {{- product.price | money -}}
+              </span>
               <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
-              <s class="text-base sm:text-[18px] lg:text-xl text-[#a00] decoration-[#a00]">{{ product.compare_at_price_max | money }}</s>
+              <s class="text-base sm:text-[18px] lg:text-xl text-[#a00] decoration-[#a00]">
+                {{- product.compare_at_price_max | money -}}
+              </s>
             {% else %}
               <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
-              <span class="text-[#4a4a49] font-gobold uppercase font-black text-[25px] lg:text-[30px]">{{ product.price | money }}</span>
-              {% endif %}
+              <span class="text-[#4a4a49] font-gobold uppercase font-black text-[25px] lg:text-[30px]">
+                {{- product.price | money -}}
+              </span>
+            {% endif %}
           </div>
-          <div x-data="{
-              loading: false,
-              minus(){
-                $refs.quantity_input.stepDown();
-              },
-              plus(){
-                $refs.quantity_input.stepUp();
-              },
-              addToCart(){
-                loading = true;
-                let formData = new FormData($refs.product_form);
-                fetch('/cart/add.js', {
-                  method: 'POST',
-                  body: formData
-                })
-                .then(response => response.json())
-                .then(response => {
-                  $dispatch('update-cart');
-                  $dispatch('toggle-cart');
-                })
-                .catch(error => console.error('Error', error))
-                .finally(()=>loading=false)
-              }  
-            }"
-            class="flex gap-4 flex-col lg:flex-row lg:justify-start lg:items-center relative"
-            >
+          <div class="my-4">
+            <div id="__ventipay_product_installments_block"></div>
+          </div>
+
+          <div
+            x-data="
+              {
+                  loading: false,
+                  quantity: 1,
+                  showAlert: false,
+                  minus() {
+                      if (this.quantity > 1) {
+                          this.quantity--;
+                          $refs.quantity_input.stepDown();
+                          this.showAlert = false;
+                      }
+                  },
+                  plus() {
+                      if (this.quantity < 3) {
+                          this.quantity++;
+                          $refs.quantity_input.stepUp();
+                          this.showAlert = false;
+                      } else {
+                          this.showAlert = true;
+                      }
+                  },
+                  addToCart() {
+                      loading = true;
+                      let formData = new FormData($refs.product_form);
+                      fetch('/cart/add.js', {
+                          method: 'POST',
+                          body: formData
+                      })
+                      .then(response => response.json())
+                      .then(response => {
+                          $dispatch('update-cart');
+                          $dispatch('toggle-cart');
+                      })
+                      .catch(error => console.error('Error', error))
+                      .finally(() => loading = false);
+                  }
+              }
+            "
+          >
+            <div class="flex gap-4 flex-col lg:flex-row lg:justify-start lg:items-center relative">
               {% render 'loader' %}
-              <form action="{{ routes.cart_add_url }}" method="POST" id="Product-Form-{{ product.selected_or_first_available_variant.id }}" x-ref="product_form" class="hidden">
-                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">    
+
+              <form
+                action="{{ routes.cart_add_url }}"
+                method="POST"
+                id="Product-Form-{{ product.selected_or_first_available_variant.id }}"
+                x-ref="product_form"
+                class="hidden"
+              >
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ product.selected_or_first_available_variant.id }}"
+                >
               </form>
-              <div class="flex border border-[#4a4a49] w-max items-center">
-                <button @click="minus" class="h-full px-3 py-4 border-r border-[#4a4a49]">
-                  {% render 'icon-minus', class: 'w-3' %}
-                </button>
-                <input type="number" name="quantity" class="h-full w-[50px] lg:w-[70px] outline-none text-center" min="1" value="1" form="Product-Form-{{ product.selected_or_first_available_variant.id }}" x-ref="quantity_input" >
-                <button @click="plus" class="h-full px-3 py-3 border-l border-[#4a4a49]">
-                  {% render 'icon-plus', class: 'w-3' %}
-                </button>
+
+              <div class="flex flex-col">
+                <div class="flex border border-[#4a4a49] w-max items-center">
+                  <button @click="minus" class="h-full px-3 py-4 border-r border-[#4a4a49]">
+                    {% render 'icon-minus', class: 'w-3' %}
+                  </button>
+
+                  <input
+                    type="number"
+                    name="quantity"
+                    class="h-full w-[50px] lg:w-[70px] outline-none text-center"
+                    min="1"
+                    max="3"
+                    x-model="quantity"
+                    x-ref="quantity_input"
+                    form="Product-Form-{{ product.selected_or_first_available_variant.id }}"
+                    @input="
+                      if ($event.target.value > 3) {
+                          $event.target.value = 3;
+                          quantity = 3;
+                          showAlert = true;
+                      } else {
+                          showAlert = false;
+                      }
+                    "
+                  >
+
+                  <button @click="plus" class="h-full px-3 py-3 border-l border-[#4a4a49]">
+                    {% render 'icon-plus', class: 'w-3' %}
+                  </button>
+                </div>
               </div>
+
               {% if product.selected_or_first_available_variant.available %}
-              <button type="button" name="add" {% if product.available %}@click.prevent="addToCart"{% endif %}  form="Product-Form-{{ product.selected_or_first_available_variant.id }}" class="block mx-auto font-gobold font-bold px-4 py-2 uppercase tracking-[1.5px] text-white {% if product.available %}bg-[#a00] transition-colors duration-200 ease-in-out hover:text-[#a00] hover:bg-[#efd4d4] {% else %}bg-[#4a4a49]{% endif %}" {% unless product.available %}disabled{% endunless %}> 
-                {% unless product.available %}
-                  <span>No Disponible</span>   
-                {% else %}
-                  <span>Agregar al Carrito</span>   
-                {% endunless %}
-              </button>
+                <button
+                  type="button"
+                  name="add"
+                  {% if product.available %}
+                    @click.prevent="addToCart"
+                  {% endif %}
+                  form="Product-Form-{{ product.selected_or_first_available_variant.id }}"
+                  class="block mx-auto font-gobold font-bold px-4 py-2 uppercase tracking-[1.5px] text-white {% if product.available %}bg-[#a00] transition-colors duration-200 ease-in-out hover:text-[#a00] hover:bg-[#efd4d4] {% else %}bg-[#4a4a49]{% endif %}"
+                  {% unless product.available %}
+                    disabled
+                  {% endunless %}
+                >
+                  {% unless product.available %}
+                    <span>No Disponible</span>
+                  {% else %}
+                    <span>Agregar al Carrito</span>
+                  {% endunless %}
+                </button>
               {% else %}
-                <a href="#" class="klaviyo-bis-trigger block mx-auto font-gobold font-bold px-4 py-2 uppercase tracking-[1.5px] text-white bg-[#a00] transition-colors duration-200 ease-in-out hover:text-[#a00] hover:bg-[#efd4d4]">
+                <a
+                  href="#"
+                  class="klaviyo-bis-trigger block mx-auto font-gobold font-bold px-4 py-2 uppercase tracking-[1.5px] text-white bg-[#a00] transition-colors duration-200 ease-in-out hover:text-[#a00] hover:bg-[#efd4d4]"
+                >
                   Avísame
                 </a>
               {% endif %}
-          </div> 
+            </div>
+
+            <div x-show="showAlert" class="text-red-500 text-sm mt-2">
+              Sólo se permite un máximo de 3 unidades por pedido
+            </div>
+          </div>
         </div>
         {% comment %} {% render 'cuotas-santander' %} {% endcomment %}
+        {% comment %} <-- UPSELLING --> {% endcomment %}
+        {% assign upselling_blocks = section.blocks | where: 'type', 'upselling' %}
+        {% assign has_valid_blocks = false %}
+
+        {% comment %} Verificar si hay bloques válidos {% endcomment %}
+        {% for block in upselling_blocks %}
+          {% assign upsell_product = block.settings.producto %}
+          {% if upsell_product and upsell_product.variants.size > 0 and upsell_product != blank %}
+            {% assign has_valid_blocks = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Mostrar sección solo si hay productos válidos {% endcomment %}
+        {% if has_valid_blocks %}
+          <section>
+            <div class="upselling-wrapper max-w-xl my-8">
+              {% if section.settings.titulo_upselling != blank %}
+                <h3 class="uppercase font-bold text-lg mb-4 text-center md:text-left">
+                  {{ section.settings.titulo_upselling }}
+                </h3>
+              {% endif %}
+
+              {% comment %} <-- Producto principal --> {% endcomment %}
+              <div
+                class="upselling-product flex items-center space-x-4 mb-4 border-t pt-4 border-gray-300"
+                data-product-id="{{ product.selected_or_first_available_variant.id }}"
+              >
+                {% comment %} <-- Checkbox del producto principal --> {% endcomment %}
+                <input
+                  type="checkbox"
+                  class="upselling-checkbox"
+                  data-price="{{ product.selected_or_first_available_variant.price | divided_by: 100 }}"
+                  checked
+                >
+                {% comment %} <-- Imagen del producto principal --> {% endcomment %}
+                {% if product.featured_image %}
+                  <a href="{{ product.url }}" class="w-20 h-20 overflow-hidden rounded-md">
+                    {{
+                      product.featured_image
+                      | image_url: width: 200
+                      | image_tag: class: 'object-cover w-full h-full'
+                    }}
+                  </a>
+                {% else %}
+                  <div class="w-20 h-20 bg-gray-200 flex items-center justify-center rounded-md">
+                    <span class="text-sm text-gray-500">Sin imagen</span>
+                  </div>
+                {% endif %}
+                {% comment %} <-- Información del producto principal --> {% endcomment %}
+                <div class="max-w-[240px] overflow-hidden text-ellipsis whitespace-normal">
+                  <span class="text-xs font-medium text-gray-500">Producto principal</span><br>
+                  <a href="{{ product.url }}" class="text-sm font-semibold text-gray-900 hover:text-black transition">
+                    {{ product.title }}
+                  </a>
+                  <p class="text-gray-700 text-sm">
+                    {{ product.selected_or_first_available_variant.price | money }}
+                  </p>
+                </div>
+              </div>
+
+              {% comment %} <-- Productos de upselling --> {% endcomment %}
+              {% if upselling_blocks.size > 0 %}
+                {% for block in upselling_blocks %}
+                  {% assign upsell_product = block.settings.producto %}
+                  {% if upsell_product and upsell_product.variants.size > 0 %}
+                    <div
+                      class="upselling-product flex items-center space-x-4 mb-4"
+                      data-product-id="{{ upsell_product.variants.first.id }}"
+                    >
+                      {% comment %} <-- Checkbox --> {% endcomment %}
+                      <input
+                        type="checkbox"
+                        class="upselling-checkbox"
+                        {% if product.tags contains 'Aire Acondicionado Portátil'
+                          and upsell_product.title contains 'Sello De Ventana'
+                        %}
+                          data-price="9990"
+                        {% else %}
+                          data-price="{{ upsell_product.variants.first.price | divided_by: 100 }}"
+                        {% endif %}
+                      >
+                      <!-- Imagen del producto -->
+                      {% if upsell_product.featured_image %}
+                        <a href="{{ upsell_product.url }}" class="w-20 h-20 overflow-hidden rounded-md">
+                          {{
+                            upsell_product.featured_image
+                            | image_url: width: 200
+                            | image_tag:
+                              class: 'object-cover w-full
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  h-full'
+                          }}
+                        </a>
+                      {% else %}
+                        <div class="w-20 h-20 bg-gray-200 flex items-center justify-center rounded-md">
+                          <span class="text-sm text-gray-500">Sin imagen</span>
+                        </div>
+                      {% endif %}
+                      {% comment %} <-- Información del producto --> {% endcomment %}
+                      <div class="max-w-[240px] overflow-hidden text-ellipsis whitespace-normal">
+                        <a href="{{ upsell_product.url }}" class="text-sm font-semibold text-gray-900 hover:text-black">
+                          {{ upsell_product.title }}
+                        </a>
+                        {% comment %} Verificar condiciones para aplicar descuento {% endcomment %}
+                        {% if product.tags contains 'Aire Acondicionado Portátil'
+                          and upsell_product.title contains 'Sello De Ventana'
+                        %}
+                          <p class="text-gray-500 text-sm line-through">
+                            {{ upsell_product.variants.first.price | money }}
+                          </p>
+                          <p class="text-gray-700 text-sm font-normal">$9.990</p>
+                        {% else %}
+                          <p class="text-gray-700 text-sm">
+                            {{ upsell_product.variants.first.price | money }}
+                          </p>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+
+              {% comment %} <-- Botón para agregar seleccionados --> {% endcomment %}
+              <div class="flex justify-between items-center mt-4">
+                <span class="font-bold text-lg">Total:</span>
+                <span id="total-price" class="font-bold text-lg"></span>
+              </div>
+              <button
+                id="add-selected-to-cart"
+                class="
+                  {% unless product.available %}
+                    opacity-50 cursor-not-allowed
+                  {% endunless %} mt-4 relative block w-max px-8 py-2.5 text-white rounded-sm uppercase text-sm font-bold tracking-[1px] mx-auto transition-hover duration-200 ease-in bg-[#a00] hover:opacity-70
+                "
+                {% unless product.available %}
+                  disabled
+                {% endunless %}
+              >
+                Agregar seleccionados
+              </button>
+            </div>
+          </section>
+        {% endif %}
+
         {% if product.description != blank %}
           <div class="description mb-8">
             <h2 class="uppercase font-semibold text-2xl my-4">Descripción</h2>
             <div class="prose">
               {{ product.description }}
-            </div> 
-          </div>        
-        {% endif %} 
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
 </div>
 
-
 {% if product.selected_or_first_available_variant.available == false %}
-  <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
-<script>
+  <script async src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
+  <script>
     var klaviyo = klaviyo || [];
     klaviyo.init({
-      account: "VRKSdn",
-      platform: "shopify"
+      account: 'VRKSdn',
+      platform: 'shopify',
     });
-    klaviyo.enable("backinstock",{ 
-    trigger: {
-      product_page_text: "Notify Me When Available",
-      product_page_class: "btn-soon",
-      product_page_text_align: "center",
-      product_page_margin: "0px",
-      replace_anchor: false
-    },
-    modal: {
-     headline: "{product_name}",
-     body_content: "Deja tu contacto para avisarte cuando este producto esté disponible.",
-     email_field_label: "Email",
-     button_label: "Avísame cuando esté disponible",
-     subscription_success_label: "¡Ya estás estás registrado! te avisaremos cuando este producto esté disponible",
-     footer_content: '',
-     drop_background_color: "#000",
-     background_color: "#fff",
-     text_color: "#222",
-     button_text_color: "#fff",
-     button_background_color: "#a00",
-     close_button_color: "#ccc",
-     error_background_color: "#fcd6d7",
-     error_text_color: "#C72E2F",
-     success_background_color: "#d3efcd",
-     success_text_color: "#222"
-    }
-  });
-</script>
+    klaviyo.enable('backinstock', {
+      trigger: {
+        product_page_text: 'Notify Me When Available',
+        product_page_class: 'btn-soon',
+        product_page_text_align: 'center',
+        product_page_margin: '0px',
+        replace_anchor: false,
+      },
+      modal: {
+        headline: '{product_name}',
+        body_content: 'Deja tu contacto para avisarte cuando este producto esté disponible.',
+        email_field_label: 'Email',
+        button_label: 'Avísame cuando esté disponible',
+        subscription_success_label: '¡Ya estás estás registrado! te avisaremos cuando este producto esté disponible',
+        footer_content: '',
+        drop_background_color: '#000',
+        background_color: '#fff',
+        text_color: '#222',
+        button_text_color: '#fff',
+        button_background_color: '#a00',
+        close_button_color: '#ccc',
+        error_background_color: '#fcd6d7',
+        error_text_color: '#C72E2F',
+        success_background_color: '#d3efcd',
+        success_text_color: '#222',
+      },
+    });
+  </script>
 {% endif %}
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes = document.querySelectorAll('.upselling-checkbox');
+    const totalPriceElement = document.getElementById('total-price');
+    const addToCartButton = document.getElementById('add-selected-to-cart');
+
+    // Formateador de moneda CLP
+    const formatter = new Intl.NumberFormat('es-CL', {
+      style: 'currency',
+      currency: 'CLP',
+      minimumFractionDigits: 0,
+    });
+
+    // Función para actualizar el precio total
+    const updateTotalPrice = () => {
+      let total = 0;
+
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          const productElement = checkbox.closest('.upselling-product');
+          const productTitle = productElement.querySelector('a').textContent.trim();
+
+          // Verificar si es el producto "Sello De Ventana"
+          if (productTitle.includes('Sello De Ventana')) {
+            total += 9990; // Precio rebajado para el Sello De Ventana
+          } else {
+            // Si no es el producto con descuento, usar el precio original del data-price
+            total += parseFloat(checkbox.dataset.price || 0);
+          }
+        }
+      });
+
+      // Actualizar el texto del total
+      totalPriceElement.textContent = formatter.format(total);
+
+      // Desactivar el botón si no hay productos seleccionados
+      addToCartButton.disabled = total === 0;
+      addToCartButton.style.opacity = total === 0 ? '0.5' : '1';
+    };
+
+    // Función para agregar productos seleccionados al carrito
+    const addToCart = () => {
+      const selectedProducts = [];
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          const productElement = checkbox.closest('.upselling-product');
+          const productTitle = productElement.querySelector('a').textContent.trim();
+          const productId = productElement.dataset.productId;
+
+          // Verificar si es "Sello De Ventana" para aplicar descuento en el carrito
+          if (productTitle.includes('Sello De Ventana')) {
+            selectedProducts.push({
+              id: productId,
+              quantity: 1,
+              discountedPrice: 9990, // Precio rebajado para el carrito
+            });
+          } else {
+            // Producto sin descuento
+            selectedProducts.push({
+              id: productId,
+              quantity: 1,
+            });
+          }
+        }
+      });
+
+      // Construir los datos del formulario para agregar al carrito
+      const formData = new FormData();
+      selectedProducts.forEach((product, index) => {
+        formData.append(`items[${index}][id]`, product.id);
+        formData.append(`items[${index}][quantity]`, product.quantity);
+        if (product.discountedPrice) {
+          formData.append(`items[${index}][properties][Discounted Price]`, product.discountedPrice);
+        }
+      });
+
+      // Enviar los datos al carrito
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then(() => {
+          // Abrir el carrito y actualizarlo
+          window.dispatchEvent(new CustomEvent('toggle-cart')); // Abrir el carrito lateral
+          window.dispatchEvent(new CustomEvent('update-cart')); // Actualizar contenido del carrito
+        })
+        .catch((error) => console.error('Error al agregar productos:', error));
+    };
+
+    // Agregar eventos a los checkboxes
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', updateTotalPrice);
+    });
+
+    // Evento para el botón de agregar al carrito
+    addToCartButton.addEventListener('click', addToCart);
+
+    // Calcular total al cargar la página
+    updateTotalPrice();
+  });
+</script>
+
 {%- liquid
-if product.selected_or_first_available_variant.featured_media
-  assign seo_media = product.selected_or_first_available_variant.featured_media
-else
-  assign seo_media = product.featured_media
-endif
+  if product.selected_or_first_available_variant.featured_media
+    assign seo_media = product.selected_or_first_available_variant.featured_media
+  else
+    assign seo_media = product.featured_media
+  endif
 -%}
 
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "Product",
-  "name": {{ product.title | json }},
-  "url": {{ request.origin | append: product.url | json }},
-  {% if seo_media -%}
-    "image": [
-      {{ seo_media | image_url: width: 1920 | prepend: "https:" | json }}
-    ],
-  {%- endif %}
-  "description": {{ product.description | strip_html | json }},
-  {% if product.selected_or_first_available_variant.sku != blank -%}
-    "sku": {{ product.selected_or_first_available_variant.sku | json }},
-  {%- endif %}
-  "brand": {
-    "@type": "Brand",
-    "name": {{ product.vendor | json }}
-  },
-  "offers": [
-    {%- for variant in product.variants -%}
-      {
-        "@type" : "Offer",
-        {%- if variant.sku != blank -%}
-          "sku": {{ variant.sku | json }},
-        {%- endif -%}
-        {%- if variant.barcode.size == 12 -%}
-          "gtin12": {{ variant.barcode }},
-        {%- endif -%}
-        {%- if variant.barcode.size == 13 -%}
-          "gtin13": {{ variant.barcode }},
-        {%- endif -%}
-        {%- if variant.barcode.size == 14 -%}
-          "gtin14": {{ variant.barcode }},
-        {%- endif -%}
-        "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
-        "price" : {{ variant.price | divided_by: 100.00 | json }},
-        "priceCurrency" : {{ cart.currency.iso_code | json }},
-        "url" : {{ request.origin | append: variant.url | json }}
-      }{% unless forloop.last %},{% endunless %}
-    {%- endfor -%}
-  ]
-}
+<script type="text/javascript">
+  // VentiPay Widget
+  // Setup
+  var __ventipay_color = 'primary'; // Background color of the button. One of: primary, white, black, or an HEX color code
+  var __ventipay_text_color = 'white'; // Text color of the button. One of: primary, white, black, or an HEX color code
+  var __ventipay_language = 'es'; // One of: es, en
 
+  // DO NOT CHANGE ANYTHING BELOW THIS LINE
+  var __ventipay_money_format = {{ shop.money_format | json }};
+  var __ventipay_price_min = {{ product.price_min | json }};
+  var __ventipay_cart_currency = {{ cart.currency.iso_code | json }};
+  var __ventipay_customer = {{ customer | json }};
+  var __ventipay_cart = {{ cart | json }};
+</script>
+<script
+  type="text/javascript"
+  src="https://js.ventipay.com/widgets/shopify/product/"
+></script>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "url": {{ request.origin | append: product.url | json }},
+    {% if seo_media -%}
+      "image" : [{{ seo_media | image_url: width: 1920 | prepend: "https:" | json }}],
+      {%- endif %}
+      "description": {{ product.description | strip_html | json }},
+      {% if product.selected_or_first_available_variant.sku != blank -%}
+        "sku": {{ product.selected_or_first_available_variant.sku | json }},
+        {%- endif %}
+        "brand": {
+          "@type": "Brand",
+          "name": {{ product.vendor | json }}
+        },
+        "offers": [
+                  {%- for variant in product.variants -%}
+            {
+                      "@type": "Offer",
+                      {%- if variant.sku != blank -%}
+                "sku": {{ variant.sku | json }},
+                      {%- endif -%}
+                {%- if variant.barcode.size == 12 -%}
+                  "gtin12": {{ variant.barcode }},
+                      {%- endif -%}
+                  {%- if variant.barcode.size == 13 -%}
+                    "gtin13": {{ variant.barcode }},
+                      {%- endif -%}
+                    {%- if variant.barcode.size == 14 -%}
+                      "gtin14": {{ variant.barcode }},
+                      {%- endif -%}
+                      "availability": "http://schema.org/{% if variant.available %} InStock{% else %}OutOfStock{% endif %}",
+                      "price": {{ variant.price | divided_by: 100.00 | json }},
+                      "priceCurrency": {{ cart.currency.iso_code | json }},
+                      "url": {{ request.origin | append: variant.url | json }}
+                    }{% unless forloop.last %},{% endunless %}
+                  {%- endfor -%}
+                ]
+              }
 </script>
 
 {% schema %}
-  {
-    "name": "Main Product",
-    "settings": []
-  }
+{
+  "name": "Main Product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo_upselling",
+      "label": "Título upselling"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "upselling",
+      "name": "Upselling",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "product",
+          "id": "producto",
+          "label": "Producto upselling"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

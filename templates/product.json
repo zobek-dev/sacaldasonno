@@ -2,7 +2,37 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "settings": {}
+      "blocks": {
+        "upselling_RnHyV9": {
+          "type": "upselling",
+          "disabled": true,
+          "settings": {
+            "producto": "{{ product.metafields.custom.producto_upselling_1.value }}"
+          }
+        },
+        "upselling_Q3JN3t": {
+          "type": "upselling",
+          "disabled": true,
+          "settings": {
+            "producto": "{{ product.metafields.custom.producto_upselling_2.value }}"
+          }
+        },
+        "upselling_aaBn6P": {
+          "type": "upselling",
+          "disabled": true,
+          "settings": {
+            "producto": "{{ product.metafields.custom.producto_upselling_3.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "upselling_RnHyV9",
+        "upselling_Q3JN3t",
+        "upselling_aaBn6P"
+      ],
+      "settings": {
+        "titulo_upselling": "Upselling"
+      }
     },
     "caracteristicas": {
       "type": "product-caracteristicas",
@@ -26,7 +56,7 @@
       "settings": {
         "image": "{{ product.metafields.custom.inpage_1.value.imagen.value }}",
         "title": "{{ product.metafields.custom.inpage_1.value.tituio.value }}",
-        "content": "{{ product.metafields.custom.inpage_1.value.contenido | metafield_tag }}",
+        "content": "<p>{{ product.metafields.custom.inpage_1.value.contenido | metafield_tag }}<\/p>",
         "reverse": false
       }
     },
